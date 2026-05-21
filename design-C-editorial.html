@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface — Editorial</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+:root {
+    --paper: #FFFEFB;
+    --paper-soft: #F8F6F0;
+    --ink: #1A1A1A;
+    --ink-soft: #2D2D2D;
+    --grey: #6E6E6E;
+    --grey-soft: #A5A5A5;
+    --line: #D9D5CC;
+    --accent: #6B2929;
+    --accent-soft: #8B3535;
+    --olive: #6F6F4A;
+}
+html { scroll-behavior: smooth; }
+html, body { background: var(--paper); color: var(--ink); font-family: 'Manrope', sans-serif; font-size: 16px; line-height: 1.65; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1180px; margin: 0 auto; padding: 0 56px; }
+.container-narrow { max-width: 880px; margin: 0 auto; padding: 0 56px; }
+.serif { font-family: 'Cormorant Garamond', serif; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); font-weight: 500; }
+
+/* NAV — MINIMAL TOP BAR */
+nav {
+    position: sticky; top: 0; z-index: 100;
+    padding: 28px 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+}
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+}
+.brand-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--grey);
+    margin-left: 12px;
+    text-transform: uppercase;
+}
+.nav-links {
+    display: flex; gap: 36px; align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+.nav-links a { color: var(--ink); transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { color: var(--accent) !important; }
+
+/* MASTHEAD — MAGAZINE FRONT PAGE */
+.masthead { padding: 80px 0 60px; text-align: center; border-bottom: 1px solid var(--line); }
+.masthead .issue {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-bottom: 56px;
+    display: flex; justify-content: center; align-items: center; gap: 16px;
+}
+.masthead .issue::before, .masthead .issue::after { content: ""; width: 50px; height: 1px; background: var(--line); }
+.masthead h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(64px, 9vw, 132px);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 36px;
+    max-width: 13ch;
+    margin-left: auto; margin-right: auto;
+}
+.masthead h1 em { font-style: italic; color: var(--accent); }
+.masthead .dek {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-soft);
+    max-width: 540px;
+    margin: 0 auto 48px;
+    line-height: 1.55;
+    font-weight: 300;
+}
+.masthead .byline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    color: var(--grey);
+    text-transform: uppercase;
+    display: flex; justify-content: center; gap: 24px;
+}
+.masthead .byline span { display: flex; align-items: center; gap: 12px; }
+
+/* HERO IMAGE — FULL BLEED CAPTION STYLE */
+.hero-image {
+    height: 70vh; min-height: 580px;
+    margin: 0 56px 0;
+    position: relative;
+    overflow: hidden;
+}
+.hero-image .bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1800&q=85');
+    background-size: cover; background-position: center;
+}
+.hero-image .caption {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    background: var(--paper);
+    padding: 14px 22px;
+    max-width: 320px;
+}
+.hero-image .caption .lab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.hero-image .caption p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+}
+
+/* CHAPTER MARKER */
+.chapter {
+    text-align: center;
+    padding: 100px 0 60px;
+}
+.chapter .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.chapter h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 24px;
+    max-width: 18ch;
+    margin-left: auto; margin-right: auto;
+}
+.chapter h2 em { font-style: italic; color: var(--accent); }
+.chapter .standfirst {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.55;
+    font-weight: 300;
+}
+
+/* OPENING SPREAD — DROP CAP */
+.opening { padding: 40px 0 100px; border-bottom: 1px solid var(--line); }
+.opening .body {
+    max-width: 720px;
+    margin: 0 auto;
+    column-count: 2;
+    column-gap: 48px;
+}
+.opening .body p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+.opening .body p em { color: var(--accent); font-style: italic; }
+.opening .body p::first-letter {
+    /* drop cap on first */
+    /* won't apply to all */
+}
+.opening .drop-cap::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    line-height: 0.85;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+/* SPECIALTY — NUMBERED PRINT-STYLE */
+.specialty { padding: 100px 0 100px; border-bottom: 1px solid var(--line); }
+.specialty .container { display: grid; grid-template-columns: 0.6fr 1fr; gap: 80px; align-items: center; }
+.specialty .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+.specialty .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(140px, 18vw, 240px);
+    line-height: 0.85;
+    color: var(--ink);
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
+}
+.specialty .big sup { font-size: 0.4em; color: var(--accent); }
+.specialty .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 32px;
+    color: var(--ink-soft);
+    line-height: 1.2;
+    font-weight: 300;
+}
+.specialty .right p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+.specialty .right p em { color: var(--accent); font-style: italic; }
+.specialty .right .list {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--grey);
+    line-height: 2;
+    text-transform: uppercase;
+}
+
+/* FEATURE SPREAD — IMAGE + CAPTION */
+.feature { padding: 100px 0; border-bottom: 1px solid var(--line); }
+.feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.feature-img-wrap { position: relative; }
+.feature-img {
+    height: 540px;
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=85');
+    background-size: cover; background-position: center;
+}
+.feature-img-cap {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-top: 12px;
+    padding-left: 4px;
+}
+.feature-text .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+.feature-text h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 28px;
+}
+.feature-text h3 em { font-style: italic; color: var(--accent); }
+.feature-text p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+.feature-text .pull-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 26px;
+    color: var(--accent);
+    margin: 32px 0;
+    padding: 24px 32px;
+    border-left: 1px solid var(--accent);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* THE INDEX — LIST OF TRIPS LIKE A TOC */
+.index { padding: 100px 0; border-bottom: 1px solid var(--line); }
+.index-list { max-width: 880px; margin: 0 auto; }
+.index-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 2fr 100px;
+    gap: 32px;
+    padding: 28px 0;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    transition: padding 0.3s;
+}
+.index-row:hover { padding-left: 12px; }
+.index-row:last-child { border-bottom: 0; }
+.index-row .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 0.15em;
+}
+.index-row .title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.005em;
+    font-weight: 400;
+}
+.index-row .title em { font-style: italic; color: var(--accent); }
+.index-row .dek {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    font-weight: 400;
+}
+.index-row .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--grey);
+    letter-spacing: 0.15em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+/* PULL QUOTE FEATURE */
+.quote-feature {
+    padding: 140px 0;
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+}
+.quote-feature .mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 80px;
+    color: var(--accent);
+    line-height: 0.4;
+    margin-bottom: 36px;
+    opacity: 0.7;
+}
+.quote-feature blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.25;
+    color: var(--ink);
+    max-width: 900px;
+    margin: 0 auto 32px;
+    letter-spacing: -0.005em;
+}
+.quote-feature blockquote em { color: var(--accent); font-style: italic; }
+.quote-feature .attr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--grey);
+    text-transform: uppercase;
+}
+
+/* COLOPHON / FOOTER */
+.colophon { padding: 100px 0 40px; }
+.colophon-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+.colophon .masthead-block { padding-right: 40px; }
+.colophon .brand { font-size: 36px; margin-bottom: 16px; }
+.colophon .desc { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 18px; color: var(--ink-soft); line-height: 1.5; }
+.colophon h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.colophon a {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-style: italic;
+    font-weight: 400;
+}
+.colophon a:hover { color: var(--accent); }
+.colophon-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+    display: flex; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--grey);
+    text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+    .opening .body { column-count: 1; }
+    .specialty .container, .feature-grid, .colophon-grid { grid-template-columns: 1fr; gap: 40px; }
+    .index-row { grid-template-columns: 40px 1fr; }
+    .index-row .dek, .index-row .meta { grid-column: span 2; }
+    .masthead h1 { font-size: 56px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="/" class="brand">Preface<span class="brand-tag">— Travel Quarterly</span></a>
+        <div class="nav-links">
+            <a href="#">All-Inclusives</a>
+            <a href="#">Business</a>
+            <a href="#">About</a>
+            <a href="#" class="nav-cta">Book →</a>
+        </div>
+    </div>
+</nav>
+
+<!-- MASTHEAD -->
+<section class="masthead">
+    <div class="container">
+        <div class="issue">Issue No. 01 · Volume I · Toronto 2026</div>
+        <h1>Travel, <em>considered.</em></h1>
+        <div class="dek">An advisor practice for those who'd rather not Expedia it. Stories, opinions, and bookings from someone who actually sleeps where she sells.</div>
+        <div class="byline">
+            <span>— Established 2026</span>
+            <span>TICO #XXXXXXX</span>
+            <span>Fora Travel</span>
+        </div>
+    </div>
+</section>
+
+<!-- HERO IMAGE -->
+<div class="hero-image">
+    <div class="bg"></div>
+    <div class="caption">
+        <div class="lab">— Figure 01</div>
+        <p>The view from the Premier Beachfront Pool Villa at Six Senses Fiji. The room we booked the client was a Pool Villa. <em>This is what arrived.</em></p>
+    </div>
+</div>
+
+<!-- CHAPTER 01 -->
+<section class="chapter">
+    <div class="container">
+        <div class="num">— Chapter 01 / The position</div>
+        <h2>The hotel pays the commission. <em>You arrive to upgrades.</em></h2>
+        <p class="standfirst">Same rate as Booking.com. Different reception. The whole pitch in one sentence — though we will, naturally, write several thousand more.</p>
+    </div>
+</section>
+
+<!-- OPENING SPREAD WITH DROP CAP -->
+<section class="opening">
+    <div class="container-narrow">
+        <div class="body">
+            <p class="drop-cap">There is a generation of people now hitting their peak travel years — honeymoons, family weeks, milestone celebrations, business travel — who never had a relationship with a travel advisor. Their parents had advisors. They have Expedia.</p>
+            <p>The arithmetic, plainly: hotels publish a rate. Whether you book on Booking.com, Expedia, or through me, that rate is identical. The difference is what's waiting in the room.</p>
+            <p>Through Fora's preferred-partner status across Virtuoso, Four Seasons, Belmond, Rosewood, Hyatt Privé, and the rest, our bookings layer on a confirmed room upgrade, daily breakfast for two, $100–$200 in hotel credits, early check-in, late check-out, and a welcome amenity — <em>all paid by the hotel from its marketing budget, none by you.</em></p>
+            <p>That's the entire pitch. Same price. Better arrival.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SPECIALTY -->
+<section class="specialty">
+    <div class="container">
+        <div class="left">
+            <div class="label">— Chapter 02 / The specialty</div>
+            <div class="big">20<sup>+</sup></div>
+            <div class="title">all-inclusives, personally stayed.</div>
+        </div>
+        <div class="right">
+            <p>Most agencies plan resort trips they've only read about. That's how clients end up at Sandals when they should be at Excellence Playa Mujeres.</p>
+            <p>We know which property has a real kids' club. Which adults-only is genuinely quiet at 11pm. <em>Which $700/night room is actually worth $700.</em></p>
+            <div class="list">
+                Excellence Playa Mujeres · Excellence Punta Cana<br/>
+                Le Blanc Cancun · Zoetry Agua · Atelier Playa Mujeres<br/>
+                Hyatt Ziva Cap Cana · Secrets Cap Cana · Dreams Riviera<br/>
+                Sandals Royal Caribbean · Sandals Curaçao<br/>
+                Beaches Turks &amp; Caicos · Grand Velas Riviera Maya<br/>
+                Rosewood Mayakoba · Andaz Mayakoba · Nizuc · Unico 20˚87˚
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE SPREAD -->
+<section class="feature">
+    <div class="container">
+        <div class="feature-grid">
+            <div class="feature-img-wrap">
+                <div class="feature-img"></div>
+                <div class="feature-img-cap">— Excellence Playa Mujeres, Cancun. The benchmark for adults-only in Mexico.</div>
+            </div>
+            <div class="feature-text">
+                <div class="num">— Chapter 03 / A receipt</div>
+                <h3>What we paid. <em>What we got.</em></h3>
+                <p>Last month's honeymoon booking. Six Senses Fiji, seven nights, $8,000.</p>
+                <p>What the client booked: a standard Pool Villa.</p>
+                <p>What the client arrived to: a Premier Beachfront Pool Villa, plus daily breakfast for two, a $100 spa credit, and a welcome amenity.</p>
+                <div class="pull-quote">"Net value over the Booking.com booking: roughly $3,460. Cost over the Booking.com booking: $0."</div>
+                <p>This is not magic. It is what hotels pay agents to do.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INDEX -->
+<section class="index">
+    <div class="container">
+        <div class="chapter" style="padding: 0 0 60px;">
+            <div class="num">— Chapter 04 / The practice</div>
+            <h2 style="margin: 0 auto;">The trips <em>we plan.</em></h2>
+        </div>
+        <div class="index-list">
+            <div class="index-row">
+                <div class="num">— 01</div>
+                <div class="title">Honeymoons</div>
+                <div class="dek">Maldives, Bali, Greek Isles, South Africa. The trip you've been overthinking for nine months.</div>
+                <div class="meta">$8–22K</div>
+            </div>
+            <div class="index-row">
+                <div class="num">— 02</div>
+                <div class="title">Family escapes</div>
+                <div class="dek">The all-inclusives that don't feel like all-inclusives. Real kids' clubs, quiet adult zones.</div>
+                <div class="meta">$5–15K</div>
+            </div>
+            <div class="index-row">
+                <div class="num">— 03</div>
+                <div class="title">Bach weekends</div>
+                <div class="dek">Twelve girls. One villa. Five group chats. We can do this.</div>
+                <div class="meta">$1.5–3K/pp</div>
+            </div>
+            <div class="index-row">
+                <div class="num">— 04</div>
+                <div class="title">Milestone group</div>
+                <div class="dek">Twenty people. Five family WhatsApps. One trip. Multi-gen logistics, sorted.</div>
+                <div class="meta">$25–80K</div>
+            </div>
+            <div class="index-row">
+                <div class="num">— 05</div>
+                <div class="title">Business travel</div>
+                <div class="dek">Stop logging into Marriott.com. We do it. Hyatt Privé and STARS perks on every booking.</div>
+                <div class="meta">From free</div>
+            </div>
+            <div class="index-row">
+                <div class="num">— 06</div>
+                <div class="title">All-Inclusives <em>(specialty)</em></div>
+                <div class="dek">Twenty-plus properties stayed at. The full list, with honest verdicts on each.</div>
+                <div class="meta">$4–15K</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PULL QUOTE -->
+<section class="quote-feature">
+    <div class="container">
+        <div class="mark">"</div>
+        <blockquote>If you can't tell what your travel agent thinks, <em>they're not your travel agent.</em></blockquote>
+        <div class="attr">— The Newsletter · Issue 12 · March 2026</div>
+    </div>
+</section>
+
+<!-- CHAPTER FINAL — CTA -->
+<section class="chapter" style="padding: 120px 0; border-bottom: 1px solid var(--line);">
+    <div class="container">
+        <div class="num">— Chapter 05 / The conversation</div>
+        <h2 style="margin-bottom: 32px;">Begin <em>the conversation.</em></h2>
+        <p class="standfirst" style="margin-bottom: 40px;">Twenty minutes. No pitch, no pressure. If we are not the right fit, we will tell you.</p>
+        <a href="#" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); padding: 16px 0; border-bottom: 1px solid var(--accent); display: inline-block;">Book a call →</a>
+    </div>
+</section>
+
+<!-- COLOPHON / FOOTER -->
+<footer class="colophon">
+    <div class="container">
+        <div class="colophon-grid">
+            <div class="masthead-block">
+                <div class="brand">Preface<span style="color: var(--accent); font-style: italic;">.</span></div>
+                <div class="desc">Travel, considered. An advisor practice for those who'd rather not Expedia it. Established Toronto, 2026.</div>
+            </div>
+            <div>
+                <h5>Practice</h5>
+                <a href="#">All-Inclusives</a>
+                <a href="#">Honeymoons</a>
+                <a href="#">Family</a>
+                <a href="#">Groups</a>
+                <a href="#">Business</a>
+            </div>
+            <div>
+                <h5>Journal</h5>
+                <a href="#">Newsletter</a>
+                <a href="#">Guides</a>
+                <a href="#">About</a>
+            </div>
+            <div>
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Email</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="colophon-bottom">
+            <div>© 2026 Preface Travel Co.</div>
+            <div>Toronto · TICO #XXXXXXX · Fora Travel</div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
