@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface — Dark + Process</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+:root {
+    --bg: #0B0B0B; --bg-soft: #141414; --bg-card: #1A1A1A; --bg-card-hover: #232323;
+    --text: #E8E2D5; --text-soft: #C4BDA8; --text-mute: #7A7468;
+    --accent: #C9A876; --accent-soft: #A88B5C; --accent-bright: #E8C28F;
+    --line: #2A2620; --line-soft: #1F1C18;
+}
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1320px; margin: 0 auto; padding: 0 48px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 24px 0; background: rgba(11,11,11,0.75); backdrop-filter: blur(20px); }
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 400; letter-spacing: 0.04em; color: var(--text); }
+.brand span { color: var(--accent); font-style: italic; }
+.nav-links { display: flex; gap: 44px; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; }
+.nav-links a { color: var(--text-soft); }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { color: var(--accent) !important; border: 1px solid var(--accent); padding: 12px 24px; }
+.nav-cta:hover { background: var(--accent); color: var(--bg) !important; }
+
+/* HERO — FULL BLEED + VALUE BANDS */
+.hero { margin-top: 0; position: relative; min-height: 100vh; display: flex; align-items: center; padding: 100px 0; overflow: hidden; }
+.hero .bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1800&q=85'); background-size: cover; background-position: center; filter: brightness(0.45); }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,0.4) 0%, rgba(11,11,11,0.6) 50%, rgba(11,11,11,0.95) 100%); }
+.hero .content { position: relative; z-index: 2; width: 100%; }
+.hero .eyebrow { margin-bottom: 28px; color: var(--accent-bright); }
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 7vw, 104px);
+    font-weight: 300;
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+    max-width: 14ch;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text-soft);
+    margin-bottom: 56px;
+    line-height: 1.5;
+    font-weight: 300;
+    max-width: 560px;
+}
+.hero-cta-row { display: flex; gap: 24px; align-items: center; }
+.btn { display: inline-block; color: var(--bg); background: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; padding: 18px 32px; font-weight: 500; transition: all 0.3s; }
+.btn:hover { background: var(--accent-bright); }
+.btn-link { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; padding: 18px 0; border-bottom: 1px solid var(--accent); }
+
+/* IMMEDIATE VALUE STATEMENT — BELOW HERO */
+.value-strip { background: var(--bg-card); border-top: 1px solid var(--accent); border-bottom: 1px solid var(--accent); padding: 64px 0; }
+.value-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 48px; align-items: center; }
+.value-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text);
+    letter-spacing: -0.01em;
+}
+.value-headline em { color: var(--accent); font-style: italic; }
+.value-stat { text-align: left; padding-left: 32px; border-left: 1px solid var(--line); }
+.value-stat .n { font-family: 'Playfair Display', serif; font-size: 48px; color: var(--accent); font-weight: 300; line-height: 1; letter-spacing: -0.025em; margin-bottom: 8px; }
+.value-stat .n sup { font-size: 0.4em; color: var(--text-soft); }
+.value-stat .lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-soft); line-height: 1.5; }
+
+/* THE 4 STEPS */
+.process { padding: 140px 0; border-bottom: 1px solid var(--line); }
+.section-head { margin-bottom: 100px; text-align: center; }
+.section-head .eyebrow { margin-bottom: 28px; display: inline-flex; align-items: center; gap: 14px; }
+.section-head .eyebrow::before, .section-head .eyebrow::after { content: ""; width: 32px; height: 1px; background: var(--accent); opacity: 0.5; }
+.section-head h2 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 4.5vw, 64px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; }
+.section-head h2 em { font-style: italic; color: var(--accent); }
+.section-head p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--text-soft); max-width: 620px; margin: 20px auto 0; font-weight: 300; }
+
+.steps-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.steps-flow::before {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 12.5%; right: 12.5%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--accent) 20%, var(--accent) 80%, transparent);
+    z-index: 0;
+}
+.step { padding: 0 28px; position: relative; z-index: 1; }
+.step .dot { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--accent); background: var(--bg); margin-bottom: 28px; position: relative; }
+.step .dot::after { content: ""; position: absolute; inset: 8px; border-radius: 50%; background: var(--accent); }
+.step .num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em; color: var(--accent); text-transform: uppercase; margin-bottom: 18px; }
+.step h4 { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 400; line-height: 1.15; margin-bottom: 14px; }
+.step h4 em { font-style: italic; color: var(--accent); }
+.step p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--text-soft); line-height: 1.55; font-weight: 300; }
+.step .outcome { margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+
+/* THE MATH — INLINE COMPARISON BANDS */
+.math-section { padding: 140px 0; background: var(--bg-soft); }
+.math-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start; margin-top: 80px; }
+.math-left { position: sticky; top: 120px; }
+.math-left h3 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 300; line-height: 1.2; margin-bottom: 24px; letter-spacing: -0.01em; }
+.math-left h3 em { color: var(--accent); font-style: italic; }
+.math-left p { font-family: 'Playfair Display', serif; font-size: 19px; font-style: italic; color: var(--text-soft); line-height: 1.6; font-weight: 300; }
+
+.math-rows { display: flex; flex-direction: column; gap: 4px; }
+.math-row {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    padding: 24px 28px;
+    align-items: center;
+    transition: all 0.2s;
+}
+.math-row:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+.math-row.header { background: transparent; border-color: transparent; padding-bottom: 12px; padding-top: 0; }
+.math-row.header div { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-mute); }
+.math-row.header .preface { color: var(--accent); }
+.math-row.total { background: var(--bg-card); border: 2px solid var(--accent); margin-top: 12px; padding: 28px; }
+.math-row.total .new { font-size: 22px; font-weight: 600; }
+.math-row .label { font-size: 14px; color: var(--text-soft); }
+.math-row .old { font-family: 'JetBrains Mono', monospace; color: var(--text-mute); text-decoration: line-through; font-size: 13px; }
+.math-row .new { font-family: 'JetBrains Mono', monospace; color: var(--accent); font-weight: 600; font-size: 14px; }
+
+/* TRIPS — IMAGE CARDS WITH PRICE TAGS */
+.trips { padding: 140px 0; }
+.trip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.trip-card { position: relative; height: 540px; overflow: hidden; cursor: pointer; }
+.trip-card .bg { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.8s; filter: brightness(0.65); }
+.trip-card:hover .bg { transform: scale(1.06); filter: brightness(0.85); }
+.trip-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 30%, rgba(11,11,11,0.95)); }
+.trip-card .top { position: absolute; top: 24px; left: 24px; right: 24px; z-index: 2; display: flex; justify-content: space-between; }
+.trip-card .num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em; color: var(--accent); }
+.trip-card .price-tag { background: var(--bg); color: var(--accent); border: 1px solid var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; padding: 6px 12px; font-weight: 600; }
+.trip-card .info { position: absolute; bottom: 0; left: 0; right: 0; padding: 36px 28px; z-index: 2; }
+.trip-card h3 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 300; line-height: 1.1; margin-bottom: 14px; }
+.trip-card .desc { font-family: 'Playfair Display', serif; font-style: italic; font-size: 15px; color: var(--text-soft); line-height: 1.5; margin-bottom: 20px; font-weight: 300; }
+.trip-card .stat-row {
+    display: flex; gap: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(232, 226, 213, 0.15);
+}
+.trip-card .stat-row .s {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+.trip-card .stat-row .s .v { color: var(--text); display: block; font-size: 14px; margin-bottom: 4px; }
+
+/* SPECIALTY */
+.specialty { position: relative; height: 90vh; min-height: 720px; margin: 100px 0; overflow: hidden; }
+.specialty .bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1800&q=85'); background-size: cover; background-position: center; filter: brightness(0.5); }
+.specialty::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,11,11,0.92) 0%, rgba(11,11,11,0.5) 50%, rgba(11,11,11,0.2)); }
+.specialty .content { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; }
+.specialty .inner { max-width: 640px; }
+.specialty .eyebrow { margin-bottom: 28px; }
+.specialty .number { font-family: 'Playfair Display', serif; font-size: clamp(140px, 18vw, 240px); line-height: 0.85; font-weight: 300; margin-bottom: 12px; letter-spacing: -0.05em; }
+.specialty .number sup { font-size: 0.4em; color: var(--accent); }
+.specialty .label { font-family: 'Playfair Display', serif; font-style: italic; font-size: 32px; color: var(--text-soft); margin-bottom: 36px; font-weight: 300; }
+.specialty p { font-size: 17px; color: var(--text-soft); line-height: 1.65; margin-bottom: 18px; max-width: 560px; }
+.specialty .verdict-list { margin-top: 36px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 600px; }
+.specialty .verdict { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(201, 168, 118, 0.25); font-size: 13px; }
+.specialty .verdict .name { color: var(--text); }
+.specialty .verdict .tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.18em; color: var(--accent); text-transform: uppercase; }
+
+/* TESTIMONIAL FEATURE */
+.testimonial { padding: 140px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.testimonial .container { display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center; }
+.testimonial-img {
+    height: 540px;
+    background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85');
+    background-size: cover; background-position: center;
+    filter: brightness(0.85);
+}
+.testimonial-text .eyebrow { margin-bottom: 28px; }
+.testimonial-text blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 40px;
+    letter-spacing: -0.005em;
+}
+.testimonial-text blockquote em { color: var(--accent); font-style: italic; }
+.testimonial-text .stat-line { display: flex; gap: 48px; padding: 32px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 32px; }
+.testimonial-text .stat-line .item .n { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 6px; }
+.testimonial-text .stat-line .item .lab { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-mute); }
+.testimonial-text .attr { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.25em; color: var(--text-mute); text-transform: uppercase; }
+.testimonial-text .attr strong { color: var(--accent); font-weight: 600; }
+
+/* CTA */
+.cta-section { position: relative; height: 70vh; min-height: 560px; overflow: hidden; display: flex; align-items: center; }
+.cta-section .bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=85'); background-size: cover; background-position: center; filter: brightness(0.45); }
+.cta-section::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,11,0.4) 0%, rgba(11,11,11,0.85)); }
+.cta-section .content { position: relative; z-index: 2; width: 100%; text-align: center; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 5vw, 72px); font-weight: 300; line-height: 1.1; letter-spacing: -0.015em; margin-bottom: 28px; max-width: 16ch; margin-left: auto; margin-right: auto; }
+.cta-section h2 em { color: var(--accent); font-style: italic; }
+.cta-section p { font-family: 'Playfair Display', serif; font-style: italic; font-size: 19px; color: var(--text-soft); max-width: 540px; margin: 0 auto 48px; font-weight: 300; }
+
+/* FOOTER */
+footer { padding: 80px 0 40px; border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+footer .brand { font-size: 32px; margin-bottom: 20px; }
+.footer-tag { font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; color: var(--text-mute); max-width: 280px; line-height: 1.45; }
+.footer-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; }
+.footer-col a { display: block; font-size: 14px; color: var(--text-soft); margin-bottom: 12px; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 300; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid var(--line); padding-top: 32px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); letter-spacing: 0.2em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+    .value-grid, .steps-flow, .trip-grid, .math-grid, .testimonial .container, .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .steps-flow::before { display: none; }
+    .specialty .verdict-list { grid-template-columns: 1fr; }
+    .math-left { position: static; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="/" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="#">All-Inclusives</a>
+            <a href="#">Business</a>
+            <a href="#">About</a>
+            <a href="#" class="nav-cta">Book</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO — FULL BLEED -->
+<section class="hero">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="eyebrow">— Independent travel advisor · Toronto · TICO #XXXXXXX</div>
+            <h1>Travel for people who'd rather <em>not Expedia it.</em></h1>
+            <p class="sub">Same prices as Booking.com. Upgrades, breakfast, hotel credits, and a human in the loop — funded by the hotel, at no cost to you.</p>
+            <div class="hero-cta-row">
+                <a href="#" class="btn">Book a 20-min call →</a>
+                <a href="#process" class="btn-link">See how it works</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VALUE STRIP — IMMEDIATE PROOF -->
+<section class="value-strip">
+    <div class="container">
+        <div class="value-grid">
+            <div class="value-headline">What you get, <em>specifically.</em></div>
+            <div class="value-stat">
+                <div class="n">$1,200</div>
+                <div class="lab">Avg added value per trip<br/>vs. booking direct</div>
+            </div>
+            <div class="value-stat">
+                <div class="n">$0</div>
+                <div class="lab">Cost to switch — hotels fund<br/>the commission</div>
+            </div>
+            <div class="value-stat">
+                <div class="n">60min</div>
+                <div class="lab">Business travel booking<br/>SLA</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4-STEP PROCESS -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">— The process</div>
+            <h2>Four steps. <em>That's the whole thing.</em></h2>
+            <p>No bookings hidden behind 20 emails. No upsells. No memberships. Just the work.</p>
+        </div>
+        <div class="steps-flow">
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 01</div>
+                <h4>20-min <em>discovery call</em></h4>
+                <p>Tell me where, when, who, and roughly what you'd spend. I tell you whether I'm the right fit.</p>
+                <div class="outcome">→ Outcome: clarity</div>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 02</div>
+                <h4>Planning <em>fee + brief</em></h4>
+                <p>$300–$2,500 by trip complexity. Refundable through first revision if it's not right.</p>
+                <div class="outcome">→ Outcome: skin in the game</div>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 03</div>
+                <h4>Proposal <em>+ iteration</em></h4>
+                <p>2-3 options with real numbers, real hotels, real reasoning. You pick. We refine.</p>
+                <div class="outcome">→ Outcome: locked-in plan</div>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 04</div>
+                <h4>You go. <em>I stay awake.</em></h4>
+                <p>WhatsApp me if the flight cancels, hotel's overbooked, or you want a 11pm Tokyo dinner rec.</p>
+                <div class="outcome">→ Outcome: human in the loop</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- THE MATH — INLINE COMPARISON -->
+<section class="math-section">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">— The math, plainly</div>
+            <h2>Same rate. <em>Better arrival.</em></h2>
+            <p>What the difference looks like on a real $8,000 booking.</p>
+        </div>
+        <div class="math-grid">
+            <div class="math-left">
+                <h3>$8,000 honeymoon. <em>$3,460 in added value.</em></h3>
+                <p>The hotel publishes one rate. Booking direct vs. through me is identical in price. The difference is what's already waiting in your room — paid by the hotel's marketing budget, not your card.</p>
+            </div>
+            <div class="math-rows">
+                <div class="math-row header">
+                    <div>Detail</div>
+                    <div>Booked Direct</div>
+                    <div class="preface">Through Preface</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Room rate</div>
+                    <div class="old">$8,000</div>
+                    <div class="new">$8,000</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Room category</div>
+                    <div class="old">Garden View</div>
+                    <div class="new">Beachfront Pool Villa</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Daily breakfast (2 pax × 7)</div>
+                    <div class="old">$490</div>
+                    <div class="new">Included</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Spa credit</div>
+                    <div class="old">$0</div>
+                    <div class="new">$100</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Welcome amenity</div>
+                    <div class="old">$0</div>
+                    <div class="new">+$120 (champagne)</div>
+                </div>
+                <div class="math-row">
+                    <div class="label">Early check-in / late check-out</div>
+                    <div class="old">Subject to availability</div>
+                    <div class="new">Confirmed</div>
+                </div>
+                <div class="math-row total">
+                    <div class="label">Cost over Booking.com</div>
+                    <div class="old">—</div>
+                    <div class="new">$0 / +$3,460 value</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRIPS WITH STATS -->
+<section class="trips">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">What we plan</div>
+            <h2>The trips that <em>have to land.</em></h2>
+            <p>Each segment, with the price range and the average value layered on.</p>
+        </div>
+        <div class="trip-grid">
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 01</div><div class="price-tag">$8–22K</div></div>
+                <div class="info">
+                    <h3>Honeymoons</h3>
+                    <p class="desc">Maldives, Bali, Greek Isles, South Africa.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">+$1,800</span>Added Value</div>
+                        <div class="s"><span class="v">2-6 wk</span>Plan Time</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 02</div><div class="price-tag">$5–15K</div></div>
+                <div class="info">
+                    <h3>Family escapes</h3>
+                    <p class="desc">All-inclusives that don't feel like all-inclusives.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">+$1,200</span>Added Value</div>
+                        <div class="s"><span class="v">3-5 wk</span>Plan Time</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 03</div><div class="price-tag">$1.5–3K/pp</div></div>
+                <div class="info">
+                    <h3>Bach weekends</h3>
+                    <p class="desc">Twelve girls. One villa. Five group chats.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">8-15 pax</span>Group Size</div>
+                        <div class="s"><span class="v">2-4 wk</span>Plan Time</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 04</div><div class="price-tag">$25–80K</div></div>
+                <div class="info">
+                    <h3>Milestone groups</h3>
+                    <p class="desc">Twenty people. Five family WhatsApps. One trip.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">+$4,500</span>Added Value</div>
+                        <div class="s"><span class="v">3-6 mo</span>Plan Time</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1535629108986-7ddd75a17a47?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 05</div><div class="price-tag">FREE</div></div>
+                <div class="info">
+                    <h3>Business travel</h3>
+                    <p class="desc">Stop logging into Marriott.com. I do it.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">60 min</span>Booking SLA</div>
+                        <div class="s"><span class="v">~$120</span>Per Trip Added</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=900&q=85');"></div>
+                <div class="top"><div class="num">— 06 ★</div><div class="price-tag">$4–15K</div></div>
+                <div class="info">
+                    <h3>All-Inclusives</h3>
+                    <p class="desc">The specialty. 20+ properties stayed.</p>
+                    <div class="stat-row">
+                        <div class="s"><span class="v">+$1,500</span>Added Value</div>
+                        <div class="s"><span class="v">1-3 wk</span>Plan Time</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SPECIALTY -->
+<section class="specialty">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="inner">
+                <div class="eyebrow">— The specialty edge</div>
+                <div class="number">20<sup>+</sup></div>
+                <div class="label">all-inclusives, personally stayed</div>
+                <p>Most agencies plan resort trips they've only read about. We know which property has a real kids' club, which $700/night room is actually worth $700.</p>
+                <div class="verdict-list">
+                    <div class="verdict"><span class="name">Excellence Playa Mujeres</span><span class="tag">Specialty</span></div>
+                    <div class="verdict"><span class="name">Le Blanc Spa Cancun</span><span class="tag">Recommend</span></div>
+                    <div class="verdict"><span class="name">Zoetry Agua</span><span class="tag">Recommend</span></div>
+                    <div class="verdict"><span class="name">Hyatt Ziva Cap Cana</span><span class="tag">Recommend</span></div>
+                    <div class="verdict"><span class="name">Rosewood Mayakoba</span><span class="tag">Recommend</span></div>
+                    <div class="verdict"><span class="name">Royalton CHIC</span><span class="tag">Conditional</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL FEATURE -->
+<section class="testimonial">
+    <div class="container">
+        <div class="testimonial-img"></div>
+        <div class="testimonial-text">
+            <div class="eyebrow">— A real client</div>
+            <blockquote>"Got upgraded to an over-water bungalow at check-in <em>without asking.</em> The amenity package showed up as $1,800 of actual money saved. We're booking everything through Preface from now on."</blockquote>
+            <div class="stat-line">
+                <div class="item"><div class="n">$1,800</div><div class="lab">Value Added</div></div>
+                <div class="item"><div class="n">7</div><div class="lab">Nights, Maldives</div></div>
+                <div class="item"><div class="n">$0</div><div class="lab">Extra Cost</div></div>
+            </div>
+            <div class="attr"><strong>Sarah K.</strong> · Honeymoon · April 2026</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="eyebrow" style="margin-bottom: 32px;">— Ready?</div>
+            <h2>Begin the <em>conversation.</em></h2>
+            <p>Twenty minutes. No pitch, no pressure. If we're not the right fit, we'll tell you.</p>
+            <a href="#" class="btn">Book a call →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">Travel, considered. For people who'd rather not Expedia it.</div>
+            </div>
+            <div class="footer-col"><h5>Practice</h5><a href="#">All-Inclusives</a><a href="#">Honeymoons</a><a href="#">Family</a><a href="#">Groups</a><a href="#">Business</a></div>
+            <div class="footer-col"><h5>Journal</h5><a href="#">Newsletter</a><a href="#">Guides</a><a href="#">About</a></div>
+            <div class="footer-col"><h5>Reach</h5><a href="#">Book a call</a><a href="#">Email</a><a href="#">Instagram</a></div>
+        </div>
+        <div class="footer-bottom"><div>© 2026 Preface Travel Co.</div><div>Toronto · TICO #XXXXXXX</div></div>
+    </div>
+</footer>
+</body>
+</html>
