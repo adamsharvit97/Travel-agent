@@ -97,30 +97,30 @@ def html_body():
 
 <p>The path: <strong>day job stays through month 15&ndash;18</strong> because your runway requires it. Inside that window, you license up (TICO + Fora), activate your warm network, build referral partnerships with planners and brokers you already know, and ship a set-and-forget cold-outreach engine for US partners. Content gets outsourced from month 4 to a VA who turns your voice memos into newsletter posts and Reels. By day 300, the practice is producing $2,500/wk in commissions; by month 18, you can quit the day job safely. By Year 5, you're either a $500K+ lifestyle operator or a $3&ndash;16M exit candidate.</p>
 
-<h2>The Five-Tier Income Ladder</h2>
+<h2>The Six-Tier Income Ladder</h2>
 <div class="exec-stats">
     <div>
-        <div class="label">Tier 1 &mdash; Comfortable</div>
+        <div class="label">Comfortable</div>
+        <div class="stat">$10K/mo</div>
+        <div class="note">Y1 Q3 alongside day job</div>
+    </div>
+    <div>
+        <div class="label">Happy</div>
         <div class="stat">$15K/mo</div>
-        <div class="note">Reachable in Y1 Q4; replaces day-job net</div>
+        <div class="note">Y1 Q4 / Y2 Q1; day-job exit unlocks here</div>
     </div>
     <div>
-        <div class="label">Tier 2 &mdash; Wanted</div>
-        <div class="stat">$25K/mo</div>
-        <div class="note">Y2 with consistent partnership volume</div>
+        <div class="label">Target</div>
+        <div class="stat">$30K/mo</div>
+        <div class="note">Y3 with first sub-advisor</div>
     </div>
     <div>
-        <div class="label">Tier 3 &mdash; Target</div>
-        <div class="stat">$35K/mo</div>
-        <div class="note">Y3 with 2&ndash;3 sub-advisors producing</div>
-    </div>
-    <div>
-        <div class="label">Tier 4 &mdash; Goal</div>
-        <div class="stat">$80K/mo</div>
-        <div class="note">Y5&ndash;Y6 with full team + brand pull</div>
+        <div class="label">Goal</div>
+        <div class="stat">$50K/mo</div>
+        <div class="note">Y5 with full team</div>
     </div>
 </div>
-<p class="small" style="margin-top: -0.1in;">A fifth tier &mdash; <strong>$250K/mo ($3M/yr)</strong> &mdash; is the Y7&ndash;Y10 picture. It requires either an exit producing $15M+ (annualizable returns) or a 20+ advisor team at scale. Real, but not bookable to a five-year plan.</p>
+<p class="small" style="margin-top: -0.1in;">Two additional milestone markers are tracked through the plan: <strong>Decent ($5K/mo)</strong> &mdash; the early signal that the business works, reachable in M2&ndash;3 from the warm network alone; and <strong>Satisfied ($20K/mo)</strong> &mdash; the comfortable steady-state between Happy and Target, hit in Y2 Q3.</p>
 
 <h2>Why You Win</h2>
 <ul>
@@ -225,14 +225,15 @@ def html_body():
 <table>
 <thead><tr><th>Tier</th><th class="num">Monthly Net</th><th class="num">Bookings/mo</th><th class="num">Bookings/wk</th><th>Phase Hit</th></tr></thead>
 <tbody>
-<tr><td>Comfortable</td><td class="num">$15K</td><td class="num">~18</td><td class="num">~4.5</td><td>Y1 Q4</td></tr>
-<tr><td>Wanted</td><td class="num">$25K</td><td class="num">~30</td><td class="num">~7.5</td><td>Y2 H2</td></tr>
-<tr><td>Target</td><td class="num">$35K</td><td class="num">~43</td><td class="num">~11</td><td>Y3 with team</td></tr>
-<tr><td>Goal</td><td class="num">$80K</td><td class="num">~98</td><td class="num">~24</td><td>Y5&ndash;Y6 with full team</td></tr>
-<tr><td>Ultimate</td><td class="num">$250K</td><td class="num">~305</td><td class="num">~76</td><td>Y8&ndash;Y10 OR exit equivalent</td></tr>
+<tr><td>Decent</td><td class="num">$5K</td><td class="num">~6</td><td class="num">~1.5</td><td>M2&ndash;3 (warm network)</td></tr>
+<tr><td>Comfortable</td><td class="num">$10K</td><td class="num">~12</td><td class="num">~3</td><td>M5&ndash;6</td></tr>
+<tr><td>Happy</td><td class="num">$15K</td><td class="num">~18</td><td class="num">~4.5</td><td>Y1 Q4 (day-job exit window)</td></tr>
+<tr><td>Satisfied</td><td class="num">$20K</td><td class="num">~24</td><td class="num">~6</td><td>Y2 Q1&ndash;Q2</td></tr>
+<tr><td>Target</td><td class="num">$30K</td><td class="num">~37</td><td class="num">~9</td><td>Y2 H2 solo / Y3 with 1st sub</td></tr>
+<tr><td>Goal</td><td class="num">$50K</td><td class="num">~61</td><td class="num">~15</td><td>Y4&ndash;Y5 with full team</td></tr>
 </tbody>
 </table>
-<p>At ~10 bookings/wk you're at solo capacity. Anything beyond requires sub-advisors.</p>
+<p>At ~10 bookings/wk you're at solo capacity. The Target and Goal tiers require at least 1&ndash;2 sub-advisors to fulfill demand without burning out.</p>
 </section>
 
 <!-- 05 MARKET POSITION -->
@@ -496,7 +497,7 @@ def html_body():
 <tr><td><strong>Your personal income (incorporated)</strong></td><td class="num"><strong>$280&ndash;350K take-home</strong></td></tr>
 </tbody>
 </table>
-<p>This hits Tier 3 (target = $35K/mo = $420K/yr gross &asymp; $280K take-home incorporated).</p>
+<p>Y3 take-home of $280&ndash;350K = <strong>$23&ndash;29K/mo</strong> &mdash; landing right at your Target tier ($30K/mo). The first sub-advisor pushes you across.</p>
 
 <!-- 6.6 -->
 <div class="phase-banner">
@@ -698,15 +699,17 @@ No pressure &mdash; if you've already got a trip planned this year, I'd love to 
 
 <h2>Income Tier Achievement Timeline</h2>
 <table>
-<thead><tr><th>Tier</th><th class="num">Monthly Income</th><th class="num">Y/M Hit (Business Only)</th><th class="num">Combined w/ Day Job</th></tr></thead>
+<thead><tr><th>Tier</th><th class="num">Monthly Net</th><th class="num">Business Only</th><th class="num">Combined w/ Day Job</th></tr></thead>
 <tbody>
-<tr><td>Tier 1 &mdash; Comfortable</td><td class="num">$15K</td><td class="num">Y2 M3</td><td class="num">Y1 M3 (with day job)</td></tr>
-<tr><td>Tier 2 &mdash; Wanted</td><td class="num">$25K</td><td class="num">Y2 M9</td><td class="num">Y1 M6</td></tr>
-<tr><td>Tier 3 &mdash; Target</td><td class="num">$35K</td><td class="num">Y3 (with team)</td><td class="num">Y2 (without team if day job continues)</td></tr>
-<tr><td>Tier 4 &mdash; Goal</td><td class="num">$80K</td><td class="num">Y5 (full team)</td><td class="num">Y4 (with team + day-job-replacement-level commissions)</td></tr>
-<tr><td>Tier 5 &mdash; Ultimate</td><td class="num">$250K</td><td class="num">Y7&ndash;Y10 OR exit-equivalent</td><td class="num">n/a</td></tr>
+<tr><td>Decent</td><td class="num">$5K</td><td class="num">Y1 M2&ndash;3</td><td class="num">Y1 M2&ndash;3 (with day job)</td></tr>
+<tr><td>Comfortable</td><td class="num">$10K</td><td class="num">Y1 M5&ndash;6</td><td class="num">Y1 M1 (combined)</td></tr>
+<tr><td>Happy</td><td class="num">$15K</td><td class="num">Y1 Q4</td><td class="num">Y1 M3 (combined)</td></tr>
+<tr><td>Satisfied</td><td class="num">$20K</td><td class="num">Y2 Q1&ndash;Q2</td><td class="num">Y1 M6 (combined)</td></tr>
+<tr><td>Target</td><td class="num">$30K</td><td class="num">Y2 H2 solo / Y3 with team</td><td class="num">Y1 Q4 (combined with day job)</td></tr>
+<tr><td>Goal</td><td class="num">$50K</td><td class="num">Y4&ndash;Y5 with full team</td><td class="num">n/a (day job exited by then)</td></tr>
 </tbody>
 </table>
+<p class="small">&ldquo;Combined with day job&rdquo; column reflects total household income (business net + day-job net of ~$8.7K/mo). The combined figure is informational only &mdash; it accelerates the feeling of income progress but doesn't change the business-side milestones.</p>
 
 <h2>Years 2&ndash;5 Trajectory (Post-Day-Job)</h2>
 <table>
@@ -724,7 +727,7 @@ No pressure &mdash; if you've already got a trip planned this year, I'd love to 
 </tbody>
 </table>
 
-<p>Y5 personal take-home of $45K/mo gets you between Tier 3 ($35K target) and Tier 4 ($80K goal). Reaching the full Tier 4 requires either: (a) extending the team to 6&ndash;8 advisors (Y6&ndash;Y7) or (b) an exit producing equivalent annualized returns.</p>
+<p>Y5 personal take-home of $45K/mo lands right under your <strong>Goal of $50K/mo</strong>, with Y6 expected to break through it. The plan delivers the Goal tier essentially on-schedule. <strong>Target ($30K/mo) is hit by Y3</strong> with your first sub-advisor, three years ahead of Goal.</p>
 </section>
 
 <!-- 10 CAPITAL & TOOLING -->
