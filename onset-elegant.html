@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Onset — a travel company for trips that started on a screen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EDE0;
+    --paper-2: #EBE1CC;
+    --ink: #1A1A1A;
+    --ink-soft: #4a4a47;
+    --rule: rgba(26,26,26,0.16);
+    --accent: #8B6F47;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  .narrow { max-width: 780px; margin: 0 auto; padding: 0 40px; }
+  .serif { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; }
+  em.serif { font-style: italic; }
+
+  nav {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  nav .row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0;
+  }
+  .logo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .nav-links {
+    display: flex; gap: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 3px;
+  }
+  .back-home {
+    position: fixed; bottom: 24px; left: 24px;
+    z-index: 60;
+    background: rgba(26,26,26,0.06);
+    color: var(--ink);
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    border: 1px solid var(--rule);
+  }
+
+  /* Hero */
+  .hero { padding: 120px 0 100px; border-bottom: 1px solid var(--rule); }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 40px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(48px, 6.5vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    margin: 0 0 36px;
+    max-width: 17ch;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .hero p.lede {
+    font-size: clamp(18px, 1.4vw, 22px);
+    max-width: 640px;
+    color: var(--ink-soft);
+    margin: 0 0 48px;
+    line-height: 1.55;
+  }
+  .hero-cta { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 30px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .btn-text {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Sections shared */
+  section { padding: 100px 0; border-bottom: 1px solid var(--rule); }
+  .section-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+  .section-h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(36px, 4.5vw, 60px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin: 0 0 64px;
+    max-width: 20ch;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+  }
+  .three-col .col h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 28px;
+    margin: 0 0 16px;
+    font-style: italic;
+  }
+  .three-col .col .num {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .three-col .col p {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin: 0;
+  }
+  @media (max-width: 860px) { .three-col { grid-template-columns: 1fr; } }
+
+  /* Trip types — magazine 2x2 grid */
+  .trip-types { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .trip-types > article { background: var(--paper); padding: 56px 48px; min-height: 340px; }
+  .trip-types > article h3 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .trip-types > article .kind {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  .trip-types > article p { color: var(--ink-soft); margin: 0 0 24px; }
+  .trip-types > article .detail {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    color: var(--accent);
+    font-size: 17px;
+  }
+  @media (max-width: 860px) { .trip-types { grid-template-columns: 1fr; } }
+
+  /* Quote block */
+  .quote-block { padding: 140px 0; text-align: center; background: var(--paper-2); border-bottom: 1px solid var(--rule); }
+  .quote-block blockquote {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(26px, 3.2vw, 40px);
+    line-height: 1.3;
+    margin: 0 auto 32px;
+    max-width: 28ch;
+    letter-spacing: -0.005em;
+  }
+  .quote-block .attr {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  /* Comparison */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--rule); }
+  .compare > div { padding: 56px 48px; border-right: 1px solid var(--rule); }
+  .compare > div:last-child { border-right: none; background: var(--paper-2); }
+  .compare h4 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 24px;
+    margin: 0 0 24px;
+    font-weight: 500;
+  }
+  .compare ul { padding: 0; margin: 0; list-style: none; }
+  .compare ul li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    color: var(--ink-soft);
+  }
+  .compare ul li:last-child { border-bottom: none; }
+  .compare ul li::before { content: "—  "; color: var(--accent); }
+  @media (max-width: 860px) {
+    .compare { grid-template-columns: 1fr; }
+    .compare > div { border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+
+  /* Newsletter */
+  .standing-order {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 120px 0;
+    text-align: center;
+    border-bottom: none;
+  }
+  .standing-order h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5vw, 64px);
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .standing-order .sub {
+    font-size: 17px;
+    color: rgba(244,237,224,0.7);
+    max-width: 540px;
+    margin: 0 auto 40px;
+  }
+  .so-form {
+    display: flex;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 8px;
+  }
+  .so-form input {
+    flex: 1;
+    padding: 16px 20px;
+    border-radius: 4px;
+    border: 1px solid rgba(244,237,224,0.3);
+    background: transparent;
+    color: var(--paper);
+    font-family: inherit;
+    font-size: 15px;
+  }
+  .so-form input::placeholder { color: rgba(244,237,224,0.5); }
+  .so-form button {
+    background: var(--paper);
+    color: var(--ink);
+    border: none;
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .so-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(244,237,224,0.5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* About */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .about .portrait {
+    aspect-ratio: 4/5;
+    background:
+      radial-gradient(circle at 30% 25%, rgba(139,111,71,0.35), transparent 65%),
+      linear-gradient(180deg, #d8cdb3, #b8a988);
+    border-radius: 2px;
+  }
+  .about h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1.1; margin: 0 0 24px; }
+  .about p { color: var(--ink-soft); margin: 0 0 16px; }
+  .about .signature {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-style: italic;
+    font-size: 24px;
+    margin-top: 24px;
+    color: var(--ink);
+  }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+  /* Final CTA */
+  .cta-block { padding: 120px 0; text-align: center; }
+  .cta-block h2 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    font-size: clamp(40px, 5.5vw, 72px);
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .cta-block .sub { color: var(--ink-soft); font-size: 17px; max-width: 520px; margin: 0 auto 40px; }
+
+  footer {
+    padding: 56px 0;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+</style>
+</head>
+<body>
+
+<a class="back-home" href="./index.html">← all concepts</a>
+
+<nav>
+  <div class="container row">
+    <div class="logo">Onset</div>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#trips">Trips</a>
+      <a href="#brief">The Brief</a>
+      <a href="#about">About</a>
+    </div>
+    <a class="nav-cta" href="#cta">Book a call</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">Personal travel planning · Toronto</div>
+    <h1>A travel company for trips that <em>started on a screen.</em></h1>
+    <p class="lede">For the trips that begin somewhere unusual — a show you couldn&apos;t put down, an artist&apos;s tour, a race you started watching during the pandemic, the finale that wouldn&apos;t leave you alone for a week. We plan them the way they deserve to be planned. No template, no Reddit thread.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#cta">Book a first call</a>
+      <a class="btn-text" href="#approach">How it works</a>
+    </div>
+  </div>
+</header>
+
+<section id="approach">
+  <div class="container">
+    <div class="section-eyebrow">The Approach</div>
+    <h2 class="section-h2">A travel advisor for the trips you used to think no one planned.</h2>
+    <div class="three-col">
+      <div class="col">
+        <div class="num">i.</div>
+        <h3>We start with what you loved, not where you&apos;d go.</h3>
+        <p>The trip begins with the thing — the show, the race, the artist, the moment. We work backwards from there. By the end, we&apos;ll usually agree on a destination you hadn&apos;t even considered.</p>
+      </div>
+      <div class="col">
+        <div class="num">ii.</div>
+        <h3>An itinerary that doesn&apos;t read like a Wikipedia page.</h3>
+        <p>You&apos;ll get a short, opinionated plan: the obvious thing worth doing, the better thing nearby that nobody mentions, and the half-day we&apos;d leave open on purpose. Not a bulleted Google Doc. Not a Reddit list.</p>
+      </div>
+      <div class="col">
+        <div class="num">iii.</div>
+        <h3>A real number to call when something breaks.</h3>
+        <p>The flight cancels, the hotel doesn&apos;t honour the upgrade, the restaurant lost the reservation. You text us. We fix it. That&apos;s the entire job, after the booking is made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trips">
+  <div class="container">
+    <div class="section-eyebrow">Trips We Plan Often</div>
+    <h2 class="section-h2">Four shapes of trip, however you arrived at them.</h2>
+    <div class="trip-types">
+      <article>
+        <div class="kind">Most requested</div>
+        <h3>The Show Trip</h3>
+        <p>Built around a series you couldn&apos;t put down. The location the camera lingered on. The hotel that&apos;s actually right, not the one you read about on a fan-blog. The dinner the show didn&apos;t get to.</p>
+        <div class="detail">— Usually 5–9 nights, planned 3–6 months out.</div>
+      </article>
+      <article>
+        <div class="kind">Books fastest</div>
+        <h3>The Event Trip</h3>
+        <p>A Grand Prix weekend. A Grand Slam. A festival you&apos;d been meaning to do for years. We handle the tickets and the hospitality. You don&apos;t price-anxiety the package the morning it goes on sale.</p>
+        <div class="detail">— Planned the moment the calendar drops.</div>
+      </article>
+      <article>
+        <div class="kind">Quietly the best</div>
+        <h3>The Artist Trip</h3>
+        <p>A tour stop in a city you don&apos;t know. A residency. A festival run. The album release you want to be near. We put you in the right neighbourhood, with the right night plan around the show.</p>
+        <div class="detail">— Often a long weekend. Often the most fun.</div>
+      </article>
+      <article>
+        <div class="kind">Underrated</div>
+        <h3>The Film Trip</h3>
+        <p>A place you saw in a film once and never quite stopped thinking about. Years later, you mention it offhandedly. A few weeks after that, you go.</p>
+        <div class="detail">— Three to seven nights, often a surprise.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="quote-block">
+  <blockquote>&ldquo;I told them I&apos;d been thinking about it since the finale aired. Eight weeks later I was at dinner in the exact place — and the better restaurant down the street.&rdquo;</blockquote>
+  <div class="attr">— R., a screen-led week, October 2025</div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">Why Us, Not Reddit</div>
+    <h2 class="section-h2">A short, honest comparison.</h2>
+    <div class="compare">
+      <div>
+        <h4>Planning it yourself</h4>
+        <ul>
+          <li>You scroll forty-seven Reddit threads and a few TikToks.</li>
+          <li>You book the obvious hotel. It was mid.</li>
+          <li>You miss the better location ten minutes away.</li>
+          <li>You pay the public rate. No upgrade. No breakfast. No credits.</li>
+          <li>Customer service is a forty-minute hold with a call centre.</li>
+          <li>Time to plan: 15–25 hours, scattered across two months.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Planning it with us</h4>
+        <ul>
+          <li>We&apos;ve watched the show, gone to the race, read the album notes.</li>
+          <li>We book the right hotel. There is a right one.</li>
+          <li>We tell you about the spot the show didn&apos;t get to.</li>
+          <li>Same public rate. Room upgrade, breakfast, credits, late checkout.</li>
+          <li>Customer service is a person who knows you, by text.</li>
+          <li>Time for you to plan: 90 minutes total, including the trip.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brief" class="standing-order">
+  <div class="narrow">
+    <h2>The Brief.</h2>
+    <p class="sub">A short letter, every other Sunday. One screen-led trip idea, properly considered. One hotel worth the money this month. The occasional opinion on something we&apos;re tired of seeing on Instagram.</p>
+    <form class="so-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="Your email" />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="so-note">No marketing. 4 minutes to read. Unsubscribe whenever.</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about">
+      <div class="portrait" aria-hidden="true"></div>
+      <div>
+        <div class="section-eyebrow">About</div>
+        <h2>I&apos;m a travel advisor for the demographic that didn&apos;t know it had one.</h2>
+        <p>I&apos;m 29, based in Toronto. I work with people in their late twenties and thirties — most of them are the first person in their friend group with a travel advisor, and they all assumed it was something out of reach. It isn&apos;t.</p>
+        <p>The trips I plan look the way they do because the best travel ideas of the last decade have come from somewhere unusual — a show, an artist, a race, a tour. I have access to the same hotel and airline network as the advisors who only take clients over fifty. The trips just happen to start in a different place.</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin-top: 32px;">TICO-certified · Independent advisor with Fora Travel · Virtuoso network access · Toronto, Ontario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta-block">
+  <div class="narrow">
+    <h2>A first call is twenty minutes.<br/><span style="font-style: italic; color: var(--accent);">And it&apos;s free.</span></h2>
+    <p class="sub">No commitment. No pitch deck. Just enough to know whether we&apos;d be useful to each other.</p>
+    <a class="btn-primary" href="mailto:hello@onset.travel">Book a call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container row">
+    <div>Onset · est. 2026 · Toronto</div>
+    <div>Independent advisor with Fora Travel · TICO #50000000</div>
+  </div>
+</footer>
+
+</body>
+</html>
