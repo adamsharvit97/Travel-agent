@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface — DM Serif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+:root {
+    --bg: #0A0A0A;
+    --bg-soft: #121212;
+    --text: #EEE8DA;
+    --text-soft: #C8C0AE;
+    --text-mute: #7A7164;
+    --accent: #D4B080;
+    --accent-bright: #ECC79A;
+    --line: #2A2620;
+}
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1380px; margin: 0 auto; padding: 0 56px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
+
+/* NAV — INVISIBLE OVER HERO */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 32px 0; transition: all 0.4s; }
+nav.scrolled { background: rgba(10,10,10,0.85); backdrop-filter: blur(20px); padding: 18px 0; border-bottom: 1px solid rgba(212, 176, 128, 0.15); }
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: 'DM Serif Display', serif; font-size: 26px; font-weight: 400; letter-spacing: 0.04em; color: var(--text); }
+.brand span { color: var(--accent); font-style: italic; }
+.nav-links { display: flex; gap: 48px; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; }
+.nav-links a { color: var(--text-soft); transition: color 0.2s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-cta { color: var(--accent) !important; border-bottom: 1px solid var(--accent); padding-bottom: 4px; }
+
+/* HERO — FULL VIEWPORT IMMERSIVE */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 760px;
+    overflow: hidden;
+}
+.hero .bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=2000&q=90');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+}
+.hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.3) 0%, transparent 30%, transparent 50%, rgba(10,10,10,0.85) 100%);
+    z-index: 1;
+}
+.hero .content {
+    position: absolute; inset: 0;
+    z-index: 2;
+    display: flex; align-items: flex-end;
+    padding-bottom: 14vh;
+}
+.hero .container { width: 100%; }
+.hero .place-stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 16px;
+}
+.hero .place-stamp::before {
+    content: ""; width: 60px; height: 1px;
+    background: var(--accent);
+    opacity: 0.7;
+}
+.hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(56px, 8vw, 128px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.028em;
+    color: var(--text);
+    margin-bottom: 32px;
+    max-width: 16ch;
+}
+.hero h1 em { font-style: italic; color: var(--accent); display: block; }
+.hero .breath {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--text-soft);
+    max-width: 520px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.hero .scroll-cue {
+    position: absolute;
+    bottom: 5vh; right: 56px;
+    z-index: 2;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    writing-mode: vertical-rl;
+}
+.hero .scroll-cue::after {
+    content: ""; display: block;
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, var(--accent), transparent);
+    margin: 16px auto 0;
+}
+
+/* OPENING STATEMENT — POETIC INTRO */
+.opening { padding: 180px 0 140px; text-align: center; }
+.opening .container { max-width: 980px; }
+.opening .marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 56px;
+    display: inline-flex; align-items: center; gap: 14px;
+}
+.opening .marker::before, .opening .marker::after { content: ""; width: 40px; height: 1px; background: var(--accent); opacity: 0.5; }
+.opening h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: var(--text);
+    max-width: 22ch;
+    margin: 0 auto;
+}
+.opening h2 em { font-style: italic; color: var(--accent); }
+.opening .signature {
+    margin-top: 56px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--text-mute);
+}
+
+/* MOMENTS — THREE FULL-BLEED SCENES */
+.moments { padding: 60px 0; }
+.moment {
+    position: relative;
+    height: 90vh;
+    min-height: 680px;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+.moment .bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.85);
+}
+.moment::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(10,10,10,0.55));
+}
+.moment .scene {
+    position: absolute;
+    bottom: 56px; left: 56px; right: 56px;
+    z-index: 2;
+    display: flex; justify-content: space-between; align-items: flex-end;
+}
+.moment .scene .left { max-width: 56%; }
+.moment .scene .stamp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+}
+.moment .scene .stamp .time { color: var(--text); margin-right: 16px; }
+.moment .scene .title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4.5vw, 60px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+.moment .scene .title em { font-style: italic; color: var(--accent); }
+.moment .scene .caption {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--text-soft);
+    line-height: 1.5;
+    max-width: 460px;
+    font-weight: 400;
+}
+.moment .scene .right {
+    text-align: right;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    line-height: 2;
+}
+.moment .scene .right .property { color: var(--text-soft); }
+
+/* INTERLUDE — PHILOSOPHY */
+.interlude {
+    padding: 180px 0;
+    text-align: center;
+    background: var(--bg-soft);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.interlude .container { max-width: 920px; }
+.interlude .mark {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 80px;
+    line-height: 0.5;
+    color: var(--accent);
+    margin-bottom: 56px;
+    opacity: 0.6;
+}
+.interlude blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--text);
+    margin-bottom: 56px;
+    letter-spacing: -0.01em;
+}
+.interlude blockquote em { color: var(--accent); }
+.interlude .attribution {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+}
+
+/* PRACTICE — WHAT WE PLAN (POETIC) */
+.practice { padding: 180px 0 60px; }
+.practice-head { margin-bottom: 100px; text-align: center; }
+.practice-head .eyebrow { margin-bottom: 36px; display: inline-flex; align-items: center; gap: 14px; }
+.practice-head .eyebrow::before, .practice-head .eyebrow::after { content: ""; width: 40px; height: 1px; background: var(--accent); opacity: 0.5; }
+.practice-head h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 18ch;
+    margin: 0 auto;
+}
+.practice-head h2 em { color: var(--accent); font-style: italic; }
+
+.journeys {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+.journey {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.5s;
+}
+.journey:hover { background: var(--bg-soft); }
+.journey:nth-child(even) .text { order: 1; }
+.journey:nth-child(even) .visual { order: 2; }
+.journey .visual {
+    height: 520px;
+    position: relative;
+    overflow: hidden;
+}
+.journey .visual .img {
+    position: absolute; inset: 0;
+    background-size: cover; background-position: center;
+    transition: transform 1s;
+}
+.journey:hover .visual .img { transform: scale(1.04); }
+.journey .text { padding: 80px 80px; }
+.journey .text .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 32px;
+}
+.journey .text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.018em;
+    margin-bottom: 28px;
+}
+.journey .text h3 em { font-style: italic; color: var(--accent); }
+.journey .text p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--text-soft);
+    line-height: 1.55;
+    font-weight: 400;
+    margin-bottom: 24px;
+    max-width: 480px;
+}
+.journey .text .destinations {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    line-height: 2;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+    max-width: 380px;
+}
+
+/* QUIET PROOF — A SINGLE RECEIPT, HUMBLE */
+.quiet-proof { padding: 180px 0; text-align: center; }
+.quiet-proof .container { max-width: 800px; }
+.quiet-proof .marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 40px;
+}
+.quiet-proof h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(34px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 60px;
+    letter-spacing: -0.015em;
+}
+.quiet-proof h2 em { color: var(--accent); font-style: italic; }
+.quiet-proof .story {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text-soft);
+    line-height: 1.7;
+    font-weight: 400;
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: left;
+}
+.quiet-proof .story p { margin-bottom: 24px; }
+.quiet-proof .story p em { color: var(--accent); font-style: italic; }
+.quiet-proof .story .signoff {
+    margin-top: 56px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--text-mute);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* CTA — INVITATION */
+.invitation {
+    position: relative;
+    height: 90vh;
+    min-height: 680px;
+    overflow: hidden;
+    display: flex; align-items: center;
+}
+.invitation .bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=2000&q=90');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.55);
+}
+.invitation::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.3), rgba(10,10,10,0.7)); }
+.invitation .content { position: relative; z-index: 2; width: 100%; text-align: center; }
+.invitation .marker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.4em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 40px;
+}
+.invitation h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 6vw, 88px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--text);
+    margin-bottom: 40px;
+    max-width: 16ch;
+    margin-left: auto; margin-right: auto;
+}
+.invitation h2 em { font-style: italic; color: var(--accent); display: block; }
+.invitation p {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text-soft);
+    max-width: 540px;
+    margin: 0 auto 56px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.invitation a {
+    display: inline-block;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--accent);
+    transition: letter-spacing 0.4s;
+}
+.invitation a:hover { letter-spacing: 0.5em; }
+
+/* FOOTER */
+footer { padding: 100px 0 40px; border-top: 1px solid var(--line); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+footer .brand { font-size: 32px; margin-bottom: 20px; }
+.footer-tag { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 18px; color: var(--text-mute); max-width: 300px; line-height: 1.45; }
+.footer-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; }
+.footer-col a { display: block; font-size: 16px; color: var(--text-soft); margin-bottom: 12px; font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; }
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom { border-top: 1px solid var(--line); padding-top: 32px; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-mute); letter-spacing: 0.25em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+    .journey, .footer-grid { grid-template-columns: 1fr; }
+    .journey .text { padding: 56px 32px; }
+    .moment .scene { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .moment .scene .left, .moment .scene .right { max-width: 100%; text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+    <div class="container">
+        <a href="/" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="#">Journeys</a>
+            <a href="#">Specialty</a>
+            <a href="#">Journal</a>
+            <a href="#" class="nav-cta">Begin →</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO — IMMERSIVE -->
+<section class="hero">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="place-stamp">5:47 AM · Maldives · A Tuesday in March</div>
+            <h1>The morning you've been<em>working toward.</em></h1>
+            <p class="breath">Travel that feels the way it looks in the photo. For people who'd rather not Expedia it.</p>
+        </div>
+    </div>
+    <div class="scroll-cue">Scroll —</div>
+</section>
+
+<!-- OPENING STATEMENT -->
+<section class="opening">
+    <div class="container">
+        <div class="marker">— Preface</div>
+        <h2>An advisor practice for people who travel <em>like they mean it</em> — and would rather not spend the trip wishing they'd booked something else.</h2>
+        <div class="signature">Toronto · Established 2026</div>
+    </div>
+</section>
+
+<!-- MOMENT 1 — MORNING -->
+<section class="moments">
+    <div class="moment">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=2000&q=90');"></div>
+        <div class="scene">
+            <div class="left">
+                <div class="stamp"><span class="time">5:47 AM</span><span>The first hour</span></div>
+                <h3 class="title">Sunrise over the lagoon. <em>Coffee, slowly.</em></h3>
+                <p class="caption">The over-water villa was booked as a "Standard Pool Villa." At check-in, an upgrade. The morning, this.</p>
+            </div>
+            <div class="right">
+                <div class="property">Six Senses Fiji</div>
+                <div>Honeymoon · 7 nights</div>
+                <div>Booked through Preface</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOMENT 2 — AFTERNOON -->
+    <div class="moment">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=2000&q=90');"></div>
+        <div class="scene">
+            <div class="left">
+                <div class="stamp"><span class="time">2:14 PM</span><span>Pool, no schedule</span></div>
+                <h3 class="title">The third day. <em>You've stopped checking your phone.</em></h3>
+                <p class="caption">Excellence Club access included. Premium liquor, butler service, a $200 spa credit. None of which you knew to ask for.</p>
+            </div>
+            <div class="right">
+                <div class="property">Excellence Playa Mujeres</div>
+                <div>Family · 7 nights</div>
+                <div>Booked through Preface</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOMENT 3 — EVENING -->
+    <div class="moment">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=2000&q=90');"></div>
+        <div class="scene">
+            <div class="left">
+                <div class="stamp"><span class="time">9:32 PM</span><span>The last evening</span></div>
+                <h3 class="title">A table you didn't reserve. <em>A bottle you didn't order.</em></h3>
+                <p class="caption">The hotel knows it's your anniversary. The room steward knew your dietary preferences before you arrived. Someone, somewhere, made a phone call.</p>
+            </div>
+            <div class="right">
+                <div class="property">Rosewood Mayakoba</div>
+                <div>Anniversary · 4 nights</div>
+                <div>Booked through Preface</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INTERLUDE -->
+<section class="interlude">
+    <div class="container">
+        <div class="mark">"</div>
+        <blockquote>Anyone can book a room. We're in the business of <em>arranging arrivals.</em></blockquote>
+        <div class="attribution">— Preface · The Studio</div>
+    </div>
+</section>
+
+<!-- THE PRACTICE -->
+<section class="practice">
+    <div class="practice-head">
+        <div class="eyebrow">— The practice</div>
+        <h2>The trips that <em>have to land.</em></h2>
+    </div>
+
+    <div class="journeys">
+        <div class="journey">
+            <div class="visual">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=90');"></div>
+            </div>
+            <div class="text">
+                <div class="num">— 01 / Honeymoons</div>
+                <h3>The trip you've been overthinking for <em>nine months.</em></h3>
+                <p>Maldives over-water. Bali by region. Greek isles. South Africa and Mauritius. The right answer depends on whether you want to read in bed or do something every day.</p>
+                <div class="destinations">Maldives · Bali · Santorini · Mauritius<br/>Tulum · Amalfi · Bora Bora · Tokyo + Kyoto</div>
+            </div>
+        </div>
+
+        <div class="journey">
+            <div class="visual">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=90');"></div>
+            </div>
+            <div class="text">
+                <div class="num">— 02 / Family</div>
+                <h3>An all-inclusive that <em>doesn't feel like one.</em></h3>
+                <p>Real kids' clubs. Adult zones that are actually quiet. We've stayed at most of them. We know which marketing photos lie about the beach.</p>
+                <div class="destinations">Hyatt Ziva Cap Cana · Beaches Turks &amp; Caicos<br/>Excellence Punta Cana · Andaz Mayakoba</div>
+            </div>
+        </div>
+
+        <div class="journey">
+            <div class="visual">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=1200&q=90');"></div>
+            </div>
+            <div class="text">
+                <div class="num">— 03 / Groups &amp; milestones</div>
+                <h3>Twenty people. <em>One trip. We can do this.</em></h3>
+                <p>40th birthdays. Parents' anniversaries. Multi-generational family travel. The trip where someone usually loses their mind — except this time.</p>
+                <div class="destinations">Mykonos villas · Israel multi-gen<br/>Cabo birthday weeks · Italian estates</div>
+            </div>
+        </div>
+
+        <div class="journey">
+            <div class="visual">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&q=90');"></div>
+            </div>
+            <div class="text">
+                <div class="num">— 04 / The specialty</div>
+                <h3>Twenty resorts, <em>personally slept in.</em></h3>
+                <p>Most agencies plan resort trips they've only read about. We know which property has a real kids' club, which adults-only is genuinely quiet at 11pm. The full ranking is in the journal.</p>
+                <div class="destinations">Excellence · Le Blanc · Zoetry · Atelier<br/>Rosewood · Hyatt Inclusive Collection · + 14 more</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- QUIET PROOF -->
+<section class="quiet-proof">
+    <div class="container">
+        <div class="marker">— What it looks like in practice</div>
+        <h2>One booking. <em>Recently.</em></h2>
+        <div class="story">
+            <p>Last month, a couple booked their honeymoon to Six Senses Fiji. They paid $8,000 for what they thought was a Pool Villa. At check-in, the front desk handed them keys to the Premier Beachfront Pool Villa.</p>
+            <p>The room they walked into would have cost <em>$2,400 more</em> on Booking.com.</p>
+            <p>Daily breakfast was included. A $100 spa credit waited at the concierge desk. A bottle of champagne sat on the table, with a note: <em>"Mr. &amp; Mrs. K. — Welcome home."</em></p>
+            <p>None of it cost extra. None of it was asked for. The hotel paid Fora the commission they would have paid Booking.com — except Booking.com would have kept it.</p>
+            <div class="signoff">— Honeymoon · M+S · May 2026</div>
+        </div>
+    </div>
+</section>
+
+<!-- INVITATION -->
+<section class="invitation">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="marker">— Ready when you are</div>
+            <h2>Tell us where <em>you're going.</em></h2>
+            <p>Twenty minutes. No pitch, no pressure. If we're not the right fit, we'll tell you.</p>
+            <a href="#">Begin the conversation →</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">An advisor practice for people who'd rather not Expedia it.</div>
+            </div>
+            <div class="footer-col">
+                <h5>Practice</h5>
+                <a href="#">Honeymoons</a>
+                <a href="#">Family</a>
+                <a href="#">Groups</a>
+                <a href="#">All-Inclusives</a>
+                <a href="#">Business</a>
+            </div>
+            <div class="footer-col">
+                <h5>Journal</h5>
+                <a href="#">Recent issues</a>
+                <a href="#">Guides</a>
+                <a href="#">About</a>
+            </div>
+            <div class="footer-col">
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Write</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 Preface Travel Co.</div>
+            <div>Toronto · TICO #XXXXXXX</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    if (window.scrollY > 80) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+});
+</script>
+</body>
+</html>
