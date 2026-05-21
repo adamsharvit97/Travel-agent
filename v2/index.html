@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Preface — a travel advisor for the trips that actually matter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EDE0;
+    --paper-2: #EBE1CC;
+    --ink: #1A1A1A;
+    --ink-soft: #4a4a47;
+    --rule: rgba(26,26,26,0.16);
+    --accent: #8B6F47;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+  a { color: inherit; text-decoration: none; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  .narrow { max-width: 760px; margin: 0 auto; padding: 0 40px; }
+  .serif { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; }
+
+  nav { border-bottom: 1px solid var(--rule); background: var(--paper); position: sticky; top: 0; z-index: 40; }
+  nav .row { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+  .logo { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 26px; font-weight: 500; }
+  .nav-links { display: flex; gap: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-cta { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; }
+
+  /* Hero */
+  .hero { padding: 140px 0 100px; border-bottom: 1px solid var(--rule); }
+  .hero .eyebrow { font-size: 12px; letter-spacing: 0.20em; text-transform: uppercase; color: var(--accent); margin-bottom: 40px; font-weight: 600; }
+  .hero h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(48px, 6.5vw, 92px); line-height: 1.02; letter-spacing: -0.015em; margin: 0 0 36px; max-width: 16ch; }
+  .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
+  .hero p.lede { font-size: clamp(18px, 1.4vw, 22px); max-width: 640px; color: var(--ink-soft); margin: 0 0 48px; line-height: 1.55; }
+  .hero-cta { display: flex; gap: 28px; align-items: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--ink); color: var(--paper); padding: 16px 30px; border-radius: 4px; font-size: 14px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .btn-text { color: var(--ink); border-bottom: 1px solid var(--ink); padding-bottom: 4px; font-size: 14px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
+
+  section { padding: 120px 0; border-bottom: 1px solid var(--rule); }
+  .section-eyebrow { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin-bottom: 32px; }
+  .section-h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(36px, 4.5vw, 60px); line-height: 1.1; letter-spacing: -0.01em; margin: 0 0 56px; max-width: 20ch; }
+  .section-sub { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: -32px 0 64px; line-height: 1.55; }
+
+  /* 5-segment picker */
+  .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .who-card { background: var(--paper); padding: 56px 48px; min-height: 320px; display: flex; flex-direction: column; justify-content: space-between; transition: background 0.2s; }
+  .who-card:hover { background: var(--paper-2); }
+  .who-card .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 14px; font-style: italic; color: var(--accent); margin-bottom: 16px; }
+  .who-card .kind { font-size: 12px; color: var(--accent); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; margin-bottom: 16px; }
+  .who-card h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(28px, 3vw, 38px); line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.005em; }
+  .who-card p { color: var(--ink-soft); margin: 0 0 24px; font-size: 16px; }
+  .who-card .more { font-size: 12px; letter-spacing: 0.10em; text-transform: uppercase; border-bottom: 1px solid var(--ink); padding-bottom: 3px; align-self: flex-start; font-weight: 500; }
+  /* Card 5 — full width if odd count */
+  .who-card.full { grid-column: 1 / -1; }
+  @media (max-width: 880px) { .who-grid { grid-template-columns: 1fr; } .who-card.full { grid-column: 1; } }
+
+  /* What you get — 3 columns */
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 56px; }
+  .three-col .col h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 26px; margin: 0 0 16px; font-style: italic; }
+  .three-col .col .num { font-family: "Cormorant Garamond", Georgia, serif; font-size: 14px; font-style: italic; color: var(--accent); margin-bottom: 16px; }
+  .three-col .col p { color: var(--ink-soft); font-size: 16px; margin: 0; }
+  @media (max-width: 860px) { .three-col { grid-template-columns: 1fr; } }
+
+  /* Brief — newsletter */
+  .brief-band { background: var(--ink); color: var(--paper); padding: 120px 0; text-align: center; border-bottom: none; }
+  .brief-band h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(40px, 5vw, 64px); margin: 0 0 16px; letter-spacing: -0.01em; }
+  .brief-band .sub { font-size: 17px; color: rgba(244,237,224,0.7); max-width: 540px; margin: 0 auto 40px; }
+  .so-form { display: flex; max-width: 480px; margin: 0 auto; gap: 8px; }
+  .so-form input { flex: 1; padding: 16px 20px; border-radius: 4px; border: 1px solid rgba(244,237,224,0.3); background: transparent; color: var(--paper); font-family: inherit; font-size: 15px; }
+  .so-form input::placeholder { color: rgba(244,237,224,0.5); }
+  .so-form button { background: var(--paper); color: var(--ink); border: none; padding: 16px 28px; border-radius: 4px; font-weight: 500; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
+  .so-note { margin-top: 24px; font-size: 12px; color: rgba(244,237,224,0.5); letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* About */
+  .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: center; }
+  .about .portrait { aspect-ratio: 4/5; background: radial-gradient(circle at 30% 25%, rgba(139,111,71,0.35), transparent 65%), linear-gradient(180deg, #d8cdb3, #b8a988); border-radius: 2px; }
+  .about h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: 44px; line-height: 1.1; margin: 0 0 24px; }
+  .about p { color: var(--ink-soft); margin: 0 0 16px; }
+  @media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+  /* Final CTA */
+  .cta-block { padding: 120px 0; text-align: center; }
+  .cta-block h2 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(40px, 5.5vw, 72px); margin: 0 0 16px; letter-spacing: -0.01em; }
+  .cta-block .sub { color: var(--ink-soft); font-size: 17px; max-width: 520px; margin: 0 auto 40px; }
+
+  footer { padding: 56px 0; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-soft); }
+  footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+
+  .back-home { position: fixed; bottom: 24px; left: 24px; z-index: 60; background: rgba(26,26,26,0.06); color: var(--ink); padding: 8px 14px; border-radius: 999px; font-size: 12px; border: 1px solid var(--rule); }
+</style>
+</head>
+<body>
+
+<a class="back-home" href="../index.html">← all concepts</a>
+
+<nav>
+  <div class="container row">
+    <a class="logo" href="./index.html">Preface</a>
+    <div class="nav-links">
+      <a href="./couples.html">Couples</a>
+      <a href="./family.html">Family</a>
+      <a href="./milestone.html">Milestone</a>
+      <a href="./honeymoon.html">Honeymoon</a>
+      <a href="./bachelor.html">Bach</a>
+    </div>
+    <a class="nav-cta" href="#cta">Book a call</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">A travel advisor · Toronto</div>
+    <h1>A travel advisor for the trips that <em>actually matter.</em></h1>
+    <p class="lede">For the trips you take once a year, the trip that&apos;s your honeymoon, the trip your mother is turning seventy on, the resort week your kids talk about for a decade, and the bachelor weekend your buddies still bring up in toasts. Same rates as Expedia. Quietly better in every way you&apos;d notice.</p>
+    <div class="hero-cta">
+      <a class="btn-primary" href="#cta">Book a first call</a>
+      <a class="btn-text" href="#who">See if we&apos;re for you</a>
+    </div>
+  </div>
+</header>
+
+<section id="who">
+  <div class="container">
+    <div class="section-eyebrow">Who we plan for</div>
+    <h2 class="section-h2">Five kinds of trip. We do all of them.</h2>
+    <p class="section-sub">Most travel advisors only take one kind of client — the older one, the richer one, the corporate one. We take the rest.</p>
+    <div class="who-grid">
+
+      <a class="who-card" href="./couples.html">
+        <div>
+          <div class="num">i.</div>
+          <div class="kind">For couples · 1–2 trips a year</div>
+          <h3>The annual vacation.</h3>
+          <p>Your once-or-twice-a-year trip, planned properly. The week in Italy in September, the long weekend in Tulum, the ten days in Japan you keep promising yourselves. Same hotel rate as Booking — except you actually arrive to a room you&apos;d want.</p>
+        </div>
+        <span class="more">For couples →</span>
+      </a>
+
+      <a class="who-card" href="./family.html">
+        <div>
+          <div class="num">ii.</div>
+          <div class="kind">For young families · 2–3 trips a year</div>
+          <h3>The family trip.</h3>
+          <p>Winter break. March break. Two weeks in summer. The all-inclusive that&apos;s actually right, with connecting rooms guaranteed, the kids&apos; club hours verified, and your Aeroplan points kept where they belong — with you.</p>
+        </div>
+        <span class="more">For families →</span>
+      </a>
+
+      <a class="who-card" href="./milestone.html">
+        <div>
+          <div class="num">iii.</div>
+          <div class="kind">For multi-gen groups · 6–20 people</div>
+          <h3>The milestone birthday.</h3>
+          <p>Mom is turning seventy and eighteen of you are going to Italy. We handle the spreadsheet, the deposits, the dietary requirements, the dinner reservations, and the day everyone lands. You and your mom show up.</p>
+        </div>
+        <span class="more">For milestones →</span>
+      </a>
+
+      <a class="who-card" href="./honeymoon.html">
+        <div>
+          <div class="num">iv.</div>
+          <div class="kind">For newlyweds · once · gateway</div>
+          <h3>The honeymoon.</h3>
+          <p>You&apos;ve made four hundred decisions in the last nine months. This isn&apos;t one of them. You tell us how you want it to feel; we send back the plan. Champagne in the room, room upgrade, late checkout — on the house.</p>
+        </div>
+        <span class="more">For honeymooners →</span>
+      </a>
+
+      <a class="who-card full" href="./bachelor.html">
+        <div>
+          <div class="num">v.</div>
+          <div class="kind">For best men &amp; maids of honour · groups of 8+</div>
+          <h3>The bachelor or bachelorette weekend.</h3>
+          <p>Group trips that don&apos;t fall apart. Hotel block negotiated, dinners reserved, transport arranged. We collect the money from your eleven friends — so you don&apos;t have to be the bank, the boss, and the bouncer all at once.</p>
+        </div>
+        <span class="more">For best men &amp; maids of honour →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-eyebrow">What you actually get</div>
+    <h2 class="section-h2">Three things every trip with us has in common.</h2>
+    <div class="three-col">
+      <div class="col">
+        <div class="num">i.</div>
+        <h3>Same rate. Better stay.</h3>
+        <p>The hotels you were already considering, booked at the same nightly rate you&apos;d find online — except you arrive to a room upgrade, breakfast for two, a $100 food &amp; beverage credit, and a 4pm checkout. This is not a discount. It is access.</p>
+      </div>
+      <div class="col">
+        <div class="num">ii.</div>
+        <h3>The time back.</h3>
+        <p>Planning a real trip takes 15 to 25 hours, scattered across two months. With us, it takes you a single 20-minute call. We do the rest, including the bits you wouldn&apos;t have thought to do.</p>
+      </div>
+      <div class="col">
+        <div class="num">iii.</div>
+        <h3>A real number when something breaks.</h3>
+        <p>The flight cancels. The hotel forgets the upgrade. The restaurant lost the reservation. You text us. We fix it. That&apos;s the entire job, after the booking is made.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brief-band">
+  <div class="narrow">
+    <h2>The Brief.</h2>
+    <p class="sub">A short letter, every other Sunday. One destination, properly considered. A hotel or two worth the money this month. The occasional opinion on something we&apos;re tired of seeing on Instagram.</p>
+    <form class="so-form" onsubmit="event.preventDefault();">
+      <input type="email" placeholder="Your email" />
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="so-note">No marketing. 4 minutes to read. Unsubscribe whenever.</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about">
+      <div class="portrait" aria-hidden="true"></div>
+      <div>
+        <div class="section-eyebrow">About</div>
+        <h2>A travel advisor for the people who didn&apos;t know they could have one.</h2>
+        <p>I&apos;m 29, based in Toronto. I work with people in their late twenties and thirties — most of them are the first person in their friend group to use a travel advisor, and they all assumed it was something out of reach. It isn&apos;t.</p>
+        <p>I have access to the same hotel and airline network as the advisors who only take clients over fifty. The trips I plan are the ones you were going to take anyway — I just make them quietly better, take the work off your plate, and stay on call if anything breaks. The relationship starts now, and compounds for thirty years.</p>
+        <p style="font-size: 13px; color: var(--ink-soft); margin-top: 32px;">TICO-certified · Independent advisor with Fora Travel · Virtuoso network access · Toronto, Ontario.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" class="cta-block">
+  <div class="narrow">
+    <h2>A first call is twenty minutes.<br/><span style="font-style: italic; color: var(--accent);">And it&apos;s free.</span></h2>
+    <p class="sub">No commitment. No pitch deck. Just enough to know whether we&apos;d be useful to each other.</p>
+    <a class="btn-primary" href="mailto:hello@preface.travel">Book a call</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container row">
+    <div>Preface · est. 2026 · Toronto</div>
+    <div>Independent advisor with Fora Travel · TICO #50000000</div>
+  </div>
+</footer>
+
+</body>
+</html>
