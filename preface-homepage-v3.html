@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface — Travel for people who'd rather not Expedia it</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+:root {
+    --bg: #FAFAF8;
+    --bg-alt: #F2F0EB;
+    --bg-warm: #EDE8DD;
+    --ink: #0A0A0A;
+    --ink-soft: #2A2A2A;
+    --grey-mid: #6B6B6B;
+    --grey-light: #B8B6B0;
+    --line: #E5E3DD;
+    --line-soft: #EFEDE7;
+    --accent: #A85C3D;
+    --accent-dark: #8E4A2F;
+    --accent-light: #D4A57E;
+    --deep: #1A2B33;
+    --sand: #E8DCC4;
+}
+
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+.container-tight { max-width: 1120px; margin: 0 auto; padding: 0 40px; }
+
+/* TYPOGRAPHY */
+.serif { font-family: 'Fraunces', serif; }
+.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78em; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 500;
+}
+.eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent);
+    font-weight: 600;
+}
+
+/* NAV */
+nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 22px 0;
+    background: rgba(250, 250, 248, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(229, 227, 221, 0.5);
+    transition: padding 0.3s, background 0.3s;
+}
+nav .container {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.brand {
+    font-family: 'Fraunces', serif; font-size: 26px;
+    font-weight: 400; letter-spacing: -0.01em;
+    color: var(--ink);
+}
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 40px; align-items: center; }
+.nav-links a {
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    position: relative; transition: color 0.2s;
+}
+.nav-links a::after {
+    content: ""; position: absolute; bottom: -4px; left: 0;
+    width: 0; height: 1px; background: var(--accent);
+    transition: width 0.3s;
+}
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+    background: var(--ink) !important; color: var(--bg) !important;
+    padding: 12px 22px; font-size: 13px; font-weight: 500;
+    border-radius: 100px;
+    transition: all 0.2s;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover {
+    background: var(--accent) !important;
+    transform: translateY(-1px);
+}
+
+/* HERO — SPLIT LAYOUT */
+.hero {
+    margin-top: 78px;
+    padding: 80px 0 120px;
+    position: relative;
+}
+.hero .container {
+    display: grid; grid-template-columns: 1fr 1.05fr;
+    gap: 80px; align-items: center;
+}
+.hero-text { padding-right: 40px; }
+.hero-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 36px; font-weight: 600;
+    display: flex; align-items: center; gap: 14px;
+}
+.hero-eyebrow::after {
+    content: ""; flex: 1; height: 1px; background: var(--accent);
+    opacity: 0.4;
+}
+.hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 5.5vw, 84px);
+    font-weight: 400;
+    line-height: 0.98;
+    letter-spacing: -0.028em;
+    margin-bottom: 36px;
+    color: var(--ink);
+}
+.hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+    font-weight: 300;
+    display: block;
+}
+.hero-sub {
+    font-size: 19px;
+    color: var(--grey-mid);
+    line-height: 1.55;
+    margin-bottom: 44px;
+    max-width: 460px;
+}
+.hero-ctas { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+    background: var(--ink); color: var(--bg);
+    padding: 18px 32px; font-size: 14px; font-weight: 500;
+    border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.25s;
+    border: 1px solid var(--ink);
+}
+.btn-primary:hover {
+    background: var(--accent); border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px -8px rgba(168, 92, 61, 0.4);
+}
+.btn-primary .arrow { transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(4px); }
+.btn-link {
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    padding: 18px 4px;
+    border-bottom: 1px solid var(--ink);
+    transition: all 0.2s;
+}
+.btn-link:hover { color: var(--accent); border-color: var(--accent); }
+
+.hero-visual {
+    position: relative;
+    height: 640px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+.hero-visual .img-main {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+}
+.hero-visual .img-overlay {
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 220px; height: 280px;
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 6px solid var(--bg);
+    border-radius: 2px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.3);
+}
+.hero-visual .badge {
+    position: absolute;
+    top: 24px; right: 24px;
+    background: rgba(10, 10, 10, 0.85);
+    color: var(--bg);
+    backdrop-filter: blur(12px);
+    padding: 16px 22px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+.hero-visual .badge .num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    margin-right: 8px;
+    text-transform: none;
+}
+
+/* TRUST STRIP */
+.trust-strip {
+    background: var(--ink);
+    padding: 24px 0;
+    overflow: hidden;
+}
+.trust-inner {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bg);
+    white-space: nowrap;
+    animation: scroll 45s linear infinite;
+}
+.trust-inner span { display: flex; align-items: center; gap: 14px; opacity: 0.85; }
+.trust-inner span::before {
+    content: "◆"; color: var(--accent); font-size: 10px;
+}
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* SECTION HEADERS (REUSABLE) */
+.section-head { margin-bottom: 80px; max-width: 760px; }
+.section-head .eyebrow {
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 14px;
+}
+.section-head .eyebrow::after {
+    content: ""; flex: 1; max-width: 80px;
+    height: 1px; background: var(--accent); opacity: 0.4;
+}
+.section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+    color: var(--ink);
+}
+.section-head h2 em {
+    font-style: italic; color: var(--accent);
+    font-weight: 300;
+}
+.section-head p {
+    font-size: 18px;
+    color: var(--grey-mid);
+    line-height: 1.55;
+    max-width: 600px;
+}
+
+/* THE MATH SECTION */
+.math {
+    padding: 140px 0 120px;
+    background: var(--bg);
+    position: relative;
+}
+.math::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(to right, transparent, var(--line) 20%, var(--line) 80%, transparent);
+}
+.math-wrap { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: center; }
+.math-left .section-head { margin-bottom: 40px; max-width: none; }
+.math-left h2 { font-size: clamp(36px, 4vw, 56px); }
+.math-left p { font-size: 17px; line-height: 1.65; margin-bottom: 16px; max-width: 480px; }
+
+.math-card {
+    background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+    border: 1px solid var(--line);
+    padding: 48px 44px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+.math-card::before {
+    content: ""; position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+}
+.math-card .ctx {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--grey-mid);
+    margin-bottom: 8px; font-weight: 600;
+}
+.math-card .ctx-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    margin-bottom: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+.math-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 2px solid var(--ink);
+}
+.math-grid .h {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--grey-mid);
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+.math-grid .h.preface { color: var(--accent); }
+.math-grid > div {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    align-self: center;
+}
+.math-grid > div:nth-last-child(-n+3) { border-bottom: 0; padding-top: 20px; font-weight: 600; }
+.math-grid .label { color: var(--ink-soft); }
+.math-grid .v-old {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--grey-mid);
+    text-decoration: line-through;
+}
+.math-grid .v-new {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* SPECIALTY SHOWCASE — ALL-INCLUSIVES */
+.specialty {
+    padding: 140px 0;
+    background: var(--ink);
+    color: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+.specialty::before {
+    content: ""; position: absolute;
+    top: 0; right: -200px; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(168, 92, 61, 0.15), transparent 60%);
+    pointer-events: none;
+}
+.specialty-wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center; position: relative; z-index: 1; }
+.specialty-left .eyebrow {
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex; align-items: center; gap: 14px;
+}
+.specialty-left .eyebrow::after {
+    content: ""; flex: 1; max-width: 60px;
+    height: 1px; background: var(--accent); opacity: 0.4;
+}
+.specialty-stat {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(120px, 16vw, 220px);
+    line-height: 0.82;
+    letter-spacing: -0.06em;
+    color: var(--bg);
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+.specialty-stat sup {
+    font-size: 0.4em;
+    vertical-align: super;
+    color: var(--accent);
+}
+.specialty-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 30px;
+    color: var(--grey-light);
+    margin-bottom: 36px;
+    line-height: 1.2;
+}
+.specialty-text {
+    font-size: 17px;
+    color: var(--grey-light);
+    line-height: 1.65;
+    max-width: 540px;
+    margin-bottom: 18px;
+}
+.specialty-brands {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid #2A2A2A;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--grey-mid);
+    line-height: 2.1;
+}
+
+.specialty-visual {
+    position: relative;
+    height: 540px;
+}
+.specialty-visual .v1 {
+    position: absolute;
+    top: 0; right: 0;
+    width: 88%; height: 64%;
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=900&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+}
+.specialty-visual .v2 {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 70%; height: 50%;
+    background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=700&q=80');
+    background-size: cover;
+    background-position: center;
+    border: 8px solid var(--ink);
+    border-radius: 2px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+}
+
+/* WHAT WE BOOK — IMAGE CARD GRID */
+.trips {
+    padding: 140px 0;
+    background: var(--bg);
+}
+.trips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+.trip-card {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.trip-card:hover { transform: translateY(-6px); }
+.trip-card .bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.trip-card:hover .bg { transform: scale(1.06); }
+.trip-card::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0) 30%, rgba(10,10,10,0.85) 100%);
+}
+.trip-card .info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 32px 28px;
+    color: var(--bg);
+    z-index: 2;
+}
+.trip-card .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 14px; font-weight: 600;
+}
+.trip-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 30px; font-weight: 400;
+    line-height: 1.1; letter-spacing: -0.015em;
+    margin-bottom: 12px;
+}
+.trip-card p {
+    font-size: 13px; color: rgba(250,250,248,0.85);
+    line-height: 1.55;
+    margin-bottom: 16px;
+    max-width: 340px;
+}
+.trip-card .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    color: var(--accent-light);
+    display: flex; gap: 16px;
+}
+
+/* DESTINATIONS MOSAIC */
+.destinations {
+    padding: 140px 0;
+    background: var(--bg-warm);
+    position: relative;
+}
+.dest-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+.dest {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    height: 280px;
+    transition: all 0.5s;
+}
+.dest.tall { height: 580px; }
+.dest::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,10,10,0.1), rgba(10,10,10,0.55));
+    transition: opacity 0.3s;
+}
+.dest:hover::after { opacity: 0.3; }
+.dest:hover { transform: scale(1.02); }
+.dest .label {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    color: var(--bg);
+    z-index: 2;
+}
+.dest .label .place {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; line-height: 1;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+}
+.dest .label .country {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+}
+.dest-1 { background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=900&q=80'); }
+.dest-2 { background-image: url('https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=600&q=80'); }
+.dest-3 { background-image: url('https://images.unsplash.com/photo-1505228395891-9a51e7e86bf6?w=600&q=80'); }
+.dest-4 { background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80'); }
+.dest-5 { background-image: url('https://images.unsplash.com/photo-1503914091580-a45770e6ea9c?w=600&q=80'); }
+.dest-6 { background-image: url('https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=600&q=80'); }
+.dest-7 { background-image: url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80'); }
+.dest-8 { background-image: url('https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=600&q=80'); }
+
+/* RECEIPT — REAL CLIENT MATH */
+.receipt {
+    padding: 140px 0;
+    background: var(--bg);
+}
+.receipt-wrap {
+    display: grid; grid-template-columns: 1fr 1.1fr;
+    gap: 100px; align-items: center;
+}
+.receipt-left h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.5vw, 60px);
+    font-weight: 400; line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+}
+.receipt-left h2 em { font-style: italic; color: var(--accent); }
+.receipt-left p { font-size: 17px; color: var(--grey-mid); line-height: 1.65; margin-bottom: 16px; }
+
+.receipt-card-wrap {
+    position: relative;
+}
+.receipt-card-wrap .photo {
+    position: absolute;
+    top: -32px; right: -32px;
+    width: 60%; height: 50%;
+    background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=700&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 2px;
+    z-index: 0;
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.4);
+}
+.receipt-card {
+    background: var(--ink); color: var(--bg);
+    padding: 60px 52px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+}
+.receipt-card .pin {
+    position: absolute; top: -14px; left: 44px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--accent); color: var(--bg);
+    padding: 8px 16px; letter-spacing: 0.18em;
+    border-radius: 2px;
+    font-weight: 600;
+}
+.receipt-card .client {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.22em;
+    color: var(--grey-light);
+    margin-bottom: 10px;
+}
+.receipt-card .trip {
+    font-family: 'Fraunces', serif;
+    font-size: 26px; font-weight: 400;
+    margin-bottom: 36px;
+    letter-spacing: -0.01em;
+}
+.receipt-card .line {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid #2A2A2A;
+    font-size: 14px;
+}
+.receipt-card .line.total {
+    border-bottom: 0; padding-top: 28px;
+    font-size: 17px; font-weight: 600; color: var(--accent);
+}
+.receipt-card .line .v {
+    font-family: 'JetBrains Mono', monospace;
+}
+.receipt-card .stamp {
+    margin-top: 40px; padding-top: 28px;
+    border-top: 1px solid #2A2A2A;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    color: var(--grey-light);
+}
+
+/* HOT TAKES */
+.hot-takes {
+    padding: 140px 0;
+    background: var(--ink);
+    color: var(--bg);
+    position: relative;
+}
+.hot-takes .section-head h2 { color: var(--bg); }
+.hot-takes .section-head p { color: var(--grey-light); }
+.takes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    border: 1px solid #1F1F1F;
+    background: #1F1F1F;
+}
+.take {
+    background: var(--ink);
+    padding: 48px 44px;
+    transition: background 0.3s;
+    cursor: pointer;
+}
+.take:hover { background: #0F0F0F; }
+.take .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: var(--accent);
+    margin-bottom: 28px;
+    font-weight: 600;
+}
+.take .quote {
+    font-family: 'Fraunces', serif;
+    font-size: 26px; font-weight: 300;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--bg);
+    margin-bottom: 28px;
+}
+.take .quote em { color: var(--accent); font-style: italic; }
+.take .source {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--grey-light);
+    letter-spacing: 0.15em;
+    padding-top: 24px;
+    border-top: 1px solid #2A2A2A;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    padding: 140px 0;
+    background: var(--bg-alt);
+    position: relative;
+}
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+.testi-card {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 40px 36px;
+    border-radius: 2px;
+    transition: all 0.3s;
+    position: relative;
+    display: flex; flex-direction: column;
+}
+.testi-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 60px -25px rgba(0,0,0,0.12);
+    border-color: var(--accent-light);
+}
+.testi-card .stars {
+    color: var(--accent);
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+.testi-card .quote {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    flex: 1;
+}
+.testi-card .quote em { color: var(--accent); font-style: italic; }
+.testi-card .author {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+}
+.testi-card .avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--bg-warm);
+}
+.testi-card .who .name {
+    font-size: 14px; font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+}
+.testi-card .who .trip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    color: var(--grey-mid);
+    text-transform: uppercase;
+}
+
+/* HOW IT WORKS — VERTICAL TIMELINE */
+.how-it-works {
+    padding: 140px 0;
+    background: var(--bg);
+}
+.how-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+}
+.how-grid::before {
+    content: "";
+    position: absolute;
+    top: 64px; left: 12.5%; right: 12.5%;
+    height: 1px;
+    background: var(--line);
+    z-index: 0;
+}
+.step {
+    text-align: left;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+.step .dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+    margin-bottom: 32px;
+    margin-top: 56px;
+    position: relative;
+}
+.step .dot::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+}
+.step .num {
+    font-family: 'Fraunces', serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+}
+.step h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+}
+.step p {
+    font-size: 14px;
+    color: var(--grey-mid);
+    line-height: 1.6;
+}
+
+/* NEWSLETTER */
+.newsletter {
+    padding: 140px 0;
+    background: var(--ink);
+    color: var(--bg);
+    position: relative;
+    overflow: hidden;
+}
+.newsletter::before {
+    content: "";
+    position: absolute;
+    top: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(168, 92, 61, 0.2), transparent 60%);
+    pointer-events: none;
+}
+.newsletter::after {
+    content: "";
+    position: absolute;
+    bottom: -200px; right: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(168, 92, 61, 0.15), transparent 60%);
+    pointer-events: none;
+}
+.newsletter-inner {
+    max-width: 720px; margin: 0 auto;
+    text-align: center;
+    position: relative; z-index: 1;
+}
+.newsletter .eyebrow {
+    color: var(--accent);
+    margin-bottom: 28px;
+    justify-content: center;
+    display: flex; align-items: center; gap: 14px;
+}
+.newsletter .eyebrow::before,
+.newsletter .eyebrow::after {
+    content: ""; width: 40px;
+    height: 1px; background: var(--accent); opacity: 0.4;
+}
+.newsletter h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.5vw, 60px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 28px;
+    color: var(--bg);
+}
+.newsletter h2 em { font-style: italic; color: var(--accent); }
+.newsletter p {
+    font-size: 18px;
+    color: var(--grey-light);
+    margin-bottom: 48px;
+    line-height: 1.55;
+}
+.newsletter form {
+    display: flex;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid #2A2A2A;
+    padding: 6px;
+    border-radius: 100px;
+}
+.newsletter input {
+    flex: 1;
+    background: transparent;
+    border: 0;
+    padding: 14px 20px;
+    color: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+}
+.newsletter input::placeholder { color: var(--grey-mid); }
+.newsletter input:focus { outline: none; }
+.newsletter button {
+    background: var(--accent); color: var(--bg);
+    border: 0;
+    padding: 14px 28px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; font-weight: 500;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.newsletter button:hover {
+    background: var(--bg); color: var(--ink);
+}
+.newsletter .fine {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    color: var(--grey-mid);
+    margin-top: 28px;
+    text-transform: uppercase;
+}
+
+/* FOOTER */
+footer {
+    background: var(--bg);
+    padding: 100px 0 40px;
+    border-top: 1px solid var(--line);
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+}
+footer .brand { font-size: 32px; margin-bottom: 20px; }
+.footer-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 19px;
+    color: var(--grey-mid);
+    max-width: 320px;
+    line-height: 1.4;
+    margin-bottom: 28px;
+}
+.footer-cred {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--grey-mid);
+    line-height: 1.9;
+}
+.footer-col h5 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+.footer-col a {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--accent); }
+.footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--grey-mid);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero .container,
+    .math-wrap,
+    .specialty-wrap,
+    .receipt-wrap { grid-template-columns: 1fr; gap: 60px; }
+    .trips-grid,
+    .takes-grid,
+    .testi-grid { grid-template-columns: 1fr; }
+    .dest-mosaic { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
+    .dest-1, .dest-7 { grid-column: span 2; }
+    .how-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .how-grid::before { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .hero h1 { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="/" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="preface-page-all-inclusives.html">All-Inclusives</a>
+            <a href="preface-page-business-travel.html">Business Travel</a>
+            <a href="preface-page-about.html">About</a>
+            <a href="#" class="nav-cta">Book a call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO — SPLIT LAYOUT WITH IMAGE -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-text">
+            <div class="hero-eyebrow">Independent travel advisor · TICO #XXXXXXX</div>
+            <h1>Travel for people who'd rather <em>not Expedia it.</em></h1>
+            <p class="hero-sub">Same prices as Booking.com — but you arrive to upgrades, daily breakfast, hotel credits, and a human (me) on WhatsApp when something breaks. Honeymoons. Family trips. Bach weekends. Business travel. Toronto, in your inbox.</p>
+            <div class="hero-ctas">
+                <a href="#" class="btn-primary">
+                    Book a 20-min call
+                    <span class="arrow">→</span>
+                </a>
+                <a href="#math" class="btn-link">See the math</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="img-main"></div>
+            <div class="img-overlay"></div>
+            <div class="badge"><span class="num">20+</span>All-inclusives stayed</div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+    <div class="trust-inner">
+        <span>FORA TRAVEL</span>
+        <span>VIRTUOSO MEMBER</span>
+        <span>FOUR SEASONS PREFERRED PARTNER</span>
+        <span>HYATT PRIVÉ</span>
+        <span>BELMOND BELLINI CLUB</span>
+        <span>ROSEWOOD ELITE</span>
+        <span>MARRIOTT STARS</span>
+        <span>HILTON FOR LUXURY</span>
+        <span>MANDARIN ORIENTAL FAN CLUB</span>
+        <span>FORA TRAVEL</span>
+        <span>VIRTUOSO MEMBER</span>
+        <span>FOUR SEASONS PREFERRED PARTNER</span>
+        <span>HYATT PRIVÉ</span>
+        <span>BELMOND BELLINI CLUB</span>
+        <span>ROSEWOOD ELITE</span>
+        <span>MARRIOTT STARS</span>
+        <span>HILTON FOR LUXURY</span>
+        <span>MANDARIN ORIENTAL FAN CLUB</span>
+    </div>
+</div>
+
+<!-- THE MATH SECTION -->
+<section class="math" id="math">
+    <div class="container">
+        <div class="math-wrap">
+            <div class="math-left">
+                <div class="section-head">
+                    <div class="eyebrow">The math, plainly</div>
+                    <h2>Booking direct is <em>literally the same price.</em><br/>But you get less.</h2>
+                </div>
+                <p>Hotels pay travel advisors a commission. Booking through me costs you nothing — they don't lower your rate when you cut us out, they just keep the commission.</p>
+                <p>So you can pay full price and arrive to a basic room. Or pay full price and arrive to an upgrade, breakfast, and credits. That's it. That's the entire pitch.</p>
+            </div>
+            <div class="math-card">
+                <div class="ctx">Honeymoon · 7 nights</div>
+                <div class="ctx-title">$8,000 at a <em style="color: var(--accent); font-style: italic;">Six Senses</em></div>
+                <div class="math-grid">
+                    <div class="h">Detail</div>
+                    <div class="h">Expedia</div>
+                    <div class="h preface">Preface</div>
+
+                    <div class="label">Room rate</div>
+                    <div class="v-old">$8,000</div>
+                    <div class="v-new">$8,000</div>
+
+                    <div class="label">Room category</div>
+                    <div class="v-old">Booked: Garden View</div>
+                    <div class="v-new">Arrived: Ocean View</div>
+
+                    <div class="label">Daily breakfast (2 pax × 7)</div>
+                    <div class="v-old">$490 out-of-pocket</div>
+                    <div class="v-new">Included</div>
+
+                    <div class="label">Property credit</div>
+                    <div class="v-old">$0</div>
+                    <div class="v-new">$100/stay</div>
+
+                    <div class="label">When the flight cancels</div>
+                    <div class="v-old">Voicemail in Bangalore</div>
+                    <div class="v-new">Me. On WhatsApp.</div>
+
+                    <div class="label">Net value to you</div>
+                    <div class="v-old">$0</div>
+                    <div class="v-new">~$1,200</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SPECIALTY — ALL INCLUSIVES -->
+<section class="specialty">
+    <div class="container">
+        <div class="specialty-wrap">
+            <div class="specialty-left">
+                <div class="eyebrow">— Where I have receipts</div>
+                <div class="specialty-stat">20<sup>+</sup></div>
+                <div class="specialty-label">all-inclusives, personally stayed</div>
+                <p class="specialty-text">Most agencies plan resort trips they've only read about. That's how clients end up at Sandals when they should be at Excellence Playa Mujeres.</p>
+                <p class="specialty-text">I know which property has a real kids' club, which adults-only is genuinely quiet at 11pm, which $700/night room is actually worth $700.</p>
+                <div class="specialty-brands">EXCELLENCE · ZOETRY · LE BLANC · SECRETS · DREAMS · SANDALS · BEACHES<br/>ROYALTON · ATELIER · HYATT ZIVA · GRAND VELAS · ROSEWOOD MAYAKOBA<br/>ANDAZ MAYAKOBA · NIZUC · UNICO 20˚87˚ · ATELIER PLAYA MUJERES · + MORE</div>
+            </div>
+            <div class="specialty-visual">
+                <div class="v1"></div>
+                <div class="v2"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT WE BOOK — IMAGE CARDS -->
+<section class="trips">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">What we book</div>
+            <h2>The trips you only take a few times in your life. <em>Try not to screw them up.</em></h2>
+            <p>The full millennial calendar. Honeymoons. Family weeks. Bach trips. Milestone groups. Business travel for execs who'd rather stop logging into Marriott.com.</p>
+        </div>
+        <div class="trips-grid">
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">01 / Honeymoon</div>
+                    <h3>The trip you've been overthinking for nine months.</h3>
+                    <p>Maldives, Bali, Greek Isles, South Africa + Mauritius. The right answer depends on whether you want to read in bed or do something every day.</p>
+                    <div class="meta"><span>$8–18K</span><span>14 days plan</span></div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">02 / Family</div>
+                    <h3>The all-inclusive that doesn't feel like one.</h3>
+                    <p>Kids want a kids' club. Adults want quiet. I know which properties actually deliver both and which ones just claim to.</p>
+                    <div class="meta"><span>$5–14K</span><span>7 days plan</span></div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">03 / Bach</div>
+                    <h3>Twelve girls. One villa. Five group chats.</h3>
+                    <p>Mykonos, Tulum, Lisbon, Nashville, Cabo. We handle the villa, dinners, boat day, and the friend who needs a separate room.</p>
+                    <div class="meta"><span>$1.5–3K/pp</span><span>21 days plan</span></div>
+                </div>
+            </a>
+            <a href="#" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">04 / Milestone Group</div>
+                    <h3>Twenty people. Five family WhatsApps. One trip.</h3>
+                    <p>40th birthdays. Parents' anniversaries. Multi-gen Israel trips. The trips where someone usually loses their mind.</p>
+                    <div class="meta"><span>$25–80K</span><span>60+ days plan</span></div>
+                </div>
+            </a>
+            <a href="preface-page-business-travel.html" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1535629108986-7ddd75a17a47?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">05 / Business Travel</div>
+                    <h3>Stop logging into Marriott.com. I'll do it.</h3>
+                    <p>Hotel + flight bookings for founders + execs. Privé / STARS / Impresario perks layered on. 60-min booking SLA.</p>
+                    <div class="meta"><span>Free / $150/mo</span><span>60-min SLA</span></div>
+                </div>
+            </a>
+            <a href="preface-page-all-inclusives.html" class="trip-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=800&q=80');"></div>
+                <div class="info">
+                    <div class="num">06 / All-Inclusives</div>
+                    <h3>The specialty. 20+ properties stayed.</h3>
+                    <p>The good ones. The great ones. The ones that should be condemned. I have notes. The full list is inside.</p>
+                    <div class="meta"><span>$4–15K</span><span>Honest takes</span></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- DESTINATIONS MOSAIC -->
+<section class="destinations">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Destinations</div>
+            <h2>Where I've actually been. <em>Where I'd send you.</em></h2>
+            <p>Not a brochure. The places I have receipts in — real properties, honest verdicts, current intel.</p>
+        </div>
+        <div class="dest-mosaic">
+            <div class="dest dest-1">
+                <div class="label">
+                    <div class="place">Maldives</div>
+                    <div class="country">— Indian Ocean</div>
+                </div>
+            </div>
+            <div class="dest dest-2">
+                <div class="label">
+                    <div class="place">Tulum</div>
+                    <div class="country">— Mexico</div>
+                </div>
+            </div>
+            <div class="dest dest-3">
+                <div class="label">
+                    <div class="place">Riviera Maya</div>
+                    <div class="country">— Mexico</div>
+                </div>
+            </div>
+            <div class="dest dest-4">
+                <div class="label">
+                    <div class="place">Santorini</div>
+                    <div class="country">— Greece</div>
+                </div>
+            </div>
+            <div class="dest dest-5">
+                <div class="label">
+                    <div class="place">Punta Cana</div>
+                    <div class="country">— D.R.</div>
+                </div>
+            </div>
+            <div class="dest dest-6">
+                <div class="label">
+                    <div class="place">Cabo</div>
+                    <div class="country">— Mexico</div>
+                </div>
+            </div>
+            <div class="dest dest-7">
+                <div class="label">
+                    <div class="place">Turks &amp; Caicos</div>
+                    <div class="country">— Caribbean</div>
+                </div>
+            </div>
+            <div class="dest dest-8">
+                <div class="label">
+                    <div class="place">Amalfi</div>
+                    <div class="country">— Italy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RECEIPT -->
+<section class="receipt">
+    <div class="container">
+        <div class="receipt-wrap">
+            <div class="receipt-left">
+                <div class="eyebrow" style="margin-bottom: 24px;">A real receipt</div>
+                <h2>Show, <em>don't tell.</em></h2>
+                <p>Names changed. Numbers real. One of last month's honeymoon bookings.</p>
+                <p>If you've ever stayed at a Belmond, an Aman, a Rosewood, a Six Senses, a Four Seasons, or a Mandarin Oriental and didn't get a room upgrade — you were doing it wrong.</p>
+            </div>
+            <div class="receipt-card-wrap">
+                <div class="photo"></div>
+                <div class="receipt-card">
+                    <div class="pin">CONFIRMED</div>
+                    <div class="client">Honeymoon · M+S</div>
+                    <div class="trip">Six Senses Fiji · 7 nights</div>
+                    <div class="line"><span>Room booked</span><span class="v">Pool Villa</span></div>
+                    <div class="line"><span>Room arrived</span><span class="v">Premier Beachfront Pool</span></div>
+                    <div class="line"><span>Cash value of upgrade</span><span class="v">+$2,400</span></div>
+                    <div class="line"><span>Daily breakfast (2 pax × 7)</span><span class="v">+$840</span></div>
+                    <div class="line"><span>$100 spa credit</span><span class="v">+$100</span></div>
+                    <div class="line"><span>Welcome amenity (champagne)</span><span class="v">+$120</span></div>
+                    <div class="line"><span>Cost over Expedia rate</span><span class="v">$0</span></div>
+                    <div class="line total"><span>Total added value</span><span class="v">+$3,460</span></div>
+                    <div class="stamp">VIA PREFACE · TICO #XXXXXXX · MAY 2026</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOT TAKES -->
+<section class="hot-takes">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Things we actually believe</div>
+            <h2>If you can't tell what your travel agent thinks, <em>they're not your travel agent.</em></h2>
+            <p>Hot takes from the newsletter. No-pressure click — if any of these annoy you, we're probably not the right fit.</p>
+        </div>
+        <div class="takes-grid">
+            <div class="take">
+                <div class="num">— ISSUE 12</div>
+                <div class="quote">"Sandals is mid. There are three all-inclusives in the Caribbean that aren't, <em>and none of them advertise on TV.</em>"</div>
+                <div class="source">March 2026</div>
+            </div>
+            <div class="take">
+                <div class="quote">"Maldives in August is a scam. <em>Half the islands are unrentable</em> in monsoon. Your advisor should be telling you this."</div>
+                <div class="num" style="margin: 28px 0 0 0;">— ISSUE 14 · April 2026</div>
+            </div>
+            <div class="take">
+                <div class="num">— ISSUE 9</div>
+                <div class="quote">"The honeymoon you're planning shouldn't be the same hotel every couple in your wedding posted about. <em>Get a personality.</em>"</div>
+                <div class="source">February 2026</div>
+            </div>
+            <div class="take">
+                <div class="quote">"If you're flying eleven hours, you should be staying at least eight nights. <em>Jet lag is not a souvenir.</em>"</div>
+                <div class="num" style="margin: 28px 0 0 0;">— ISSUE 15 · May 2026</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">— What clients say</div>
+            <h2>Real receipts. <em>Real reviews.</em></h2>
+            <p>Names with permission. Trips that actually happened.</p>
+        </div>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"Got upgraded to an over-water bungalow at check-in without asking. The 'amenity package' showed up as $1,800 of <em>actual money saved</em> on the trip. We're booking everything through Preface from now on."</div>
+                <div class="author">
+                    <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80');"></div>
+                    <div class="who">
+                        <div class="name">Sarah K.</div>
+                        <div class="trip">Honeymoon · Maldives</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"Saved me probably 6 hours of research on the family trip. Recommended Hyatt Ziva Cap Cana over the place I was looking at. <em>The kids' club actually delivered</em> — first time on a family trip I read a book."</div>
+                <div class="author">
+                    <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80');"></div>
+                    <div class="who">
+                        <div class="name">David C.</div>
+                        <div class="trip">Family · Dominican Republic</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">★★★★★</div>
+                <div class="quote">"Booked 8 weeks of business travel through Preface. <em>Zero logging into Marriott.com.</em> Two flight cancellations he handled while I slept. The points stayed mine. This is the future of travel for execs."</div>
+                <div class="author">
+                    <div class="avatar" style="background-image: url('https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&q=80');"></div>
+                    <div class="who">
+                        <div class="name">Jordan P.</div>
+                        <div class="trip">Business Travel · Toronto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">How it works</div>
+            <h2>The whole thing, <em>in four steps.</em></h2>
+        </div>
+        <div class="how-grid">
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 01</div>
+                <h4>20-min intro call</h4>
+                <p>Tell me where, when, who, budget. I tell you whether I'm the right fit. No pitch, no pressure.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 02</div>
+                <h4>Planning fee</h4>
+                <p>$300–$2,500 by trip complexity. Locks dates. Refundable through first revision if it's not what you wanted.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 03</div>
+                <h4>Proposal &amp; iterate</h4>
+                <p>2–3 options with real numbers, real itineraries, real reasoning. We refine. You book at the same rate as Expedia.</p>
+            </div>
+            <div class="step">
+                <div class="dot"></div>
+                <div class="num">Step 04</div>
+                <h4>You go. I stay awake.</h4>
+                <p>WhatsApp me if a flight cancels, a hotel's overbooked, or you want a 11pm Tokyo restaurant rec. Human in the loop.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+    <div class="container">
+        <div class="newsletter-inner">
+            <div class="eyebrow">The newsletter</div>
+            <h2>Travel takes, every other Friday. <em>Opinions included.</em></h2>
+            <p>One hotel worth your money. One overrated destination you don't have to feel bad about skipping. One trip-planning tip your friends don't know. Read it in five minutes.</p>
+            <form onsubmit="event.preventDefault();">
+                <input type="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div class="fine">FREE · NO SPAM · UNSUBSCRIBE WHENEVER</div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">Travel for people who'd rather not Expedia it.</div>
+                <div class="footer-cred">TICO #XXXXXXX<br/>FORA TRAVEL · VIRTUOSO · HYATT PRIVÉ<br/>20+ ALL-INCLUSIVES STAYED</div>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <a href="preface-page-all-inclusives.html">All-Inclusives</a>
+                <a href="preface-page-business-travel.html">Business Travel</a>
+                <a href="#">Honeymoons</a>
+                <a href="#">Family Trips</a>
+                <a href="#">Bach &amp; Milestone</a>
+            </div>
+            <div class="footer-col">
+                <h5>Read</h5>
+                <a href="#newsletter">Newsletter</a>
+                <a href="preface-page-all-inclusives.html">All-Inclusive guide</a>
+                <a href="#">Hot takes</a>
+                <a href="preface-page-about.html">About</a>
+            </div>
+            <div class="footer-col">
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Email</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">TikTok</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 PREFACE TRAVEL CO.</div>
+            <div>BUILT IN TORONTO</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Subtle nav backdrop on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 40) {
+        nav.style.padding = '14px 0';
+        nav.style.background = 'rgba(250, 250, 248, 0.95)';
+    } else {
+        nav.style.padding = '22px 0';
+        nav.style.background = 'rgba(250, 250, 248, 0.85)';
+    }
+});
+</script>
+
+</body>
+</html>

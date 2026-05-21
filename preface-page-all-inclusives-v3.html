@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>All-Inclusives — Preface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+:root {
+    --bg: #FAFAF8; --bg-alt: #F2F0EB; --bg-warm: #EDE8DD;
+    --ink: #0A0A0A; --ink-soft: #2A2A2A;
+    --grey-mid: #6B6B6B; --grey-light: #B8B6B0;
+    --line: #E5E3DD; --accent: #A85C3D;
+    --accent-dark: #8E4A2F; --accent-light: #D4A57E;
+}
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 22px 0; background: rgba(250, 250, 248, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid rgba(229, 227, 221, 0.5); }
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); }
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 40px; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); position: relative; transition: color 0.2s; }
+.nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--ink) !important; color: var(--bg) !important; padding: 12px 22px; font-size: 13px; font-weight: 500; border-radius: 100px; transition: all 0.2s; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+
+/* HERO WITH BG IMAGE */
+.ai-hero {
+    margin-top: 78px;
+    position: relative;
+    height: 720px;
+    overflow: hidden;
+}
+.ai-hero .bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1800&q=85');
+    background-size: cover; background-position: center;
+}
+.ai-hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.5) 60%, rgba(10,10,10,0.85) 100%);
+}
+.ai-hero .content {
+    position: absolute; inset: 0; z-index: 2;
+    display: flex; align-items: flex-end;
+    padding-bottom: 80px;
+}
+.ai-hero .container { width: 100%; }
+.ai-hero .eyebrow { color: var(--accent-light); margin-bottom: 24px; }
+.ai-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 400; line-height: 0.98;
+    letter-spacing: -0.03em;
+    color: var(--bg);
+    max-width: 14ch;
+    margin-bottom: 28px;
+}
+.ai-hero h1 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.ai-hero p {
+    font-size: 19px; color: var(--grey-light);
+    max-width: 580px; line-height: 1.55;
+    margin-bottom: 40px;
+}
+
+/* STATS BAR */
+.stats-bar {
+    background: var(--ink);
+    padding: 60px 0;
+    border-top: 1px solid #1F1F1F;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+}
+.stat-item {
+    text-align: center;
+    padding: 12px 20px;
+    border-right: 1px solid #1F1F1F;
+}
+.stat-item:last-child { border-right: 0; }
+.stat-item .n {
+    font-family: 'Fraunces', serif;
+    font-size: 68px; font-weight: 300;
+    line-height: 1; letter-spacing: -0.04em;
+    color: var(--accent);
+}
+.stat-item .n sup { font-size: 0.4em; vertical-align: super; color: var(--bg); opacity: 0.6; }
+.stat-item .lab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--grey-light);
+    margin-top: 14px;
+}
+
+/* SECTION HEAD */
+.section-head { margin-bottom: 70px; max-width: 760px; }
+.section-head .eyebrow { margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
+.section-head .eyebrow::after { content: ""; flex: 1; max-width: 80px; height: 1px; background: var(--accent); opacity: 0.4; }
+.section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 4.5vw, 60px);
+    font-weight: 400; line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+}
+.section-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.section-head p { font-size: 17px; color: var(--grey-mid); line-height: 1.6; max-width: 600px; }
+
+/* FEATURED PROPERTIES */
+.featured {
+    padding: 140px 0 60px;
+    background: var(--bg);
+}
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-bottom: 80px;
+}
+.prop-card {
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+.prop-card:hover { transform: translateY(-6px); }
+.prop-card .bg {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s;
+}
+.prop-card:hover .bg { transform: scale(1.05); }
+.prop-card::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.1) 30%, rgba(10,10,10,0.85) 100%);
+}
+.prop-card .info {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 36px 32px;
+    color: var(--bg); z-index: 2;
+}
+.prop-card .tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    padding: 5px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+.prop-card h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 32px; font-weight: 400;
+    line-height: 1.05; letter-spacing: -0.015em;
+    margin-bottom: 8px;
+}
+.prop-card .loc {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 16px;
+}
+.prop-card .take {
+    font-size: 14px;
+    color: rgba(250, 250, 248, 0.85);
+    line-height: 1.55;
+    max-width: 380px;
+}
+
+/* PROPERTY LIST (FULL) */
+.full-list {
+    padding: 60px 0 140px;
+    background: var(--bg);
+}
+.list-wrap { border-top: 2px solid var(--ink); margin-top: 60px; }
+.list-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1.4fr 120px;
+    gap: 32px; align-items: center;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.2s;
+}
+.list-row:hover { background: var(--bg-alt); }
+.list-row .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--grey-light); letter-spacing: 0.12em;
+}
+.list-row .name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 500;
+    letter-spacing: -0.01em;
+}
+.list-row .name .loc {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--grey-mid);
+    margin-top: 6px; font-weight: 400;
+}
+.list-row .take { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
+.list-row .verdict {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase; text-align: right; font-weight: 600;
+}
+.list-row .verdict.spec { color: var(--accent); }
+.list-row .verdict.rec { color: var(--ink); }
+.list-row .verdict.maybe { color: var(--grey-mid); }
+
+/* FRAMEWORK */
+.framework {
+    padding: 140px 0;
+    background: var(--bg-warm);
+    position: relative;
+}
+.fw-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.fw {
+    background: var(--bg);
+    padding: 44px 36px;
+    border-radius: 2px;
+    border: 1px solid var(--line);
+    transition: all 0.3s;
+}
+.fw:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -25px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-light);
+}
+.fw .icon {
+    font-family: 'Fraunces', serif;
+    font-size: 56px; font-weight: 300;
+    color: var(--accent);
+    line-height: 1; margin-bottom: 20px;
+}
+.fw h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 14px;
+}
+.fw h4 em { color: var(--accent); font-style: italic; }
+.fw p { font-size: 14px; color: var(--grey-mid); line-height: 1.65; }
+
+/* MISTAKES */
+.mistakes {
+    padding: 140px 0;
+    background: var(--bg);
+}
+.mistakes-list { margin-top: 70px; }
+.mistake {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 48px;
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+}
+.mistake .num {
+    font-family: 'Fraunces', serif;
+    font-size: 60px; font-weight: 300;
+    color: var(--accent); line-height: 1;
+    letter-spacing: -0.03em;
+}
+.mistake h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px; font-weight: 500;
+    margin-bottom: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+}
+.mistake p { font-size: 16px; color: var(--grey-mid); line-height: 1.65; margin-bottom: 10px; max-width: 700px; }
+.mistake p:last-child { color: var(--ink-soft); font-style: italic; }
+
+/* CTA WITH FULL-BLEED IMAGE */
+.cta-section {
+    position: relative;
+    padding: 0;
+    height: 540px;
+    overflow: hidden;
+}
+.cta-section .bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1800&q=85');
+    background-size: cover; background-position: center;
+}
+.cta-section::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,10,10,0.7), rgba(10,10,10,0.45));
+}
+.cta-content {
+    position: relative; z-index: 2;
+    height: 100%;
+    display: flex; align-items: center;
+}
+.cta-content .container { width: 100%; }
+.cta-inner { max-width: 720px; }
+.cta-content .eyebrow { color: var(--accent-light); margin-bottom: 28px; }
+.cta-content h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--bg);
+    margin-bottom: 28px;
+}
+.cta-content h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.cta-content p { font-size: 18px; color: var(--grey-light); margin-bottom: 40px; max-width: 540px; line-height: 1.55; }
+.btn-primary {
+    background: var(--accent); color: var(--bg);
+    padding: 18px 32px; font-size: 14px; font-weight: 500;
+    border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: all 0.25s;
+    border: 1px solid var(--accent);
+}
+.btn-primary:hover {
+    background: var(--bg); color: var(--ink); border-color: var(--bg);
+    transform: translateY(-1px);
+}
+.btn-primary .arrow { transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(4px); }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--bg); padding: 100px 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+footer .brand { font-size: 32px; margin-bottom: 20px; color: var(--bg); }
+.footer-tag { font-family: 'Fraunces', serif; font-style: italic; font-size: 19px; color: var(--grey-light); max-width: 320px; line-height: 1.4; margin-bottom: 28px; }
+.footer-cred { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--grey-mid); line-height: 1.9; }
+.footer-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; font-weight: 600; }
+.footer-col a { display: block; font-size: 14px; color: var(--grey-light); margin-bottom: 12px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--bg); }
+.footer-bottom { border-top: 1px solid #2A2A2A; padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--grey-mid); letter-spacing: 0.15em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+    .featured-grid, .fw-grid, .footer-grid, .stats-grid { grid-template-columns: 1fr; }
+    .stat-item { border-right: 0; border-bottom: 1px solid #1F1F1F; padding-bottom: 32px; margin-bottom: 32px; }
+    .list-row { grid-template-columns: 40px 1fr; gap: 20px; }
+    .list-row .take, .list-row .verdict { grid-column: span 2; }
+    .ai-hero h1 { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="preface-homepage-v3.html" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="preface-page-all-inclusives-v3.html" style="color: var(--accent);">All-Inclusives</a>
+            <a href="preface-page-business-travel-v3.html">Business Travel</a>
+            <a href="preface-page-about-v3.html">About</a>
+            <a href="#" class="nav-cta">Book a call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="ai-hero">
+    <div class="bg"></div>
+    <div class="content">
+        <div class="container">
+            <div class="eyebrow">— The specialty</div>
+            <h1>All-inclusives, <em>ranked.</em><br/>Sort of.</h1>
+            <p>I've stayed at 20+ properties across the Caribbean and Mexico. Some are genuinely great. Most are mid. A few should be condemned. Here's what I know — and how I'd think about picking the right one.</p>
+            <a href="#list" class="btn-primary">
+                See the list
+                <span class="arrow">→</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="n">20<sup>+</sup></div>
+                <div class="lab">Properties Stayed</div>
+            </div>
+            <div class="stat-item">
+                <div class="n">15<sup>+</sup></div>
+                <div class="lab">Caribbean Destinations</div>
+            </div>
+            <div class="stat-item">
+                <div class="n">6</div>
+                <div class="lab">Brand Families</div>
+            </div>
+            <div class="stat-item">
+                <div class="n">100%</div>
+                <div class="lab">Honest Takes</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURED PROPERTIES -->
+<section class="featured">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Top of the list</div>
+            <h2>The four I'd <em>book without thinking about it.</em></h2>
+            <p>Properties I've personally stayed at and would happily send my closest friends to. Featured below. Full list of 17 further down.</p>
+        </div>
+        <div class="featured-grid">
+            <a href="#" class="prop-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&q=80');"></div>
+                <div class="info">
+                    <div class="tag">★ Specialty</div>
+                    <h3>Excellence Playa Mujeres</h3>
+                    <div class="loc">Cancun · Mexico · Adults Only</div>
+                    <div class="take">The benchmark for adults-only in Mexico. Excellence Club is non-negotiable — private pool, premium liquor, butler. Don't book a base room or you'll feel ripped off.</div>
+                </div>
+            </a>
+            <a href="#" class="prop-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1000&q=80');"></div>
+                <div class="info">
+                    <div class="tag">Recommend</div>
+                    <h3>Le Blanc Spa Cancun</h3>
+                    <div class="loc">Cancun · Mexico · Adults Only</div>
+                    <div class="take">Sleek, modern, occasionally uptight. Great for honeymoon couples who hate kids and want a 'design hotel' feel with all-inclusive economics.</div>
+                </div>
+            </a>
+            <a href="#" class="prop-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1000&q=80');"></div>
+                <div class="info">
+                    <div class="tag">Recommend</div>
+                    <h3>Zoetry Agua Punta Cana</h3>
+                    <div class="loc">Dominican Republic · Boutique</div>
+                    <div class="take">Small, calm, almost wellness-led. The right pick if you want all-inclusive without the all-inclusive energy.</div>
+                </div>
+            </a>
+            <a href="#" class="prop-card">
+                <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=1000&q=80');"></div>
+                <div class="info">
+                    <div class="tag">Recommend</div>
+                    <h3>Hyatt Ziva Cap Cana</h3>
+                    <div class="loc">Dominican Republic · Family</div>
+                    <div class="take">Best of the family-friendly DR options I've stayed at. Actual kids' programming. Adult zones genuinely quiet. Now in Hyatt Privé.</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FULL LIST -->
+<section class="full-list" id="list">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">The full list</div>
+            <h2>17 properties I've actually been to. <em>The takes are real.</em></h2>
+            <p>This isn't every all-inclusive I'd recommend — it's every one I've personally slept at. DM for the unfiltered version.</p>
+        </div>
+        <div class="list-wrap">
+            <div class="list-row">
+                <div class="n">01</div>
+                <div class="name">Excellence Playa Mujeres<span class="loc">Cancun · Adults Only</span></div>
+                <div class="take">The benchmark. Excellence Club non-negotiable.</div>
+                <div class="verdict spec">★ Specialty</div>
+            </div>
+            <div class="list-row">
+                <div class="n">02</div>
+                <div class="name">Excellence Punta Cana<span class="loc">D.R. · Adults Only</span></div>
+                <div class="take">Bigger, livelier, less polished than Playa Mujeres. Get Club or skip.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">03</div>
+                <div class="name">Le Blanc Spa Cancun<span class="loc">Cancun · Adults Only</span></div>
+                <div class="take">Sleek, modern, occasionally uptight. For honeymooners.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">04</div>
+                <div class="name">Zoetry Agua Punta Cana<span class="loc">D.R. · Boutique</span></div>
+                <div class="take">Small, calm, wellness-led. Without the AI energy.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">05</div>
+                <div class="name">Atelier Playa Mujeres<span class="loc">Cancun · Adults Only</span></div>
+                <div class="take">Newer, art-forward concept. Service ironing out.</div>
+                <div class="verdict maybe">Conditional</div>
+            </div>
+            <div class="list-row">
+                <div class="n">06</div>
+                <div class="name">Hyatt Ziva Cap Cana<span class="loc">D.R. · Family</span></div>
+                <div class="take">Best family-friendly DR property. Actual kids' programming.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">07</div>
+                <div class="name">Secrets Cap Cana<span class="loc">D.R. · Adults Only</span></div>
+                <div class="take">Solid mid-tier. Preferred Club worth the bump. Just fine.</div>
+                <div class="verdict maybe">Conditional</div>
+            </div>
+            <div class="list-row">
+                <div class="n">08</div>
+                <div class="name">Dreams Riviera Cancun<span class="loc">Cancun · Family</span></div>
+                <div class="take">Reliable accessible-luxury family. Beach has sargassum issues.</div>
+                <div class="verdict maybe">Conditional</div>
+            </div>
+            <div class="list-row">
+                <div class="n">09</div>
+                <div class="name">Royalton CHIC Punta Cana<span class="loc">D.R. · Adults Only</span></div>
+                <div class="take">Loud. Music until late. Party energy. Fine if you're 22.</div>
+                <div class="verdict maybe">Specific Audience</div>
+            </div>
+            <div class="list-row">
+                <div class="n">10</div>
+                <div class="name">Sandals Royal Caribbean<span class="loc">Jamaica · Adults Only</span></div>
+                <div class="take">If brand-loyal, one of their better properties. Otherwise skip.</div>
+                <div class="verdict maybe">Conditional</div>
+            </div>
+            <div class="list-row">
+                <div class="n">11</div>
+                <div class="name">Sandals Curaçao<span class="loc">Curaçao · Adults Only</span></div>
+                <div class="take">Newer Sandals. Cleaner aesthetic. Curaçao is the better Sandals destination right now.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">12</div>
+                <div class="name">Beaches Turks &amp; Caicos<span class="loc">T&amp;C · Family</span></div>
+                <div class="take">Best beach of any all-inclusive I've been to. Premium pricing.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">13</div>
+                <div class="name">Grand Velas Riviera Maya<span class="loc">Riviera Maya · Family/Adults</span></div>
+                <div class="take">Highest-end AI I've stayed at. Pick Grand Class or skip.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">14</div>
+                <div class="name">Rosewood Mayakoba<span class="loc">Riviera Maya · Boutique</span></div>
+                <div class="take">Not strictly AI but functions like one. Worth the splurge.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">15</div>
+                <div class="name">Andaz Mayakoba<span class="loc">Riviera Maya · Family Friendly</span></div>
+                <div class="take">Family-friendly, design-forward. The locals' favorite.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">16</div>
+                <div class="name">Nizuc Resort &amp; Spa<span class="loc">Cancun · Adults/Family</span></div>
+                <div class="take">Architectural standout. AI plan optional. Honeymoon-worthy.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+            <div class="list-row">
+                <div class="n">17</div>
+                <div class="name">Unico 20˚87˚<span class="loc">Riviera Maya · Adults Only</span></div>
+                <div class="take">Heavy concept (cultural programming, no kids, no logo). Beach is just okay.</div>
+                <div class="verdict rec">Recommend</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section class="framework">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">How I'd think about it</div>
+            <h2>The questions I ask <em>before recommending a property.</em></h2>
+            <p>Anyone can read the brochure. The right call depends on what you actually want, not on what marketing photos promise.</p>
+        </div>
+        <div class="fw-grid">
+            <div class="fw">
+                <div class="icon">01</div>
+                <h4>Adults-only or kids? <em>The biggest fork.</em></h4>
+                <p>Adults-only runs quieter, slower, and usually serves better food. Family resorts have kids' clubs and waterslides but adult dinners get loud. There's no in-between; pick a side.</p>
+            </div>
+            <div class="fw">
+                <div class="icon">02</div>
+                <h4>Noise tolerance? <em>Yes, really.</em></h4>
+                <p>Royalton CHIC has DJs at the pool. Zoetry has acoustic guitar at the pool. Some people love one, some need the other. Marketing photos lie about this — I won't.</p>
+            </div>
+            <div class="fw">
+                <div class="icon">03</div>
+                <h4>Mexico, Caribbean, or D.R.? <em>Trade-offs.</em></h4>
+                <p>Mexico = fastest flight, sharpest design, best food, occasional sargassum. Caribbean = best beaches but limited inventory at top tier. D.R. = biggest variety and best value but more uneven service.</p>
+            </div>
+            <div class="fw">
+                <div class="icon">04</div>
+                <h4>Club access or base room? <em>The classic mistake.</em></h4>
+                <p>Most all-inclusives have a "Club" tier. The price difference is $200-500/wk per couple. The amenity difference is enormous — private pools, premium liquor, butler, better food. Get Club.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MISTAKES -->
+<section class="mistakes">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Common mistakes</div>
+            <h2>Four things people get wrong booking AIs. <em>I see all of them every week.</em></h2>
+        </div>
+        <div class="mistakes-list">
+            <div class="mistake">
+                <div class="num">01</div>
+                <div>
+                    <h3>Booking on Booking.com to save money.</h3>
+                    <p>You don't save money. The hotel charges the same rate. You just lose the upgrades, club access, breakfast, credits, and human concierge that come with booking through an advisor.</p>
+                    <p>Average value left on the table: ~$1,200 per couple per week.</p>
+                </div>
+            </div>
+            <div class="mistake">
+                <div class="num">02</div>
+                <div>
+                    <h3>Picking Sandals because it's famous.</h3>
+                    <p>Sandals does heavy marketing. They're fine. They're often not the best option at their price point. Excellence, Le Blanc, and Royalton's adult-only properties typically deliver more for the same money.</p>
+                    <p>Tell your advisor your priorities first; let them recommend the brand, not the other way around.</p>
+                </div>
+            </div>
+            <div class="mistake">
+                <div class="num">03</div>
+                <div>
+                    <h3>Booking June through October in Riviera Maya.</h3>
+                    <p>Sargassum season. Beaches are covered in brown seaweed for half the year. Hotels can clean it but you'll smell it from the lobby. If you must travel summer, go Caribbean (Turks, Anguilla, BVI) or Pacific Mexico.</p>
+                    <p>Nobody books for the resort. They book for the beach. The beach is the product.</p>
+                </div>
+            </div>
+            <div class="mistake">
+                <div class="num">04</div>
+                <div>
+                    <h3>Not booking Club / Preferred / Premium tier.</h3>
+                    <p>The base room is bait pricing. The actual product is the Club tier. You'll spend $5K either way; the question is whether you arrive to a basic room or to private-pool, premium liquor, butler service.</p>
+                    <p>If your budget is ~$5K, book Club at a mid-tier resort. Better than base room at a top-tier resort.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="bg"></div>
+    <div class="cta-content">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="eyebrow">Ready to book?</div>
+                <h2>Think you've picked your resort? <em>Let me weigh in before you book.</em></h2>
+                <p>20-minute call. Free. I'll tell you whether your shortlist is right, suggest 2-3 alternatives, and explain the room-tier trade-offs. No commitment.</p>
+                <a href="#" class="btn-primary">
+                    Book a 20-min call
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">Travel for people who'd rather not Expedia it.</div>
+                <div class="footer-cred">TICO #XXXXXXX<br/>FORA · VIRTUOSO · HYATT PRIVÉ<br/>20+ ALL-INCLUSIVES STAYED</div>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <a href="preface-page-all-inclusives-v3.html">All-Inclusives</a>
+                <a href="preface-page-business-travel-v3.html">Business Travel</a>
+                <a href="preface-homepage-v3.html">Honeymoons</a>
+                <a href="preface-homepage-v3.html">Family</a>
+                <a href="preface-homepage-v3.html">Bach &amp; Milestone</a>
+            </div>
+            <div class="footer-col">
+                <h5>Read</h5>
+                <a href="preface-homepage-v3.html#newsletter">Newsletter</a>
+                <a href="preface-page-all-inclusives-v3.html">All-Inclusive guide</a>
+                <a href="preface-page-about-v3.html">About</a>
+            </div>
+            <div class="footer-col">
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Email</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 PREFACE TRAVEL CO.</div>
+            <div>BUILT IN TORONTO</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

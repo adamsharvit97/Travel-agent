@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Preface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+:root {
+    --bg: #FAFAF8; --bg-alt: #F2F0EB; --bg-warm: #EDE8DD;
+    --ink: #0A0A0A; --ink-soft: #2A2A2A;
+    --grey-mid: #6B6B6B; --grey-light: #B8B6B0;
+    --line: #E5E3DD; --accent: #A85C3D;
+    --accent-light: #D4A57E;
+}
+html { scroll-behavior: smooth; }
+html, body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+.container-tight { max-width: 1080px; margin: 0 auto; padding: 0 40px; }
+.eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 22px 0; background: rgba(250, 250, 248, 0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(229, 227, 221, 0.5); }
+nav .container { display: flex; justify-content: space-between; align-items: center; }
+.brand { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 400; letter-spacing: -0.01em; color: var(--ink); }
+.brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 40px; align-items: center; }
+.nav-links a { font-size: 14px; font-weight: 500; color: var(--ink); position: relative; transition: color 0.2s; }
+.nav-links a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--ink) !important; color: var(--bg) !important; padding: 12px 22px; font-size: 13px; font-weight: 500; border-radius: 100px; transition: all 0.2s; }
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--accent) !important; transform: translateY(-1px); }
+
+/* HERO */
+.about-hero { margin-top: 78px; padding: 100px 0 80px; position: relative; }
+.about-hero .container { display: grid; grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+.about-hero .eyebrow { margin-bottom: 32px; display: flex; align-items: center; gap: 14px; }
+.about-hero .eyebrow::after { content: ""; flex: 1; height: 1px; background: var(--accent); opacity: 0.4; }
+.about-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.028em;
+    margin-bottom: 32px;
+}
+.about-hero h1 em { font-style: italic; color: var(--accent); font-weight: 300; display: block; }
+.about-hero .sub { font-size: 18px; color: var(--grey-mid); line-height: 1.55; max-width: 480px; }
+
+.about-hero-visual { position: relative; height: 580px; }
+.about-hero-visual .v1 {
+    position: absolute;
+    top: 0; right: 0;
+    width: 88%; height: 78%;
+    background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80');
+    background-size: cover; background-position: center;
+    border-radius: 2px;
+}
+.about-hero-visual .v2 {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 50%; height: 42%;
+    background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80');
+    background-size: cover; background-position: center;
+    border: 8px solid var(--bg);
+    border-radius: 2px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.25);
+}
+
+/* STORY */
+.story { padding: 140px 0; background: var(--bg-alt); }
+.story-grid { display: grid; grid-template-columns: 0.4fr 1fr; gap: 80px; align-items: start; max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+.story-grid .label-side .eyebrow { margin-bottom: 16px; }
+.story-grid .label-side .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.15em;
+    color: var(--grey-mid); line-height: 2.1;
+    margin-top: 28px; padding-top: 28px;
+    border-top: 1px solid var(--line);
+}
+.story-grid .body p {
+    font-family: 'Fraunces', serif;
+    font-size: 23px; font-weight: 400;
+    line-height: 1.42; letter-spacing: -0.005em;
+    margin-bottom: 24px;
+    color: var(--ink-soft);
+}
+.story-grid .body p em { color: var(--accent); font-style: italic; }
+.story-grid .body p strong { color: var(--ink); font-weight: 500; }
+
+/* MANIFESTO */
+.manifesto { background: var(--ink); color: var(--bg); padding: 140px 0; position: relative; overflow: hidden; }
+.manifesto::before { content: ""; position: absolute; top: -200px; left: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(168, 92, 61, 0.2), transparent 60%); pointer-events: none; }
+.manifesto::after { content: ""; position: absolute; bottom: -200px; right: -200px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(168, 92, 61, 0.12), transparent 60%); pointer-events: none; }
+.manifesto-inner { position: relative; z-index: 1; }
+.manifesto .eyebrow { color: var(--accent); margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
+.manifesto .eyebrow::after { content: ""; flex: 1; max-width: 80px; height: 1px; background: var(--accent); opacity: 0.4; }
+.manifesto h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    margin-bottom: 56px;
+    max-width: 880px;
+    color: var(--bg);
+}
+.manifesto h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.manifesto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; border: 1px solid #1F1F1F; background: #1F1F1F; margin-top: 40px; }
+.mn-item {
+    background: var(--ink);
+    padding: 44px 36px;
+    transition: background 0.3s;
+}
+.mn-item:hover { background: #0F0F0F; }
+.mn-item .num {
+    font-family: 'Fraunces', serif;
+    font-size: 42px; font-weight: 300;
+    color: var(--accent); line-height: 1;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+.mn-item h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 22px; font-weight: 500;
+    margin-bottom: 16px;
+    line-height: 1.2;
+    color: var(--bg);
+    letter-spacing: -0.01em;
+}
+.mn-item p { font-size: 14px; color: var(--grey-light); line-height: 1.65; }
+
+/* CREDENTIALS */
+.credentials { padding: 140px 0; background: var(--bg); }
+.section-head { margin-bottom: 60px; max-width: 760px; }
+.section-head .eyebrow { margin-bottom: 24px; display: flex; align-items: center; gap: 14px; }
+.section-head .eyebrow::after { content: ""; flex: 1; max-width: 80px; height: 1px; background: var(--accent); opacity: 0.4; }
+.section-head h2 { font-family: 'Fraunces', serif; font-size: clamp(40px, 4.5vw, 60px); font-weight: 400; line-height: 1.02; letter-spacing: -0.025em; margin-bottom: 20px; }
+.section-head h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.section-head p { font-size: 17px; color: var(--grey-mid); line-height: 1.6; max-width: 600px; }
+
+.cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.cred {
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    padding: 36px 32px;
+    display: flex; align-items: baseline; gap: 32px;
+    transition: all 0.3s;
+}
+.cred:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -25px rgba(0,0,0,0.1); border-color: var(--accent-light); }
+.cred .icon {
+    font-family: 'Fraunces', serif;
+    font-size: 56px; font-weight: 300;
+    color: var(--accent); line-height: 1;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+}
+.cred .icon sup { font-size: 0.4em; vertical-align: super; }
+.cred .text h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.cred .text p { font-size: 14px; color: var(--grey-mid); line-height: 1.6; }
+
+/* SIGNATURE Q&A */
+.signature { padding: 140px 0; background: var(--bg-warm); }
+.sig-list { max-width: 900px; margin-top: 60px; }
+.sig-block { padding: 36px 0; border-bottom: 1px solid var(--line); }
+.sig-block:last-child { border-bottom: 0; }
+.sig-block .q {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px; font-weight: 600;
+}
+.sig-block .a {
+    font-family: 'Fraunces', serif;
+    font-size: 30px; font-weight: 400;
+    line-height: 1.3; letter-spacing: -0.015em;
+    color: var(--ink);
+}
+.sig-block .a em { color: var(--accent); font-style: italic; }
+
+/* CTA */
+.cta-section { position: relative; padding: 0; height: 480px; overflow: hidden; }
+.cta-section .bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1800&q=85'); background-size: cover; background-position: center; }
+.cta-section::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(10,10,10,0.75), rgba(10,10,10,0.5)); }
+.cta-content { position: relative; z-index: 2; height: 100%; display: flex; align-items: center; }
+.cta-content .container { width: 100%; }
+.cta-inner { max-width: 720px; }
+.cta-content .eyebrow { color: var(--accent-light); margin-bottom: 28px; }
+.cta-content h2 { font-family: 'Fraunces', serif; font-size: clamp(40px, 5vw, 60px); font-weight: 400; line-height: 1.05; letter-spacing: -0.025em; color: var(--bg); margin-bottom: 28px; }
+.cta-content h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+.cta-content p { font-size: 18px; color: var(--grey-light); margin-bottom: 40px; max-width: 540px; line-height: 1.55; }
+.btn-primary { background: var(--accent); color: var(--bg); padding: 18px 32px; font-size: 14px; font-weight: 500; border-radius: 100px; display: inline-flex; align-items: center; gap: 10px; transition: all 0.25s; border: 1px solid var(--accent); }
+.btn-primary:hover { background: var(--bg); color: var(--ink); border-color: var(--bg); transform: translateY(-1px); }
+.btn-primary .arrow { transition: transform 0.25s; }
+.btn-primary:hover .arrow { transform: translateX(4px); }
+
+/* FOOTER */
+footer { background: var(--ink); color: var(--bg); padding: 100px 0 40px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 80px; }
+footer .brand { font-size: 32px; margin-bottom: 20px; color: var(--bg); }
+.footer-tag { font-family: 'Fraunces', serif; font-style: italic; font-size: 19px; color: var(--grey-light); max-width: 320px; line-height: 1.4; margin-bottom: 28px; }
+.footer-cred { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--grey-mid); line-height: 1.9; }
+.footer-col h5 { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 22px; font-weight: 600; }
+.footer-col a { display: block; font-size: 14px; color: var(--grey-light); margin-bottom: 12px; transition: color 0.2s; }
+.footer-col a:hover { color: var(--bg); }
+.footer-bottom { border-top: 1px solid #2A2A2A; padding-top: 32px; display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--grey-mid); letter-spacing: 0.15em; text-transform: uppercase; }
+
+@media (max-width: 900px) {
+    .about-hero .container, .story-grid { grid-template-columns: 1fr; gap: 60px; }
+    .manifesto-grid, .cred-grid, .footer-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="preface-homepage-v3.html" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="preface-page-all-inclusives-v3.html">All-Inclusives</a>
+            <a href="preface-page-business-travel-v3.html">Business Travel</a>
+            <a href="preface-page-about-v3.html" style="color: var(--accent);">About</a>
+            <a href="#" class="nav-cta">Book a call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="about-hero">
+    <div class="container">
+        <div>
+            <div class="eyebrow">About</div>
+            <h1>Hi. I'm [Your Name].<em>I built Preface for under-40s.</em></h1>
+            <p class="sub">Travel-advisor practice based in Toronto. Building the kind of relationship our parents had with their travel agents — updated for how the rest of us actually book.</p>
+        </div>
+        <div class="about-hero-visual">
+            <div class="v1"></div>
+            <div class="v2"></div>
+        </div>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+    <div class="story-grid">
+        <div class="label-side">
+            <div class="eyebrow">The short version</div>
+            <div class="meta">TICO #XXXXXXX<br/>FORA TRAVEL ADVISOR<br/>BASED IN TORONTO<br/>20+ AI'S STAYED<br/>30+ COUNTRIES</div>
+        </div>
+        <div class="body">
+            <p>I'm 29, Toronto-based, and I've spent the last [X] years in sales — long enough to know that the right relationship beats the right software, every time.</p>
+            <p>Travel was always the thing. I've been to 30+ countries, slept at 20+ all-inclusives across the Caribbean and Mexico, and somewhere along the way <em>realized everyone I knew was spending $8K on a honeymoon</em> via Expedia and getting nothing back for it.</p>
+            <p>That's the founding insight, basically. <strong>You're paying full price either way</strong> — the question is whether you arrive to upgrades, breakfast, and a human you can text, or whether you arrive to a basic room and a Bangalore voicemail.</p>
+            <p>I got TICO certified, joined Fora Travel — the millennial-focused host agency — and built Preface. <em>We're for people who'd rather not Expedia it.</em></p>
+        </div>
+    </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+    <div class="container manifesto-inner">
+        <div class="eyebrow">What I actually believe</div>
+        <h2>Travel advisors aren't dead. <em>The old ones are just hard to find under 60.</em></h2>
+        <div class="manifesto-grid">
+            <div class="mn-item">
+                <div class="num">01</div>
+                <h4>Same price. Better arrival.</h4>
+                <p>The hotel pays our commission, not you. You pay what Expedia would charge. You arrive to upgrades, breakfast, and resort credits. That's the whole thing.</p>
+            </div>
+            <div class="mn-item">
+                <div class="num">02</div>
+                <h4>Opinions, not brochures.</h4>
+                <p>Most travel content reads like a 1996 brochure. I'd rather tell you the truth — Sandals is fine, Excellence is better, sargassum season is real — than write "indulge in unparalleled luxury."</p>
+            </div>
+            <div class="mn-item">
+                <div class="num">03</div>
+                <h4>A human on WhatsApp.</h4>
+                <p>Flight cancelled in Lisbon at 2am? Hotel overbooked? Resort lost your reservation? You text me. I fix it. Try that with Booking.com.</p>
+            </div>
+            <div class="mn-item">
+                <div class="num">04</div>
+                <h4>No minimum, no membership.</h4>
+                <p>This isn't an exclusive concierge club with a $50K trip minimum. $3K bach weekend or $80K family pilgrimage — same energy, same care.</p>
+            </div>
+            <div class="mn-item">
+                <div class="num">05</div>
+                <h4>Built for under-40s.</h4>
+                <p>I'm 29. Most of my clients are 28-36. I know what your honeymoon shortlist looks like, what your friends are posting about, and what's actually new vs newly-marketed.</p>
+            </div>
+            <div class="mn-item">
+                <div class="num">06</div>
+                <h4>One advisor, ten years.</h4>
+                <p>Bach trip. Honeymoon. Babymoon. Family vacations. Milestone celebrations. The relationship is the product. One trusted person handling everything for the next decade.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section class="credentials">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">Receipts</div>
+            <h2>Real credentials. <em>None of them faked.</em></h2>
+        </div>
+        <div class="cred-grid">
+            <div class="cred">
+                <div class="icon">★</div>
+                <div class="text">
+                    <h4>TICO #XXXXXXX</h4>
+                    <p>Travel Industry Council of Ontario certified — the regulatory body that licenses anyone selling travel from Ontario. Mandatory, hard-won, real.</p>
+                </div>
+            </div>
+            <div class="cred">
+                <div class="icon">F</div>
+                <div class="text">
+                    <h4>Fora Travel Advisor</h4>
+                    <p>Independent advisor with Fora — modern, millennial-focused host agency. Direct access to Aman, Belmond, Six Senses, Excellence, Rosewood, and major chain preferred-partner programs.</p>
+                </div>
+            </div>
+            <div class="cred">
+                <div class="icon">20<sup>+</sup></div>
+                <div class="text">
+                    <h4>All-Inclusives Stayed</h4>
+                    <p>Excellence, Zoetry, Le Blanc, Sandals, Atelier, Hyatt Ziva, Royalton, Beaches, Grand Velas, Rosewood Mayakoba, Andaz Mayakoba, Nizuc, Unico, and more. I have notes.</p>
+                </div>
+            </div>
+            <div class="cred">
+                <div class="icon">30<sup>+</sup></div>
+                <div class="text">
+                    <h4>Countries Traveled</h4>
+                    <p>Caribbean deep, Europe broad, with extended time in Buenos Aires upcoming. Pacific Mexico, Iceland, Israel, Spain, Italy, Greece, Portugal, Croatia. The travel CV is real.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SIGNATURE Q&A -->
+<section class="signature">
+    <div class="container">
+        <div class="section-head">
+            <div class="eyebrow">A few quick ones</div>
+            <h2>Things people ask. <em>Honest answers.</em></h2>
+        </div>
+        <div class="sig-list">
+            <div class="sig-block">
+                <div class="q">Q / Where would you go if you had a free week right now?</div>
+                <div class="a">Buenos Aires for the food, or Andaz Mayakoba if I wanted to lie down. <em>Probably the latter.</em></div>
+            </div>
+            <div class="sig-block">
+                <div class="q">Q / Most overrated destination?</div>
+                <div class="a">Tulum, by a wide margin. <em>The beach is fine. Everything else is performance.</em></div>
+            </div>
+            <div class="sig-block">
+                <div class="q">Q / Most underrated?</div>
+                <div class="a">Curaçao. The new Sandals there is genuinely good and you're not fighting 4,000 American spring-breakers for a beach chair.</div>
+            </div>
+            <div class="sig-block">
+                <div class="q">Q / Best meal you've had at a resort?</div>
+                <div class="a">The Italian restaurant at Grand Velas Riviera Maya. <em>I'd fly back for it.</em></div>
+            </div>
+            <div class="sig-block">
+                <div class="q">Q / The trip you're most proud of planning?</div>
+                <div class="a">A 14-person multigen family trip to Israel last fall. Three generations, two airlines, four hotels, one perfect itinerary. <em>That's the work.</em></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="bg"></div>
+    <div class="cta-content">
+        <div class="container">
+            <div class="cta-inner">
+                <div class="eyebrow">Want to actually talk?</div>
+                <h2>20 minutes. <em>No pitch, no pressure.</em></h2>
+                <p>If you have a trip coming up — or you're 9 months out and trying to figure out where to start — book a call. I'll either be the right fit, or tell you I'm not.</p>
+                <a href="#" class="btn-primary">
+                    Book a 20-min call
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">Travel for people who'd rather not Expedia it.</div>
+                <div class="footer-cred">TICO #XXXXXXX<br/>FORA · VIRTUOSO · HYATT PRIVÉ<br/>20+ ALL-INCLUSIVES STAYED</div>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <a href="preface-page-all-inclusives-v3.html">All-Inclusives</a>
+                <a href="preface-page-business-travel-v3.html">Business Travel</a>
+                <a href="preface-homepage-v3.html">Honeymoons</a>
+                <a href="preface-homepage-v3.html">Family</a>
+                <a href="preface-homepage-v3.html">Bach &amp; Milestone</a>
+            </div>
+            <div class="footer-col">
+                <h5>Read</h5>
+                <a href="preface-homepage-v3.html#newsletter">Newsletter</a>
+                <a href="preface-page-all-inclusives-v3.html">All-Inclusive guide</a>
+                <a href="preface-page-about-v3.html">About</a>
+            </div>
+            <div class="footer-col">
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 PREFACE TRAVEL CO.</div>
+            <div>BUILT IN TORONTO</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
