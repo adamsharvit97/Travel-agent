@@ -138,37 +138,61 @@ nav .container { display: flex; justify-content: space-between; align-items: cen
 .math-row.header div { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--grey-mid); font-weight: 600; }
 .math-row .preface-label { color: var(--accent); }
 
-/* ============ RECEIPTS / EXPERTISE ============ */
+/* ============ RECEIPTS / EXPERTISE — FORMAT 02 ============ */
 .receipts-expertise { padding: 140px 0 120px; }
-.expertise-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--line); border: 1px solid var(--line); margin-top: 60px; }
-.expertise-card {
-    background: var(--bg); padding: 48px 32px;
+.exp-wrap { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4px; background: var(--line); border: 1px solid var(--line); margin-top: 60px; }
+.exp-feature {
+    background: var(--bg);
+    padding: 60px 48px;
     display: flex; flex-direction: column;
-    min-height: 340px;
+    min-height: 520px;
 }
-.expertise-card .stat {
+.exp-feature .pretag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    background: var(--accent); color: var(--bg);
+    padding: 4px 12px; border-radius: 2px;
+    align-self: flex-start; margin-bottom: 28px;
+}
+.exp-feature .big-stat {
     font-family: 'Fraunces', serif;
-    font-size: 72px; font-weight: 300;
-    line-height: 0.9; letter-spacing: -0.03em;
-    color: var(--accent);
-    margin-bottom: 24px;
+    font-size: 156px; font-weight: 300;
+    line-height: 0.85; letter-spacing: -0.04em;
+    color: var(--ink); margin-bottom: 12px;
 }
-.expertise-card .stat sup {
-    font-size: 0.4em; vertical-align: super;
-    margin-left: 4px;
-    color: var(--ink-soft);
-    font-weight: 400;
+.exp-feature .big-stat sup { font-size: 0.35em; color: var(--accent); vertical-align: super; }
+.exp-feature .feat-label {
+    font-family: 'Fraunces', serif; font-size: 28px; font-style: italic;
+    color: var(--grey-mid); margin-bottom: 32px; line-height: 1.2;
 }
-.expertise-card h4 {
+.exp-feature p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; max-width: 540px; }
+.exp-feature .brand-strip {
+    margin-top: auto; padding-top: 28px;
+    border-top: 1px solid var(--line);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--ink); font-weight: 600;
-    margin-bottom: 16px;
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--grey-mid); line-height: 1.9;
 }
-.expertise-card p {
-    font-size: 14px; color: var(--grey-mid); line-height: 1.55;
-    margin-top: auto;
+.exp-sidebar { background: var(--bg); display: flex; flex-direction: column; }
+.exp-side-item {
+    padding: 36px 32px;
+    border-bottom: 1px solid var(--line);
+    flex: 1;
+    display: flex; flex-direction: column;
 }
+.exp-side-item:last-child { border-bottom: 0; }
+.exp-side-item .s-stat {
+    font-family: 'Fraunces', serif; font-size: 48px; font-weight: 300;
+    color: var(--accent); line-height: 1; margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+.exp-side-item h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 12px; font-weight: 600;
+}
+.exp-side-item p { font-size: 13px; color: var(--grey-mid); line-height: 1.55; margin-top: auto; }
 
 /* ============ WHAT WE BOOK ============ */
 .what-we-book { background: var(--bg-alt); padding: 120px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -410,34 +434,39 @@ footer .brand span { color: var(--accent); }
     </div>
 </section>
 
-<!-- RECEIPTS / EXPERTISE -->
+<!-- RECEIPTS / EXPERTISE — FORMAT 02 -->
 <section class="receipts-expertise">
     <div class="container">
         <div class="section-header">
             <div class="section-eyebrow">— Where I have the most receipts</div>
             <h2>Most travel agencies plan trips they've never taken. <em>I've slept in most of these.</em></h2>
-            <p>Generalist agency, deep pockets of expertise. If your trip touches any of these areas, you're getting more than google-able advice.</p>
+            <p>Generalist agency, with one area where the depth runs especially deep.</p>
         </div>
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <div class="stat">20<sup>+</sup></div>
-                <h4>All-Inclusives</h4>
-                <p>Excellence, Zoetry, Le Blanc, Royalton, Sandals, Beaches, Excellence, Atelier, Hyatt Ziva, Secrets, Dreams. I've stayed at the good ones and the ones that should be condemned. I have notes.</p>
+        <div class="exp-wrap">
+            <div class="exp-feature">
+                <span class="pretag">Specialty</span>
+                <div class="big-stat">20<sup>+</sup></div>
+                <div class="feat-label">all-inclusives, personally stayed</div>
+                <p>Most agencies plan resort trips they've only read about. That's how clients end up at Sandals when they should be at Excellence Playa Mujeres.</p>
+                <p>I know which property has a real kids' club, which adults-only is genuinely quiet at 11pm, and which $700/night room is actually worth $700.</p>
+                <div class="brand-strip">EXCELLENCE · ZOETRY · LE BLANC · SECRETS · DREAMS · SANDALS · BEACHES · ROYALTON · ATELIER · HYATT ZIVA · GRAND VELAS · ROSEWOOD MAYAKOBA · ANDAZ MAYAKOBA · NIZUC · UNICO 20˚87˚</div>
             </div>
-            <div class="expertise-card">
-                <div class="stat">15<sup>+</sup></div>
-                <h4>Caribbean + Mexico</h4>
-                <p>DR, Mexico (Riviera Maya, Cabo, Tulum), Turks, BVI, St. Lucia, Anguilla, Bahamas. I know which beaches deliver on the photo and which ones have seaweed for six months a year.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="stat">7+</div>
-                <h4>European cities</h4>
-                <p>The honeymoon circuits and the underrated alternatives. Italy, Greece, Spain, France, Portugal, Croatia. Where to stay, where the locals actually eat.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="stat">∞</div>
-                <h4>Group logistics</h4>
-                <p>10-pax bach weekends to 30-person milestone trips. The work isn't the destination — it's the WhatsApp chats. That's my zone.</p>
+            <div class="exp-sidebar">
+                <div class="exp-side-item">
+                    <div class="s-stat">15+</div>
+                    <h4>Caribbean + Mexico</h4>
+                    <p>Boots on the ground at most of the islands. Beyond the resorts — the destinations themselves.</p>
+                </div>
+                <div class="exp-side-item">
+                    <div class="s-stat">7+</div>
+                    <h4>European cities</h4>
+                    <p>Honeymoon circuits and underrated alternatives. Italy, Greece, Spain, Croatia.</p>
+                </div>
+                <div class="exp-side-item">
+                    <div class="s-stat">∞</div>
+                    <h4>Group logistics</h4>
+                    <p>Bach to milestone. The work is the WhatsApp chats. That's my zone.</p>
+                </div>
             </div>
         </div>
     </div>
