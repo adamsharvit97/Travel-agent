@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Three concepts — mockups</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #FAFAFA;
+    color: #111;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+  }
+  .wrap { width: 100%; max-width: 1100px; }
+  header { margin-bottom: 56px; }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #6b6b6b;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: clamp(28px, 4.5vw, 44px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    letter-spacing: -0.02em;
+  }
+  .lede {
+    font-size: 17px;
+    line-height: 1.55;
+    color: #444;
+    max-width: 620px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  a.card {
+    text-decoration: none;
+    color: inherit;
+    border-radius: 16px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 280px;
+    transition: transform 0.15s ease;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  a.card:hover { transform: translateY(-3px); }
+  .card .num {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    opacity: 0.7;
+  }
+  .card .name {
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .card .desc {
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.85;
+    flex-grow: 1;
+  }
+  .card .go {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .c1 { background: #0A0A0A; color: #F5F1EA; }
+  .c1 .name { font-family: "Anton", Impact, sans-serif; text-transform: uppercase; font-size: 44px; letter-spacing: 0.02em; }
+  .c1 .go { color: #FF6B35; }
+  .c2 { background: #F4EDE0; color: #1A1A1A; }
+  .c2 .name { font-family: "Cormorant Garamond", "EB Garamond", Georgia, serif; font-style: italic; font-weight: 500; font-size: 38px; }
+  .c2 .go { color: #8B6F47; }
+  .c3 { background: #fff; color: #111; border: 1px solid #111; }
+  .c3 .name { font-family: "Oswald", "Barlow Condensed", Impact, sans-serif; font-weight: 600; text-transform: uppercase; font-size: 40px; letter-spacing: -0.01em; }
+  .c3 .go { color: #FF2D55; }
+  footer {
+    margin-top: 56px;
+    font-size: 13px;
+    color: #888;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="eyebrow">Three concepts · Travel advisor for the 24–36 cohort</div>
+      <h1>Same business, three different brands.</h1>
+      <p class="lede">Each concept targets the same demographic from a different angle: high-volume group operator, premium-feeling editorial brand, and content-led culture brand. Open any one to see how it would feel.</p>
+    </header>
+
+    <div class="grid">
+      <a class="card c1" href="./crew.html">
+        <span class="num">01</span>
+        <span class="name">Crew</span>
+        <span class="desc">The Group Guy. Bachelor parties, milestone birthdays, friend trips that won't fall apart. Transactional, fast revenue, big repeat pipeline.</span>
+        <span class="go">Open →</span>
+      </a>
+      <a class="card c2" href="./preface.html">
+        <span class="num">02</span>
+        <span class="name">Preface</span>
+        <span class="desc">The Aspirational Insider. For couples 28–36 who didn't know they could have a travel advisor. Editorial, quiet, compounds.</span>
+        <span class="go">Open →</span>
+      </a>
+      <a class="card c3" href="./onset.html">
+        <span class="num">03</span>
+        <span class="name">Onset</span>
+        <span class="desc">The Culture-First brand. Trips inspired by film, TV, music, F1. TikTok-native, content-driven, highest ceiling.</span>
+        <span class="go">Open →</span>
+      </a>
+    </div>
+
+    <footer>Static HTML mockups · open each file directly in your browser</footer>
+  </div>
+</body>
+</html>
