@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preface — Expertise Section Format Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+:root {
+    --bg: #FAFAF8;
+    --bg-alt: #F2F0EB;
+    --ink: #0A0A0A;
+    --ink-soft: #2A2A2A;
+    --grey-mid: #6B6B6B;
+    --grey-light: #B8B6B0;
+    --line: #E5E3DD;
+    --accent: #A85C3D;
+}
+
+html, body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.55; }
+img { max-width: 100%; display: block; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+.format-divider {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 40px 0;
+    margin-top: 80px;
+    border-top: 4px solid var(--accent);
+}
+.format-divider:first-child { margin-top: 0; }
+.format-divider .container { display: flex; justify-content: space-between; align-items: baseline; }
+.format-divider .num {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.2em; color: var(--accent);
+}
+.format-divider .name {
+    font-family: 'Fraunces', serif; font-size: 32px; font-weight: 400;
+    letter-spacing: -0.015em;
+}
+.format-divider .desc {
+    font-size: 13px; color: var(--grey-light); max-width: 360px; text-align: right;
+}
+
+/* Shared section header */
+.section-header { margin: 80px 0 60px; max-width: 720px; }
+.section-eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px;
+}
+.section-header h2 {
+    font-family: 'Fraunces', serif; font-size: 48px; font-weight: 400;
+    line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.section-header h2 em { font-style: italic; color: var(--accent); }
+.section-header p { font-size: 16px; color: var(--grey-mid); line-height: 1.6; max-width: 580px; }
+
+section.demo { padding: 0 0 100px; }
+
+/* =============================================
+   FORMAT 1 — EQUAL QUADRANT (current)
+   ============================================= */
+.f1-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--line); border: 1px solid var(--line); }
+.f1-card {
+    background: var(--bg); padding: 48px 32px;
+    display: flex; flex-direction: column; min-height: 340px;
+}
+.f1-card .stat {
+    font-family: 'Fraunces', serif;
+    font-size: 72px; font-weight: 300;
+    line-height: 0.9; letter-spacing: -0.03em;
+    color: var(--accent); margin-bottom: 24px;
+}
+.f1-card .stat sup { font-size: 0.4em; vertical-align: super; color: var(--ink-soft); }
+.f1-card h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 16px;
+}
+.f1-card p { font-size: 14px; color: var(--grey-mid); line-height: 1.55; margin-top: auto; }
+
+/* =============================================
+   FORMAT 2 — FEATURE + SIDEBAR (asymmetric)
+   ============================================= */
+.f2-wrap { display: grid; grid-template-columns: 1.6fr 1fr; gap: 4px; background: var(--line); border: 1px solid var(--line); }
+.f2-feature {
+    background: var(--bg);
+    padding: 60px 48px;
+    display: flex; flex-direction: column;
+    min-height: 480px;
+}
+.f2-feature .pretag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    background: var(--accent); color: var(--bg);
+    padding: 4px 12px; border-radius: 2px;
+    align-self: flex-start; margin-bottom: 28px;
+}
+.f2-feature .big-stat {
+    font-family: 'Fraunces', serif;
+    font-size: 156px; font-weight: 300;
+    line-height: 0.85; letter-spacing: -0.04em;
+    color: var(--ink); margin-bottom: 12px;
+}
+.f2-feature .big-stat sup { font-size: 0.35em; color: var(--accent); vertical-align: super; }
+.f2-feature .label {
+    font-family: 'Fraunces', serif; font-size: 28px; font-style: italic;
+    color: var(--grey-mid); margin-bottom: 32px;
+}
+.f2-feature p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; margin-bottom: 14px; max-width: 540px; }
+.f2-feature .brand-strip {
+    margin-top: 28px;
+    padding-top: 24px; border-top: 1px solid var(--line);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--grey-mid); line-height: 1.9;
+}
+
+.f2-sidebar { background: var(--bg); display: flex; flex-direction: column; }
+.f2-side-item {
+    padding: 32px 32px;
+    border-bottom: 1px solid var(--line);
+    flex: 1;
+    display: flex; flex-direction: column;
+}
+.f2-side-item:last-child { border-bottom: 0; }
+.f2-side-item .s-stat {
+    font-family: 'Fraunces', serif; font-size: 42px; font-weight: 300;
+    color: var(--accent); line-height: 1; margin-bottom: 8px;
+}
+.f2-side-item h4 {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink); margin-bottom: 10px;
+}
+.f2-side-item p { font-size: 13px; color: var(--grey-mid); line-height: 1.5; }
+
+/* =============================================
+   FORMAT 3 — EDITORIAL STRIPES
+   ============================================= */
+.f3-wrap { border-top: 2px solid var(--ink); }
+.f3-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+    transition: background 0.2s;
+}
+.f3-row:hover { background: var(--bg-alt); }
+.f3-row .n {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    letter-spacing: 0.15em; color: var(--grey-light);
+}
+.f3-row .heading {
+    display: flex; align-items: baseline; gap: 24px;
+}
+.f3-row .heading .stat {
+    font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300;
+    color: var(--accent); line-height: 1; letter-spacing: -0.02em;
+}
+.f3-row .heading .stat sup { font-size: 0.4em; vertical-align: super; color: var(--ink); }
+.f3-row .heading .label {
+    font-family: 'Fraunces', serif; font-size: 24px; font-style: italic;
+    color: var(--ink); font-weight: 400;
+}
+.f3-row .copy { font-size: 14px; color: var(--grey-mid); line-height: 1.6; }
+
+/* =============================================
+   FORMAT 4 — TYPOGRAPHIC SHOWCASE (no cards)
+   ============================================= */
+.f4-wrap { padding: 40px 0; }
+.f4-stat-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+    padding: 32px 0;
+    margin-bottom: 80px;
+}
+.f4-stat-bar .item { text-align: center; border-right: 1px solid var(--line); padding: 0 20px; }
+.f4-stat-bar .item:last-child { border-right: 0; }
+.f4-stat-bar .item .num {
+    font-family: 'Fraunces', serif; font-size: 56px; font-weight: 300;
+    color: var(--accent); line-height: 1; letter-spacing: -0.03em;
+}
+.f4-stat-bar .item .num sup { font-size: 0.4em; vertical-align: super; color: var(--ink-soft); }
+.f4-stat-bar .item .label {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--ink-soft); margin-top: 12px;
+}
+.f4-showcase { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+.f4-showcase h3 {
+    font-family: 'Fraunces', serif; font-size: 40px; font-weight: 400;
+    line-height: 1.1; letter-spacing: -0.02em;
+}
+.f4-showcase h3 em { color: var(--accent); font-style: italic; }
+.f4-brands {
+    font-family: 'Fraunces', serif;
+    font-size: 24px; font-weight: 400; line-height: 1.65;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+}
+.f4-brands .dot { color: var(--accent); margin: 0 8px; }
+.f4-brands .other {
+    display: block; margin-top: 32px; padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'Inter', sans-serif; font-size: 13px;
+    color: var(--grey-mid); letter-spacing: 0.02em;
+    line-height: 1.7;
+}
+.f4-brands .other strong { color: var(--ink); font-weight: 600; }
+
+</style>
+</head>
+<body>
+
+<!-- ==========================
+     FORMAT 1 — EQUAL QUADRANT
+     ========================== -->
+<div class="format-divider">
+    <div class="container">
+        <div>
+            <div class="num">— FORMAT 01</div>
+            <div class="name">Equal Quadrant</div>
+        </div>
+        <div class="desc">Current B layout. Four equal cards, stat-led. All competencies weighted the same. Safe, modular, easiest to scale to 5+ items.</div>
+    </div>
+</div>
+<section class="demo">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— Where I have the most receipts</div>
+            <h2>Most travel agencies plan trips they've never taken. <em>I've slept in most of these.</em></h2>
+            <p>Generalist agency, deep pockets of expertise. If your trip touches any of these areas, you're getting more than google-able advice.</p>
+        </div>
+        <div class="f1-grid">
+            <div class="f1-card">
+                <div class="stat">20<sup>+</sup></div>
+                <h4>All-Inclusives</h4>
+                <p>Excellence, Zoetry, Le Blanc, Royalton, Sandals. I've stayed at the good ones and the ones that should be condemned. I have notes.</p>
+            </div>
+            <div class="f1-card">
+                <div class="stat">15<sup>+</sup></div>
+                <h4>Caribbean + Mexico</h4>
+                <p>DR, Riviera Maya, Cabo, Tulum, Turks, BVI, St. Lucia, Anguilla. I know which beaches have seaweed and which don't.</p>
+            </div>
+            <div class="f1-card">
+                <div class="stat">7+</div>
+                <h4>European cities</h4>
+                <p>The honeymoon circuits and the underrated alternatives. Italy, Greece, Spain, Croatia. Where to stay, where to eat.</p>
+            </div>
+            <div class="f1-card">
+                <div class="stat">∞</div>
+                <h4>Group logistics</h4>
+                <p>10-pax bach weekends to 30-person family trips. The work isn't the destination — it's the WhatsApp chats. That's my zone.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     FORMAT 2 — FEATURE + SIDEBAR
+     ========================== -->
+<div class="format-divider">
+    <div class="container">
+        <div>
+            <div class="num">— FORMAT 02</div>
+            <div class="name">Feature + Sidebar</div>
+        </div>
+        <div class="desc">Asymmetric. All-inclusives gets a feature treatment with massive stat + brand showcase. Other expertise areas stack vertically as sidebar items. Visually leads to the specialty without losing the other credentials.</div>
+    </div>
+</div>
+<section class="demo">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— Where I have the most receipts</div>
+            <h2>Most travel agencies plan trips they've never taken. <em>I've slept in most of these.</em></h2>
+            <p>Generalist agency, with one area where the depth runs especially deep.</p>
+        </div>
+        <div class="f2-wrap">
+            <div class="f2-feature">
+                <span class="pretag">Specialty</span>
+                <div class="big-stat">20<sup>+</sup></div>
+                <div class="label">all-inclusives, personally stayed</div>
+                <p>Most agencies plan resort trips they've only read about. That's how clients end up at Sandals when they should be at Excellence Playa Mujeres.</p>
+                <p>I know which property has a real kids' club, which adults-only is genuinely quiet at 11pm, and which $700/night room is actually worth $700.</p>
+                <div class="brand-strip">EXCELLENCE · ZOETRY · LE BLANC · SECRETS · DREAMS · SANDALS · BEACHES · ROYALTON · ATELIER · HYATT ZIVA · GRAND VELAS · ROSEWOOD MAYAKOBA · ANDAZ MAYAKOBA · NIZUC · UNICO 20˚87˚</div>
+            </div>
+            <div class="f2-sidebar">
+                <div class="f2-side-item">
+                    <div class="s-stat">15+</div>
+                    <h4>Caribbean + Mexico</h4>
+                    <p>Boots on the ground at most of the islands. Beyond the resorts — the destinations themselves.</p>
+                </div>
+                <div class="f2-side-item">
+                    <div class="s-stat">7+</div>
+                    <h4>European cities</h4>
+                    <p>Honeymoon circuits and underrated alternatives. Italy, Greece, Spain, Croatia.</p>
+                </div>
+                <div class="f2-side-item">
+                    <div class="s-stat">∞</div>
+                    <h4>Group logistics</h4>
+                    <p>Bach to milestone. The work is the WhatsApp chats. That's my zone.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     FORMAT 3 — EDITORIAL STRIPES
+     ========================== -->
+<div class="format-divider">
+    <div class="container">
+        <div>
+            <div class="num">— FORMAT 03</div>
+            <div class="name">Editorial Stripes</div>
+        </div>
+        <div class="desc">Horizontal full-width rows. More magazine-like. Reads like an index. Each expertise area gets a row with stat + name + description. Calm, sophisticated, slows the eye down.</div>
+    </div>
+</div>
+<section class="demo">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— Where I have the most receipts</div>
+            <h2>Most travel agencies plan trips they've never taken. <em>I've slept in most of these.</em></h2>
+            <p>Generalist agency, deep pockets of expertise. Four areas where the receipts are real.</p>
+        </div>
+        <div class="f3-wrap">
+            <div class="f3-row">
+                <div class="n">01 / SPECIALTY</div>
+                <div class="heading">
+                    <div class="stat">20<sup>+</sup></div>
+                    <div class="label">All-inclusives, stayed</div>
+                </div>
+                <div class="copy">Excellence, Zoetry, Le Blanc, Royalton, Sandals, Atelier, Hyatt Ziva. The good ones, the great ones, and the ones that should be condemned.</div>
+            </div>
+            <div class="f3-row">
+                <div class="n">02</div>
+                <div class="heading">
+                    <div class="stat">15<sup>+</sup></div>
+                    <div class="label">Caribbean + Mexico destinations</div>
+                </div>
+                <div class="copy">DR, Riviera Maya, Cabo, Tulum, Turks, BVI, St. Lucia, Anguilla. Beyond resorts — knowing the destinations themselves.</div>
+            </div>
+            <div class="f3-row">
+                <div class="n">03</div>
+                <div class="heading">
+                    <div class="stat">7<sup>+</sup></div>
+                    <div class="label">European cities</div>
+                </div>
+                <div class="copy">Honeymoon circuits and the underrated alternatives. Italy, Greece, Spain, France, Portugal, Croatia.</div>
+            </div>
+            <div class="f3-row">
+                <div class="n">04</div>
+                <div class="heading">
+                    <div class="stat">∞</div>
+                    <div class="label">Group logistics</div>
+                </div>
+                <div class="copy">10-pax bach weekends to 30-person family trips. The work isn't the destination — it's the WhatsApp chats. That's my zone.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     FORMAT 4 — TYPOGRAPHIC SHOWCASE
+     ========================== -->
+<div class="format-divider">
+    <div class="container">
+        <div>
+            <div class="num">— FORMAT 04</div>
+            <div class="name">Stat Bar + Brand Showcase</div>
+        </div>
+        <div class="desc">Stats live in a single horizontal bar (4 across). Below: typographic showcase of property names in serif display type. The brand names ARE the proof. Most editorial, most "magazine."</div>
+    </div>
+</div>
+<section class="demo">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— Where I have the most receipts</div>
+            <h2>Most travel agencies plan trips they've never taken. <em>I've slept in most of these.</em></h2>
+        </div>
+        <div class="f4-wrap">
+            <div class="f4-stat-bar">
+                <div class="item">
+                    <div class="num">20<sup>+</sup></div>
+                    <div class="label">All-Inclusives Stayed</div>
+                </div>
+                <div class="item">
+                    <div class="num">15<sup>+</sup></div>
+                    <div class="label">Caribbean + Mexico</div>
+                </div>
+                <div class="item">
+                    <div class="num">7<sup>+</sup></div>
+                    <div class="label">European Cities</div>
+                </div>
+                <div class="item">
+                    <div class="num">∞</div>
+                    <div class="label">Group Trips Run</div>
+                </div>
+            </div>
+            <div class="f4-showcase">
+                <h3>The all-inclusives <em>I've actually been to.</em></h3>
+                <div class="f4-brands">
+                    Excellence Playa Mujeres<span class="dot">·</span>Excellence Punta Cana<span class="dot">·</span>Le Blanc Cancun<span class="dot">·</span>Zoetry Agua Punta Cana<span class="dot">·</span>Atelier Playa Mujeres<span class="dot">·</span>Hyatt Ziva Cap Cana<span class="dot">·</span>Secrets Cap Cana<span class="dot">·</span>Dreams Riviera Cancun<span class="dot">·</span>Royalton CHIC<span class="dot">·</span>Sandals Royal Caribbean<span class="dot">·</span>Sandals Curaçao<span class="dot">·</span>Beaches Turks &amp; Caicos<span class="dot">·</span>Grand Velas Riviera Maya<span class="dot">·</span>Rosewood Mayakoba<span class="dot">·</span>Andaz Mayakoba<span class="dot">·</span>Nizuc<span class="dot">·</span>Unico 20˚87˚<span class="dot">·</span>+ several more.
+                    <span class="other"><strong>Plus the rest:</strong> 15+ Caribbean destinations beyond the all-inclusives. 7+ European city circuits. Group trip logistics from 10-pax bach weekends to 30-person family pilgrimages.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
