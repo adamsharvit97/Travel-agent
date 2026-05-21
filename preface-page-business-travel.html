@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Travel — Preface</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="preface-styles.css">
+<style>
+/* Business Travel page-specific */
+.bt-hero { padding: 120px 0 80px; }
+.bt-hero h1 em { color: var(--accent); font-style: italic; font-weight: 300; }
+
+.compare {
+    padding: 100px 0 80px;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.compare-table {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    margin-top: 60px;
+}
+.compare-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    padding: 20px 32px;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+}
+.compare-row:last-child { border-bottom: 0; }
+.compare-row.header {
+    background: var(--ink); color: var(--bg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600;
+}
+.compare-row .label {
+    font-size: 14px; color: var(--ink-soft); font-weight: 500;
+}
+.compare-row .old {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--grey-mid);
+}
+.compare-row .new {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; color: var(--accent); font-weight: 600;
+}
+.compare-row.header .label,
+.compare-row.header .old,
+.compare-row.header .new { color: var(--bg); font-family: 'JetBrains Mono', monospace; }
+.compare-row.header .new { color: var(--accent); }
+
+/* How it works */
+.how-bt { padding: 120px 0 80px; }
+.how-bt-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; background: var(--line); border: 1px solid var(--line); margin-top: 60px; }
+.how-bt-step {
+    background: var(--bg);
+    padding: 40px 28px;
+    min-height: 280px;
+}
+.how-bt-step .step-num {
+    font-family: 'Fraunces', serif; font-size: 64px;
+    line-height: 0.9; color: var(--accent); font-weight: 300;
+    margin-bottom: 24px;
+}
+.how-bt-step h4 {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 500; margin-bottom: 12px; line-height: 1.2;
+}
+.how-bt-step p {
+    font-size: 14px; color: var(--grey-mid); line-height: 1.55;
+}
+
+/* Receipt for BT */
+.bt-receipt { padding: 120px 0; }
+.bt-receipt-grid {
+    display: grid; grid-template-columns: 1.1fr 0.9fr;
+    gap: 100px; align-items: center;
+}
+.bt-receipt-left h2 {
+    font-family: 'Fraunces', serif; font-size: 56px;
+    font-weight: 400; line-height: 1.05;
+    letter-spacing: -0.025em; margin-bottom: 28px;
+}
+.bt-receipt-left h2 em { font-style: italic; color: var(--accent); }
+.bt-receipt-left p {
+    font-size: 17px; color: var(--grey-mid); line-height: 1.65;
+    margin-bottom: 14px;
+}
+.bt-receipt-card {
+    background: var(--ink); color: var(--bg);
+    padding: 56px 48px;
+    position: relative;
+}
+.bt-receipt-card .pin {
+    position: absolute; top: -10px; left: 40px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    background: var(--accent); color: var(--bg);
+    padding: 6px 12px; letter-spacing: 0.15em;
+}
+.bt-receipt-card .client {
+    font-size: 12px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--grey-light);
+    margin-bottom: 8px;
+}
+.bt-receipt-card .trip {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    margin-bottom: 32px;
+}
+.bt-receipt-card .line {
+    display: flex; justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0; border-bottom: 1px solid #2A2A2A;
+    font-size: 14px;
+}
+.bt-receipt-card .line.total {
+    border-bottom: 0; padding-top: 24px;
+    font-size: 16px; font-weight: 600; color: var(--accent);
+}
+.bt-receipt-card .line .val {
+    font-family: 'JetBrains Mono', monospace;
+}
+.bt-receipt-card .stamp {
+    margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid #2A2A2A;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    letter-spacing: 0.15em; color: var(--grey-light);
+}
+
+/* Pricing tiers */
+.tiers { padding: 100px 0 120px; background: var(--bg-alt); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--line); border: 1px solid var(--line); margin-top: 60px; }
+.tier {
+    background: var(--bg);
+    padding: 48px 36px;
+    display: flex; flex-direction: column;
+    min-height: 520px;
+}
+.tier.featured { background: var(--ink); color: var(--bg); }
+.tier .tier-name {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 20px; font-weight: 600;
+}
+.tier .tier-price {
+    font-family: 'Fraunces', serif; font-size: 48px; font-weight: 300;
+    line-height: 1; margin-bottom: 8px; letter-spacing: -0.02em;
+}
+.tier .tier-price small {
+    font-family: 'Inter', sans-serif; font-size: 14px; color: var(--grey-mid);
+    display: block; margin-top: 8px;
+}
+.tier.featured .tier-price small { color: var(--grey-light); }
+.tier ul {
+    list-style: none; padding: 0; margin-top: 32px;
+    flex: 1;
+}
+.tier ul li {
+    padding: 10px 0; border-bottom: 1px solid var(--line);
+    font-size: 14px; line-height: 1.55;
+    position: relative; padding-left: 24px;
+}
+.tier.featured ul li { border-bottom: 1px solid #2A2A2A; color: var(--grey-light); }
+.tier ul li::before {
+    content: "→"; position: absolute; left: 0;
+    color: var(--accent); font-weight: 600;
+}
+.tier .tier-cta {
+    margin-top: 32px;
+    background: var(--ink); color: var(--bg);
+    padding: 14px 24px; font-size: 13px; font-weight: 500;
+    border-radius: 4px; text-decoration: none;
+    text-align: center; display: block;
+    transition: background 0.2s;
+}
+.tier.featured .tier-cta { background: var(--accent); }
+.tier .tier-cta:hover { background: var(--accent); }
+
+/* FAQ */
+.faq { padding: 100px 0; }
+.faq-list { margin-top: 60px; }
+.faq-item {
+    border-bottom: 1px solid var(--line);
+    padding: 28px 0;
+}
+.faq-item .q {
+    font-family: 'Fraunces', serif; font-size: 22px;
+    font-weight: 500; margin-bottom: 10px;
+    line-height: 1.25; letter-spacing: -0.01em;
+}
+.faq-item .a {
+    font-size: 14px; color: var(--grey-mid); line-height: 1.65;
+    max-width: 760px;
+}
+
+/* CTA */
+.cta-section { background: var(--ink); color: var(--bg); padding: 120px 0; text-align: center; }
+.cta-section h2 {
+    font-family: 'Fraunces', serif; font-size: 56px; font-weight: 400;
+    line-height: 1.05; letter-spacing: -0.025em; margin-bottom: 28px;
+}
+.cta-section h2 em { color: var(--accent); font-style: italic; }
+.cta-section p { font-size: 17px; color: var(--grey-light); max-width: 580px; margin: 0 auto 40px; line-height: 1.6; }
+.cta-section .btn-primary {
+    background: var(--accent); color: var(--bg);
+    padding: 18px 36px; font-size: 15px; font-weight: 500;
+    border-radius: 4px; text-decoration: none; display: inline-block;
+    transition: background 0.2s;
+}
+.cta-section .btn-primary:hover { background: var(--bg); color: var(--ink); }
+</style>
+</head>
+<body>
+
+<nav>
+    <div class="container">
+        <a href="preface-homepage-B-hybrid.html" class="brand">Preface<span>.</span></a>
+        <div class="nav-links">
+            <a href="preface-page-all-inclusives.html">All-Inclusives</a>
+            <a href="preface-page-business-travel.html" style="color: var(--accent);">Business Travel</a>
+            <a href="preface-page-about.html">About</a>
+            <a href="#" class="nav-cta">Book a call</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero bt-hero">
+    <div class="container">
+        <div class="hero-eyebrow">— For founders + sales execs + partners</div>
+        <h1>Stop logging into Marriott.com. <em>I'll do it.</em></h1>
+        <p>Travel desk for Toronto-based founders, sales execs, and consulting partners. Hotels and flights booked in 60 minutes. Loyalty status optimized. Resort credits + upgrades + breakfast layered onto your business stays through Hyatt Privé, Marriott STARS, Hilton for Luxury — at zero cost above what Booking.com would charge.</p>
+        <div class="hero-ctas" style="margin-top: 40px;">
+            <a href="#" class="btn-primary">Book a 20-min onboarding call →</a>
+            <a href="#how" class="btn-link">How it works</a>
+        </div>
+    </div>
+</section>
+
+<!-- COMPARE -->
+<section class="compare">
+    <div class="container">
+        <div class="section-header" style="margin: 0 0 0;">
+            <div class="section-eyebrow">— Why people switch</div>
+            <h2>Same trip. <em>Different arrival.</em></h2>
+            <p>The hotel charges your card direct. The rate is identical. The difference is what's already waiting in your room.</p>
+        </div>
+        <div class="compare-table">
+            <div class="compare-row header">
+                <div class="label">$2,400 / 3-night Marriott in NYC</div>
+                <div class="old">Booked direct</div>
+                <div class="new">Through Preface</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Room rate</div>
+                <div class="old">$2,400</div>
+                <div class="new">$2,400</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Marriott points earned</div>
+                <div class="old">10× (Bonvoy member rate)</div>
+                <div class="new">10× (same — your account)</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Room category</div>
+                <div class="old">Booked: Deluxe King</div>
+                <div class="new">Arrived: Premium Suite</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Daily breakfast</div>
+                <div class="old">$45 / day out-of-pocket</div>
+                <div class="new">Complimentary (Bonvoy STARS)</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">F&amp;B credit</div>
+                <div class="old">$0</div>
+                <div class="new">$100 / stay</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Early check-in / late check-out</div>
+                <div class="old">Subject to availability</div>
+                <div class="new">Confirmed</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">When the flight cancels at 11pm</div>
+                <div class="old">Marriott.com chat queue</div>
+                <div class="new">Me. On WhatsApp.</div>
+            </div>
+            <div class="compare-row">
+                <div class="label">Added value on a 3-night stay</div>
+                <div class="old">$0</div>
+                <div class="new">~$430</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-bt" id="how">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— How it works</div>
+            <h2>From inbox to booking in 60 minutes. <em>That's the entire workflow.</em></h2>
+        </div>
+        <div class="how-bt-grid">
+            <div class="how-bt-step">
+                <div class="step-num">1</div>
+                <h4>20-min onboarding</h4>
+                <p>Quick call. I get your loyalty numbers, billing card, hotel/airline preferences, dietary stuff. Done once. Never repeated.</p>
+            </div>
+            <div class="how-bt-step">
+                <div class="step-num">2</div>
+                <h4>You text me the trip</h4>
+                <p>"Need NYC Sun–Wed, 4-star, near Midtown." Slack, email, iMessage — whatever's faster for you.</p>
+            </div>
+            <div class="how-bt-step">
+                <div class="step-num">3</div>
+                <h4>Booked in 60 minutes</h4>
+                <p>Confirmation lands in your inbox. Hotel charges your card direct. Privé / STARS / Impresario perks layered on automatically.</p>
+            </div>
+            <div class="how-bt-step">
+                <div class="step-num">4</div>
+                <h4>Something goes wrong?</h4>
+                <p>You text me. I fix it. Flight delayed, hotel overbooked, lounge access denied. I'm awake when the front desk isn't.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RECEIPT -->
+<section class="bt-receipt">
+    <div class="container">
+        <div class="bt-receipt-grid">
+            <div class="bt-receipt-left">
+                <div class="section-eyebrow">— A real Q1 receipt</div>
+                <h2>One Toronto founder. <em>32 nights last quarter.</em></h2>
+                <p>Names changed. Numbers real. This is the actual added value over what booking direct would have produced.</p>
+                <p>If you're spending 25+ nights/year in hotels and you're not capturing this kind of value, you're leaving money in the lobby.</p>
+            </div>
+            <div class="bt-receipt-card">
+                <div class="pin">Q1 2026</div>
+                <div class="client">Client · Toronto SaaS Founder</div>
+                <div class="trip">32 hotel nights · 8 trips · 6 cities</div>
+                <div class="line"><span>Bookings (Marriott + Hyatt + Hilton)</span><span class="val">$18,400</span></div>
+                <div class="line"><span>Room upgrades captured (cash value)</span><span class="val">+$1,940</span></div>
+                <div class="line"><span>Daily breakfast included (8 × 4 nights avg)</span><span class="val">+$540</span></div>
+                <div class="line"><span>F&amp;B + spa credits across program perks</span><span class="val">+$680</span></div>
+                <div class="line"><span>Status point bonuses (Privé/STARS)</span><span class="val">+$320</span></div>
+                <div class="line"><span>Disruption recovery (2 flight cancellations)</span><span class="val">+$450 saved</span></div>
+                <div class="line"><span>Cost over Marriott.com direct rate</span><span class="val">$0</span></div>
+                <div class="line total"><span>Total added value, one quarter</span><span class="val">+$3,930</span></div>
+                <div class="stamp">VIA PREFACE · TICO #XXXXXXX · Q1 2026</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRICING TIERS -->
+<section class="tiers">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— Three tiers</div>
+            <h2>Pick the level. <em>Most clients land in Standard.</em></h2>
+            <p>Standard is free — the hotels pay my commission. Concierge and Executive cover the work that's beyond hotel-only bookings.</p>
+        </div>
+        <div class="tier-grid">
+            <div class="tier">
+                <div class="tier-name">Standard</div>
+                <div class="tier-price">Free<small>per booking — hotel-funded</small></div>
+                <ul>
+                    <li>Hotel bookings under Privé / STARS / Virtuoso amenity programs</li>
+                    <li>Confirmed room upgrades + breakfast + credits</li>
+                    <li>Your loyalty points stay yours (booked under your number)</li>
+                    <li>Hotel charges your card direct</li>
+                    <li>48-hour booking SLA</li>
+                </ul>
+                <a href="#" class="tier-cta">Start with Standard →</a>
+            </div>
+            <div class="tier featured">
+                <div class="tier-name">Concierge</div>
+                <div class="tier-price">$150<small>/ month subscription · or $25/trip</small></div>
+                <ul>
+                    <li>Everything in Standard, plus:</li>
+                    <li>Flight bookings (with status-aware seat optimization)</li>
+                    <li>Restaurant reservations + car/transfer coordination</li>
+                    <li>Disruption recovery (flight cancellations, hotel overbookings)</li>
+                    <li>Lounge access advisory</li>
+                    <li>60-minute booking SLA</li>
+                </ul>
+                <a href="#" class="tier-cta">Most popular →</a>
+            </div>
+            <div class="tier">
+                <div class="tier-name">Executive</div>
+                <div class="tier-price">$500<small>/ month subscription</small></div>
+                <ul>
+                    <li>Everything in Concierge, plus:</li>
+                    <li>24/7 WhatsApp access</li>
+                    <li>Quarterly travel optimization review (status, loyalty, spend)</li>
+                    <li>Status-match coordination across Marriott / Hyatt / Hilton</li>
+                    <li>Spouse / family leisure trip planning included</li>
+                    <li>30-minute booking SLA</li>
+                </ul>
+                <a href="#" class="tier-cta">For 60+ nights / year →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-eyebrow">— FAQ</div>
+            <h2>Things people ask before signing up. <em>Honest answers.</em></h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="q">Do I lose my Marriott / Hyatt / Hilton points?</div>
+                <div class="a">No. I book under your loyalty number, your card on file. You earn the same points as if you booked direct. The Privé / STARS / Impresario amenity package layers on top of your existing status — it doesn't replace it.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">Can you book through my company's TMS (Concur, Egencia, TripActions)?</div>
+                <div class="a">No. This is a personal-account model. If your company has a corporate travel program, that's a different lane. Preface is for founders, partners, and sales execs whose travel is on their own card (or who get reimbursed via expense reports).</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">What hotels are covered by your amenity programs?</div>
+                <div class="a">All Marriott luxury &amp; lifestyle (Ritz, St. Regis, Edition, Luxury Collection, JW, W) via STARS. All Hyatt brands (Park Hyatt, Andaz, Alila, Miraval) via Privé. Hilton's luxury portfolio (Waldorf, Conrad, LXR) via for Luxury. Plus Four Seasons FSPP, Belmond Bellini Club, Rosewood Elite, Mandarin Oriental Fan Club, IHG Luxury &amp; Lifestyle. About 2,500+ properties globally.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">What about budget hotels (Holiday Inn Express, Hampton, Marriott Courtyard)?</div>
+                <div class="a">These aren't in the amenity programs — booking them through me gets you the same room as Booking.com with no perks. I'll still book them on Concierge or Executive tier (because it's faster than you doing it), but on Standard there's no value-add. Honest recommendation: book Hampton yourself, send me the luxury and full-service brands.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">What's the catch?</div>
+                <div class="a">Standard tier truly has no catch — Fora (my host agency) earns a commission from the hotel out of its marketing budget. The same commission Booking.com keeps for itself. I'd rather make the commission delivering you upgrades than have a faceless OTA keep it.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">What's your booking SLA?</div>
+                <div class="a">Standard: 48 hours. Concierge: 60 minutes during business hours, 4 hours overnight. Executive: 30 minutes business hours, 90 minutes overnight. Disruption recovery (flight cancelled, hotel issue): always within 15 minutes regardless of tier.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">How do you handle flights?</div>
+                <div class="a">Flight booking is Concierge tier and up. Through Fora's Flights Desk I can book published-fare tickets at the same rate as Expedia, plus access to some negotiated business-class fares (typically 10-20% off published business class on international routes). Status credits accrue to your accounts.</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">What's the minimum commitment?</div>
+                <div class="a">Standard: none. Concierge: month-to-month, cancel anytime. Executive: month-to-month, cancel anytime. No annual contracts, no setup fees.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="container">
+        <h2>Travel 25+ nights a year? <em>Let's get 20 minutes on the calendar.</em></h2>
+        <p>I'll walk you through your current pattern, show you what you'd save (time + amenity value), and we'll figure out if Standard or Concierge is the right fit. No pitch, no pressure.</p>
+        <a href="#" class="btn-primary">Book a 20-min onboarding call →</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="brand">Preface<span>.</span></div>
+                <div class="footer-tag">Travel for people who'd rather not Expedia it.</div>
+            </div>
+            <div class="footer-col">
+                <h5>Services</h5>
+                <a href="preface-page-all-inclusives.html">All-Inclusives</a>
+                <a href="preface-page-business-travel.html">Business Travel</a>
+                <a href="preface-homepage-B-hybrid.html">Honeymoons</a>
+                <a href="preface-homepage-B-hybrid.html">Family Trips</a>
+                <a href="preface-homepage-B-hybrid.html">Group + Milestone</a>
+            </div>
+            <div class="footer-col">
+                <h5>Read</h5>
+                <a href="preface-homepage-B-hybrid.html#newsletter">Newsletter</a>
+                <a href="preface-page-all-inclusives.html">All-Inclusive guide</a>
+                <a href="preface-page-about.html">About</a>
+            </div>
+            <div class="footer-col">
+                <h5>Reach</h5>
+                <a href="#">Book a call</a>
+                <a href="#">Email</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 PREFACE TRAVEL CO. · TICO #XXXXXXX</div>
+            <div>BUILT IN TORONTO</div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
