@@ -74,7 +74,8 @@ def html_body():
 <tr><td><strong>Hire philosophy</strong></td><td>Hire to free yourself from sales work</td><td>Hire to amplify the operator-in-chief; founder stays in the action through Y5</td></tr>
 <tr><td><strong>End-state</strong></td><td>Build to sell</td><td>Build to own, with exit optionality preserved &mdash; founder loves the operator role</td></tr>
 <tr><td><strong>Income arcs</strong></td><td>Single $400&ndash;600K Y5 midpoint</td><td>Five-tier ladder modeled: $15K / $25K / $35K / $80K / $250K monthly &mdash; each with specific gates</td></tr>
-<tr><td><strong>Brand direction</strong></td><td>Refined warm-classic (Cormorant Garamond, cream/burgundy)</td><td>Cool modern minimal visuals + playful, irreverent voice &mdash; Mejuri / Away / Glossier reference points (see separate brand deliverable)</td></tr>
+<tr><td><strong>Brand direction</strong></td><td>Refined warm-classic (Cormorant Garamond, cream/burgundy)</td><td>Cool modern minimal visuals + playful, irreverent voice &mdash; Mejuri / Away / Glossier reference points. <strong>Locked: Hybrid positioning (B), Format 02 (Feature + Sidebar) for expertise section.</strong></td></tr>
+<tr><td><strong>Specialty edge</strong></td><td>None identified</td><td><strong>All-inclusives (locked).</strong> Personally stayed at 20+ Caribbean/Mexico properties. Made visible as a credibility specialty but not branded as resort-only.</td></tr>
 <tr><td><strong>FAM trips</strong></td><td>Pursue actively in Y1</td><td>Only if fully comped &mdash; founder prefers personal travel investment</td></tr>
 <tr><td><strong>Sales motion</strong></td><td>Cold-led hunter</td><td>Relationship-led closer with partnership infrastructure</td></tr>
 </tbody>
@@ -239,7 +240,23 @@ def html_body():
 <h1><span class="num">Section 05</span>Market Position &mdash; The Thornhill Wedge</h1>
 <p class="section-intro">Where you start, how you expand, and what makes the trajectory defensible.</p>
 
-<h2>The Wedge: Toronto/Thornhill Jewish Community</h2>
+<h2>The Two-Axis Wedge</h2>
+<p>You have two distinct, reinforcing advantages. They operate on different axes and should both be activated from day one.</p>
+<table>
+<thead><tr><th>Axis</th><th>Your Wedge</th><th>How It Works</th></tr></thead>
+<tbody>
+<tr><td><strong>Network density</strong> (where you find clients)</td><td>Toronto/Thornhill Jewish community</td><td>Dense relational network produces warm-network bookings + partnership referrals from people who already trust you</td></tr>
+<tr><td><strong>Expertise depth</strong> (why they pick you over other advisors)</td><td>20+ all-inclusives personally stayed</td><td>Defensible credibility against generalist Fora advisors. Featured on website (Format 02), referenced in cold outreach, anchors content strategy</td></tr>
+</tbody>
+</table>
+<p>Network gets you discovered. Expertise gets you chosen. The two are independent &mdash; neither requires the other &mdash; but together they're harder to compete with than either alone.</p>
+
+<div class="callout gold">
+    <h4>The Strategic Rule</h4>
+    <p>Lead with all-inclusives in <strong>marketing</strong> (website, cold outreach, content), but operate from the Thornhill network for <strong>distribution</strong> (warm leads, partnerships, referrals). Don't conflate the two. The community is HOW you reach people; the all-inclusives is WHY they pick you.</p>
+</div>
+
+<h2>The Network Wedge: Toronto/Thornhill Jewish Community</h2>
 <p>This is your unfair advantage. The Thornhill Jewish community is:</p>
 <ul>
 <li><strong>Dense.</strong> Tight social network &mdash; everyone knows everyone within 1&ndash;2 degrees. Word of mouth moves fast.</li>
@@ -553,6 +570,20 @@ def html_body():
 </ol>
 <p>Expected output from a 150-person list with a dense Toronto community: 8&ndash;15 bookings in first 60 days + 5&ndash;10 partnership conversations opened.</p>
 
+<h2>The All-Inclusives Credibility Layer</h2>
+<p>Across every channel &mdash; cold outreach, partnership pitches, content, website &mdash; the "20+ all-inclusives stayed" credential should be visible and unforced. It's the single fastest way to differentiate against the 12,000 generic Fora advisors. Sample placements:</p>
+<table>
+<thead><tr><th>Channel</th><th>Credibility Insertion</th></tr></thead>
+<tbody>
+<tr><td>Cold email signature</td><td>"20+ all-inclusives stayed · TICO #XXXXXXX"</td></tr>
+<tr><td>LinkedIn headline</td><td>"Helping millennial families pick the right all-inclusive (and the rest of the trip)"</td></tr>
+<tr><td>Partnership pitch opener</td><td>"Most agencies plan resort trips they've never taken. I've been to 20+."</td></tr>
+<tr><td>Instagram bio</td><td>"20+ all-inclusives · Honeymoon &amp; family travel · Toronto"</td></tr>
+<tr><td>Newsletter subject lines</td><td>"Why Excellence Playa Mujeres beats Excellence Punta Cana", "5 all-inclusives I'd actually recommend in 2026"</td></tr>
+<tr><td>Cold reply hook (when prospect asks "why you")</td><td>"I've stayed at 20+ Caribbean and Mexican all-inclusives personally. Most agencies haven't."</td></tr>
+</tbody>
+</table>
+
 <h2>The Sample Network Message</h2>
 <div class="email-template">
 <div class="meta">CONTEXT: 1-TO-1 PERSONAL TEXT, NOT EMAIL BLAST</div>
@@ -621,17 +652,18 @@ No pressure &mdash; if you've already got a trip planned this year, I'd love to 
 </ol>
 <p><strong>Recommendation for V2:</strong> Option 2 from M4&ndash;M9. Option 1 from M10 onward if Y1 is hitting targets.</p>
 
-<h2>The Five Content Pillars (Voice-Adjusted)</h2>
+<h2>The Five Content Pillars (Voice-Adjusted, All-Inclusive-Weighted)</h2>
 <table>
 <thead><tr><th>Pillar</th><th>Voice-Right Hook</th><th>Cadence</th></tr></thead>
 <tbody>
-<tr><td><strong>The Math</strong></td><td>&ldquo;Here's what your $8K Expedia booking cost you in upgrades you didn't get&rdquo;</td><td>1x/wk LinkedIn + IG</td></tr>
-<tr><td><strong>The Receipt</strong></td><td>Screenshot of an actual upgrade with caption: &ldquo;She paid $5K. They gave her the $12K suite. This is what we do.&rdquo;</td><td>2x/wk IG story</td></tr>
-<tr><td><strong>The Hot Take</strong></td><td>&ldquo;Sandals is mid. Here are 3 all-inclusives that aren't.&rdquo;</td><td>1x/wk TikTok</td></tr>
-<tr><td><strong>The Insider</strong></td><td>&ldquo;The Aman Tokyo room they don't show on the website&rdquo;</td><td>1x/wk newsletter</td></tr>
-<tr><td><strong>The Story</strong></td><td>Client trip recap (real names with permission)</td><td>1x/biweekly newsletter</td></tr>
+<tr><td><strong>The All-Inclusive Take</strong></td><td>&ldquo;Excellence Playa Mujeres vs Excellence Punta Cana &mdash; I've been to both. Here's the call.&rdquo;</td><td>1x/wk TikTok + IG</td></tr>
+<tr><td><strong>The Math</strong></td><td>&ldquo;Here's what your $8K all-inclusive cost you in club-level access you didn't get&rdquo;</td><td>1x/wk LinkedIn + IG</td></tr>
+<tr><td><strong>The Receipt</strong></td><td>Screenshot of an actual room-category upgrade with caption: &ldquo;They booked Junior Suite. They arrived to Excellence Club Rooftop.&rdquo;</td><td>2x/wk IG story</td></tr>
+<tr><td><strong>The Insider</strong></td><td>&ldquo;Where the staff actually eats at Zoetry Agua. The off-menu thing the concierge won't volunteer.&rdquo;</td><td>1x/wk newsletter</td></tr>
+<tr><td><strong>The Story</strong></td><td>Client trip recap (with permission)</td><td>1x/biweekly newsletter</td></tr>
 </tbody>
 </table>
+<p class="small">Three of five pillars now lean on the all-inclusives expertise. The other two stay broad to keep brand from feeling resort-only.</p>
 
 <h2>Newsletter as the Primary Content Asset</h2>
 <p>Biweekly (not weekly &mdash; sustainable). 1,200&ndash;1,500 words. Format: one insider tip + one client story + one travel deal. Build to 5K subs by Y2 end. Paid tier ($10/mo) launches at 5K subs &mdash; templates, exclusive deals, monthly Q&amp;A call. Target 2% paid conversion = $1K/mo MRR by Y2 H2.</p>
@@ -760,6 +792,7 @@ No pressure &mdash; if you've already got a trip planned this year, I'd love to 
 <tr><td>12</td><td>Supplier commission compression</td><td>Industry-wide cuts</td><td>Diversify supplier mix; lean into FIT independents</td></tr>
 <tr><td>13</td><td>Recession Y2&ndash;Y3</td><td>Discretionary travel drops 20%+</td><td>Shift mix to family + milestone (less elastic) away from bach</td></tr>
 <tr><td>14</td><td><strong>NEW: Network exhaustion</strong></td><td>Y2 H2 with warm-network referrals slowing dramatically</td><td>Cold outreach + content must be producing real volume by Y2 to bridge</td></tr>
+<tr><td>15</td><td><strong>NEW: Pigeonholed as resort-only</strong></td><td>By Y2, &gt;70% of bookings are all-inclusives; missing higher-margin non-resort trips</td><td>Format 02 (B hybrid) is specifically designed to surface all-inclusives without making them the brand identity. Monitor mix quarterly; rebalance content if it skews too far.</td></tr>
 </tbody>
 </table>
 </section>
@@ -894,7 +927,9 @@ No pressure &mdash; if you've already got a trip planned this year, I'd love to 
 <div class="callout">
 <p><em>&ldquo;Thanks for grabbing coffee. Quick context: I just got my travel-advisor license through Fora Travel. It's the millennial-focused agency &mdash; we book the same hotels you'd see on Expedia, except suppliers pay us a commission AND give your clients upgrades, breakfast, credits, the stuff you can't get direct.</em></p>
 <p><em>The reason I wanted to meet: the best clients in this business come from people like you &mdash; a planner / agent / broker who's in the room when couples and families are making big decisions. The arrangement: anyone you send my way, I send you 25% of my commission. Paid quarterly. No contract, no quota. If you send me ten couples, you make a few thousand dollars passive income. If you send me zero, no problem.</em></p>
-<p><em>The reason this works in our community specifically: you and I know everyone. The same family that's planning a Pesach trip is planning their daughter's bat mitzvah trip is planning their parents' 60th. One trusted advisor handles all of it. That advisor should be me &mdash; and you should get paid for it.</em></p>
+<p><em>One thing that's specifically true for me: I've personally stayed at 20+ all-inclusives across the Caribbean and Mexico. So if you're referring couples who want a resort honeymoon, they're not getting a generic agent &mdash; they're getting someone who's actually been to most of these properties.</em></p>
+
+<p><em>And the rest of the time: you and I know everyone in this community. The same family that's planning a Pesach trip is planning their daughter's bat mitzvah trip is planning their parents' 60th. One trusted advisor handles all of it. That advisor should be me &mdash; and you should get paid for it.</em></p>
 <p><em>Want to try it for 90 days, no formal commitment?&rdquo;</em></p>
 </div>
 
