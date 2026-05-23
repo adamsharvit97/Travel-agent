@@ -1,0 +1,22 @@
+/* TEAM */
+
+  Founder: Placeholder Name
+  Site: https://latitude43.travel
+  Office: Toronto, 43°N
+  Contact: office [at] latitude43.travel
+
+/* SITE */
+
+  Launched: 2026
+  Standards: HTML5, CSS3, WCAG AA
+  Type: Hand-built. No frameworks.
+  Typefaces: EB Garamond, Inter
+  Colours: Navy #0E1A2B, Ivory #F4EFE6, Brass #B8924C
+
+/* OPERATIONS */
+
+  Host agency: Fora Travel LLC, IATA-accredited
+  Hours: 09:00–18:00 ET, Monday to Friday
+  Desk: 24 / 365, 60-minute SLA
+
+                            43°N

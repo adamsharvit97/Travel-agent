@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Latitude 43 — Members' Travel Office</title>
+<style>
+  :root {
+    --ink: #0e1116;
+    --paper: #f6f3ec;
+    --rule: #1a1f2a;
+    --muted: #5a5f6b;
+    --accent: #7a4a1f;
+    --serif: "EB Garamond", "Garamond", "Hoefler Text", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #2a2a2a; color: var(--ink); font-family: var(--sans); }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 24px auto;
+    background: var(--paper);
+    padding: 0.6in 0.7in 0.55in;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 30px;
+    letter-spacing: 0.5px;
+    color: var(--ink);
+    line-height: 1;
+  }
+  .wordmark .num { font-style: italic; }
+  .meta {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.5;
+  }
+  .tagline {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-style: italic;
+    color: var(--ink);
+    margin-top: 14px;
+    letter-spacing: 0.2px;
+  }
+  .pitch {
+    margin-top: 22px;
+    font-family: var(--serif);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 6.6in;
+  }
+  .pillars {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .pillar { }
+  .pillar .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+  }
+  .pillar h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 17px;
+    margin: 4px 0 6px;
+    letter-spacing: 0.2px;
+  }
+  .pillar p {
+    font-family: var(--sans);
+    font-size: 11px;
+    line-height: 1.55;
+    color: var(--ink);
+    margin: 0;
+  }
+  .atlas {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+  }
+  .atlas h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+    color: var(--muted);
+  }
+  .atlas-table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+  .atlas-table .col {
+    padding: 12px 14px;
+    border-right: 1px solid var(--rule);
+  }
+  .atlas-table .col:last-child { border-right: none; }
+  .atlas-table .tier {
+    font-family: var(--serif);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  .atlas-table .price {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 4px;
+    color: var(--ink);
+  }
+  .atlas-table .price small {
+    font-family: var(--sans);
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 2px;
+  }
+  .atlas-table .desc {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    line-height: 1.5;
+    margin-top: 8px;
+    color: var(--ink);
+  }
+  .scenario {
+    margin-top: 22px;
+    padding: 16px 18px;
+    background: #efeae0;
+    border-left: 3px solid var(--accent);
+  }
+  .scenario h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    color: var(--muted);
+  }
+  .scenario p {
+    font-family: var(--serif);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+    color: var(--ink);
+  }
+  footer {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .contact {
+    font-family: var(--sans);
+    font-size: 10.5px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+  .contact .label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .sla-stamp {
+    border: 1.5px solid var(--rule);
+    padding: 10px 14px;
+    text-align: center;
+    font-family: var(--serif);
+    line-height: 1.2;
+  }
+  .sla-stamp .big {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    display: block;
+  }
+  .sla-stamp .small {
+    font-family: var(--sans);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-top: 4px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      min-height: 100vh;
+      padding: 0.55in 0.6in;
+    }
+    @page { size: Letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="wordmark">Latitude <span class="num">43°</span></div>
+    <div class="meta">
+      Members' Travel Office<br />
+      Toronto · 43.65°N · Eastern Time
+    </div>
+  </header>
+
+  <div class="tagline">
+    For the founder, the partner, the principal. One named advisor. 24 / 7 / 365.
+  </div>
+
+  <p class="pitch">
+    Latitude 43 is a members' travel office built for senior buyers whose travel is too consequential for a card concierge and too small for an enterprise TMC. We sell three things — rewards-program leverage, convenience, and 24/7 service — under a single membership called Latitude Atlas. One named advisor on your contract. Sixty-minute first response in writing, day or night. Virtuoso, Fine Hotels and Resorts, STARS, and Four Seasons Preferred Partner access on every hotel you already book. Toronto-based, Eastern Time, with the operating discipline of a software company.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="num">I.</div>
+      <h3>Rewards</h3>
+      <p>Virtuoso, FHR, STARS, FSPP, Rosewood Elite, Mandarin Fan Club, Aman Privé Reserve. The amenity layer that compounds across a year of stays at no incremental cost to the booking.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">II.</div>
+      <h3>Convenience</h3>
+      <p>One number. One inbox. One travel profile, kept current. One named advisor for your professional and personal travel. No call trees, no pod rotation, no Concur friction.</p>
+    </div>
+    <div class="pillar">
+      <div class="num">III.</div>
+      <h3>24 / 7 Service</h3>
+      <p>Sixty-minute first-response SLA, written. The advisor on your contract is the advisor on the rebooking. Pacific to Asia coverage by named human, not a shared overnight pool.</p>
+    </div>
+  </div>
+
+  <div class="atlas">
+    <h2>Latitude Atlas — Membership</h2>
+    <div class="atlas-table">
+      <div class="col">
+        <div class="tier">Atlas Principal</div>
+        <div class="price">$3,600 <small>per year · one traveler</small></div>
+        <p class="desc">For the founder, the GP, the solo principal. Unlimited bookings. 60-minute response SLA. Up to ~40 trips a year.</p>
+      </div>
+      <div class="col">
+        <div class="tier">Atlas Office</div>
+        <div class="price">$12,000 <small>per year · up to 5 travelers</small></div>
+        <p class="desc">For a small partnership or executive team. Shared travel profile. Quarterly review with the principal and CFO/COO.</p>
+      </div>
+      <div class="col">
+        <div class="tier">Atlas Firm</div>
+        <div class="price">$36,000 <small>per year · up to 15 travelers</small></div>
+        <p class="desc">For a firm with a CFO, an EA, or a travel manager on the other side. Includes Latitude Reports — a T&amp;E dashboard built for the finance team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scenario">
+    <h2>A representative scenario</h2>
+    <p>
+      Friday, 6:14 p.m. The 7:00 p.m. United departure from Newark to Munich cancels for mechanical. The executive — your client — is at gate C123 in Terminal C with a 9 a.m. board meeting on Saturday at the Bayerischer Hof. At 6:17 p.m. they text Latitude 43. At 6:19, we acknowledge. At 6:31, we have called the Lufthansa station manager at EWR and protected a seat on LH 411 at 9:55 p.m. into Munich. At 6:34, we have held a same-night fallback at the Westin Newark Airport in case the protected seat falls through. At 6:42, we have rebooked the ground transfer in Munich, notified the Bayerischer Hof of the changed arrival, and forwarded the GM a note. The client is in the United Polaris lounge by 7:00. The board meeting begins on time at 9:00 the next morning. Total written exchanges with the client: four.
+    </p>
+  </div>
+
+  <footer>
+    <div class="contact">
+      <span class="label">Contact</span>
+      [Founder name] · Founder &amp; Principal<br />
+      [direct mobile] · [email]<br />
+      latitude43.travel · Toronto, ON
+    </div>
+    <div class="sla-stamp">
+      <span class="big">60-min SLA</span>
+      <span class="small">Day or night · 365</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

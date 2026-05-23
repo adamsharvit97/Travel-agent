@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Office — Latitude 43</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --navy: #0E1A2B;
+    --navy-soft: #1a2940;
+    --ivory: #F4EFE6;
+    --ivory-dim: #ECE5D7;
+    --brass: #B8924C;
+    --brass-soft: #C9A461;
+    --ink: #0E1A2B;
+    --muted: #6b7280;
+    --rule: #d8cfbf;
+    --green: #4a6b4a;
+    --amber: #a8782a;
+    --red: #8b3a3a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'EB Garamond', Georgia, serif; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 18px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--brass);
+  }
+  .wordmark {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  .wordmark .dot { color: var(--brass); margin: 0 10px; }
+  .wordmark .office {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--brass-soft);
+    font-weight: 500;
+  }
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 12px;
+  }
+  .desk-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ivory-dim);
+    letter-spacing: 0.04em;
+  }
+  .pulse {
+    width: 8px; height: 8px;
+    background: var(--brass);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(184,146,76,0.7);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(184,146,76,0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(184,146,76,0); }
+    100% { box-shadow: 0 0 0 0 rgba(184,146,76,0); }
+  }
+  .member-chip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--brass);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .member-meta { line-height: 1.3; }
+  .member-name { color: var(--ivory); font-weight: 500; }
+  .member-tier {
+    font-size: 10px;
+    color: var(--brass-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+
+  /* Welcome */
+  .welcome {
+    padding: 56px 48px 32px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--ivory);
+  }
+  .welcome h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .welcome h1 em { color: var(--brass); font-style: normal; }
+  .welcome-sub {
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Grid */
+  .layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px 48px 64px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+  }
+  .col-main { display: flex; flex-direction: column; gap: 28px; }
+  .col-side { display: flex; flex-direction: column; gap: 28px; }
+
+  /* Cards */
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 28px 32px;
+  }
+  .card-hd {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 14px;
+    margin-bottom: 20px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--brass);
+    font-weight: 600;
+  }
+  .card-hd h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+  .card-action {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--brass);
+    padding-bottom: 2px;
+    cursor: pointer;
+  }
+
+  /* Next trip */
+  .trip-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+  .trip-route {
+    font-family: 'EB Garamond', serif;
+    font-size: 44px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+  }
+  .trip-route .arrow { color: var(--brass); margin: 0 14px; }
+  .trip-when {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    letter-spacing: 0.04em;
+  }
+  .trip-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 13px;
+  }
+  .trip-meta-row {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .trip-meta-row:last-child { border: none; }
+  .trip-meta-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .trip-meta-value { color: var(--ink); }
+  .status-pill {
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 3px 8px;
+    border-radius: 1px;
+    font-weight: 600;
+  }
+  .pill-confirmed { background: rgba(74,107,74,0.12); color: var(--green); }
+  .pill-hold { background: rgba(168,120,42,0.12); color: var(--amber); }
+  .pill-research { background: rgba(184,146,76,0.14); color: var(--brass); }
+
+  /* Upcoming */
+  .upcoming-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .upcoming-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 110px;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .upcoming-row:last-child { border: none; }
+  .upcoming-date {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--navy);
+  }
+  .upcoming-date .day {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    display: block;
+    margin-top: 2px;
+    font-family: 'Inter', sans-serif;
+  }
+  .upcoming-route { font-weight: 500; font-size: 14px; }
+  .upcoming-purpose { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .upcoming-detail { font-size: 13px; color: var(--muted); }
+
+  /* Reports */
+  .reports-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .stat {
+    border-left: 2px solid var(--brass);
+    padding-left: 16px;
+  }
+  .stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .stat-value {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .stat-delta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+    letter-spacing: 0.04em;
+  }
+  .charts-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .chart-wrap { position: relative; height: 160px; }
+  .chart-title {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  /* Desk status */
+  .desk-card {
+    background: var(--navy);
+    color: var(--ivory);
+    border: none;
+  }
+  .desk-card .card-hd {
+    border-bottom: 1px solid rgba(184,146,76,0.35);
+  }
+  .desk-card .card-hd h2 { color: var(--ivory); }
+  .desk-card .eyebrow { color: var(--brass-soft); }
+  .desk-officer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .desk-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--brass);
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+  }
+  .desk-officer-name {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    color: var(--ivory);
+  }
+  .desk-officer-role {
+    font-size: 11px;
+    color: var(--brass-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-top: 2px;
+  }
+  .desk-stat {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 13px;
+    border-bottom: 1px solid rgba(184,146,76,0.2);
+  }
+  .desk-stat:last-of-type { border: none; }
+  .desk-stat .lbl { color: var(--ivory-dim); font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; }
+  .desk-stat .val { color: var(--brass-soft); font-weight: 500; }
+  .desk-cta {
+    display: block;
+    text-align: center;
+    background: var(--brass);
+    color: var(--navy);
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* Activity */
+  .activity-row {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+  }
+  .activity-row:last-child { border: none; }
+  .activity-bullet {
+    width: 6px; height: 6px;
+    background: var(--brass);
+    border-radius: 50%;
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+  .activity-body { flex: 1; }
+  .activity-time {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Open requests */
+  .request-card {
+    background: var(--ivory-dim);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+  }
+  .request-status {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--brass);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .request-body {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.4;
+  }
+  .request-meta {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Quick actions */
+  .qa-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .qa-tile {
+    background: #fff;
+    padding: 22px 18px;
+    text-decoration: none;
+    color: var(--navy);
+    transition: background 0.2s;
+    cursor: pointer;
+  }
+  .qa-tile:hover { background: var(--ivory-dim); }
+  .qa-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 4px;
+  }
+  .qa-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  footer {
+    padding: 32px 48px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    display: flex;
+    justify-content: space-between;
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wordmark">
+    Latitude 43 <span class="dot">·</span> <span class="office">Atlas Office</span>
+  </div>
+  <div class="topbar-right">
+    <div class="desk-status">
+      <span class="pulse"></span>
+      <span>Desk open · Last response 12 minutes ago</span>
+    </div>
+    <div class="member-chip">
+      <div class="avatar">EM</div>
+      <div class="member-meta">
+        <div class="member-name">Eleanor Marchetti</div>
+        <div class="member-tier">Atlas · Member since Jan 2026</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="welcome">
+  <h1 class="serif">Good afternoon, Eleanor. Your next departure is in <em>38 hours</em>.</h1>
+  <div class="welcome-sub">Thursday, 23 May 2026 · 14:42 EDT · Toronto</div>
+</section>
+
+<main class="layout">
+
+  <div class="col-main">
+
+    <!-- Next Trip -->
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Next Departure</div>
+          <h2>The Mark, New York</h2>
+        </div>
+        <a class="card-action">View full itinerary</a>
+      </div>
+
+      <div class="trip-hero">
+        <div>
+          <div class="trip-route serif">YYZ <span class="arrow">→</span> JFK</div>
+          <div class="trip-when">Thursday, 25 May · departing 07:35 · Air Canada 704</div>
+        </div>
+        <div class="trip-meta">
+          <div class="trip-meta-row">
+            <span class="trip-meta-label">Flight</span>
+            <span class="trip-meta-value">AC 704 · 1A · Signature Class</span>
+            <span class="status-pill pill-confirmed">Confirmed</span>
+          </div>
+          <div class="trip-meta-row">
+            <span class="trip-meta-label">Hotel</span>
+            <span class="trip-meta-value">The Mark · Park Suite · 3 nights</span>
+            <span class="status-pill pill-confirmed">Confirmed</span>
+          </div>
+          <div class="trip-meta-row">
+            <span class="trip-meta-label">Ground</span>
+            <span class="trip-meta-value">Blacklane · YYZ pickup 05:20</span>
+            <span class="status-pill pill-confirmed">Confirmed</span>
+          </div>
+          <div class="trip-meta-row">
+            <span class="trip-meta-label">Return</span>
+            <span class="trip-meta-value">AC 723 · Sunday 20:10</span>
+            <span class="status-pill pill-confirmed">Confirmed</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Upcoming Trips -->
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Upcoming</div>
+          <h2>The next four trips</h2>
+        </div>
+        <a class="card-action">See all 14</a>
+      </div>
+      <div class="upcoming-list">
+        <div class="upcoming-row">
+          <div class="upcoming-date serif">12 Jun<span class="day">Wed</span></div>
+          <div>
+            <div class="upcoming-route">YYZ → SFO → YYZ</div>
+            <div class="upcoming-purpose">Sand Hill meetings · 2 nights</div>
+          </div>
+          <div class="upcoming-detail">Rosewood Sand Hill</div>
+          <span class="status-pill pill-confirmed">Confirmed</span>
+        </div>
+        <div class="upcoming-row">
+          <div class="upcoming-date serif">28 Jun<span class="day">Fri</span></div>
+          <div>
+            <div class="upcoming-route">YYZ → LHR → ZRH</div>
+            <div class="upcoming-purpose">Family Office Forum · 5 nights</div>
+          </div>
+          <div class="upcoming-detail">Mandarin Geneva · pending upgrade</div>
+          <span class="status-pill pill-hold">On hold</span>
+        </div>
+        <div class="upcoming-row">
+          <div class="upcoming-date serif">14 Jul<span class="day">Mon</span></div>
+          <div>
+            <div class="upcoming-route">YYZ → BOS → YYZ</div>
+            <div class="upcoming-purpose">Board offsite · 2 nights</div>
+          </div>
+          <div class="upcoming-detail">XV Beacon</div>
+          <span class="status-pill pill-confirmed">Confirmed</span>
+        </div>
+        <div class="upcoming-row">
+          <div class="upcoming-date serif">02 Aug<span class="day">Sat</span></div>
+          <div>
+            <div class="upcoming-route">YYZ → JFK → LIN</div>
+            <div class="upcoming-purpose">Personal · Lake Como · 8 nights</div>
+          </div>
+          <div class="upcoming-detail">Villa d'Este · researching ground</div>
+          <span class="status-pill pill-research">In progress</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Latitude Reports -->
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Latitude Reports</div>
+          <h2>Year to date</h2>
+        </div>
+        <a class="card-action">Open full report</a>
+      </div>
+
+      <div class="reports-grid">
+        <div class="stat">
+          <div class="stat-label">YTD Spend</div>
+          <div class="stat-value">$48,200</div>
+          <div class="stat-delta">across 14 trips</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Trips</div>
+          <div class="stat-value">14</div>
+          <div class="stat-delta">42 nights away</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Rewards Captured</div>
+          <div class="stat-value">$3,840</div>
+          <div class="stat-delta">upgrades + amenities</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">CO2</div>
+          <div class="stat-value">3.2 t</div>
+          <div class="stat-delta">offset enrolled</div>
+        </div>
+      </div>
+
+      <div class="charts-row">
+        <div>
+          <div class="chart-title">Spend by category</div>
+          <div class="chart-wrap"><canvas id="spendChart"></canvas></div>
+        </div>
+        <div>
+          <div class="chart-title">CO2 trend</div>
+          <div class="chart-wrap"><canvas id="co2Chart"></canvas></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="col-side">
+
+    <article class="card desk-card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">The Desk</div>
+          <h2>Live status</h2>
+        </div>
+      </div>
+      <div class="desk-officer">
+        <div class="desk-avatar">SK</div>
+        <div>
+          <div class="desk-officer-name">Sarah K.</div>
+          <div class="desk-officer-role">Lead Advisor on duty</div>
+        </div>
+      </div>
+      <div class="desk-stat">
+        <span class="lbl">Response time</span>
+        <span class="val">Under 15 minutes</span>
+      </div>
+      <div class="desk-stat">
+        <span class="lbl">Shift ends</span>
+        <span class="val">18:00 EDT</span>
+      </div>
+      <div class="desk-stat">
+        <span class="lbl">Overnight cover</span>
+        <span class="val">Marcus T. · Berlin</span>
+      </div>
+      <a class="desk-cta">Open the Desk</a>
+    </article>
+
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Open Requests</div>
+          <h2>In progress</h2>
+        </div>
+      </div>
+      <div class="request-card">
+        <div class="request-status">Researching</div>
+        <div class="request-body serif">Berlin hotel for 12 to 14 November. Considering Hotel de Rome and Soho House.</div>
+        <div class="request-meta">Opened 18 hours ago · Sarah K.</div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Recent Activity</div>
+          <h2>Last 72 hours</h2>
+        </div>
+      </div>
+      <div class="activity-row">
+        <span class="activity-bullet"></span>
+        <div class="activity-body">
+          Mandarin Oriental Geneva upgraded to executive suite.
+          <div class="activity-time">2 hours ago · no charge</div>
+        </div>
+      </div>
+      <div class="activity-row">
+        <span class="activity-bullet"></span>
+        <div class="activity-body">
+          Hertz SFO rate revised. Saved $112 on the 12 June pickup.
+          <div class="activity-time">Yesterday · 16:24 EDT</div>
+        </div>
+      </div>
+      <div class="activity-row">
+        <span class="activity-bullet"></span>
+        <div class="activity-body">
+          Atlas Reports Q1 is ready for review.
+          <div class="activity-time">Monday · 09:00 EDT</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-hd">
+        <div>
+          <div class="eyebrow">Quick Actions</div>
+          <h2>What's next</h2>
+        </div>
+      </div>
+      <div class="qa-grid">
+        <a class="qa-tile">
+          <div class="qa-title">Request a trip</div>
+          <div class="qa-sub">Brief us in 90 seconds</div>
+        </a>
+        <a class="qa-tile">
+          <div class="qa-title">Change details</div>
+          <div class="qa-sub">Modify an upcoming trip</div>
+        </a>
+        <a class="qa-tile">
+          <div class="qa-title">Open the Desk</div>
+          <div class="qa-sub">Direct line to your advisor</div>
+        </a>
+        <a class="qa-tile">
+          <div class="qa-title">See Reports</div>
+          <div class="qa-sub">Spend, rewards, footprint</div>
+        </a>
+      </div>
+    </article>
+
+  </aside>
+
+</main>
+
+<footer>
+  <span>Latitude 43 Travel Advisory · Toronto · Hosted by Fora</span>
+  <span>Atlas Office v1.0 · Confidential to the member</span>
+</footer>
+
+<script>
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = '#6b7280';
+
+  // Spend by category — horizontal bar
+  new Chart(document.getElementById('spendChart'), {
+    type: 'bar',
+    data: {
+      labels: ['Air', 'Hotel', 'Ground', 'Other'],
+      datasets: [{
+        data: [21400, 19600, 4800, 2400],
+        backgroundColor: ['#0E1A2B', '#B8924C', '#6b7280', '#d8cfbf'],
+        borderRadius: 1,
+        barThickness: 18
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          grid: { color: '#ECE5D7' },
+          ticks: { callback: v => '$' + (v/1000) + 'k' }
+        },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+
+  // CO2 trend — line
+  new Chart(document.getElementById('co2Chart'), {
+    type: 'line',
+    data: {
+      labels: ['J','F','M','A','M'],
+      datasets: [{
+        data: [0.4, 0.8, 1.4, 2.2, 3.2],
+        borderColor: '#B8924C',
+        backgroundColor: 'rgba(184,146,76,0.12)',
+        tension: 0.35,
+        fill: true,
+        borderWidth: 2,
+        pointBackgroundColor: '#0E1A2B',
+        pointRadius: 3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { grid: { color: '#ECE5D7' }, ticks: { callback: v => v + 't' } },
+        x: { grid: { display: false } }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

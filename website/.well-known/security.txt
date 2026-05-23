@@ -1,0 +1,5 @@
+Contact: mailto:security@latitude43.travel
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://latitude43.travel/.well-known/security.txt
+Policy: https://latitude43.travel/security

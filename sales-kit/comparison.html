@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Latitude 43 — Comparative Brief</title>
+<style>
+  :root {
+    --ink: #0e1116;
+    --paper: #f6f3ec;
+    --rule: #1a1f2a;
+    --muted: #5a5f6b;
+    --soft: #efeae0;
+    --accent: #7a4a1f;
+    --highlight: #f0e3c8;
+    --serif: "EB Garamond", "Garamond", "Hoefler Text", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #2a2a2a; color: var(--ink); font-family: var(--sans); }
+  .page {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 24px auto;
+    background: var(--paper);
+    padding: 0.5in 0.55in;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+    page-break-after: always;
+  }
+  .page:last-child { page-break-after: auto; }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .wordmark {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+  }
+  .wordmark .num { font-style: italic; }
+  .doc-title {
+    font-family: var(--sans);
+    font-size: 9.5px;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: right;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    margin: 16px 0 4px;
+  }
+  h1 .em { font-style: italic; color: var(--accent); }
+  .deck {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--sans);
+    font-size: 9.5px;
+    line-height: 1.5;
+    table-layout: fixed;
+  }
+  table.compare th, table.compare td {
+    border: 1px solid var(--rule);
+    padding: 8px 9px;
+    vertical-align: top;
+    text-align: left;
+  }
+  table.compare thead th {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+    text-transform: none;
+  }
+  table.compare thead th.lat43 {
+    background: var(--accent);
+  }
+  table.compare tbody th {
+    background: var(--soft);
+    font-weight: 600;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 110px;
+  }
+  table.compare td.lat43 {
+    background: var(--highlight);
+  }
+  .gap-callout {
+    margin-top: 14px;
+    padding: 12px 14px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .gap-callout h2 {
+    font-family: var(--serif);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #d8c7a4;
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .gap-callout p {
+    font-family: var(--serif);
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  .legend {
+    margin-top: 10px;
+    font-family: var(--sans);
+    font-size: 9px;
+    color: var(--muted);
+    letter-spacing: 0.3px;
+  }
+
+  /* Page 2 — analysis */
+  .analysis {
+    margin-top: 4px;
+    columns: 2;
+    column-gap: 22px;
+  }
+  .analysis section {
+    break-inside: avoid;
+    margin-bottom: 14px;
+  }
+  .analysis h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0 0 4px;
+    letter-spacing: 0.2px;
+  }
+  .analysis h3 .num {
+    font-style: italic;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+  .analysis p {
+    font-family: var(--serif);
+    font-size: 12px;
+    line-height: 1.55;
+    margin: 0 0 6px;
+  }
+  .closing {
+    margin-top: 14px;
+    padding: 16px 18px;
+    background: var(--soft);
+    border-left: 3px solid var(--accent);
+  }
+  .closing h3 {
+    font-family: var(--serif);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 6px;
+    font-weight: 500;
+  }
+  .closing p {
+    font-family: var(--serif);
+    font-size: 13px;
+    line-height: 1.55;
+    margin: 0;
+  }
+  footer {
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule);
+    font-family: var(--sans);
+    font-size: 9px;
+    color: var(--muted);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+      min-height: 100vh;
+      padding: 0.45in 0.5in;
+    }
+    @page { size: Letter; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 — MATRIX -->
+<div class="page">
+
+  <header>
+    <div class="wordmark">Latitude <span class="num">43°</span></div>
+    <div class="doc-title">Comparative Brief · For Internal Use After Discovery</div>
+  </header>
+
+  <h1>The category, side by side. <span class="em">Where the gap is.</span></h1>
+  <div class="deck">A reading aid for the senior buyer choosing between Latitude 43 and the four credible alternatives. Built from publicly disclosed pricing, websites, procurement records, and operator interviews.</div>
+
+  <table class="compare">
+    <thead>
+      <tr>
+        <th style="width: 110px;"></th>
+        <th>Amex Centurion Concierge</th>
+        <th>Navan</th>
+        <th>Cadence Travel</th>
+        <th>Brownell Corporate</th>
+        <th class="lat43">Latitude 43</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>What it actually is</th>
+        <td>Card-attached concierge desk. Reservations layer, not operations.</td>
+        <td>SaaS travel platform with embedded agent support. Self-serve first.</td>
+        <td>Three-line agency (corporate, MICE, host) inside Tzell / Internova / Certares.</td>
+        <td>Microsite routing corporate work into Tzell's consortium infrastructure.</td>
+        <td class="lat43">Members' travel office. One named advisor. Membership-priced.</td>
+      </tr>
+      <tr>
+        <th>Built for whom</th>
+        <td>Black Card holders ($10K+ annual fee). Lifestyle bookings first.</td>
+        <td>Mid-market and SMB finance teams. Procurement-led purchase.</td>
+        <td>500-person corporate travel programs &amp; UHNW leisure clients.</td>
+        <td>UHNW leisure clients who also need occasional corporate bookings.</td>
+        <td class="lat43">Founders ($50K T&amp;E), GPs, PE deal teams, RIA principals.</td>
+      </tr>
+      <tr>
+        <th>Pricing</th>
+        <td>Bundled into the $10,000 card fee. No standalone tier.</td>
+        <td>Per-booking transaction fees + per-traveler SaaS license. Disclosed in RFP only.</td>
+        <td>Per-transaction TMC fees + override commissions. Nothing published.</td>
+        <td>Not published anywhere. Reads as bespoke.</td>
+        <td class="lat43"><strong>$3,600 / $12,000 / $36,000 per year.</strong> Published on the homepage.</td>
+      </tr>
+      <tr>
+        <th>SLA published</th>
+        <td>No.</td>
+        <td>Average chat response, no contractual minimum.</td>
+        <td>None. After-hours requires code SV23G.</td>
+        <td>None on the corporate site. 24/7 caveat lives in the Privacy Notice.</td>
+        <td class="lat43"><strong>60-minute first response. Written. 24 / 7 / 365.</strong></td>
+      </tr>
+      <tr>
+        <th>Named human</th>
+        <td>No. Rotating pool.</td>
+        <td>Software-first; agent pool on escalation.</td>
+        <td>Pod model. "Account Director" assignment.</td>
+        <td>Zero corporate advisors named on the public site.</td>
+        <td class="lat43"><strong>Yes.</strong> Founder on contract. Documented secondary.</td>
+      </tr>
+      <tr>
+        <th>B2B booking codes</th>
+        <td>FHR via Amex Travel. No Virtuoso, no STARS, no FSPP.</td>
+        <td>Mostly retail rates. Limited consortia access.</td>
+        <td>Virtuoso (since 1999) on leisure side. Mixed application on corporate.</td>
+        <td>Virtuoso on leisure. Corporate amenity application opaque.</td>
+        <td class="lat43">Virtuoso, FHR, STARS, FSPP, Rosewood Elite, Aman Privé, Peninsula PP.</td>
+      </tr>
+      <tr>
+        <th>Tech narrative</th>
+        <td>Amex Travel booking tool. Lifestyle CRM.</td>
+        <td>Proprietary platform — strong product, low service depth.</td>
+        <td>Spotnana + TripSuite + SafeToGo (all licensed).</td>
+        <td>No proprietary tech. Tzell stack.</td>
+        <td class="lat43">Best-of-breed integrations applied by the advisor on the traveler's behalf.</td>
+      </tr>
+      <tr>
+        <th>Visible founder</th>
+        <td>No. Card brand.</td>
+        <td>Ariel Cohen — yes, but at the helm of a 3,000-person company.</td>
+        <td>Wendy Burk, founder &amp; CEO. Layered under President + Chairman.</td>
+        <td>Troy Haas, sole owner. Leisure-side voice.</td>
+        <td class="lat43"><strong>Founder is the advisor.</strong> Mobile number on the contract.</td>
+      </tr>
+      <tr>
+        <th>Ownership</th>
+        <td>American Express (NYSE: AXP).</td>
+        <td>VC-backed (Andreessen, Lightspeed). $9.2B last valuation.</td>
+        <td>Certares PE → Internova → GTC → Tzell.</td>
+        <td>Privately held by founder; corporate side affiliated with Tzell.</td>
+        <td class="lat43">Founder-owned. No PE clock. Aligned incentives.</td>
+      </tr>
+      <tr>
+        <th>Where it fails for the senior buyer</th>
+        <td>Cannot rebook irregular ops in real time. No supplier override authority.</td>
+        <td>Designed for the CFO, not the traveler. High-touch on escalation only.</td>
+        <td>Pacific time zone. Three masters (leisure / MICE / corporate). Brand staleness.</td>
+        <td>Heritage-leisure brand running a corporate side door through a third party.</td>
+        <td class="lat43">N/A for the ICP. Below the cost-of-service floor for any enterprise alternative.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="gap-callout">
+    <h2>The gap</h2>
+    <p>None of the four alternatives publishes a price, an SLA, and a named human on the same homepage. The closest — Cadence Travel — buries its after-hours desk behind a numeric code in a privacy notice. The category has been operating on "call us for a quote" since 1995. Latitude 43 is built for the buyer who has stopped accepting that.</p>
+  </div>
+
+  <div class="legend">Sources: Travel Weekly Power List 2024 &amp; 2025; Internova / Certares public disclosures; Cadence Trustpilot &amp; Glassdoor; Brownell Travel Weekly profile; Navan investor materials; Amex Centurion member documentation.</div>
+
+  <footer>
+    <span>Latitude 43° · Members' Travel Office · Toronto · 43.65°N</span>
+    <span>Page 1 of 2</span>
+  </footer>
+
+</div>
+
+<!-- PAGE 2 — ANALYSIS -->
+<div class="page">
+
+  <header>
+    <div class="wordmark">Latitude <span class="num">43°</span></div>
+    <div class="doc-title">Comparative Brief · The Five Differentiators</div>
+  </header>
+
+  <h1>What changes when you choose <span class="em">Latitude 43.</span></h1>
+  <div class="deck">Five structural differences, in the order they tend to matter once a buyer has signed.</div>
+
+  <div class="analysis">
+
+    <section>
+      <h3><span class="num">I.</span>The named human on the contract.</h3>
+      <p>At Amex Centurion, Navan, Cadence, and Brownell, the human who picks up the phone is not the human named on the contract. The contract names a brand or a team. The shift picks up. At Latitude 43, the founder is on the contract, and the founder is the advisor. The relationship is one-to-one, capped at fifteen accounts before a second advisor is brought on — and even then, the founder stays on the contract.</p>
+    </section>
+
+    <section>
+      <h3><span class="num">II.</span>The 60-minute SLA, in writing.</h3>
+      <p>None of the four alternatives publishes a first-response SLA on its corporate site. Cadence's after-hours desk is reached via a code (SV23G). Brownell's 24/7 language lives in the Privacy Notice. Navan's response varies by tier. Amex's is bundled into the card relationship. Latitude 43's SLA is on the homepage: 60 minutes, in writing, day or night, day one to day 365 of the membership.</p>
+    </section>
+
+    <section>
+      <h3><span class="num">III.</span>The published price.</h3>
+      <p>Three tiers — Atlas Principal ($3,600), Atlas Office ($12,000), Atlas Firm ($36,000) — on the homepage. No "contact sales" gate. No per-transaction surprise. The B2B booking amenities, the override commissions, and the night-desk staffing are all inside the membership price. The buyer knows the all-in cost before the discovery call.</p>
+    </section>
+
+    <section>
+      <h3><span class="num">IV.</span>The amenity-channel stack, applied by default.</h3>
+      <p>Every hotel booking is routed through the right B2B channel — Virtuoso, FHR, STARS, FSPP, Rosewood Elite, Aman Privé, Peninsula Preferred Privileges, Mandarin Fan Club. The amenities are stacked on top of any loyalty status the traveler already holds. The price the traveler sees is the price the traveler would have seen on the hotel website. The amenity layer is the value the booking channel quietly adds.</p>
+    </section>
+
+    <section>
+      <h3><span class="num">V.</span>The aligned incentives.</h3>
+      <p>Cadence is owned by Certares, a private equity firm. Brownell's corporate side routes through the same Internova / Tzell consortium. Navan is on a VC clock. Amex is a public company. Each is optimized for the return profile of its capital. Latitude 43 is founder-owned. The economic unit is the long-term client relationship, not the LBO exit. The advisor's bonus is renewals, not transactions.</p>
+    </section>
+
+  </div>
+
+  <div class="closing">
+    <h3>If you sign by month-end</h3>
+    <p>
+      We charge the first year on signature, no proration. We do an 90-minute onboarding call to capture preferences, document seat-and-room-and-meal preferences, and load the traveler profile into Sabre and the four major B2B booking channels. We commit to a first trip booked within seven days of signature. We send the first written quarterly review at day 90 — a one-page document covering trips booked, dollars saved against retail benchmark, disruptions managed, and amenities delivered. The agreement is renewable annually, terminable on 30 days' notice, no claw-back, no fine print.
+    </p>
+  </div>
+
+  <footer>
+    <span>Latitude 43° · 60-minute SLA · day or night</span>
+    <span>Page 2 of 2</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

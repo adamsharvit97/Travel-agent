@@ -1975,3 +1975,545 @@ main {
     width: 100%;
   }
 }
+
+/* ============================================================
+   New page components — case studies, press, member preview, FAQ
+   ============================================================ */
+
+/* Case study cards (extended) */
+.case-card {
+  border-top: 1px solid var(--sand);
+  padding: 64px 0;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.case-card:last-of-type {
+  border-bottom: 1px solid var(--sand);
+}
+
+.case-card .case-num {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.case-card .case-num small {
+  display: block;
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+  margin-top: 8px;
+}
+
+.case-card h3 {
+  font-style: italic;
+  margin-bottom: 18px;
+  font-size: 1.55rem;
+}
+
+.case-card .case-section {
+  margin-top: 22px;
+}
+
+.case-card .case-section span.label-caps {
+  color: var(--brass);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.case-card .numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.case-card .numbers .stat .num {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--navy);
+  display: block;
+}
+
+.case-card .numbers .stat .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+  margin-top: 6px;
+  display: block;
+}
+
+.case-card .quote {
+  margin-top: 28px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--navy);
+  padding-left: 20px;
+  border-left: 2px solid var(--brass);
+}
+
+.case-card .quote .attribution {
+  display: block;
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+}
+
+/* Press page */
+.press-logos {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 36px;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.press-logos a {
+  display: block;
+  text-align: center;
+  padding: 18px 8px;
+  border: 1px solid var(--sand);
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--charcoal-70);
+  font-size: 1.05rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  filter: grayscale(1);
+}
+
+.press-logos a:hover {
+  color: var(--brass);
+  border-color: var(--brass);
+  filter: none;
+}
+
+.coverage-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.coverage-card {
+  border: 1px solid var(--sand);
+  padding: 32px;
+  background: var(--ivory);
+  display: flex;
+  flex-direction: column;
+}
+
+.coverage-card .meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 16px;
+}
+
+.coverage-card h3 {
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+}
+
+.coverage-card p {
+  font-size: 0.98rem;
+  flex-grow: 1;
+}
+
+.coverage-card .read {
+  margin-top: 18px;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 1px solid var(--brass);
+  display: inline-block;
+  padding-bottom: 2px;
+  align-self: flex-start;
+}
+
+.press-contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.press-contact .block h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+
+.press-contact .block p {
+  font-size: 1rem;
+}
+
+.press-kit-list {
+  list-style: none;
+  margin-top: 12px;
+}
+
+.press-kit-list li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sand);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.press-kit-list li a {
+  color: var(--navy);
+  border-bottom: 1px solid var(--brass);
+}
+
+.pull-quotes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 48px;
+  margin-top: 24px;
+}
+
+.pull-quote {
+  padding: 28px;
+  background: var(--bone);
+  border-left: 2px solid var(--brass);
+}
+
+.pull-quote p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--navy);
+  line-height: 1.55;
+}
+
+.pull-quote .attribution {
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+}
+
+/* Member preview page */
+.day-timeline {
+  border-top: 1px solid var(--sand);
+  margin-top: 24px;
+}
+
+.day-timeline .moment {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 36px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--sand);
+  align-items: start;
+}
+
+.day-timeline .moment .time {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--brass);
+}
+
+.day-timeline .moment h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.day-timeline .moment p {
+  font-size: 1rem;
+}
+
+/* Slack-style mock */
+.desk-channel {
+  background: #ffffff;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.desk-channel .channel-header {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.desk-channel .channel-header .channel-name {
+  font-family: var(--sans);
+  font-weight: 500;
+}
+
+.desk-channel .channel-header .channel-meta {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sand);
+}
+
+.desk-channel .channel-body {
+  padding: 24px 28px;
+}
+
+.desk-msg {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--bone);
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.desk-msg:last-child {
+  border-bottom: none;
+}
+
+.desk-msg .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 4px;
+  background: var(--bone);
+  color: var(--navy);
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desk-msg .avatar.brass {
+  background: var(--brass);
+  color: var(--ivory);
+}
+
+.desk-msg .body {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  line-height: 1.55;
+}
+
+.desk-msg .body .who {
+  font-weight: 600;
+  color: var(--navy);
+  margin-right: 8px;
+}
+
+.desk-msg .body .when {
+  color: var(--charcoal-70);
+  font-size: 0.78rem;
+}
+
+.desk-msg .body p {
+  font-size: 0.95rem;
+  margin-top: 4px;
+  color: var(--charcoal);
+}
+
+/* Mocked portal panel */
+.portal-mock {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 40px;
+  border-radius: 4px;
+}
+
+.portal-mock h4 {
+  color: var(--ivory);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.portal-mock .portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.portal-mock .portal-grid .cell {
+  background: rgba(244, 239, 230, 0.06);
+  border: 1px solid rgba(244, 239, 230, 0.18);
+  padding: 18px 20px;
+}
+
+.portal-mock .portal-grid .cell .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.portal-mock .portal-grid .cell .value {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  margin-top: 8px;
+  color: var(--ivory);
+}
+
+.portal-mock .portal-grid .cell .sub {
+  font-size: 0.8rem;
+  color: var(--sand);
+  margin-top: 6px;
+}
+
+.report-preview {
+  background: var(--ivory);
+  border: 1px solid var(--sand);
+  padding: 36px;
+}
+
+.report-preview .report-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--bone);
+  font-size: 0.92rem;
+}
+
+.report-preview .report-row.head {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brass);
+  border-bottom: 1px solid var(--sand);
+}
+
+.year-in-review-thumb {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 64px 48px;
+  text-align: center;
+  border: 1px solid var(--brass);
+}
+
+.year-in-review-thumb .label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.year-in-review-thumb h3 {
+  color: var(--ivory);
+  font-style: italic;
+  margin-top: 16px;
+  font-size: 2rem;
+}
+
+.year-in-review-thumb p {
+  color: var(--sand);
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+/* FAQ numbered */
+.faq-numbered {
+  border-top: 1px solid var(--sand);
+}
+
+.faq-numbered .faq-item {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--sand);
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.faq-numbered .faq-item .q-num {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 1.4rem;
+}
+
+.faq-numbered .faq-item h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.faq-numbered .faq-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Responsive overrides for new components */
+@media (max-width: 900px) {
+  .case-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 48px 0;
+  }
+  .case-card .numbers {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .press-logos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .coverage-grid {
+    grid-template-columns: 1fr;
+  }
+  .press-contact {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .pull-quotes {
+    grid-template-columns: 1fr;
+  }
+  .day-timeline .moment {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .portal-mock .portal-grid {
+    grid-template-columns: 1fr;
+  }
+  .report-preview .report-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .faq-numbered .faq-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
