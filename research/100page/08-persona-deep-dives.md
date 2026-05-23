@@ -835,6 +835,103 @@ A pitch that uses "travel" in the first sentence loses 7 of 10 personas. A pitch
 
 The greatest mistake the report's audience could make is **trying to build one product across these tiers**. The pain converges; the buyer and the workflow do not.
 
+### Identity-language patterns (verbatim phrases that recur)
+
+A taxonomy of language across personas, drawn from forum posts, EA job descriptions, LinkedIn posts, and industry publications:
+
+| Phrase | Used by | Signals |
+|---|---|---|
+| "I'm in town" | Founders (A, C), Solo Pro | Status announcement, not navigation |
+| "Loop in [EA name]" | Series C, Senior VC, IB MD | Delegation as power signal |
+| "Back-to-back" | All founders, VCs, MDs | Universal calendar pressure marker |
+| "Red-eye in" | Founders, MDs | Badge of seriousness |
+| "Building in public" | Emerging VC, Founder | Anti-establishment positioning |
+| "My team will handle it" | PE MD, Senior VC, Family Office | Multi-staff power signal |
+| "Onsite this week" | PE associates, Solo Pro consultants | Deal/engagement language |
+| "Roadshow" | IB MD, VC during raise | Defined logistical unit |
+| "The principal" | Family Office staff | Deferential service-pro identity |
+| "Wealth event" | RIA | Industry-specific term for client liquidity |
+| "Households" | RIA | Counting unit for clients |
+| "Stage-appropriate" | Series A founder | Hotel/restaurant signaling |
+| "Off the grid" | Senior MD, GP | Sacred protected time |
+| "Family weekend" | Series C, MD | Hardened post-pandemic boundary |
+| "Two-yearer" | PE associate | Career stage marker |
+| "Burnt" | PE/IB junior | Exhaustion after deal sprint |
+| "Wheels up" | Family office staff, MD with jet | Aviation status language |
+| "Conviction call" | Emerging VC | Decision moment, brag-worthy |
+
+The right product wraps each of these phrases into its UX. A Series A founder app that talks about "wheels up" will repel. A family office product that mentions "back-to-back" will land flat.
+
+### Income vs. willingness-to-pay map
+
+A counterintuitive finding: **willingness-to-pay does not correlate cleanly with income.** The Series A founder earning $250K base + diluted equity is less price-sensitive than the Emerging VC earning $400K because:
+
+- The founder pays from a $12M round in their corporate account; psychologically distant.
+- The Emerging VC pays from their own net management fee; psychologically immediate.
+
+| Persona | Annual income | Realistic WTP/month | WTP framing |
+|---|---|---|---|
+| Series A Founder | $200-400K | $300-600 | "fraction of the raise" |
+| Series C Founder | $400K-1M+ | $1,500-3,000 | "half an EA equivalent" |
+| Emerging VC | $200-500K | $125-250 | "must be in mgmt fee budget" |
+| Senior VC GP | $2-10M+ carry | $2,000-5,000 | "white-glove" |
+| PE Associate (firm-paid) | $300-500K | Firm pays $200-500/seat | "procurement cost" |
+| PE MD | $1-10M+ | $5,000-25,000 | "integration layer" |
+| Boutique IB MD | $1-5M | $2,000-10,000 | "roadshow ops" |
+| RIA Principal | $500K-3M | $500-2,500 | "client experience" |
+| Family Office Principal | $300-600K (the staff) | $5,000-15,000 | "vendor coordination" |
+| Solo Pro | $500K-3M | $300-1,500 | "billable hour math" |
+
+### The five most actionable cross-cutting insights
+
+**1. Time of day matters more than tool features.** Across personas, the biggest pain moment is *9pm-11pm rebooking the schedule after meetings end.* The product that wins delivers a strong evening / overnight async experience — chat-first or AI-first, doesn't require a human-touch handoff that won't return until morning.
+
+**2. "Discretion" is a hard requirement for 4 of 10 personas.** Family Office, IB MD on sensitive deals, PE MD, and Senior VC all have specific privacy / confidentiality constraints that disqualify mass-market vendors. The product must demonstrate vendor-data-segregation, NDAs, no-public-loyalty-trail design.
+
+**3. The EA is a swing vote in 6 of 10 personas.** Series C founder, both VC partner tiers, both PE personas, IB MD, Family Office. Any go-to-market that treats the EA as merely a user (rather than as the champion, gatekeeper, and operational owner) will lose. The EA-positive design and EA-positive messaging is the single largest leverage point.
+
+**4. Trip planning is a category — booking is not.** Across personas, the higher-ROI complaint is not "I can't book a flight" — it's "I don't know how to sequence my month optimally." The Series A founder doesn't know which 8 cities to be in. The Emerging VC doesn't know how to batch LP meetings. The Senior VC doesn't know how to fit 12 board meetings into 4 trips. A *routing intelligence* layer above booking is what's missing in the market.
+
+**5. Compliance / expense capture is the trojan horse.** Almost every persona names expense filing as a top-3 pain point. SAP Concur is universally hated. A product that delivers seamless expense capture as a *byproduct* of bookings — without ever asking the user to "do expenses" — wins immediate love and creates pricing power downstream.
+
+### Triggers calendar — when to time outreach
+
+The data suggests several month-of-year and event-of-life triggers that should drive outbound timing:
+
+- **December-January**: Annual planning across all personas; tools get evaluated.
+- **First Monday of new quarter**: Board meeting prep + travel rebuild cycle, particularly for VCs and PE MDs.
+- **30 days after EA hire**: EA in new seat looking for tools to standardize workflow.
+- **Day 7 of fundraise launch**: Founder has felt the calendar weight, is open to help.
+- **Conference week shoulder days**: When everyone realizes they've spent 200 hours on logistics for 4 conferences.
+- **Mid-March, mid-November (year-mid and year-end family transitions)**: Family offices coordinate property moves (PB→Aspen, Aspen→PB).
+- **First mandate week for boutique IB**: New deal won, scrambling to set up roadshow.
+
+### Why these 10 personas and not others
+
+The chapter excludes several adjacent segments deliberately:
+
+- **Corporate executives (F500 VPs)**: Buyer is the corporate TMC contract, not the individual. Different category of GTM.
+- **C-suite at public companies**: Heavily protected by IR, legal, and EA infrastructure that is corporate-procured. Excluded for the same reason.
+- **Hedge fund traders / PMs**: Surprisingly low travel; not a buying segment.
+- **Lawyers (Big Law partners)**: Have similar pain to IB MDs but are governed by firm policies and TMC contracts in nearly all cases.
+- **Real estate developers / investors**: A real segment but smaller and harder to characterize uniformly.
+
+The ten profiled here represent the **entrepreneur-and-investor archetype** the report's audience cares about — buyers who can convert without 18-month enterprise procurement cycles, who feel travel pain personally, and whose decisions are made or strongly influenced by themselves.
+
+### Final recommendation to product strategy
+
+Given the segmentation, the highest-probability winning sequence is:
+
+1. **Land** with Series A founders + Emerging VCs + Solo Pros (the solo-operator wedge). Same product, same messaging, three vertical narratives. Convert via founder/VC/podcast peer-reference loops. Price: $300-600/month subscription or 5-7% take-rate.
+
+2. **Expand** to Series C founders + Boutique IB MDs + RIA Principals (the EA-augmenting wedge). Different product surface — multi-stakeholder, EA-first, vertical workflows. Convert via existing customers' EAs going to new jobs. Price: $1,500-3,000/month or per-seat enterprise.
+
+3. **Capture** Senior VC GPs + PE MDs + Family Office Principals (the integration-layer wedge). White-glove sales, reference-only. Different product entirely — coordination platform, not booking tool. Price: $5,000-25,000/month or annual retainer.
+
+4. **Enterprise side-channel**: PE Associates / VPs via firm-level contracts with PE COOs. Procurement-driven, slow but sticky.
+
+Each wedge requires its own GTM playbook. Trying to land all four simultaneously is the failure mode.
+
 ---
 
-*Sources cited inline. Primary triangulation: WSO forum threads on PE/IB/VC travel, M&I and Peak Frameworks on IB roles, RBC/JPM/Citi 2024 family office reports, VC Lab and Carta on emerging manager economics, Eden Private Staff and Pearl Talent on EA roles, Skift and SAP Concur community on corporate booking pain, ThinkAdvisor/Rethinking 65 on RIA/wealth travel, FlyEliteJets on family office aviation, Consulting Success and Proformative on solo consultant economics.*
+*Sources cited inline. Primary triangulation: WSO forum threads on PE/IB/VC travel, M&I and Peak Frameworks on IB roles, RBC/JPM/Citi 2024 family office reports, VC Lab and Carta on emerging manager economics, Eden Private Staff and Pearl Talent on EA roles, Skift and SAP Concur community on corporate booking pain, ThinkAdvisor/Rethinking 65 on RIA/wealth travel, FlyEliteJets on family office aviation, Consulting Success and Arden Coaching on solo consultant / coaching economics, Riveter Consulting and Family Office Exchange on family office staffing comp.*
