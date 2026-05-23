@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 in Review · Latitude 43</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --navy: #0E1A2B;
+    --navy-soft: #1a2940;
+    --ivory: #F4EFE6;
+    --ivory-dim: #ECE5D7;
+    --brass: #B8924C;
+    --brass-soft: #C9A461;
+    --rule: #d8cfbf;
+    --muted: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--ivory);
+    color: var(--navy);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .serif { font-family: 'EB Garamond', Georgia, serif; }
+  .doc { max-width: 920px; margin: 0 auto; background: #fff; border-left: 1px solid var(--rule); border-right: 1px solid var(--rule); }
+
+  /* Cover */
+  .cover {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 120px 80px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 280px; height: 280px;
+    background: radial-gradient(circle, rgba(184,146,76,0.25), transparent 70%);
+  }
+  .cover-mark {
+    font-family: 'EB Garamond', serif;
+    font-size: 24px;
+    letter-spacing: 0.02em;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .cover-mark .dot { color: var(--brass); }
+  .cover-meta {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--brass);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .cover h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .cover h1 .em { font-style: italic; color: var(--brass-soft); }
+  .cover-name {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 24px;
+    color: var(--ivory);
+    margin-top: 16px;
+    opacity: 0.85;
+  }
+  .cover-footer {
+    margin-top: 80px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(184,146,76,0.4);
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass);
+  }
+
+  section {
+    padding: 80px 80px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    color: var(--brass);
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    margin-bottom: 36px;
+  }
+
+  /* Hero stats */
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--brass);
+    border-bottom: 1px solid var(--brass);
+  }
+  .hero-stat {
+    padding: 36px 28px;
+    border-right: 1px solid var(--rule);
+  }
+  .hero-stat:last-child { border-right: none; }
+  .hero-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .hero-stat-value {
+    font-family: 'EB Garamond', serif;
+    font-size: 52px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .hero-stat-unit {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Charts row */
+  .chart-section { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
+  .chart-wrap { height: 320px; position: relative; }
+  .chart-legend { display: flex; flex-direction: column; gap: 18px; }
+  .legend-row {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    gap: 14px;
+    align-items: baseline;
+    padding-bottom: 12px;
+    border-bottom: 1px dotted var(--rule);
+  }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 1px; margin-top: 6px; }
+  .legend-label { font-family: 'EB Garamond', serif; font-size: 18px; }
+  .legend-value { font-family: 'EB Garamond', serif; font-size: 18px; color: var(--navy); font-weight: 500; }
+  .legend-pct { font-size: 11px; color: var(--muted); letter-spacing: 0.08em; }
+
+  /* Rewards table */
+  .rewards-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+  }
+  .rewards-table th {
+    text-align: left;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: var(--muted);
+    padding: 14px 0;
+    border-bottom: 1px solid var(--brass);
+    font-weight: 600;
+  }
+  .rewards-table th:last-child, .rewards-table td:last-child { text-align: right; }
+  .rewards-table td {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 14px;
+  }
+  .rewards-table tr:last-child td { border-bottom: 2px solid var(--navy); font-weight: 500; }
+  .rewards-table .program {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+  }
+  .rewards-table .desc { color: var(--muted); font-size: 12px; }
+  .rewards-table .amt {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--navy);
+  }
+
+  /* Status earned */
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  .status-card {
+    border: 1px solid var(--rule);
+    padding: 28px;
+    position: relative;
+    background: var(--ivory-dim);
+  }
+  .status-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 4px; height: 100%;
+    background: var(--brass);
+  }
+  .status-program {
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  .status-progression {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+  .status-from { color: var(--muted); }
+  .status-arrow { color: var(--brass); font-size: 18px; }
+  .status-to { color: var(--navy); font-weight: 500; }
+  .status-note { font-size: 12px; color: var(--muted); margin-top: 10px; }
+
+  /* CO2 */
+  .co2-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .co2-big {
+    font-family: 'EB Garamond', serif;
+    font-size: 96px;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    color: var(--navy);
+  }
+  .co2-unit { font-size: 18px; color: var(--brass); margin-left: 8px; }
+  .co2-note {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 16px;
+    max-width: 320px;
+  }
+
+  /* Destinations */
+  .destinations-list { columns: 2; column-gap: 56px; }
+  .destination-row {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    break-inside: avoid;
+    align-items: baseline;
+  }
+  .dest-rank {
+    font-family: 'EB Garamond', serif;
+    font-size: 18px;
+    color: var(--brass);
+  }
+  .dest-name { font-family: 'EB Garamond', serif; font-size: 18px; }
+  .dest-meta { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
+
+  /* Notable trips */
+  .trip {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 40px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .trip:last-child { border: none; }
+  .trip-month {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--brass);
+  }
+  .trip-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .trip-body {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #334155;
+  }
+  .trip-tags {
+    margin-top: 12px;
+    display: flex;
+    gap: 14px;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .trip-tag::before { content: "·"; color: var(--brass); margin-right: 8px; }
+  .trip-tag:first-child::before { display: none; }
+
+  /* Disruption */
+  .disruption-bg {
+    background: var(--navy);
+    color: var(--ivory);
+    border: none;
+  }
+  .disruption-bg h2 { color: var(--ivory); }
+  .disruption-bg .eyebrow { color: var(--brass); }
+  .disruption-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    padding-top: 24px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(184,146,76,0.4);
+  }
+  .disruption-stat-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--brass);
+    margin-bottom: 10px;
+  }
+  .disruption-stat-value {
+    font-family: 'EB Garamond', serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--ivory);
+  }
+  .disruption-stat-note {
+    font-size: 13px;
+    color: rgba(244,239,230,0.7);
+    margin-top: 10px;
+  }
+  .disruption-prose {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--ivory);
+    max-width: 640px;
+    margin-bottom: 32px;
+  }
+
+  /* Looking forward */
+  .recommendations { display: flex; flex-direction: column; gap: 0; }
+  .rec {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .rec:last-child { border: none; }
+  .rec-num {
+    font-family: 'EB Garamond', serif;
+    font-size: 56px;
+    color: var(--brass);
+    line-height: 1;
+  }
+  .rec-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+  }
+  .rec-body {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.7;
+  }
+  .rec-action {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--brass);
+    margin-top: 12px;
+    font-weight: 600;
+  }
+
+  /* Closing */
+  .closing {
+    padding: 96px 80px;
+    text-align: center;
+  }
+  .closing-quote {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    line-height: 1.4;
+    max-width: 580px;
+    margin: 0 auto 32px;
+    color: var(--navy);
+  }
+  .closing-sig {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--brass);
+  }
+  .closing-name {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 6px;
+  }
+
+  footer {
+    padding: 32px 80px;
+    background: var(--navy);
+    color: var(--ivory);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .mark { font-family: 'EB Garamond', serif; font-size: 14px; }
+
+  @media print {
+    body { background: white; }
+    .doc { border: none; max-width: none; }
+    section { page-break-inside: avoid; }
+    .cover, .disruption-bg, footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="doc">
+
+  <div class="cover">
+    <div class="cover-mark">Latitude 43 <span class="dot">·</span> Atlas</div>
+    <div class="cover-meta">Annual Report · Confidential</div>
+    <h1>2026<br>in <span class="em">review</span>.</h1>
+    <div class="cover-name">For Eleanor Marchetti</div>
+    <div class="cover-footer">
+      <span>Issued December 2026</span>
+      <span>The year, on paper.</span>
+    </div>
+  </div>
+
+  <!-- Hero stats -->
+  <section>
+    <div class="eyebrow">The year in numbers</div>
+    <h2>Twenty-six trips. One hundred and four nights.</h2>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-label">Trips</div>
+        <div class="hero-stat-value">26</div>
+        <div class="hero-stat-unit">across 4 continents</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Nights away</div>
+        <div class="hero-stat-value">104</div>
+        <div class="hero-stat-unit">28 percent of the year</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Miles flown</div>
+        <div class="hero-stat-value">142k</div>
+        <div class="hero-stat-unit">across 9 carriers</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-label">Countries</div>
+        <div class="hero-stat-value">17</div>
+        <div class="hero-stat-unit">5 first visits</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spend -->
+  <section>
+    <div class="eyebrow">Spend by category</div>
+    <h2>Where the budget went.</h2>
+    <div class="chart-section">
+      <div class="chart-wrap"><canvas id="spendDonut"></canvas></div>
+      <div class="chart-legend">
+        <div class="legend-row">
+          <div class="legend-swatch" style="background:#0E1A2B"></div>
+          <div>
+            <div class="legend-label">Air</div>
+            <div class="legend-pct">12 carriers · 26 segments</div>
+          </div>
+          <div class="legend-value">$48,400</div>
+        </div>
+        <div class="legend-row">
+          <div class="legend-swatch" style="background:#B8924C"></div>
+          <div>
+            <div class="legend-label">Hotel</div>
+            <div class="legend-pct">19 properties · 104 nights</div>
+          </div>
+          <div class="legend-value">$62,200</div>
+        </div>
+        <div class="legend-row">
+          <div class="legend-swatch" style="background:#6b7280"></div>
+          <div>
+            <div class="legend-label">Ground</div>
+            <div class="legend-pct">Blacklane primary · 4 city fixers</div>
+          </div>
+          <div class="legend-value">$11,800</div>
+        </div>
+        <div class="legend-row" style="border:none">
+          <div class="legend-swatch" style="background:#d8cfbf"></div>
+          <div>
+            <div class="legend-label">Other</div>
+            <div class="legend-pct">Visas, rail, insurance, gear</div>
+          </div>
+          <div class="legend-value">$6,400</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rewards -->
+  <section>
+    <div class="eyebrow">Rewards captured</div>
+    <h2>$12,840 in upgrades and amenities, off-bill.</h2>
+    <p style="color: var(--muted); margin-bottom: 8px;">Captured value through Fora Preferred Partner, Virtuoso, and direct hotel relationships. None of this appears on your invoice.</p>
+    <table class="rewards-table">
+      <thead>
+        <tr>
+          <th>Program</th>
+          <th>Notes</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="program">Fora Preferred / Virtuoso</span><div class="desc">Suite upgrades, F&B credits, late checkout</div></td>
+          <td class="desc">11 stays · 7 properties</td>
+          <td class="amt">$5,840</td>
+        </tr>
+        <tr>
+          <td><span class="program">Marriott Bonvoy</span><div class="desc">Ambassador upgrades, suite night certificates</div></td>
+          <td class="desc">6 stays · St Regis, Edition, Ritz</td>
+          <td class="amt">$2,920</td>
+        </tr>
+        <tr>
+          <td><span class="program">Hyatt Globalist</span><div class="desc">Suite upgrades, breakfast, club access</div></td>
+          <td class="desc">3 stays · Park Hyatt, Andaz</td>
+          <td class="amt">$1,640</td>
+        </tr>
+        <tr>
+          <td><span class="program">Amex Fine Hotels &amp; Resorts</span><div class="desc">Upgrade, $100 credit, breakfast</div></td>
+          <td class="desc">4 stays</td>
+          <td class="amt">$1,280</td>
+        </tr>
+        <tr>
+          <td><span class="program">Airline points · seat upgrades</span><div class="desc">AC Aeroplan eUpgrades, UA PlusPoints</div></td>
+          <td class="desc">5 segments</td>
+          <td class="amt">$1,160</td>
+        </tr>
+        <tr>
+          <td><span class="program">Total captured</span><div class="desc">Off-invoice value to the member</div></td>
+          <td></td>
+          <td class="amt">$12,840</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Status -->
+  <section>
+    <div class="eyebrow">Status earned</div>
+    <h2>Three tiers up. Two retained for 2027.</h2>
+    <div class="status-grid">
+      <div class="status-card">
+        <div class="status-program">Air Canada Aeroplan</div>
+        <div class="desc">142,400 status miles · 89 segments</div>
+        <div class="status-progression">
+          <span class="status-from">Elite 75K</span>
+          <span class="status-arrow">→</span>
+          <span class="status-to">Super Elite 100K</span>
+        </div>
+        <div class="status-note">Retained through 2028. eUpgrade balance: 26 credits.</div>
+      </div>
+      <div class="status-card">
+        <div class="status-program">Marriott Bonvoy</div>
+        <div class="desc">82 nights · 7 brands</div>
+        <div class="status-progression">
+          <span class="status-from">Titanium Elite</span>
+          <span class="status-arrow">→</span>
+          <span class="status-to">Ambassador Elite</span>
+        </div>
+        <div class="status-note">Ambassador One desk relationship now active.</div>
+      </div>
+      <div class="status-card">
+        <div class="status-program">Hyatt</div>
+        <div class="desc">38 nights · World of Hyatt</div>
+        <div class="status-progression">
+          <span class="status-from">Explorist</span>
+          <span class="status-arrow">→</span>
+          <span class="status-to">Globalist</span>
+        </div>
+        <div class="status-note">Suite upgrade awards: 4 unused, expire June 2027.</div>
+      </div>
+      <div class="status-card">
+        <div class="status-program">United MileagePlus</div>
+        <div class="desc">28 segments · Star Alliance</div>
+        <div class="status-progression">
+          <span class="status-from">Premier Gold</span>
+          <span class="status-arrow">→</span>
+          <span class="status-to">Premier Platinum</span>
+        </div>
+        <div class="status-note">PlusPoints balance: 280. Two int'l upgrades available.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CO2 -->
+  <section>
+    <div class="eyebrow">Footprint</div>
+    <h2>Where the year landed, by tonne.</h2>
+    <div class="co2-grid">
+      <div>
+        <div class="co2-big">11.8<span class="co2-unit">t CO2</span></div>
+        <div class="co2-note">Verified through Latitude's offset partner. Domestic 2.4t, long-haul 6.8t, ground and rail 2.6t. Fully offset through verified projects in Quebec and Costa Rica.</div>
+      </div>
+      <div class="chart-wrap" style="height:240px"><canvas id="co2Bar"></canvas></div>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section>
+    <div class="eyebrow">Top destinations</div>
+    <h2>Where you spent the most time.</h2>
+    <div class="destinations-list">
+      <div class="destination-row">
+        <span class="dest-rank">1</span>
+        <span class="dest-name">New York (JFK · LGA · EWR)</span>
+        <span class="dest-meta">7 trips · 21 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">2</span>
+        <span class="dest-name">London (LHR · LCY)</span>
+        <span class="dest-meta">4 trips · 16 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">3</span>
+        <span class="dest-name">San Francisco (SFO)</span>
+        <span class="dest-meta">3 trips · 9 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">4</span>
+        <span class="dest-name">Zurich and Geneva</span>
+        <span class="dest-meta">2 trips · 11 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">5</span>
+        <span class="dest-name">Singapore (SIN)</span>
+        <span class="dest-meta">2 trips · 8 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">6</span>
+        <span class="dest-name">Lake Como (LIN by way of)</span>
+        <span class="dest-meta">1 trip · 8 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">7</span>
+        <span class="dest-name">Boston (BOS)</span>
+        <span class="dest-meta">2 trips · 4 nights</span>
+      </div>
+      <div class="destination-row">
+        <span class="dest-rank">8</span>
+        <span class="dest-name">Tokyo (HND)</span>
+        <span class="dest-meta">1 trip · 6 nights</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notable trips -->
+  <section>
+    <div class="eyebrow">Notable trips</div>
+    <h2>Four moments from the year.</h2>
+
+    <div class="trip">
+      <div class="trip-month">March</div>
+      <div>
+        <div class="trip-title">NYC roadshow, fourteen LP meetings, four days.</div>
+        <div class="trip-body">The Mark, Park Suite, all four nights. A standing breakfast table held at 07:00 at the lobby restaurant. Blacklane on standby from 07:45 to 19:00 every day. Two days extended by 6 hours when the Greenwich meeting ran long; the hotel held the suite and the driver swapped without prompting. The Mark concierge sourced a missing cufflink between meetings on day two. Trip closed on schedule.</div>
+        <div class="trip-tags">
+          <span class="trip-tag">YYZ → JFK</span>
+          <span class="trip-tag">4 nights</span>
+          <span class="trip-tag">The Mark</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="trip">
+      <div class="trip-month">June</div>
+      <div>
+        <div class="trip-title">Family Office Forum, Geneva, five nights.</div>
+        <div class="trip-body">Mandarin Oriental Geneva, executive suite upgrade at check-in. The forum overlapped with two private dinners at the Beau-Rivage and Domaine de Châteauvieux. A driver from Limousine Service Genève worked the full five days. The Forum's last-night dinner was relocated 24 hours out; the desk rebooked four members of your party simultaneously without changing the original transport schedule.</div>
+        <div class="trip-tags">
+          <span class="trip-tag">YYZ → ZRH → GVA</span>
+          <span class="trip-tag">5 nights</span>
+          <span class="trip-tag">Mandarin Oriental</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="trip">
+      <div class="trip-month">August</div>
+      <div>
+        <div class="trip-title">Lake Como, eight nights, personal.</div>
+        <div class="trip-body">Villa d'Este, lakeside suite. The longest stretch of the year. A boat held standing at the dock through the eight days. Three dinners arranged at properties around the lake — Il Sereno, Passalacqua, Grand Hotel Tremezzo — each at the table the property reserves for arriving guests rather than the floor. The flight back was disrupted at LIN by a 6-hour delay; the desk rebooked through MXP and held a car at the new gate.</div>
+        <div class="trip-tags">
+          <span class="trip-tag">YYZ → JFK → LIN</span>
+          <span class="trip-tag">8 nights</span>
+          <span class="trip-tag">Villa d'Este</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="trip">
+      <div class="trip-month">November</div>
+      <div>
+        <div class="trip-title">Tokyo, six nights, two purposes.</div>
+        <div class="trip-body">Aman Tokyo, three nights, then a transfer to the Mandarin for the back half to be closer to the Marunouchi office. The transition was handled with no overlap in luggage or transport. A standing 06:30 table at Aman for the pre-meeting briefings. The desk arranged a same-day suit alteration at Isetan when a jacket needed taking in before the board dinner.</div>
+        <div class="trip-tags">
+          <span class="trip-tag">YYZ → HND</span>
+          <span class="trip-tag">6 nights</span>
+          <span class="trip-tag">Aman · Mandarin</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disruption -->
+  <section class="disruption-bg">
+    <div class="eyebrow">Disruption handled</div>
+    <h2>The year did not always cooperate.</h2>
+    <p class="disruption-prose">Seven irregular operations across 26 trips. Three handled inside an hour. Three rebuilt with minimal impact to your schedule. One — Frankfurt, February, the cancelled LH return — required a same-night replan and an unscheduled night at the Frankfurter Hof. You were in a bed inside 60 minutes of the cancellation alert.</p>
+    <div class="disruption-grid">
+      <div>
+        <div class="disruption-stat-label">IROPs handled</div>
+        <div class="disruption-stat-value">7</div>
+        <div class="disruption-stat-note">All resolved within 24 hours</div>
+      </div>
+      <div>
+        <div class="disruption-stat-label">Averted</div>
+        <div class="disruption-stat-value">4</div>
+        <div class="disruption-stat-note">Caught before they reached you</div>
+      </div>
+      <div>
+        <div class="disruption-stat-label">Avg resolution</div>
+        <div class="disruption-stat-value">38<span style="font-size:24px"> min</span></div>
+        <div class="disruption-stat-note">From open to itinerary confirmed</div>
+      </div>
+      <div>
+        <div class="disruption-stat-label">Claims filed</div>
+        <div class="disruption-stat-value">5</div>
+        <div class="disruption-stat-note">$2,140 recovered on your behalf</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Looking forward -->
+  <section>
+    <div class="eyebrow">Looking forward</div>
+    <h2>Three recommendations for 2027.</h2>
+    <div class="recommendations">
+      <div class="rec">
+        <div class="rec-num">01</div>
+        <div>
+          <div class="rec-title">Push to Air Canada Super Elite retention plus.</div>
+          <div class="rec-body">You ended the year 8,000 SQM above the threshold. Three additional Signature-class segments in Q1 — we suggest combining the March and April NYC trips — secure the Diamond invitation and unlock direct ticketing concierge. Estimated additional spend: $2,400. Estimated value of benefits: $6,800 over the year.</div>
+          <div class="rec-action">Action · Schedule by 15 January</div>
+        </div>
+      </div>
+      <div class="rec">
+        <div class="rec-num">02</div>
+        <div>
+          <div class="rec-title">Consolidate Amex MR and Chase UR positions.</div>
+          <div class="rec-body">You hold 412,000 MR and 184,000 UR with no transfer strategy on file. We recommend transferring 200,000 MR to Aeroplan ahead of the summer Europe routes, and holding UR for Hyatt redemptions on the Como repeat. The desk has modelled three transfer scenarios; we will walk you through them on the January call.</div>
+          <div class="rec-action">Action · January quarterly review</div>
+        </div>
+      </div>
+      <div class="rec">
+        <div class="rec-num">03</div>
+        <div>
+          <div class="rec-title">Replace the carry-on. Add a second passport.</div>
+          <div class="rec-body">The Briggs &amp; Riley carry-on has 142,000 miles of wear and a wheel issue noted on the November trip. We recommend the Rimowa Original cabin in titanium for the next 10 years of travel. Separately, your single passport sat in a visa office for 11 days in October. A second passport eliminates that exposure. We will manage the application end-to-end.</div>
+          <div class="rec-action">Action · Both before March</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <div class="closing">
+    <div class="closing-quote">"A good year of travel is one you remember by the meetings you made, not the flights you took. We are honoured to have run alongside yours."</div>
+    <div class="closing-sig">Avshalom</div>
+    <div class="closing-name">Avshalom Sharvit · Principal</div>
+  </div>
+
+</div>
+
+<footer>
+  <span class="mark">Latitude 43 · Atlas</span>
+  <span>2026 Year in Review · Confidential to the member</span>
+</footer>
+
+<script>
+  Chart.defaults.font.family = "'Inter', sans-serif";
+  Chart.defaults.font.size = 11;
+  Chart.defaults.color = '#6b7280';
+
+  // Spend donut
+  new Chart(document.getElementById('spendDonut'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Air', 'Hotel', 'Ground', 'Other'],
+      datasets: [{
+        data: [48400, 62200, 11800, 6400],
+        backgroundColor: ['#0E1A2B', '#B8924C', '#6b7280', '#d8cfbf'],
+        borderColor: '#fff',
+        borderWidth: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '62%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: { label: ctx => ctx.label + ': $' + ctx.parsed.toLocaleString() }
+        }
+      }
+    }
+  });
+
+  // CO2 bar
+  new Chart(document.getElementById('co2Bar'), {
+    type: 'bar',
+    data: {
+      labels: ['Domestic', 'Long-haul', 'Ground / rail'],
+      datasets: [{
+        data: [2.4, 6.8, 2.6],
+        backgroundColor: ['#0E1A2B', '#B8924C', '#6b7280'],
+        borderRadius: 2,
+        barThickness: 32
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: '#ECE5D7' }, ticks: { callback: v => v + 't' } },
+        y: { grid: { display: false } }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
