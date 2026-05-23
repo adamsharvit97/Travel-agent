@@ -1257,6 +1257,519 @@ main {
   font-weight: 500;
 }
 
+/* ==========================================================================
+   v2 — stationery register
+   Extensions for index-v2.html, approach-v2.html, atlas-v2.html.
+   Existing v1 classes above are left untouched.
+   ========================================================================== */
+
+/* Display serif — EB Garamond at display weight for the v2 hero */
+.v2 {
+  --display-serif: 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+}
+
+.v2 .site-header {
+  background: var(--ivory);
+  border-bottom: 1px solid rgba(201, 191, 171, 0.5);
+}
+
+.v2 .site-header .container {
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+.v2 .nav-primary {
+  gap: 32px;
+}
+
+.v2 .nav-primary a,
+.v2 .nav-dropdown > span {
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
+
+/* Hero — stationery grade */
+.hero-stationery {
+  min-height: calc(100vh - 90px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--navy);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--ivory);
+  padding: 120px 0 100px;
+  overflow: hidden;
+}
+
+.hero-stationery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(14, 26, 43, 0.62) 0%, rgba(14, 26, 43, 0.78) 100%);
+  z-index: 1;
+}
+
+.hero-stationery .hero-stationery-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  padding: 0 var(--side-padding);
+}
+
+.hero-stationery .degree-mark {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 56px;
+  display: inline-block;
+}
+
+.hero-stationery .degree-mark::before,
+.hero-stationery .degree-mark::after {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background: var(--brass);
+  vertical-align: middle;
+  margin: 0 16px;
+}
+
+.hero-stationery h1 {
+  font-family: var(--display-serif, 'EB Garamond', 'Cormorant Garamond', serif);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(2.6rem, 6.2vw, 5.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+  max-width: 880px;
+  margin: 0 auto 56px;
+}
+
+.hero-stationery .price-subline {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  color: var(--ivory);
+  letter-spacing: 0.02em;
+  margin-bottom: 18px;
+  opacity: 0.92;
+}
+
+.hero-stationery .sla-smallcaps {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 56px;
+  display: block;
+}
+
+.hero-stationery .hero-cta {
+  display: inline-block;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  border-bottom: 1px solid var(--brass);
+  padding: 6px 2px 8px;
+  font-weight: 500;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-stationery .hero-cta:hover {
+  color: var(--brass);
+  border-color: var(--ivory);
+}
+
+.hero-stationery .hero-cta::after {
+  content: "  \2192";
+  color: var(--brass);
+}
+
+/* Below-the-fold — three text blocks, no icons */
+.stationery-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 72px;
+  padding: 140px 0 120px;
+}
+
+.stationery-three .block-num {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.stationery-three p {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.55;
+  color: var(--charcoal);
+  font-weight: 400;
+}
+
+.stationery-three p em,
+.stationery-three p i {
+  color: var(--navy);
+}
+
+/* Founder note / principle */
+.founder-note {
+  padding: 100px 0;
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.founder-note p {
+  font-family: var(--serif);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1.4;
+  font-style: italic;
+  color: var(--navy);
+  max-width: 880px;
+}
+
+.founder-note .signature {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-top: 36px;
+  display: block;
+}
+
+/* In the company of — cross-discipline references */
+.in-the-company {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.in-the-company .eyebrow {
+  margin-bottom: 36px;
+}
+
+.in-the-company .company-row {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.in-the-company .company-row .name {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-style: italic;
+  color: var(--navy);
+  opacity: 0.78;
+  letter-spacing: 0.01em;
+}
+
+/* Place-name treatment: TEB → LCY */
+.place-pair {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.place-pair .arrow {
+  color: var(--brass);
+  margin: 0 6px;
+  font-family: var(--serif);
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* SLA stamp — footer of every page */
+.sla-stamp {
+  display: block;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  padding: 28px 0 8px;
+  font-weight: 500;
+  border-top: 1px solid rgba(184, 146, 76, 0.28);
+  margin-top: 36px;
+}
+
+.sla-stamp .dot {
+  color: var(--brass);
+  opacity: 0.55;
+  margin: 0 10px;
+}
+
+/* v2 atlas — tier-as-prose */
+.tier-prose {
+  border-top: 1px solid var(--sand);
+  padding: 56px 0;
+  display: grid;
+  grid-template-columns: 120px 1fr 220px;
+  gap: 56px;
+  align-items: start;
+}
+
+.tier-prose:last-of-type {
+  border-bottom: 1px solid var(--sand);
+}
+
+.tier-prose .roman {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.6rem;
+  color: var(--brass);
+}
+
+.tier-prose h3 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  color: var(--navy);
+}
+
+.tier-prose .eligibility {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 22px;
+}
+
+.tier-prose p {
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+
+.tier-prose .price-line {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--navy);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.tier-prose .price-per {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal-70);
+  margin-bottom: 22px;
+  display: block;
+}
+
+.tier-prose .apply-link {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--navy);
+  border-bottom: 1px solid var(--brass);
+  padding-bottom: 4px;
+  display: inline-block;
+}
+
+/* "What we are not" — diplomatic category list */
+.not-list {
+  list-style: none;
+  border-top: 1px solid var(--sand);
+  margin-top: 24px;
+}
+
+.not-list li {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--sand);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 36px;
+  align-items: baseline;
+}
+
+.not-list li .cat {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.not-list li .note {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
+/* Named-human band */
+.named-human {
+  padding: 96px 0;
+  background: var(--navy);
+  color: var(--ivory);
+  text-align: center;
+}
+
+.named-human .eyebrow {
+  color: var(--brass);
+}
+
+.named-human h2 {
+  color: var(--ivory);
+  font-family: var(--display-serif, 'EB Garamond', 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(2rem, 3.6vw, 3rem);
+  max-width: 780px;
+  margin: 18px auto 24px;
+  letter-spacing: -0.01em;
+}
+
+.named-human p {
+  color: rgba(244, 239, 230, 0.82);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Print stylesheet — letterhead */
+@media print {
+  body {
+    background: #fff;
+    color: #000;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+  .site-header,
+  .site-footer,
+  .nav-primary,
+  .mobile-toggle,
+  .hero-cta,
+  .cta-band,
+  .in-the-company,
+  .named-human,
+  .hero-stationery::before {
+    display: none !important;
+  }
+  .hero-stationery {
+    background: #fff !important;
+    color: #000;
+    min-height: auto;
+    padding: 0;
+    text-align: left;
+  }
+  .hero-stationery h1,
+  .hero-stationery .price-subline,
+  .hero-stationery .sla-smallcaps,
+  .hero-stationery .degree-mark {
+    color: #000 !important;
+  }
+  .hero-stationery h1 {
+    font-size: 28pt;
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 24pt;
+  }
+  .stationery-three {
+    grid-template-columns: 1fr;
+    gap: 18pt;
+    padding: 18pt 0;
+  }
+  .stationery-three p {
+    font-size: 12pt;
+    color: #000;
+  }
+  .sla-stamp {
+    color: #000;
+    border-top: 1px solid #999;
+    margin-top: 24pt;
+    page-break-inside: avoid;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* v2 responsive */
+@media (max-width: 1024px) {
+  .stationery-three {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 80px 0;
+  }
+  .tier-prose {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .not-list li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-stationery {
+    min-height: calc(100vh - 70px);
+    padding: 80px 0;
+  }
+  .hero-stationery h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    margin-bottom: 36px;
+  }
+  .hero-stationery .degree-mark {
+    margin-bottom: 36px;
+  }
+  .hero-stationery .degree-mark::before,
+  .hero-stationery .degree-mark::after {
+    width: 18px;
+    margin: 0 10px;
+  }
+  .in-the-company .company-row {
+    gap: 24px;
+  }
+  .in-the-company .company-row .name {
+    font-size: 1.1rem;
+  }
+}
+
+/* ==========================================================================
+   v1 responsive (untouched below)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
   :root {
     --side-padding: 48px;
