@@ -91,19 +91,19 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://latitude43.travel/index-v2.html</loc>
+    <loc>https://latitude43.travel/index.html</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://latitude43.travel/approach-v2.html</loc>
+    <loc>https://latitude43.travel/approach.html</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://latitude43.travel/atlas-v2.html</loc>
+    <loc>https://latitude43.travel/atlas.html</loc>
     <lastmod>2026-05-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
