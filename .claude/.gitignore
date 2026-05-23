@@ -1,0 +1,10 @@
+# Local-only — never commit
+projects/
+todos/
+shell-snapshots/
+statsig/
+*.log
+credentials.json
+.credentials.json
+settings.local.json
+.last-cost.txt
