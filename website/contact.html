@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open the Desk — Latitude 43</title>
+<meta name="description" content="Book an intro call, email the office, or apply for Atlas membership. All inquiries answered within 4 business hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="wordmark">Latitude 43<span class="deg">43°N</span></a>
+    <nav class="nav-primary" aria-label="Primary">
+      <a href="approach.html">Approach</a>
+      <a href="atlas.html">Atlas</a>
+      <div class="nav-dropdown">
+        <span tabindex="0">Built For</span>
+        <div class="nav-dropdown-menu">
+          <a href="for-founders.html">Founders</a>
+          <a href="for-investors.html">Investors</a>
+          <a href="for-advisors.html">Financial Advisors</a>
+          <a href="for-solo.html">Solo Professionals</a>
+        </div>
+      </div>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="nav-cta">Open the Desk</a>
+    </nav>
+    <button class="mobile-toggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="subhero">
+    <div class="container">
+      <div class="hero-inner">
+        <span class="eyebrow">Open the Desk</span>
+        <h1>One inbox. One human. Sixty-minute response, 24/7.</h1>
+        <p class="lede">Three ways to reach the office. Pick whichever fits — we are equally responsive to all of them.</p>
+      </div>
+
+      <div class="sla-banner" style="margin-top: 48px;">
+        <span class="label-caps">SLA</span>
+        <p>All inquiries answered within four business hours. After-hours and weekend disruption requests answered within sixty minutes by the Desk.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="contact-paths">
+            <div class="contact-path">
+              <h3>Book a 20-minute intro call</h3>
+              <p>The most direct way. Pick a slot on the founder's calendar. We will ask three questions about how you travel and tell you honestly whether Atlas fits.</p>
+              <a href="https://calendly.com/latitude43/intro" class="btn btn-outline">Open the calendar</a>
+            </div>
+            <div class="contact-path">
+              <h3>Email the office</h3>
+              <p>Prefer writing to scheduling? Send a note and we will reply within four business hours.</p>
+              <a href="mailto:office@latitude43.travel" class="inline-link">office@latitude43.travel</a>
+            </div>
+            <div class="contact-path">
+              <h3>Apply for Atlas membership</h3>
+              <p>If you already know which tier fits, send the application form. We respond with a fit call within one business day.</p>
+              <a href="#apply" class="btn btn-ghost">Application form below</a>
+            </div>
+            <div class="contact-path">
+              <h3>Existing client — Latitude Desk</h3>
+              <p>Already an Atlas member? Use your dedicated Slack channel or direct line. After hours: the Desk number in your traveler agreement.</p>
+              <a href="mailto:desk@latitude43.travel" class="inline-link">desk@latitude43.travel</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form" id="apply">
+          <h3 style="margin-bottom: 8px; font-style: italic;">Application</h3>
+          <p style="margin-bottom: 28px;">Send us the basics. We reply within four business hours.</p>
+          <form action="mailto:office@latitude43.travel" method="post" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="firm">Firm or company</label>
+              <input type="text" id="firm" name="firm">
+            </div>
+            <div class="form-group">
+              <label for="role">Your role</label>
+              <select id="role" name="role">
+                <option>Founder / CEO</option>
+                <option>VC / PE Partner</option>
+                <option>Financial advisor / RIA</option>
+                <option>Solo professional / consultant</option>
+                <option>Family office</option>
+                <option>Executive assistant</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="tier">Atlas tier of interest</label>
+              <select id="tier" name="tier">
+                <option>Not sure yet</option>
+                <option>Atlas Principal — one traveler</option>
+                <option>Atlas Office — up to five</option>
+                <option>Atlas Firm — up to fifteen</option>
+                <option>Non-member / per-trip</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="trips">Approximate trips per year</label>
+              <select id="trips" name="trips">
+                <option>Fewer than 10</option>
+                <option>10–20</option>
+                <option>20–40</option>
+                <option>40+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">What would you like us to know?</label>
+              <textarea id="message" name="message" placeholder="A few lines on how you travel and what is not currently working."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send to the office</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-bone">
+    <div class="container">
+      <div class="grid-2">
+        <div>
+          <span class="eyebrow">Office</span>
+          <h2>Toronto.</h2>
+          <p style="margin-top: 24px;">The advisor practice is based in Toronto — Eastern Time, the same business hours as New York, Boston, Atlanta, and Miami. Bookings, payments, and traveler agreements run through Fora Travel LLC in the United States.</p>
+          <p style="margin-top: 16px;">We work with clients across the United States. The public site is intended for US-based travelers; we do not market to Canadian residents.</p>
+        </div>
+        <div>
+          <span class="eyebrow">Office hours</span>
+          <h2>09:00–18:00 ET, Monday to Friday.</h2>
+          <p style="margin-top: 24px;">Outside those hours, Atlas members reach the Desk for active travel issues. Non-Atlas inquiries are answered the next business morning.</p>
+          <p style="margin-top: 16px;">Holidays: closed for new inquiries. The Desk runs continuously for travelers in motion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="wordmark">Latitude 43<span class="deg">43°N</span></a>
+        <p style="margin-top: 20px;">Toronto · Operating under Fora Travel, our IATA-accredited host agency.</p>
+        <p style="margin-top: 8px;">Serving clients across the United States.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Office</h5>
+        <ul>
+          <li><a href="approach.html">Approach</a></li>
+          <li><a href="atlas.html">Atlas Membership</a></li>
+          <li><a href="atlas.html#fees">Fees</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Built For</h5>
+        <ul>
+          <li><a href="for-founders.html">Founders</a></li>
+          <li><a href="for-investors.html">Investors</a></li>
+          <li><a href="for-advisors.html">Financial Advisors</a></li>
+          <li><a href="for-solo.html">Solo Professionals</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="contact.html">Open the Desk</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Press inquiries</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Latitude 43 Travel Office. All rights reserved.</span>
+      <span>Latitude 43 operates under Fora Travel LLC, IATA-accredited. Fares quoted in USD.</span>
+    </div>
+  </div>
+</footer>
+<script src="scripts.js"></script>
+</body>
+</html>
