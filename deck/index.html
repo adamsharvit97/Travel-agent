@@ -1,0 +1,1333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Latitude 43 — A travel office for people whose time costs more than their tickets.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#0E1A2B;
+    --ivory:#F4EFE6;
+    --bone:#E8E0D0;
+    --brass:#B8924C;
+    --brass-soft:#D7B883;
+    --charcoal:#1F1F1F;
+    --sand:#C9BFAB;
+    --rule:rgba(31,31,31,.14);
+    --rule-strong:rgba(31,31,31,.28);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--ivory);color:var(--charcoal);font-family:'Inter',sans-serif;font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+  body{scroll-behavior:smooth}
+  a{color:inherit}
+  h1,h2,h3,h4{font-family:'EB Garamond',serif;font-weight:500;color:var(--navy);letter-spacing:-.005em;margin:0}
+  .serif{font-family:'EB Garamond',serif}
+  .mono{font-family:'Inter',sans-serif;font-feature-settings:"tnum" 1, "lnum" 1;letter-spacing:.04em}
+  .eyebrow{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.22em;font-size:11px;color:var(--brass);font-weight:500}
+  .rule{height:1px;background:var(--rule);width:100%}
+  .rule-brass{height:1px;background:var(--brass);width:64px}
+
+  /* Slide frame */
+  .deck{display:block}
+  .slide{
+    position:relative;
+    min-height:100vh;
+    padding:64px 88px 96px 88px;
+    display:flex;
+    flex-direction:column;
+    background:var(--ivory);
+    border-bottom:1px solid var(--rule);
+    overflow:hidden;
+    scroll-snap-align:start;
+  }
+  .slide.dark{background:var(--navy);color:#E8E0D0}
+  .slide.dark h1,.slide.dark h2,.slide.dark h3{color:var(--ivory)}
+  .slide.dark .eyebrow{color:var(--brass-soft)}
+  .slide.cream{background:var(--bone)}
+
+  /* Slide chrome */
+  .chrome-top{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--charcoal);opacity:.7;
+  }
+  .slide.dark .chrome-top{color:var(--ivory);opacity:.6}
+  .wordmark{font-family:'EB Garamond',serif;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy)}
+  .slide.dark .wordmark{color:var(--ivory)}
+  .wordmark .deg{color:var(--brass)}
+
+  .chrome-bottom{
+    position:absolute;left:88px;right:88px;bottom:32px;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--charcoal);opacity:.55;
+  }
+  .slide.dark .chrome-bottom{color:var(--ivory);opacity:.55}
+  .motif{font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.16em;color:var(--brass);text-transform:none}
+  .counter{font-feature-settings:"tnum" 1}
+
+  .slide-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0}
+
+  /* Typographic helpers */
+  h1.display{font-size:72px;line-height:1.02;letter-spacing:-.015em;font-weight:500}
+  h1.cover{font-size:96px;line-height:.98;letter-spacing:-.02em;font-weight:500}
+  h2.title{font-size:54px;line-height:1.06;letter-spacing:-.01em;font-weight:500;margin-bottom:24px}
+  h2.title em{font-style:italic;color:var(--brass)}
+  h3.kicker{font-size:30px;line-height:1.18;font-weight:500;color:var(--navy)}
+  .lede{font-family:'EB Garamond',serif;font-size:26px;line-height:1.4;color:var(--charcoal);max-width:880px}
+  .body{font-size:16px;line-height:1.65;color:var(--charcoal);max-width:760px}
+  .small{font-size:12px;color:var(--charcoal);opacity:.7;letter-spacing:.02em}
+  .footnote{font-size:11px;color:var(--charcoal);opacity:.55;letter-spacing:.04em}
+
+  .grid{display:grid;gap:32px}
+  .grid-2{grid-template-columns:1fr 1fr}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+
+  .card{
+    background:transparent;
+    border-top:1px solid var(--rule-strong);
+    padding:24px 0 0 0;
+  }
+  .card .num{font-family:'EB Garamond',serif;font-size:14px;letter-spacing:.2em;color:var(--brass);text-transform:uppercase;margin-bottom:14px}
+  .card h4{font-family:'EB Garamond',serif;font-size:24px;line-height:1.2;color:var(--navy);font-weight:500;margin-bottom:10px}
+  .card p{font-size:14.5px;line-height:1.6;color:var(--charcoal);margin:0;max-width:42ch}
+
+  .pull-quote{
+    font-family:'EB Garamond',serif;font-style:italic;font-size:30px;line-height:1.35;color:var(--navy);
+    border-left:2px solid var(--brass);padding:6px 0 6px 28px;max-width:780px;
+  }
+
+  .stat .n{font-family:'EB Garamond',serif;font-size:64px;line-height:1;color:var(--navy);font-weight:500;letter-spacing:-.01em}
+  .stat .l{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--charcoal);opacity:.7;margin-top:8px}
+
+  .chart-wrap{background:#FAF6EC;border:1px solid var(--rule);padding:28px 28px 20px 28px;border-radius:2px}
+  .slide.dark .chart-wrap{background:rgba(244,239,230,.04);border-color:rgba(244,239,230,.1)}
+
+  /* Cover */
+  .cover-grid{display:grid;grid-template-columns:1fr;gap:48px;height:100%;align-content:space-between;padding:64px 0}
+  .cover-top{display:flex;align-items:center;gap:18px}
+  .cover-logo{font-family:'EB Garamond',serif;font-size:22px;letter-spacing:.22em;text-transform:uppercase;color:var(--ivory)}
+  .cover-logo .deg{color:var(--brass)}
+  .cover-meta{display:flex;justify-content:space-between;align-items:flex-end;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ivory);opacity:.7}
+  .cover-meta .left,.cover-meta .right{display:flex;flex-direction:column;gap:6px}
+
+  /* Pricing */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong)}
+  .price-col{padding:36px 32px;border-right:1px solid var(--rule);position:relative}
+  .price-col:last-child{border-right:none}
+  .price-col.featured{background:#EFE6D2}
+  .price-col .tier{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+  .price-col h4{font-family:'EB Garamond',serif;font-size:34px;line-height:1.05;color:var(--navy);margin:10px 0 6px;font-weight:500}
+  .price-col .price{font-family:'EB Garamond',serif;font-size:42px;color:var(--navy);font-weight:500;letter-spacing:-.01em}
+  .price-col .per{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--charcoal);opacity:.6;margin-left:6px}
+  .price-col .who{font-size:13px;color:var(--charcoal);opacity:.75;margin-top:6px}
+  .price-col ul{list-style:none;padding:0;margin:24px 0 0 0;font-size:14px;line-height:1.6}
+  .price-col ul li{padding:10px 0;border-top:1px solid var(--rule)}
+  .price-col ul li:first-child{border-top:none}
+
+  /* Logo wall */
+  .logowall{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--rule-strong);border-left:1px solid var(--rule-strong)}
+  .logowall .ll{
+    border-right:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong);
+    aspect-ratio: 16/7;display:flex;align-items:center;justify-content:center;
+    font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);letter-spacing:.04em;text-align:center;padding:0 14px;
+  }
+  .logowall .ll .sub{display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-top:6px}
+
+  /* Risk columns */
+  .risk-col{padding:28px 0;border-top:1px solid var(--rule-strong)}
+  .risk-col .label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:500}
+  .risk-col h4{font-family:'EB Garamond',serif;font-size:24px;color:var(--navy);font-weight:500;margin:10px 0 12px}
+  .risk-col p{font-size:14px;color:var(--charcoal);line-height:1.6;margin:0}
+
+  /* Roadmap */
+  .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule-strong)}
+  .roadmap .q{padding:28px 24px 0 0;border-right:1px solid var(--rule);position:relative}
+  .roadmap .q:last-child{border-right:none}
+  .roadmap .q .qn{font-family:'EB Garamond',serif;font-size:60px;color:var(--brass);line-height:.9;letter-spacing:-.01em;font-weight:500}
+  .roadmap .q h4{font-family:'EB Garamond',serif;font-size:22px;color:var(--navy);margin:16px 0 8px;font-weight:500}
+  .roadmap .q p{font-size:13.5px;line-height:1.6;color:var(--charcoal);opacity:.85;margin:0}
+
+  /* Slide index */
+  #indexPanel{
+    position:fixed;top:0;right:0;height:100vh;width:380px;background:#0E1A2B;color:var(--ivory);
+    box-shadow:-12px 0 40px rgba(0,0,0,.18);transform:translateX(100%);transition:transform .28s ease;
+    z-index:50;padding:32px 28px;overflow-y:auto;
+  }
+  #indexPanel.open{transform:translateX(0)}
+  #indexPanel h3{font-family:'EB Garamond',serif;font-size:22px;color:var(--ivory);margin-bottom:6px;font-weight:500}
+  #indexPanel .sub{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);margin-bottom:24px}
+  #indexPanel ol{list-style:none;padding:0;margin:0;counter-reset:item}
+  #indexPanel ol li{counter-increment:item;padding:10px 0;border-top:1px solid rgba(244,239,230,.1);font-size:13.5px;line-height:1.4;display:flex;gap:12px;cursor:pointer;color:rgba(244,239,230,.85)}
+  #indexPanel ol li:hover{color:var(--ivory)}
+  #indexPanel ol li::before{content:counter(item,decimal-leading-zero);font-family:'Inter',sans-serif;font-size:11px;color:var(--brass);letter-spacing:.1em;min-width:28px;padding-top:2px}
+  #indexToggle{
+    position:fixed;top:24px;right:24px;z-index:60;background:var(--navy);color:var(--ivory);
+    border:none;width:44px;height:44px;cursor:pointer;font-family:'EB Garamond',serif;font-size:13px;letter-spacing:.12em;
+    display:flex;align-items:center;justify-content:center;border-radius:2px;box-shadow:0 4px 18px rgba(14,26,43,.25);
+  }
+  #indexToggle:hover{background:var(--brass)}
+
+  /* Floating slide-counter HUD */
+  #hud{
+    position:fixed;left:24px;bottom:24px;z-index:40;
+    background:rgba(14,26,43,.92);color:var(--ivory);
+    padding:10px 14px;border-radius:2px;font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    box-shadow:0 4px 18px rgba(14,26,43,.25);
+  }
+  #hud .cur{color:var(--brass-soft)}
+
+  /* Misc */
+  .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+  .threecol{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+  .fourcol{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+
+  .quad{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--rule-strong)}
+  .quad .cell{padding:32px;border-right:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong)}
+  .quad .cell:nth-child(2),.quad .cell:nth-child(4){border-right:none}
+  .quad .cell:nth-child(3),.quad .cell:nth-child(4){border-bottom:none}
+
+  .matrix-frame{position:relative;width:100%;aspect-ratio:16/10;border:1px solid var(--rule-strong);background:#FAF6EC}
+  .axis-y{position:absolute;left:-44px;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:left center;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);opacity:.7}
+  .axis-x{position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);opacity:.7}
+
+  /* Vignette block (slide 3) */
+  .vignette{padding:28px 0;border-top:1px solid var(--rule-strong);max-width:880px}
+  .vignette p{font-family:'EB Garamond',serif;font-size:22px;line-height:1.45;color:var(--navy);margin:0;font-style:italic}
+  .vignette .tag{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin-bottom:14px;display:block;font-style:normal;font-family:'Inter',sans-serif}
+
+  /* Tier callout column */
+  .three-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule-strong);border-bottom:1px solid var(--rule-strong)}
+  .three-pillars .p{padding:40px 36px 40px 0;border-right:1px solid var(--rule)}
+  .three-pillars .p:last-child{border-right:none;padding-right:0}
+  .three-pillars .p .pn{font-family:'EB Garamond',serif;font-size:14px;letter-spacing:.22em;color:var(--brass);text-transform:uppercase}
+  .three-pillars .p h3{font-family:'EB Garamond',serif;font-size:42px;color:var(--navy);font-weight:500;margin:18px 0 14px;letter-spacing:-.01em}
+  .three-pillars .p p{font-size:15px;line-height:1.6;color:var(--charcoal);margin:0;max-width:38ch}
+
+  /* Founder slide */
+  .founder-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start}
+  .headshot{aspect-ratio:4/5;background:linear-gradient(180deg,#2a3a52 0%,#0E1A2B 100%);border:1px solid var(--rule-strong);display:flex;align-items:flex-end;padding:18px;color:var(--ivory);font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.95}
+
+  /* "Not" list */
+  .not-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule-strong);max-width:920px}
+  .not-list .row{display:grid;grid-template-columns:200px 1fr;gap:32px;padding:24px 0;border-bottom:1px solid var(--rule)}
+  .not-list .row .l{font-family:'EB Garamond',serif;font-size:22px;color:var(--brass);font-weight:500;font-style:italic}
+  .not-list .row .r{font-family:'EB Garamond',serif;font-size:22px;color:var(--navy);font-weight:500}
+
+  /* Dashboard mock */
+  .dash{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}
+  .dash .panel{background:#FAF6EC;border:1px solid var(--rule);padding:18px}
+  .dash .panel h5{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);margin:0 0 12px;font-weight:500}
+  .dash .panel .kpi{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .dash .panel .kpi .v{font-family:'EB Garamond',serif;font-size:30px;color:var(--navy);font-weight:500}
+  .dash .panel .kpi .d{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+
+  /* Phase strip */
+  .phases{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule-strong)}
+  .phases .ph{padding:32px 28px 32px 0;border-right:1px solid var(--rule)}
+  .phases .ph:last-child{border-right:none;padding-right:0}
+  .phases .ph .tag{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+  .phases .ph .mo{font-family:'EB Garamond',serif;font-size:14px;color:var(--charcoal);opacity:.7;margin-top:6px;font-style:italic}
+  .phases .ph h4{font-family:'EB Garamond',serif;font-size:26px;color:var(--navy);font-weight:500;margin:18px 0 12px}
+  .phases .ph p{font-size:14px;line-height:1.6;color:var(--charcoal);margin:0}
+
+  /* Cross-border (slide 17) */
+  .cb-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .map-card{aspect-ratio:4/3;background:#0E1A2B;color:var(--ivory);position:relative;padding:32px;border:1px solid var(--rule-strong);overflow:hidden}
+  .map-card .lat{position:absolute;left:0;right:0;top:50%;height:1px;background:var(--brass);opacity:.65}
+  .map-card .lbl{position:absolute;left:32px;top:calc(50% + 10px);font-family:'EB Garamond',serif;font-size:16px;letter-spacing:.18em;color:var(--brass);font-style:italic}
+  .map-card .city{position:absolute;font-family:'EB Garamond',serif;font-size:18px;color:var(--ivory)}
+  .map-card .city .d{display:block;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.18em;color:var(--brass-soft);margin-top:4px;text-transform:uppercase}
+  .map-card .city.tor{top:48%;left:18%;transform:translateY(-100%)}
+  .map-card .city.nyc{top:55%;left:42%}
+  .map-card .city.bos{top:42%;left:52%}
+  .map-card .city.atl{top:64%;left:38%}
+  .map-card .dot{width:8px;height:8px;background:var(--brass);border-radius:50%;display:inline-block;margin-right:8px;vertical-align:middle}
+
+  .cross-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-strong)}
+  .cross-stats .s{padding:22px 24px 22px 0;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .cross-stats .s:nth-child(2n){border-right:none;padding-right:0}
+  .cross-stats .s .n{font-family:'EB Garamond',serif;font-size:42px;color:var(--navy);font-weight:500;letter-spacing:-.01em}
+  .cross-stats .s .l{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--charcoal);opacity:.7;margin-top:6px}
+
+  /* Slide 2 — quiet */
+  .slide.quiet{justify-content:center}
+  .slide.quiet .slide-body{justify-content:center;align-items:flex-start;max-width:1100px}
+  .quiet-line{font-family:'EB Garamond',serif;font-size:64px;line-height:1.14;color:var(--ivory);font-weight:500;letter-spacing:-.01em;font-style:italic}
+  .quiet-line span{color:var(--brass);font-style:normal}
+
+  /* Closing */
+  .close-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center}
+  .contact-block{border-top:1px solid rgba(244,239,230,.25)}
+  .contact-block .row{display:grid;grid-template-columns:140px 1fr;padding:18px 0;border-bottom:1px solid rgba(244,239,230,.12);font-size:14px}
+  .contact-block .row .k{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);padding-top:3px}
+  .contact-block .row .v{font-family:'EB Garamond',serif;font-size:22px;color:var(--ivory)}
+
+  /* What we deliver columns */
+  .deliver{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .deliver .col{padding:48px 36px 48px 0;border-right:1px solid var(--rule)}
+  .deliver .col:last-child{border-right:none;padding-right:0}
+  .deliver .col .pn{font-family:'EB Garamond',serif;font-size:14px;color:var(--brass);letter-spacing:.2em;text-transform:uppercase}
+  .deliver .col h3{font-family:'EB Garamond',serif;font-size:56px;color:var(--navy);font-weight:500;letter-spacing:-.015em;margin:14px 0 18px;line-height:1}
+  .deliver .col p{font-size:15.5px;line-height:1.6;color:var(--charcoal);max-width:34ch;margin:0}
+
+  /* Atlas intro */
+  .atlas-hero{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .atlas-mark{aspect-ratio:1;background:var(--navy);color:var(--ivory);display:flex;align-items:center;justify-content:center;flex-direction:column;border:1px solid var(--rule-strong);position:relative;max-width:440px;margin:0 auto}
+  .atlas-mark .am{font-family:'EB Garamond',serif;font-size:64px;color:var(--ivory);letter-spacing:.06em;font-weight:500}
+  .atlas-mark .am .deg{color:var(--brass)}
+  .atlas-mark .sub{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--brass-soft);margin-top:14px}
+  .atlas-mark .corners{position:absolute;inset:14px;border:1px solid rgba(244,239,230,.18);pointer-events:none}
+
+  /* Section opener (slides 9, 11, 12) */
+  .section-opener{display:grid;grid-template-rows:auto 1fr auto;height:100%}
+
+  /* Print */
+  @page{size:landscape}
+  @media print{
+    html,body{background:#fff}
+    #indexPanel,#indexToggle,#hud{display:none !important}
+    .slide{page-break-after:always;break-after:page;min-height:auto;height:100vh;padding:48px 64px 64px 64px}
+    .chrome-bottom{bottom:24px;left:64px;right:64px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Index toggle button -->
+<button id="indexToggle" aria-label="Toggle slide index">≡</button>
+
+<!-- Slide counter HUD -->
+<div id="hud"><span class="cur" id="hudCur">01</span>&nbsp;/&nbsp;22</div>
+
+<!-- Slide index panel -->
+<aside id="indexPanel" aria-label="Slide index">
+  <h3>Latitude <span style="color:var(--brass)">43</span>°</h3>
+  <div class="sub">Deck Index · 22 slides</div>
+  <ol id="indexList"></ol>
+</aside>
+
+<main class="deck" id="deck">
+
+  <!-- ============ SLIDE 1 — COVER ============ -->
+  <section class="slide dark" data-title="Cover">
+    <div class="chrome-top">
+      <div class="cover-logo">Latitude <span class="deg">43</span>°</div>
+      <div>Toronto · Operating under Fora Travel</div>
+    </div>
+    <div class="slide-body" style="justify-content:flex-end">
+      <div style="max-width:1100px">
+        <div class="eyebrow" style="margin-bottom:32px">A members' travel office</div>
+        <h1 class="cover">A travel office<br/>for people whose time<br/>costs more than<br/>their tickets.</h1>
+        <div style="height:48px"></div>
+        <div style="width:64px;height:1px;background:var(--brass);margin-bottom:24px"></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;color:var(--ivory)">
+          <div>
+            <div style="font-family:'EB Garamond',serif;font-size:22px;color:var(--ivory)">[FOUNDER NAME]</div>
+            <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);margin-top:6px">Founder</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-family:'EB Garamond',serif;font-size:22px;color:var(--ivory)">[MONTH YEAR]</div>
+            <div style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);margin-top:6px">Pitch deck · v1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N · 79°W</div>
+      <div class="counter">01 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 2 — THE SLIDE BEFORE THE DECK ============ -->
+  <section class="slide dark quiet" data-title="The slide before the deck">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Prelude</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow" style="margin-bottom:28px">A single sentence</div>
+      <div class="quiet-line">Most business travel is bought<br/>from people who never travel<br/>for <span>business</span>.</div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">02 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 3 — THE PROBLEM ============ -->
+  <section class="slide" data-title="The problem">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section I · The Problem</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The problem</div>
+      <h2 class="title">Three things that happen<br/>every week in <em>every firm we know</em>.</h2>
+      <div style="height:24px"></div>
+      <div class="vignette">
+        <span class="tag">I · The stack is fractured</span>
+        <p>"Your CFO uses Concur. Your assistant uses Expedia. You use Amex Travel. Nobody talks to each other."</p>
+      </div>
+      <div class="vignette">
+        <span class="tag">II · The chatbot at 2am</span>
+        <p>"Your flight cancels at 2am in Frankfurt. The Navan chatbot suggests a hotel near the airport. There are no rooms."</p>
+      </div>
+      <div class="vignette">
+        <span class="tag">III · The upgrade nobody knew about</span>
+        <p>"Your portfolio CEO is flying to a board meeting in São Paulo. You're paying for business class. He's in a middle seat in economy because the EA didn't know about the upgrade list."</p>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">03 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 4 — MARKET IS BIFURCATED ============ -->
+  <section class="slide" data-title="The market is bifurcated">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section I · Market</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Market structure</div>
+      <h2 class="title">The market is bifurcated,<br/><em>not crowded.</em></h2>
+      <div class="twocol">
+        <div>
+          <p class="lede" style="font-size:22px">Enterprise TMCs serve the Fortune 1000. Self-serve tech serves the seed-stage. Between them sits a <strong style="color:var(--brass);font-style:normal">$625B SMB segment</strong> with real T&amp;E, a real travel problem, and no white-glove service tier built for them.</p>
+          <div style="height:32px"></div>
+          <div class="footnote">Sources: GBTA 2024, public filings (Amex GBT, Navan), TravelPerk Series E valuation, U.S. SMB T&amp;E estimates. Bands are illustrative.</div>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="bifurcationChart" height="220"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">04 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 5 — WHO WE SERVE ============ -->
+  <section class="slide" data-title="Who we serve">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section II · ICP</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Who we serve</div>
+      <h2 class="title">Four kinds of traveler,<br/>one kind of expectation: <em>that it just works.</em></h2>
+      <div class="fourcol" style="margin-top:32px">
+        <div class="card">
+          <div class="num">I · Founders</div>
+          <h4>The operator who flies to close.</h4>
+          <p>Twenty to forty trips a year, mostly customer and board. Decisions hinge on whether the day works.</p>
+        </div>
+        <div class="card">
+          <div class="num">II · Investors</div>
+          <h4>PE and VC deal teams.</h4>
+          <p>Coordinated travel across partners, principals, and portfolio companies. The trip is a billable hour.</p>
+        </div>
+        <div class="card">
+          <div class="num">III · Advisors</div>
+          <h4>RIAs and financial advisors.</h4>
+          <p>Client-facing travel where the hotel and the dinner are part of the trust they're being paid for.</p>
+        </div>
+        <div class="card">
+          <div class="num">IV · Solo</div>
+          <h4>Senior professionals on their own.</h4>
+          <p>Attorneys, consultants, executives between roles. No EA, no patience for self-serve.</p>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">05 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 6 — WHAT WE ARE NOT ============ -->
+  <section class="slide cream" data-title="What we are not">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section II · Positioning</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">By contrast</div>
+      <h2 class="title">What we are <em>not.</em></h2>
+      <div class="not-list" style="margin-top:24px">
+        <div class="row">
+          <div class="l">Not a TMC.</div>
+          <div class="r">We don't sell software, and we don't sell seats by the thousand.</div>
+        </div>
+        <div class="row">
+          <div class="l">Not Concur.</div>
+          <div class="r">We don't enforce policy. We help shape one, and then we live inside it.</div>
+        </div>
+        <div class="row">
+          <div class="l">Not a card concierge.</div>
+          <div class="r">They outsource to a call center. We do not.</div>
+        </div>
+        <div class="row">
+          <div class="l">Not a leisure agency.</div>
+          <div class="r">We live in your weekday inbox, not your honeymoon planning.</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">06 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 7 — WHAT WE ARE ============ -->
+  <section class="slide dark" data-title="What we are">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section II · Positioning</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">What we are</div>
+      <h1 class="display" style="color:var(--ivory);max-width:1100px">A members' travel office.</h1>
+      <div style="height:36px"></div>
+      <div style="width:64px;height:1px;background:var(--brass)"></div>
+      <div style="height:36px"></div>
+      <p class="lede" style="color:var(--bone);font-size:30px;max-width:980px">One human, on call, with the relationships and the tools to make business travel feel like a service instead of a transaction.</p>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">07 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 8 — THE THREE THINGS ============ -->
+  <section class="slide" data-title="The three things we deliver">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section II · Value</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The three things we deliver</div>
+      <h2 class="title" style="margin-bottom:48px">Rewards. Convenience. The line that picks up at <em>two in the morning.</em></h2>
+      <div class="deliver">
+        <div class="col">
+          <div class="pn">I</div>
+          <h3>Rewards.</h3>
+          <p>Real hotel program benefits — upgrades, $100 property credits, breakfast, late checkout, fourth-night-free — not loyalty-point arbitrage. The kind of value that shows up at the front desk, not on a statement.</p>
+        </div>
+        <div class="col">
+          <div class="pn">II</div>
+          <h3>Convenience.</h3>
+          <p>Tell us once. We remember your seat, your hotel floor, your dietary restriction, your assistant's preferred CC line. Every trip is a continuation, not a restart.</p>
+        </div>
+        <div class="col">
+          <div class="pn">III</div>
+          <h3>24/7.</h3>
+          <p>Sixty minutes to first response, day or night. Not a chatbot. Not a queue. A named human in Toronto, with your full traveler profile already open on their screen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">08 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 9 — LATITUDE ATLAS INTRO ============ -->
+  <section class="slide cream" data-title="Latitude Atlas">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Product</div>
+    </div>
+    <div class="slide-body">
+      <div class="atlas-hero">
+        <div>
+          <div class="eyebrow">The membership</div>
+          <h1 class="display" style="font-size:88px;line-height:1;margin-top:18px">Latitude<br/>Atlas.</h1>
+          <div style="height:32px"></div>
+          <div style="width:64px;height:1px;background:var(--brass)"></div>
+          <div style="height:32px"></div>
+          <p class="lede" style="font-size:22px;max-width:520px">An annual membership that puts a travel office on retainer — booking, optimizing, recovering, and reporting on every trip you take.</p>
+          <div style="height:28px"></div>
+          <p class="body" style="font-size:14px;color:var(--charcoal);opacity:.8;max-width:520px">Three tiers, sized for the principal, the office, and the firm. One named advisor, one inbox, one number to call when the airline app is lying to you.</p>
+        </div>
+        <div>
+          <div class="atlas-mark">
+            <div class="corners"></div>
+            <div class="am">Atlas<span class="deg">.</span></div>
+            <div class="sub">Membership · Est. 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">09 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 10 — ATLAS TIERS ============ -->
+  <section class="slide" data-title="Atlas tiers">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Pricing</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Atlas tiers</div>
+      <h2 class="title">Three sizes — Principal, Office, Firm.<br/><em>One advisor</em> at the center of each.</h2>
+      <div class="price-grid" style="margin-top:24px">
+        <div class="price-col">
+          <div class="tier">Tier I</div>
+          <h4>Atlas Principal</h4>
+          <div><span class="price">$3,600</span><span class="per">/ year</span></div>
+          <div class="who">One traveler. The founder, the partner, the solo principal.</div>
+          <ul>
+            <li>Unlimited air, hotel, ground</li>
+            <li>Full hotel program access (Virtuoso, FHR, STARS, Privé)</li>
+            <li>Named advisor, 60-minute SLA</li>
+            <li>Annual review &amp; profile build</li>
+          </ul>
+        </div>
+        <div class="price-col featured">
+          <div class="tier" style="color:var(--navy)">Tier II · Most common</div>
+          <h4>Atlas Office</h4>
+          <div><span class="price">$12,000</span><span class="per">/ year</span></div>
+          <div class="who">Up to 5 travelers. A founder + EA + leadership team.</div>
+          <ul>
+            <li>Everything in Principal</li>
+            <li>Shared traveler profiles &amp; calendar sync</li>
+            <li>Quarterly Reports dashboard</li>
+            <li>Policy &amp; preferred-vendor consult</li>
+          </ul>
+        </div>
+        <div class="price-col">
+          <div class="tier">Tier III</div>
+          <h4>Atlas Firm</h4>
+          <div><span class="price">$36,000</span><span class="per">/ year</span></div>
+          <div class="who">Up to 15 travelers. PE/VC funds, mid-sized RIAs.</div>
+          <ul>
+            <li>Everything in Office</li>
+            <li>Dedicated team of two advisors</li>
+            <li>Monthly CFO/COO reporting cadence</li>
+            <li>Portfolio company onboarding</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex;gap:48px">
+        <div class="footnote">Non-members: <strong style="color:var(--charcoal);font-weight:600">$250–$500 planning fee per trip.</strong></div>
+        <div class="footnote">Air ticketing: <strong style="color:var(--charcoal);font-weight:600">$50 per ticket.</strong></div>
+        <div class="footnote">All hotel commissions retained, transparently disclosed.</div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">10 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 11 — LATITUDE DESK ============ -->
+  <section class="slide dark" data-title="Latitude Desk">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Service</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The 24/7 service line</div>
+      <h2 class="title" style="color:var(--ivory)">Latitude Desk.<br/><em style="color:var(--brass-soft)">Sixty minutes. A named human. No call center.</em></h2>
+      <div style="height:24px"></div>
+      <div class="twocol">
+        <div>
+          <p class="lede" style="color:var(--bone);font-size:22px;max-width:560px">When a flight cancels in Frankfurt at 2am, you do not want a chatbot. You want the person who already knows your Star Alliance status, your hotel preference, and your meeting at 9am in Zurich.</p>
+          <div style="height:28px"></div>
+          <p class="body" style="color:rgba(244,239,230,.78);font-size:14.5px;max-width:560px">Toronto's Eastern Time base means overnight European disruptions hit us during normal business hours. Late-night North American emergencies are covered by a rotating on-call schedule with a 60-minute first-response SLA — measured, reported, and published quarterly to every Atlas member.</p>
+        </div>
+        <div>
+          <div style="border-top:1px solid rgba(244,239,230,.2);padding-top:24px">
+            <div class="stat" style="margin-bottom:32px">
+              <div class="n" style="color:var(--ivory)">60<span style="font-size:32px;color:var(--brass-soft);margin-left:6px">min</span></div>
+              <div class="l" style="color:var(--brass-soft)">First response SLA, day or night</div>
+            </div>
+            <div class="stat" style="margin-bottom:32px">
+              <div class="n" style="color:var(--ivory)">2<span style="font-size:32px;color:var(--brass-soft);margin-left:6px">people</span></div>
+              <div class="l" style="color:var(--brass-soft)">Named advisor + backup, per account</div>
+            </div>
+            <div class="stat">
+              <div class="n" style="color:var(--ivory)">365</div>
+              <div class="l" style="color:var(--brass-soft)">Days covered, including holidays</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="height:28px"></div>
+      <div class="footnote" style="color:rgba(244,239,230,.55);max-width:880px">Handoff protocol: every conversation is logged in the traveler's shared profile, so the second person to pick up the call is never the first person to learn the situation.</div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">11 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 12 — LATITUDE REPORTS ============ -->
+  <section class="slide" data-title="Latitude Reports">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Reporting</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">For finance</div>
+      <h2 class="title" style="margin-bottom:16px">Latitude Reports.<br/><em>The quarterly your CFO already wanted.</em></h2>
+      <p class="body" style="margin-bottom:24px;font-size:15px">Spend by category, destination, traveler, and policy exception — delivered as a single PDF and a live dashboard, the day the quarter closes.</p>
+
+      <div class="dash">
+        <div class="panel">
+          <h5>Spend by category · Q4</h5>
+          <div class="kpi"><div class="v">$184,200</div><div class="d">+12% vs. Q3</div></div>
+          <canvas id="reportCategory" height="120"></canvas>
+        </div>
+        <div class="panel">
+          <h5>Top destinations · last 12 mo</h5>
+          <canvas id="reportDest" height="120"></canvas>
+        </div>
+        <div class="panel">
+          <h5>Policy exceptions</h5>
+          <div class="kpi"><div class="v">3.2%</div><div class="d">Within target</div></div>
+          <canvas id="reportPolicy" height="120"></canvas>
+        </div>
+        <div class="panel">
+          <h5>CO₂ by quarter (tCO₂e)</h5>
+          <div class="kpi"><div class="v">42.6</div><div class="d">−8% YoY</div></div>
+          <canvas id="reportCO2" height="120"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">12 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 13 — HIDDEN MATH ============ -->
+  <section class="slide cream" data-title="The hidden math">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Value</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The hidden math</div>
+      <h2 class="title">What a travel advisor <em>actually</em> saves you.</h2>
+      <div class="twocol" style="margin-top:8px">
+        <div class="chart-wrap" style="background:#FAF6EC">
+          <canvas id="hiddenMath" height="280"></canvas>
+        </div>
+        <div>
+          <p class="lede" style="font-size:21px">A typical principal makes 22 trips a year. At three hours of friction per trip, that's a working week reclaimed. The rewards captured at the front desk routinely cover the entire annual membership in five to seven stays.</p>
+          <div style="height:24px"></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+            <div><div class="stat"><div class="n">2.6h</div><div class="l">Saved per trip</div></div></div>
+            <div><div class="stat"><div class="n">$340</div><div class="l">Avg. rewards per stay</div></div></div>
+            <div><div class="stat"><div class="n">60m</div><div class="l">First response, after hours</div></div></div>
+            <div><div class="stat"><div class="n">&lt; 1%</div><div class="l">Booking error rate</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">13 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 14 — HOTEL PROGRAM ACCESS ============ -->
+  <section class="slide" data-title="Hotel program access">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section III · Leverage</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Program access</div>
+      <h2 class="title">The relationships you can't book yourself.<br/><em>Roughly $340 of front-desk value, per stay.</em></h2>
+      <div class="logowall" style="margin-top:16px">
+        <div class="ll">Virtuoso<span class="sub">Network</span></div>
+        <div class="ll">Four Seasons<span class="sub">Preferred Partner</span></div>
+        <div class="ll">FHR<span class="sub">Amex Fine Hotels</span></div>
+        <div class="ll">Marriott<span class="sub">STARS &amp; Luminous</span></div>
+        <div class="ll">Hyatt<span class="sub">Privé</span></div>
+        <div class="ll">Hilton<span class="sub">Impresario</span></div>
+        <div class="ll">Rosewood<span class="sub">Elite</span></div>
+        <div class="ll">Aman<span class="sub">Insider</span></div>
+        <div class="ll">Belmond<span class="sub">Bellini Club</span></div>
+        <div class="ll">Mandarin Oriental<span class="sub">Fan Club</span></div>
+      </div>
+      <div style="margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+        <div><div class="stat"><div class="n">$100</div><div class="l">Property credit, typical</div></div></div>
+        <div><div class="stat"><div class="n">Upgrade</div><div class="l">At check-in, subject to availability</div></div></div>
+        <div><div class="stat"><div class="n">Breakfast</div><div class="l">Daily, for two</div></div></div>
+        <div><div class="stat"><div class="n">4th</div><div class="l">Night free, on qualifying stays</div></div></div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">14 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 15 — COMPETITIVE MATRIX ============ -->
+  <section class="slide" data-title="Competitive positioning">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section IV · Competition</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Competitive positioning</div>
+      <h2 class="title">The top-right quadrant is <em>empty.</em></h2>
+      <div class="twocol" style="margin-top:8px">
+        <div class="chart-wrap" style="padding:32px 32px 36px 48px;background:#FAF6EC">
+          <canvas id="matrix" height="380"></canvas>
+        </div>
+        <div>
+          <p class="lede" style="font-size:21px">Full-service incumbents (Amex GBT, Concur) are built for the F500. Self-serve tech (Navan, TravelPerk) is built to take humans out of the loop. Generalist luxury (Indagare, Embark Beyond, Brownell) optimizes for leisure.</p>
+          <div style="height:20px"></div>
+          <p class="body" style="font-size:15px">No one is building the full-service, specialized advisory tier for SMB business travel. That is the quadrant we occupy.</p>
+          <div style="height:24px"></div>
+          <div class="footnote">Plot positions are directional, based on public materials and analyst commentary as of 2024–2025.</div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">15 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 16 — GTM ============ -->
+  <section class="slide cream" data-title="GTM">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section IV · Go-to-market</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Go-to-market</div>
+      <h2 class="title">Three phases. <em>Warm first, then compound.</em></h2>
+      <div class="phases" style="margin-top:16px">
+        <div class="ph">
+          <div class="tag">Phase I</div>
+          <div class="mo">Months 0 – 6</div>
+          <h4>The warm network.</h4>
+          <p>Founder's first-degree network, plus 1:1 outbound to EAs, COOs, and GPs in the US East Coast finance corridor. Goal: first ten paying members, signal proof for the next phase.</p>
+        </div>
+        <div class="ph">
+          <div class="tag">Phase II</div>
+          <div class="mo">Months 6 – 18</div>
+          <h4>The Journal &amp; the rooms.</h4>
+          <p>Latitude Journal on LinkedIn — weekly cadence, advisor-as-author. Partnerships with EA networks (NYCEA, IAAP), and curated events in NYC, Boston, and Greenwich. Goal: thirty members, two anchor accounts.</p>
+        </div>
+        <div class="ph">
+          <div class="tag">Phase III</div>
+          <div class="mo">Months 18 +</div>
+          <h4>Referral compound.</h4>
+          <p>Referral compounds inside PE/VC platforms — one partner becomes the firm, the firm becomes the portfolio. Private aviation cross-sell becomes the natural up-tier. Goal: revenue durability, predictable inbound.</p>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">16 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 17 — WHY TORONTO ============ -->
+  <section class="slide dark" data-title="Why Toronto, selling to America">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section IV · Structure</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The cross-border edge</div>
+      <h2 class="title" style="color:var(--ivory)">Why Toronto,<br/><em style="color:var(--brass-soft)">selling to America.</em></h2>
+      <div class="cb-grid" style="margin-top:16px">
+        <div>
+          <p class="lede" style="color:var(--bone);font-size:22px">Toronto sits on Eastern Time — the same business day as New York, Boston, and Atlanta — with a 30% labor cost advantage and zero conflict with the US client base.</p>
+          <div style="height:28px"></div>
+          <div class="cross-stats">
+            <div class="s">
+              <div class="n" style="color:var(--ivory)">43.65°N</div>
+              <div class="l" style="color:var(--brass-soft)">Same time zone, US East Coast</div>
+            </div>
+            <div class="s">
+              <div class="n" style="color:var(--ivory)">~30%</div>
+              <div class="l" style="color:var(--brass-soft)">Labor cost advantage vs. NYC</div>
+            </div>
+            <div class="s">
+              <div class="n" style="color:var(--ivory)">0</div>
+              <div class="l" style="color:var(--brass-soft)">Canadian client overlap</div>
+            </div>
+            <div class="s">
+              <div class="n" style="color:var(--ivory)">Fora</div>
+              <div class="l" style="color:var(--brass-soft)">US accreditation, IATA / CLIA</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="map-card">
+            <div class="lat"></div>
+            <div class="lbl">43°N — Latitude line</div>
+            <div class="city tor"><span><span class="dot"></span>Toronto</span><span class="d">43.65°N · ET</span></div>
+            <div class="city bos"><span><span class="dot"></span>Boston</span><span class="d">42.36°N · ET</span></div>
+            <div class="city nyc"><span><span class="dot"></span>New York</span><span class="d">40.71°N · ET</span></div>
+            <div class="city atl"><span><span class="dot"></span>Atlanta</span><span class="d">33.75°N · ET</span></div>
+            <div style="position:absolute;right:24px;bottom:24px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass-soft);opacity:.8">One time zone · one business day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N · 79°W</div>
+      <div class="counter">17 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 18 — FOUNDER ============ -->
+  <section class="slide" data-title="Founder">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section V · Team</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Founder</div>
+      <h2 class="title">The person <em>behind the desk.</em></h2>
+      <div class="founder-grid" style="margin-top:16px">
+        <div>
+          <div class="headshot">[ HEADSHOT ]</div>
+          <div style="margin-top:14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);opacity:.6">Professional photograph · 4:5</div>
+        </div>
+        <div>
+          <h3 class="kicker" style="font-size:42px;line-height:1.05;margin-bottom:8px">[ FOUNDER NAME ]</h3>
+          <div style="font-family:'EB Garamond',serif;font-style:italic;font-size:20px;color:var(--brass);margin-bottom:24px">[ PRIOR CAREER · Title at Firm ]</div>
+          <p class="body" style="font-size:16px;max-width:600px">[One-paragraph credibility builder: prior operating role, scale of travel managed or budgets owned, particular relationships in the program networks. Two to three sentences. The point is to make a partner at a PE firm believe that the person on the other end of the line has been on their side of the table.]</p>
+          <div style="height:32px"></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid var(--rule-strong);padding-top:24px;max-width:600px">
+            <div>
+              <div class="eyebrow" style="font-size:10px">Trained at</div>
+              <div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:6px">Fora Travel</div>
+            </div>
+            <div>
+              <div class="eyebrow" style="font-size:10px">Based in</div>
+              <div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:6px">Toronto</div>
+            </div>
+            <div>
+              <div class="eyebrow" style="font-size:10px">Serving</div>
+              <div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:6px">US clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">18 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 19 — 5-YEAR PROJECTION ============ -->
+  <section class="slide" data-title="5-year projection">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section V · Financials</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Five-year projection</div>
+      <h2 class="title">A modest plan, on purpose.<br/><em>Boutique scale, durable margin.</em></h2>
+      <div class="twocol" style="margin-top:8px;grid-template-columns:1.4fr 1fr">
+        <div class="chart-wrap" style="background:#FAF6EC">
+          <canvas id="projChart" height="280"></canvas>
+        </div>
+        <div>
+          <p class="lede" style="font-size:21px">Base case grows from $26K in year one to $229K in year five, driven by Atlas membership compounding and a slowly thickening anchor-account layer.</p>
+          <div style="height:28px"></div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:12px;border-top:1px solid var(--rule-strong);padding-top:18px">
+            <div><div class="footnote" style="color:var(--brass);font-weight:500;letter-spacing:.2em">Y1</div><div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:4px">$26K</div></div>
+            <div><div class="footnote" style="color:var(--brass);font-weight:500;letter-spacing:.2em">Y2</div><div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:4px">$61K</div></div>
+            <div><div class="footnote" style="color:var(--brass);font-weight:500;letter-spacing:.2em">Y3</div><div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:4px">$120K</div></div>
+            <div><div class="footnote" style="color:var(--brass);font-weight:500;letter-spacing:.2em">Y4</div><div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:4px">$184K</div></div>
+            <div><div class="footnote" style="color:var(--brass);font-weight:500;letter-spacing:.2em">Y5</div><div style="font-family:'EB Garamond',serif;font-size:18px;color:var(--navy);margin-top:4px">$229K</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:24px;display:flex;gap:32px;align-items:center;border-top:1px solid var(--rule);padding-top:16px">
+        <div class="footnote"><strong style="color:var(--charcoal);font-weight:600;letter-spacing:.18em">BEAR</strong> — 60% of base, slower membership ramp, no anchor accounts before Y3.</div>
+        <div class="footnote"><strong style="color:var(--charcoal);font-weight:600;letter-spacing:.18em">BASE</strong> — chart above. Founder + 1 contractor by Y3.</div>
+        <div class="footnote"><strong style="color:var(--charcoal);font-weight:600;letter-spacing:.18em">BULL</strong> — 1.5x base, two anchor PE accounts by Y2.</div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">19 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 20 — RISKS ============ -->
+  <section class="slide cream" data-title="Risks">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section V · Risk</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">Risks &amp; mitigations</div>
+      <h2 class="title">What could go wrong.<br/><em>And how we hedge it.</em></h2>
+      <div class="threecol" style="margin-top:16px">
+        <div class="risk-col">
+          <div class="label">Risk I</div>
+          <h4>Client concentration.</h4>
+          <p style="margin-bottom:14px">Early revenue clusters around the first three to five Atlas Office accounts. Any one of them leaving creates a hole.</p>
+          <div style="font-family:'EB Garamond',serif;font-size:16px;color:var(--brass);font-style:italic;margin-top:14px">Mitigation</div>
+          <p style="margin-top:6px">Deliberate diversification by year four — no single account &gt;20% of revenue. Anchor accounts are required to onboard at least one referral within the first two quarters.</p>
+        </div>
+        <div class="risk-col">
+          <div class="label">Risk II</div>
+          <h4>Founder bandwidth.</h4>
+          <p style="margin-bottom:14px">The 60-minute SLA depends on the founder being reachable. That is not a scalable position.</p>
+          <div style="font-family:'EB Garamond',serif;font-size:16px;color:var(--brass);font-style:italic;margin-top:14px">Mitigation</div>
+          <p style="margin-top:6px">Virtual assistant infrastructure by Q2 of year two. Backup advisor + on-call rotation by Y3. Tech leverage (profile system, templated trip briefs) from day one.</p>
+        </div>
+        <div class="risk-col">
+          <div class="label">Risk III</div>
+          <h4>Cross-border regulatory.</h4>
+          <p style="margin-bottom:14px">Selling US travel services from a Canadian entity is a structure that needs to hold up under scrutiny.</p>
+          <div style="font-family:'EB Garamond',serif;font-size:16px;color:var(--brass);font-style:italic;margin-top:14px">Mitigation</div>
+          <p style="margin-top:6px">Operating under Fora Travel's US accreditation (IATA, CLIA, TICO-equivalent). No solicitation of Canadian clients. Counsel review of every materials cycle.</p>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">20 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 21 — 12-MONTH ROADMAP ============ -->
+  <section class="slide" data-title="12-month roadmap">
+    <div class="chrome-top">
+      <div class="wordmark">Latitude <span class="deg">43</span>°</div>
+      <div>Section V · Plan</div>
+    </div>
+    <div class="slide-body">
+      <div class="eyebrow">The next twelve months</div>
+      <h2 class="title">From launch to <em>$250K GBV pacing.</em></h2>
+      <div class="roadmap" style="margin-top:16px">
+        <div class="q">
+          <div class="qn">Q1</div>
+          <h4>Launch.</h4>
+          <p>Site live, brand book complete, first three founding clients onboarded. CRM &amp; profile system in place.</p>
+        </div>
+        <div class="q" style="padding-left:24px">
+          <div class="qn">Q2</div>
+          <h4>Atlas v1.</h4>
+          <p>Atlas membership formalized. Latitude Journal launches on LinkedIn, weekly cadence. First EA-network event in NYC.</p>
+        </div>
+        <div class="q" style="padding-left:24px">
+          <div class="qn">Q3</div>
+          <h4>Ten.</h4>
+          <p>Ten Atlas members. First anchor outreach into two PE funds and one mid-sized RIA. Reports dashboard goes live for Office tier.</p>
+        </div>
+        <div class="q" style="padding-left:24px">
+          <div class="qn">Q4</div>
+          <h4>Fifteen.</h4>
+          <p>Fifteen Atlas members, $250K GBV pacing, first anchor account signed. Hire decision on second advisor for Y2.</p>
+        </div>
+      </div>
+      <div style="margin-top:36px;display:flex;gap:48px">
+        <div><div class="stat"><div class="n">3 → 15</div><div class="l">Atlas members, Q1 to Q4</div></div></div>
+        <div><div class="stat"><div class="n">$250K</div><div class="l">GBV pacing by year-end</div></div></div>
+        <div><div class="stat"><div class="n">1</div><div class="l">Anchor PE account signed</div></div></div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N</div>
+      <div class="counter">21 / 22</div>
+    </div>
+  </section>
+
+  <!-- ============ SLIDE 22 — CLOSING ============ -->
+  <section class="slide dark" data-title="Open the Desk">
+    <div class="chrome-top">
+      <div class="cover-logo">Latitude <span class="deg">43</span>°</div>
+      <div>Closing</div>
+    </div>
+    <div class="slide-body">
+      <div class="close-grid">
+        <div>
+          <div class="eyebrow">Reachable in sixty minutes</div>
+          <h1 class="cover" style="font-size:120px;color:var(--ivory);margin-top:18px">Open the<br/>Desk.</h1>
+          <div style="height:32px"></div>
+          <div style="width:64px;height:1px;background:var(--brass)"></div>
+          <div style="height:24px"></div>
+          <p class="lede" style="color:var(--bone);font-size:24px;max-width:560px">If your time costs more than your tickets, the next trip is the one to hand us.</p>
+        </div>
+        <div class="contact-block">
+          <div class="row"><div class="k">Founder</div><div class="v">[ FOUNDER NAME ]</div></div>
+          <div class="row"><div class="k">Email</div><div class="v">desk@latitude43.co</div></div>
+          <div class="row"><div class="k">Direct</div><div class="v">+1 (416) 000-0000</div></div>
+          <div class="row"><div class="k">Office</div><div class="v">Toronto · 43.65°N</div></div>
+          <div class="row"><div class="k">Hours</div><div class="v">Twenty-four, seven</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome-bottom">
+      <div class="motif">43°N · 79°W</div>
+      <div class="counter">22 / 22</div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* -------- Slide index / nav -------- */
+const slides = Array.from(document.querySelectorAll('.slide'));
+const indexList = document.getElementById('indexList');
+const indexPanel = document.getElementById('indexPanel');
+const indexToggle = document.getElementById('indexToggle');
+const hudCur = document.getElementById('hudCur');
+
+slides.forEach((s, i)=>{
+  const li = document.createElement('li');
+  li.textContent = s.dataset.title || ('Slide ' + (i+1));
+  li.addEventListener('click', ()=>{
+    s.scrollIntoView({behavior:'smooth', block:'start'});
+    indexPanel.classList.remove('open');
+  });
+  indexList.appendChild(li);
+});
+
+indexToggle.addEventListener('click', ()=>indexPanel.classList.toggle('open'));
+
+/* Current-slide tracking + HUD */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && e.intersectionRatio > 0.55){
+      const idx = slides.indexOf(e.target);
+      if(idx >= 0) hudCur.textContent = String(idx+1).padStart(2,'0');
+    }
+  });
+}, {threshold:[0.55]});
+slides.forEach(s=>io.observe(s));
+
+/* Keyboard nav */
+function currentIndex(){
+  const y = window.scrollY + window.innerHeight*0.4;
+  for(let i=0;i<slides.length;i++){
+    const top = slides[i].offsetTop;
+    const bot = top + slides[i].offsetHeight;
+    if(y>=top && y<bot) return i;
+  }
+  return 0;
+}
+function go(delta){
+  const i = currentIndex();
+  const next = Math.max(0, Math.min(slides.length-1, i+delta));
+  slides[next].scrollIntoView({behavior:'smooth', block:'start'});
+}
+document.addEventListener('keydown', (e)=>{
+  if(e.key==='ArrowRight' || e.key==='ArrowDown' || e.key===' ' || e.key==='PageDown'){ e.preventDefault(); go(1); }
+  else if(e.key==='ArrowLeft' || e.key==='ArrowUp' || e.key==='PageUp'){ e.preventDefault(); go(-1); }
+  else if(e.key==='Escape'){ indexPanel.classList.toggle('open'); }
+  else if(e.key==='Home'){ slides[0].scrollIntoView({behavior:'smooth'}); }
+  else if(e.key==='End'){ slides[slides.length-1].scrollIntoView({behavior:'smooth'}); }
+});
+
+/* -------- Chart.js global defaults -------- */
+const NAVY = '#0E1A2B';
+const BRASS = '#B8924C';
+const BRASS_SOFT = '#D7B883';
+const SAND = '#C9BFAB';
+const CHARCOAL = '#1F1F1F';
+const RULE = 'rgba(31,31,31,0.12)';
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.font.size = 11;
+Chart.defaults.color = CHARCOAL;
+Chart.defaults.plugins.legend.labels.usePointStyle = true;
+Chart.defaults.plugins.legend.labels.boxWidth = 8;
+
+/* Slide 4 — bifurcation horizontal bar */
+new Chart(document.getElementById('bifurcationChart'), {
+  type:'bar',
+  data:{
+    labels:['Enterprise TMCs','Self-serve tech','The unmanaged middle'],
+    datasets:[{
+      label:'Approx. addressable spend (US$B)',
+      data:[940, 180, 625],
+      backgroundColor:[NAVY, SAND, BRASS],
+      borderColor:[NAVY, SAND, BRASS],
+      borderWidth:0,
+      barThickness:36,
+    }]
+  },
+  options:{
+    indexAxis:'y',
+    responsive:true, maintainAspectRatio:false,
+    plugins:{
+      legend:{display:false},
+      tooltip:{
+        callbacks:{
+          label:(c)=>{
+            const v=c.parsed.x;
+            const notes={0:'Amex GBT 21.9% share · BCD · CTM',1:'Navan $702M rev · TravelPerk $2.7B val',2:'$625B unmanaged SMB · no white-glove tier'};
+            return ['$'+v+'B  ', notes[c.dataIndex]];
+          }
+        }
+      }
+    },
+    scales:{
+      x:{
+        grid:{color:RULE, drawBorder:false},
+        ticks:{callback:(v)=>'$'+v+'B', color:CHARCOAL},
+        title:{display:true, text:'Addressable spend (US$B, illustrative)', color:CHARCOAL, font:{size:10, weight:'500'}}
+      },
+      y:{grid:{display:false}, ticks:{color:CHARCOAL, font:{size:13}}}
+    }
+  }
+});
+
+/* Slide 12 — Reports panels */
+new Chart(document.getElementById('reportCategory'), {
+  type:'doughnut',
+  data:{
+    labels:['Air','Hotel','Ground','Other'],
+    datasets:[{data:[88,62,22,12], backgroundColor:[NAVY,BRASS,SAND,'#8a7556'], borderWidth:0}]
+  },
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'right',labels:{font:{size:10}}}}}
+});
+new Chart(document.getElementById('reportDest'), {
+  type:'bar',
+  data:{labels:['NYC','SFO','LON','SAO','SIN','MIA'],datasets:[{data:[28,19,14,9,7,6],backgroundColor:NAVY,borderRadius:1,barThickness:14}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:RULE,drawBorder:false},ticks:{font:{size:10}}}}}
+});
+new Chart(document.getElementById('reportPolicy'), {
+  type:'line',
+  data:{labels:['Q1','Q2','Q3','Q4'],datasets:[
+    {label:'Exceptions',data:[4.1,3.8,3.4,3.2],borderColor:BRASS,backgroundColor:'rgba(184,146,76,.12)',fill:true,tension:.35,pointRadius:3,pointBackgroundColor:BRASS},
+    {label:'Target',data:[3.5,3.5,3.5,3.5],borderColor:NAVY,borderDash:[4,4],fill:false,pointRadius:0,tension:0}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{y:{grid:{color:RULE,drawBorder:false},ticks:{callback:v=>v+'%',font:{size:10}}},x:{grid:{display:false},ticks:{font:{size:10}}}}}
+});
+new Chart(document.getElementById('reportCO2'), {
+  type:'bar',
+  data:{labels:['Q1','Q2','Q3','Q4'],datasets:[{data:[11.8,10.9,9.5,10.4],backgroundColor:[SAND,SAND,BRASS,SAND],borderRadius:1,barThickness:18}]},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:RULE,drawBorder:false},ticks:{font:{size:10}}}}}
+});
+
+/* Slide 13 — hidden math grouped bar */
+new Chart(document.getElementById('hiddenMath'), {
+  type:'bar',
+  data:{
+    labels:['Hours saved per trip','Rewards captured ($/stay)','Avg. response time (min)','Error rate (×10)'],
+    datasets:[
+      {label:'Self-booking',          data:[0,   0,  null, 7.0], backgroundColor:SAND,  borderRadius:1, barThickness:18},
+      {label:'EA + Expedia',          data:[1.2, 80, 240,  3.5], backgroundColor:NAVY,  borderRadius:1, barThickness:18},
+      {label:'Latitude Atlas',        data:[2.6, 340, 60,  0.6], backgroundColor:BRASS, borderRadius:1, barThickness:18},
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{position:'bottom',labels:{padding:14,font:{size:11}}}},
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:10.5}}},
+      y:{grid:{color:RULE,drawBorder:false},ticks:{font:{size:10}}}
+    }
+  }
+});
+
+/* Slide 15 — competitive matrix scatter */
+new Chart(document.getElementById('matrix'), {
+  type:'scatter',
+  data:{
+    datasets:[
+      {label:'Self-serve tech',data:[
+        {x:-7,y:-4,n:'Navan'},
+        {x:-7.5,y:-3,n:'TravelPerk'},
+        {x:-4,y:-6,n:'Concur'}
+      ],backgroundColor:SAND,pointRadius:8,pointHoverRadius:10},
+      {label:'Enterprise / generic',data:[
+        {x:4,y:-5,n:'Amex GBT'},
+        {x:2,y:-7,n:'Amex Platinum Concierge'}
+      ],backgroundColor:NAVY,pointRadius:8,pointHoverRadius:10},
+      {label:'Specialist luxury',data:[
+        {x:4,y:5,n:'Indagare'},
+        {x:5,y:4,n:'Embark Beyond'},
+        {x:3,y:6,n:'Brownell'}
+      ],backgroundColor:'#7a6240',pointRadius:8,pointHoverRadius:10},
+      {label:'Latitude 43',data:[{x:7,y:7,n:'Latitude 43'}],backgroundColor:BRASS,pointRadius:14,pointHoverRadius:16,pointStyle:'rectRot'}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{padding:14,font:{size:11}}},
+      tooltip:{callbacks:{label:(c)=>c.raw.n}}
+    },
+    scales:{
+      x:{min:-10,max:10,grid:{color:RULE,drawBorder:false},ticks:{display:false},
+         title:{display:true,text:'Self-serve  ←——————→  Full-service',color:CHARCOAL,font:{size:10,weight:'500'}}},
+      y:{min:-10,max:10,grid:{color:RULE,drawBorder:false},ticks:{display:false},
+         title:{display:true,text:'Generic  ←——————→  Specialized',color:CHARCOAL,font:{size:10,weight:'500'}}}
+    }
+  },
+  plugins:[{
+    id:'quadlines',
+    beforeDraw(chart){
+      const {ctx,chartArea,scales}=chart;
+      if(!chartArea) return;
+      ctx.save();
+      ctx.strokeStyle='rgba(31,31,31,.25)';
+      ctx.setLineDash([4,4]);
+      ctx.lineWidth=1;
+      const x0 = scales.x.getPixelForValue(0);
+      const y0 = scales.y.getPixelForValue(0);
+      ctx.beginPath();ctx.moveTo(x0,chartArea.top);ctx.lineTo(x0,chartArea.bottom);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(chartArea.left,y0);ctx.lineTo(chartArea.right,y0);ctx.stroke();
+      ctx.restore();
+
+      // Quadrant label
+      ctx.save();
+      ctx.fillStyle=BRASS;
+      ctx.font='italic 12px "EB Garamond", serif';
+      ctx.fillText('The empty quadrant', scales.x.getPixelForValue(2.5), scales.y.getPixelForValue(9));
+      ctx.restore();
+    }
+  }]
+});
+
+/* Slide 19 — 5-year projection */
+new Chart(document.getElementById('projChart'), {
+  type:'line',
+  data:{
+    labels:['Year 1','Year 2','Year 3','Year 4','Year 5'],
+    datasets:[
+      {label:'Bear',data:[16,37,72,110,137],borderColor:SAND,backgroundColor:'rgba(201,191,171,.18)',borderDash:[5,4],fill:false,tension:.3,pointRadius:3,pointBackgroundColor:SAND},
+      {label:'Base',data:[26,61,120,184,229],borderColor:NAVY,backgroundColor:'rgba(14,26,43,.06)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:NAVY,borderWidth:2.5},
+      {label:'Bull',data:[39,92,180,276,344],borderColor:BRASS,backgroundColor:'rgba(184,146,76,.08)',borderDash:[5,4],fill:false,tension:.3,pointRadius:3,pointBackgroundColor:BRASS}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{
+      legend:{position:'bottom',labels:{padding:16,font:{size:11}}},
+      tooltip:{callbacks:{label:(c)=>c.dataset.label+': $'+c.parsed.y+'K'}}
+    },
+    scales:{
+      x:{grid:{display:false},ticks:{font:{size:11}}},
+      y:{grid:{color:RULE,drawBorder:false},ticks:{callback:v=>'$'+v+'K',font:{size:11}},title:{display:true,text:'Revenue (US$ thousands)',color:CHARCOAL,font:{size:10}}}
+    }
+  }
+});
+</script>
+
+</body>
+</html>
