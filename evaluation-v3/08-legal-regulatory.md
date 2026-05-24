@@ -59,18 +59,9 @@ The split is operationally clean and the v3 plan describes it correctly. The leg
 
 This is the v3-specific issue the plan has not engaged with.
 
-Under v2 (Model A — $99 Light, $249 Office, design fee escalator), the membership was reasonably arguable as a planning-service subscription with a discount on design fees. The legal posture: the membership is a service contract for advisory time, design fees are paid per-trip transaction, and Fora's state SOT registrations cover the actual booking. The membership was not the sale of travel; it was the sale of access to a travel professional.
+Under v2 (Model A — $99 / $249 with design fee escalator), the membership was reasonably arguable as a planning-service subscription with a design-fee discount. Legal posture: membership = service contract for advisory time; design fees per-trip; Fora's state SOT registrations cover the booking. The membership was not the sale of travel.
 
-Under v3 (Model B Unlimited — $189 Light, $349 Office, zero design fees), the analysis shifts. The membership now bundles:
-
-- All trip design (no marginal fee)
-- All booking work (no marginal fee)
-- Virtuoso benefits at hotels
-- Per-trip receipts
-- The First Trip Guarantee
-- The First 30 / 90-day no-fault exit
-
-This bundle, especially in CA, looks more like a pre-paid arrangement of travel services than a planning subscription. The California Seller of Travel Law (Bus & Prof Code §17550 et seq.) defines a seller of travel broadly as "a person who sells, provides, furnishes, contracts for, arranges, or advertises that he or she can or may arrange, or has arranged" wholesale or retail travel-related services. The "arranges, or has arranged" language is the trapdoor. A $349/month membership where "everything is included" and the desk arranges any travel the member asks for is closer to "arranges travel for compensation" than "sells planning time."
+Under v3 (Model B Unlimited — $189 / $349, zero design fees), the analysis shifts. The membership now bundles all trip design, all booking work, Virtuoso benefits, per-trip receipts, FTG, and 90-day no-fault exit. The bundle, especially in CA, looks closer to a pre-paid arrangement of travel services than a planning subscription. The California Seller of Travel Law (Bus & Prof Code §17550 et seq.) defines a seller of travel broadly as "a person who sells, provides, furnishes, contracts for, arranges, or advertises that he or she can or may arrange, or has arranged" wholesale or retail travel-related services. The "arranges, or has arranged" language is the trapdoor. A $349/month membership where "everything is included" and the desk arranges any travel the member asks for is closer to "arranges travel for compensation" than "sells planning time."
 
 Two consequences:
 
@@ -146,28 +137,13 @@ The v3 plan should budget $4K–$8K for a NY-licensed travel-industry lawyer to 
 
 ### Stripe US entity routing — does Latitude 43 Inc. need a US subsidiary
 
-The plan does not address this directly. The architecture under Path A is:
+The plan does not address this. Path A architecture: Stripe account in the name of Latitude 43 Inc. (Ontario CCPC), Canadian business address, Canadian BN, USD-denominated payout to a USD account. Members in the US are billed in USD; Stripe processes, takes its fee, deposits to the Latitude 43 USD account. Stripe permits Canadian merchants accepting US-issued cards; cross-border processing fees are slightly higher (~0.6% surcharge on non-Canadian cards).
 
-- Stripe account in the name of Latitude 43 Inc. (Ontario CCPC), with a Canadian business address, Canadian BN, and a USD-denominated payout to a USD account.
-- Members in the US are billed in USD; Stripe processes the transaction, takes its fee, deposits USD to the Latitude 43 USD bank account.
-- For Stripe purposes, Latitude 43 is a Canadian merchant accepting US-issued cards. Stripe permits this; cross-border processing fees are slightly higher (~0.6% surcharge on non-Canadian cards).
+**For a US subsidiary (Latitude 43 USA LLC, Delaware):** cleaner US-resident customer experience (US billing entity on receipts, US business address on MSA), easier US-bank relationship, potential cleaner CA CST registration if required, some CFO-driven procurement buyers prefer to contract with a US entity.
 
-The question of whether to incorporate a US subsidiary (Latitude 43 USA LLC, Delaware) is structural. The arguments for and against:
+**Against:** US LLC creates Form 1065 or 1120 filing (~$3K-$5K/year compliance), Form 5471 CFC reporting on the Canadian parent, T1134 reporting on the Canadian side, Delaware franchise tax minimum plus state nexus where the LLC operates, and — most importantly — a US LLC means Latitude 43 has a US fixed place of business, which is the textbook PE trigger. PE analysis gets harder, not easier.
 
-**For a US subsidiary:**
-- Cleaner US-resident customer experience (US billing entity on receipts, US business address on the MSA).
-- Easier US-bank relationship (US payroll if needed in the future, US business credit card).
-- Potential cleaner CA CST registration if required.
-- Some US enterprise buyers (CFO-driven procurement) prefer to contract with a US entity.
-
-**Against:**
-- US LLC creates US tax filing requirements (Form 1065 partnership return or Form 1120 corp return depending on classification). Compliance cost ~$3K–$5K per year.
-- Form 5471 controlled-foreign-corporation reporting on the Canadian parent (if structured as wholly-owned US sub of CCPC, may be complex).
-- T1134 controlled foreign affiliate reporting on the Canadian side.
-- US LLC creates state nexus where it operates (Delaware franchise tax minimum, plus any state where the LLC has employees or office).
-- Permanent establishment analysis gets harder, not easier — a US LLC means Latitude 43 has a US fixed place of business, which is the textbook PE trigger.
-
-**Recommendation:** No US subsidiary in Y1 or Y2. The Stripe-as-Canadian-merchant path works for Y1-Y2 revenue scale ($115K-$222K). Revisit when revenue exceeds $500K, or earlier if a CFO buyer specifically requires US contracting.
+**Recommendation:** No US subsidiary in Y1 or Y2. Stripe-as-Canadian-merchant works for Y1-Y2 revenue scale ($115K-$222K). Revisit when revenue exceeds $500K, or earlier if a CFO buyer specifically requires US contracting.
 
 ### Privacy and data — v3 inherits the v2 stack and adds the EA seat
 
@@ -300,4 +276,4 @@ A one-page template covering all six items belongs in the operations folder.
 
 ---
 
-**Total pre-launch legal/regulatory spend under these recommendations: $28K-$42K.** Against an $115K Y1 revenue plan, this is real money. It is also the cost of doing the legal work once, correctly, before the first member is billed. The alternative — a six-figure surprise in Y2 or Y3 — wipes out two quarters of runway and damages the founder's primary-income optionality. The v3 pivot to Unlimited was a strong commercial call. The legal stack needs to catch up to it.
+**Total pre-launch legal/regulatory spend: $28K-$42K.** Against an $115K Y1 revenue plan, this is real money. It is the cost of doing the legal work once, correctly, before the first member is billed. The alternative — a six-figure surprise in Y2 or Y3 — wipes out two quarters of runway. The v3 pivot to Unlimited was a strong commercial call. The legal stack needs to catch up to it.
