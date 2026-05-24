@@ -6,7 +6,48 @@
 **Operating entity:** Latitude 43 Inc. (Ontario CCPC; dba forthcoming)
 **Host agency:** Fora Travel (US ARC/IATA, CLIA, state seller-of-travel registrations)
 **Launch market:** United States (TICO Path A — US-only sales)
-**Document version:** 2.0 — operating bible, replaces v1.0
+**Document version:** 2.1 — Model B Unlimited pivot (May 2026); v2.0 retained below as base text
+
+---
+
+## Pricing pivot to Model B Unlimited — May 2026
+
+After 30 sales simulations across three pricing models, three First Trip Guarantee mechanics, and five sales-cycle stages (Rounds 6 + 7), the canonical offering collapses to a single model. The body of this plan still reads on the v2.0 Model A pricing ($129–$149 Light + $249 Office + design fee escalator); the substitutions below override any conflict.
+
+**The single offering — Model B Unlimited:**
+
+| Tier | Price | Coverage | Design fees |
+|---|---|---|---|
+| **Atlas Light Unlimited** | $189/mo ($2,268/yr) | 1 traveler | ZERO. All trip design included. |
+| **Atlas Office Unlimited** | $349/mo ($4,188/yr) | Up to 5 named, 3 active concurrent. EA Companion Seat included. | ZERO. All trip design included, including personal/family leisure. |
+| **Latitude Society** | $1,000–$2,500/mo | Invite-only family-layer, capped at 12–15 globally | Event design billed à la carte above $30K |
+
+**What changes from v2.0:**
+1. Atlas Light repriced from $129–$149 → **$189**. Anchor at competence, not cheap entry.
+2. Atlas Office repriced from $249 → **$349**. The +$100 buys "ZERO design fees on anything" — the single cleanest pitch line in 30 sims.
+3. The entire design fee escalator (the $250 base + $50/$1K from $5K–$15K table, etc.) is **deleted for members**. It survives only for non-member one-off project work as a qualifying mechanism.
+4. The First Trip Guarantee is matched to stage, not model. **FTG1** (month + $1K labor credit) for cold inbound and live IROPs. **FTG2** (refund + free month + $500 credit) for mid-year retention saves and family-office onboarding. **FTG3** (30-day no-questions money-back) for new-buyer onboarding and price-negotiator closes. The $1K labor credit in FTG1 is re-papered as "trip value or three months, whichever is greater" to prevent under-sizing on Office-tier trips.
+
+**Why this beats Model A (v2.0) and Model C (three-tier):**
+- **Revenue per buyer is higher.** Vanessa Coyne (SMB founder, ~$180K T&E) closed at $99 Light under Model A and $349 Office under Model B — 3.5× on the same buyer. Brett (Series A founder) closed at $249 under A and $349 under B with no extra friction. Hugo Beauchamp (VC partner) closed $349 in 9:40.
+- **The pitch is one sentence.** *"Light $189, one traveler. Office $349, up to five, your EA included. Everything is included."* Buyer can repeat it back. Model A requires explaining the escalator; Model C requires defending the middle tier against the $99 Basic anchor.
+- **The price holds under negotiation.** Tomasz (PE negotiator) held cleanly under B; under C the $99 Basic gave him a permanent downward anchor. "All design included" is a content-based hold, not a margin-based one.
+- **It filters the wrong-fit buyer correctly.** True $50–80K-T&E solos who balk at $189 are the Sarah-problem cohort six months from now — low usage, low retention, low referrals. Better filtered at intake than retained at margin loss.
+
+**The trade-off being accepted:** A slice of true small-shop founders (Aaron-equivalent) won't have $189 in budget. They become Journal subscribers and referral sources, not members. ~15–25% of the cold-inbound funnel based on R6+R7 data.
+
+**Unit economics under Model B Unlimited:**
+
+| Tier | Subscription (100% retained) | Hotel commission Y1 (effective 7.8%) | Personal travel commission | Total Y1 |
+|---|---:|---:|---:|---:|
+| Atlas Light Unlimited | $2,268 | $702 (18 nights × $500 × 7.8%) | $350–700 | **~$3,300–3,700** |
+| Atlas Office Unlimited | $4,188 | $2,106 (3 active × 18 × $500 × 7.8%) | $1,400–2,000 | **~$7,700–8,300** |
+
+Compared to v2.0 ($2,400–3,000 Light, $6,300–7,000 Office), Model B lifts per-member Y1 by ~25–35% before any design-fee revenue (which goes to zero on members but is more than offset by the subscription uplift).
+
+**Y5 base case under Model B:** 60 Light / 40 Office / 20 Society holds the v2.0 mix. Revenue lifts from **$775K → ~$870K** on the pricing change alone, before behavioral effects (better fit reduces dormancy, simpler pitch raises cold-funnel conversion).
+
+The rest of this document — sales motion, operations, ICP, GTM, risk register — remains canonical. Treat any pricing or design-fee reference below as a v2.0 historical artifact superseded by this addendum.
 
 ---
 
