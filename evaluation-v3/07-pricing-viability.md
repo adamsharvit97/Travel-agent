@@ -29,19 +29,15 @@ The v3.0 plan claims the pivot was "the result of 30 sales simulations across th
 
 ### What the sims did not establish
 
-**They did not establish that $189 is optimal versus $229 or $249.** The sims tested $99 vs $189 vs $249 (across Models A, B, C). They did not test $189 vs $229. The plan's confidence that $189 holds is well-founded; the plan's confidence that $189 is the right price is not.
+- **Not that $189 is optimal vs $229 or $249.** The sims tested $99/$189/$249 across Models A, B, C. They never tested $189 vs $229 with Model B mechanics. $189 holds; the optimum is untested.
+- **Not that $349 is optimal vs $399 or $449.** Same gap. The Office price was chosen for a clean $189/$349 step and to anchor below the $400 CFO-procurement threshold. Both reasons are defensible. Neither equals "the best closing price."
+- **Not that Model B beats Model C on revenue per qualified buyer.** Sim 12 (Tomasz Werner) closed Plus at $249 list with no discount — a Model C win. The sim's own evaluator allows Model C is "viable" with a disciplined rep. Model C tied on revenue and lost on rep-load.
+- **Not retention.** Thirty sims are first-touch sales conversations. The labor-margin risk on Model B manifests in months 6–18, not on the call. The 5% labor-negative assumption in §5.3 is asserted, not earned by sim data.
+- **Not CAC by tier.** Model B's higher entry price ($189 vs $99) should logically depress cold close rate. The plan doesn't show whether close rate was higher, lower, or equal under Model B. So we cannot say whether Model B trades close rate for ACV (defensible) or improves both (the implicit claim).
 
-**They did not establish that Office at $349 is optimal versus $399 or $449.** Same gap. The Office price was chosen to maintain a clean $189/$349 step (32% premium over Light, clean ratio) and to anchor below the $400 SMB monthly threshold where CFO sign-off becomes a real procurement event. Both reasons are defensible. Neither reason is the same as "this was the best closing price."
+### Inferential weight
 
-**They did not establish that Model B beats Model C on revenue per qualified buyer.** Sim 12 — the Tomasz Werner three-tier negotiation — closed Plus at $249 list with no discount. That's a Model C win, not a Model B win. The sim's own evaluator concludes Model B is the cleaner offer "for this buyer profile" but allows Model C is "viable" with a more disciplined rep. The plan should be honest that Model C did not lose the sim block; it tied with Model B on revenue and lost on rep-load. Those are different findings.
-
-**They did not establish retention.** Thirty sims are first-touch sales conversations. The labor-margin risk on Model B Unlimited manifests in months 6–18, not on the sales call. The sims tell you nothing about whether a high-usage Office member generates positive contribution margin in Y2. That has to be modeled separately, and the plan's §5.3 5% labor-negative assumption is asserted, not earned by the sim data.
-
-**They did not establish CAC by tier.** Model B's higher entry price ($189 vs $99) should logically depress cold close rate at the top of the funnel — the $99 anchor is gone. The plan does not show whether the close rate on cold reply was higher, lower, or equal under Model B. Without that, the plan cannot say whether Model B *trades* a lower close rate for a higher ACV (defensible) or *improves* close rate and ACV simultaneously (the implicit claim).
-
-### Inferential weight of 30 sims
-
-Thirty is enough for a directional read on what a sales conversation looks like. It is not enough to underwrite a permanent strategic decision. A Round 8 block testing $229 Light + $399 Office vs $189/$349 against the same 5 sales-cycle stages × 3 FTG mechanics is the right next experiment. If $229 close rates within 10 percentage points of $189, the plan leaves $28,800 of Y5 revenue on the table by not running it.
+Thirty is enough for directional confidence on what a sales conversation looks like. It is not enough to underwrite a permanent strategic decision. A Round 8 block testing $229/$399 vs $189/$349 against the same 5 stages × 3 FTG mechanics is the right next experiment. If $229 close rates within 10 points of $189, the plan leaves $28,800 of Y5 revenue on the table by not running it.
 
 ---
 
@@ -139,19 +135,19 @@ The plan's $349 is defensible. The probable optimum is **$379–$399**. The arit
 
 This is the central attack on Model B Unlimited. Under Model A, every "free" design hour the founder gave away was capped by the design fee structure — heavy-usage members paid more, light-usage members paid less. Under Model B, the marginal cost of every design hour is the founder's hour, and the price doesn't move.
 
-### The exposure math
+### Exposure math
 
-Atlas Office at $349/mo × 3 active travelers cap × ~18 trips/year/traveler theoretical max = 54 trips/year. At 2 hours per trip (intake + book + reconfirm + follow-up, before IROP work), that's 108 founder-hours per Office member per year. At the founder's blended billable rate of $200/hour (the floor for a credible solo practice per the pricing-stress-test), the labor cost on a heavy Office member is $21,600/year against $4,188 of subscription. The commission and personal-travel revenue brings the member to roughly $8,800 of total Y1 revenue — still labor-negative by $12,800.
+Office at $349/mo × 3-active cap × 18 trips/year theoretical max = 54 trips/year. At 2 hours per trip × $200/hour blended founder rate = $21,600 of labor against $4,188 subscription. Add commission and personal-travel revenue and the member generates ~$8,800 of Y1 revenue — still labor-negative by $12,800. That's the worst-case bound.
 
-This is the worst-case bound. It is not the expected case. Two things bound the realistic exposure:
+Two things bound realistic exposure:
 
-**The 3-active cap.** The plan caps concurrent active travelers at 3. In practice, of an Office member's 5 named roster, 1–2 travel heavily, 2–3 travel rarely. The realistic load per Office member is closer to 25–35 trips/year total, not 54. At 30 trips × 2 hours = 60 founder-hours/year × $200/hour = $12,000 of labor against $8,800 of revenue — still labor-negative on the heavy members.
+**The 3-active cap.** Of an Office member's 5 named roster, 1–2 travel heavily and 2–3 rarely. Realistic load is 25–35 trips/year total. At 30 × 2 hours × $200 = $12,000 of labor against $8,800 of revenue — still labor-negative on the heavy quartile.
 
-**The PHT VA at month 4–6.** The VA absorbs the routine portion of trip work. If the VA handles 60% of trip execution at $25/hour loaded (Manila PHT rates, ~$1,500/month for 20 hours/week), the founder's effective labor on a 30-trip-per-year Office member drops to 24 hours × $200 + 36 hours × $25 = $4,800 + $900 = $5,700 of total labor. Against $8,800 of revenue, that's $3,100 of contribution margin. Positive but thin.
+**The PHT VA at month 4–6.** If the VA handles 60% of trip execution at $25/hour loaded (~$1,500/month for 20 hours/week), the founder's effective labor on a 30-trip Office member drops to 24h × $200 + 36h × $25 = $5,700 of total labor. Against $8,800 of revenue: $3,100 of contribution margin. Positive but thin.
 
-### The 5% bear assumption in §5.3
+### The 5% bear assumption
 
-Plan §5.3 asserts that 5% of members go labor-negative, generating $15–25K of impact at Y5. This is plausibly low for Year 1–2 and plausibly correct for Y3+. In Year 1, the founder doesn't know the usage distribution yet. The plan should publish a 15% bear case for Y1–Y2 with $30–50K impact, declining to 5% by Y4 as the off-board protocol matures.
+§5.3 asserts 5% of members go labor-negative, $15–25K of Y5 impact. This is plausibly low for Y1–Y2 (the founder doesn't yet know the usage distribution) and right for Y3+. Publish a 15% bear case for Y1–Y2 at $30–50K impact, declining to 5% by Y4 as the off-board protocol matures.
 
 ### Fundamental flaw or bounded risk?
 
@@ -197,21 +193,11 @@ Model C (Basic $99 / Plus $249 / Office $499) was tested in Sim 12 and closed at
 
 The strongest single argument for Model B is the one the plan understates: simplicity compounds.
 
-**For the buyer:**
-- The pitch fits in one tweet.
-- The EA repeats it accurately to the principal.
-- The CFO line-items it once and forgets it.
-- There is no surprise invoice in month 4.
-- The renewal decision is a one-bit decision (yes or no), not a five-bit decision (yes, yes but reprice, yes but tier-change, etc.).
+**For the buyer:** the pitch fits in one tweet; the EA repeats it accurately; the CFO line-items it once and forgets it; no surprise invoice in month 4; renewal is a one-bit decision (yes or no), not a five-bit one.
 
-**For the seller:**
-- The discovery call doesn't include a fees walkthrough.
-- The proposal is a paragraph, not a PDF.
-- The contract is a Stripe link.
-- There is no monthly trip-fee invoicing burden.
-- The price disclosure is the same every time.
+**For the seller:** the discovery call skips fees walkthrough; the proposal is a paragraph; the contract is a Stripe link; no monthly trip-fee invoicing; price disclosure is identical every time.
 
-The compounding effect is real and unmeasured. The founder's cognitive load on every sales call is lower under Model B than Model A. Across 200 sales calls in Y1, that's tens of hours of saved founder cognition. The plan should claim this benefit explicitly. It is the second-strongest argument for Model B after the buyer math.
+The compounding effect is real and unmeasured. Across 200 Y1 sales calls, this is tens of hours of saved founder cognition. The plan should claim this benefit explicitly. It is the second-strongest argument for Model B after the buyer math.
 
 ---
 

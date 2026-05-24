@@ -2,7 +2,7 @@
 
 **Evaluator framing:** Pre-revenue capital evaluator. McKinsey-trained operator. The founder has a primary income from Renmac that covers personal burn for the first 18–24 months. The plan calls for $0 outside capital. The business is sized to throw off $400K–$800K of personal income by Y5 in the base case, not to clear a venture hurdle. This memo evaluates whether that capital posture is achievable, what the realistic Y1 burn actually is, and what the seven-year outcome distribution looks like under v3.0 economics.
 
-**Verdict up front:** **B**. The capital plan is internally consistent with the lifestyle framing, and the Renmac backstop genuinely removes the Y1 personal-burn risk that would have been fatal under any other framing. But the plan understates true Y1 cash-out by roughly an order of magnitude — the $4–6K/yr operating cost line in §14.2 omits the PHT VA ($36–60K/yr), insurance, software at scale, marketing, contractor labor, and accounting. The realistic Y1 cash-out is $50–95K, not $4–6K. That is survivable on a Renmac primary income, but it is not "zero capital" — it is "founder-subsidized capital," and the plan should name it as such. The exit distribution in §14.2 (40/25/15/5/15) is approximately right but the dollar amounts behind each bucket are not in the document and need to be. The Renmac dependency is a single point of failure that the plan acknowledges as Risk #10 but does not stress-test in dollars. Fixing those three things is roughly half a working day and produces a plan that survives investor-grade scrutiny — not because it will be raised on, but because the founder will be making decisions against honest numbers.
+**Verdict up front:** **B**. The capital plan is internally consistent with the lifestyle framing, and the Renmac backstop genuinely removes the Y1 personal-burn risk that would have been fatal under any other framing. But the plan understates Y1 cash-out by roughly an order of magnitude — the $4–6K/yr operating cost line in §14.2 omits the PHT VA ($36–60K/yr), insurance, marketing, contractor labor, and accounting. Realistic Y1 cash-out is $50–95K, not $4–6K. That is survivable on Renmac primary income, but it is not "zero capital" — it is "founder-subsidized capital," and the plan should name it as such. The exit distribution (40/25/15/5/15) is approximately right but the dollar amounts behind each bucket are not in the document. The Renmac dependency gets one row in the risk register and is not stress-tested in dollars. Fixing those three things produces a plan the founder can make honest decisions against.
 
 ---
 
@@ -129,14 +129,9 @@ Cross-reference to the v3.0 revenue model: that threshold is hit **mid-Y2** in t
 
 ### B.4 Cash flow timing is undermodeled
 
-The plan treats Y1 revenue as a single annual number ($115K). The reality is monthly:
+The plan treats Y1 revenue as a single annual number ($115K). The monthly reality: **subscription cash** is charged via Stripe on the first of each month, payouts arrive in 2–7 days, predictable. **Fora commission cash** lags 60–90 days from trip date — supplier pays Fora 30–60 days after trip completion, Fora remits monthly with a 30-day lag. **Non-member design fees** are paid in full before design begins (per §2.4), cash-positive but episodic. **Society subscriptions** at H2 2027 launch will likely be annual prepay — cash-in but deferred-revenue liability.
 
-- **Subscription cash:** Charged monthly via Stripe on the first of each month. Stripe payouts arrive in 2–7 days. This is the cleanest, most predictable cash line.
-- **Fora commission cash:** Supplier pays Fora 30–60 days after the trip is completed; Fora reconciles and pays the advisor on a monthly cadence with a 30-day lag. **Total: 60–90 days from trip date to advisor's bank account.**
-- **Design fees (non-member):** Paid in full before design begins (per §2.4). This is cash-positive but episodic.
-- **Society launch (H2 2027):** Annual prepay for the subscription portion is common at this tier. If Society launches in H2 of Y2 with 1 member at $14K average, that's $14K of cash-in but $14K of deferred-revenue liability on the balance sheet.
-
-A realistic Y1 monthly cash-in curve, against the plan's 22 Light + 8 Office Y1 close target (assuming the plan's optimistic case):
+A realistic Y1 monthly cash-in curve, against the 22 Light + 8 Office Y1 close target:
 
 | Quarter | Cumulative members | Q-end subscription MRR | Cumulative subscription cash | Commission cash arriving (60–90 day lag) | **Cumulative cash in** |
 |---|---:|---:|---:|---:|---:|
@@ -213,23 +208,11 @@ I argued in §A.2 that the Renmac primary income is, functionally, a 24-month in
 
 ### C.2 The LCGE is the biggest unflagged tax efficiency
 
-The Lifetime Capital Gains Exemption shelters the first **$1,016,836** (2024 indexed) of capital gains on disposition of QSBC shares from tax. For a founder selling the business at Y5 for $2–3M:
+The Lifetime Capital Gains Exemption shelters the first **$1,016,836** (2024 indexed) of capital gains on QSBC share disposition. For a founder selling at Y5 for $2–3M: pre-LCGE tax of $535–800K at Ontario's ~26.76% marginal capital gains rate; with LCGE, $265–535K. **Tax savings: ~$270K.**
 
-- Pre-LCGE: $2–3M gain × ~26.76% Ontario marginal capital gains tax = **$535K–$800K of tax**
-- With LCGE: First $1.01M tax-free, remaining $1–2M × 26.76% = **$265–535K of tax**
-- **Tax savings from LCGE: $270–270K**
+QSBC eligibility requires the 24-month asset test (50% of corporate assets in active business in Canada throughout the 24 months prior, 90% at moment of sale), 24-month founder ownership prior to sale, and Canadian residency at time of sale. The early decisions that protect eligibility: do not issue shares to a holdco before the QSBC clock has run long enough; avoid passive income accumulation above $50K/yr in the operating company (it reduces SBD and can disqualify QSBC); engage Canadian tax counsel by Y3 to plan disposition structure, including potential pre-sale purification reorganization if passive assets have accumulated.
 
-For a single founder, LCGE is the most consequential tax decision in the business. To preserve LCGE eligibility:
-- Shares must be **QSBC shares at the time of sale** (24-month asset test: 50% of corporate assets used in active business in Canada throughout 24 months prior to sale; 90% test at moment of sale).
-- Shares must be **owned by the disposing individual for 24 months prior** (no recent share-issuance shenanigans).
-- Founder must be **resident in Canada** at time of sale.
-
-This means specific decisions need to be made early:
-- **Do not issue shares to a holdco before the QSBC clock has been running long enough** — selling holdco shares does not qualify for LCGE the same way (though there are crystallization techniques).
-- **Avoid passive income accumulation in the operating company** in the years before sale. Investment income above $50K/yr reduces the small business deduction and can disqualify QSBC status.
-- **Get a Canadian tax lawyer involved by Y3** to plan the disposition structure. A pre-sale "purification" reorganization can be needed if passive assets have accumulated.
-
-The plan says none of this. It should. Even one line in §14.2 — *"On exit, LCGE shelters the first $1M+ of capital gains if QSBC structure is maintained throughout."* — flags it for the founder's accountant.
+The plan says none of this. It should. Even one line in §14.2 — *"On exit, LCGE shelters the first $1M+ of capital gains if QSBC structure is maintained throughout"* — flags it for the founder's accountant.
 
 ### C.3 The "wedding gift" exit is real and unaddressed
 
