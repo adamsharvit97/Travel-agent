@@ -274,23 +274,16 @@ Plan §2.4 lists the non-member design fee schedule:
 
 The plan calls this "a funnel, not a margin product" and asserts a 30–40% conversion to Atlas Light within 12 months.
 
-### Honest assessment
+**Honest assessment.** It is largely a qualifying mechanism. The 30–40% conversion claim is asserted, not engineered. Without an explicit mechanic — a 30-day post-trip nudge, a design-fee-credit-toward-membership, a newsletter-driven offer — conversion will run 10–15%, not 30–40%.
 
-It is largely a qualifying mechanism. The 30–40% conversion claim is asserted, not engineered (v3 evaluation Lens 1 already flagged this). Without an explicit conversion mechanic — a 30-day post-trip nudge, a "your design fee credits toward Light if you join" mechanic, a quarterly newsletter-driven offer — the conversion will run at 10–15%, not 30–40%.
+**What it should be.** Reposition the schedule as a "front door for non-members," not a revenue line. Four changes:
 
-### What it should be
+1. **Design fee credit toward membership.** If the non-member converts to Light within 60 days, 50% of the design fee credits toward the first 6 months. Drops the effective membership decision to ~$145/mo for the first half-year.
+2. **14-day rush surcharge at 50%** (Bell & Bly standard). Without it, the schedule rewards bad planning at founder expense.
+3. **Lift the floor to $750.** $500 at a $5K trip = $125/hour at 4 hours of work, below the labor floor. $750 lands at $187/hour.
+4. **Cap stays at $10K.** Above that, the buyer should be in Society discussion, not à la carte.
 
-The schedule should be repositioned as a "front door for non-members," not as a revenue line. The mechanic should include:
-
-1. **Design fee credit toward membership.** If the non-member converts to Light within 60 days of their first trip, 50% of the design fee credits toward the first 6 months of membership. This drops the membership decision from $189/mo to roughly $145/mo for the first half-year — a meaningful upsell hook.
-
-2. **A 14-day rush surcharge.** Industry standard at 50% (Bell & Bly). Without it, the schedule rewards bad planning at founder expense.
-
-3. **A higher floor at $750.** $500 at a $5K trip is roughly $125/hour at 4 hours of work — below the labor floor. $750 minimum at $5K, scaling per the existing schedule, lands at $187/hour — at the labor floor.
-
-4. **The cap is fine at $10K.** Above that, the buyer should be in Society discussion, not à la carte.
-
-The non-member schedule is partially vestigial as written. Modest engineering converts it into a real funnel mechanic.
+Modest engineering converts the schedule from vestigial to a real funnel mechanic.
 
 ---
 
@@ -300,15 +293,11 @@ The v3.0 plan keeps the Society band at $1,000–$2,500/month with an average of
 
 That argument still stands. The v3.0 plan does not address it.
 
-### What should determine placement on the band
+**What should determine placement.** Three factors:
 
-Three factors:
-
-**1. Founder-direct exposure.** A Society member with 15-min SLA and quarterly in-person reviews requires founder time, not VA time. At founder $200/hour, a Society member consuming 200 hours/year of founder time costs $40,000 in labor. The subscription floor that breaks even on founder labor at this density is $30K. Anything below $30K is subsidized by other members or by founder time priced below market.
-
-**2. Brand-credibility cost.** A founder with no track record cannot credibly price a 1:6 dedicated-principal service at the same band as Knightsbridge's 1:4. The discount has to be either on price or on positioning. Latitude has chosen the price discount. The right answer in Year 1 is probably positioning instead: keep the band $1,000–$2,500 but price the modal Society member at $2,000/mo ($24K/year), with the explicit framing that Latitude Society is a "founder-led private practice" rather than a "Knightsbridge equivalent."
-
-**3. Member capacity.** The plan models 20 Society members at Y5. At 1:6 ratio that's 3.3 advisors, which under the plan's solo structure is the founder + 2 backups. The founder cannot personally cover 20 members at 15-min SLA without backup. So either Society is capped at 12–15 (the realistic founder-only ceiling) or Society staffs up (the plan does not model this).
+1. **Founder-direct exposure.** Society's 15-min SLA and quarterly in-person reviews require founder time, not VA time. At $200/hour, a member consuming 200 founder-hours/year costs $40,000 in labor. The subscription floor that breaks even is $30K. Below that, the member is subsidized.
+2. **Brand-credibility cost.** A founder with no track record cannot price a 1:6 dedicated-principal service at the Knightsbridge ($31K, 1:4) band. The discount has to be on price or positioning. Latitude chose price. Better: keep the $1,000–$2,500 band but place the modal Society member at $2,000/mo ($24K/year), framed as "founder-led private practice" rather than "Knightsbridge equivalent."
+3. **Member capacity.** The plan models 20 Y5 Society members. At 1:6 that's 3.3 advisors, which solo means founder + 2 backups. The founder cannot personally cover 20 members at 15-min SLA without staffing. Cap at 12–15 (the founder-only ceiling) or staff up (unmodeled).
 
 ### Recommendation on Society band
 
