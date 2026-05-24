@@ -308,18 +308,11 @@ V1.0 §12.3 is competent but compressed. Under-surfaced risks:
 | **W-8BEN-E filing** required to be paid by US corporate clients (Atlas Office, Firm) without 30% withholding | Low (administrative) | One form per client; ensure on file before invoicing |
 | **Personal Canadian tax** on founder's salary — Ontario marginal rate is 53.5% above $246K | High if successful | Tax-optimize via salary/dividend mix; this is what the CPA earns their fee for |
 
-### G.3 Banking and FX exposure
+### G.3 Banking, FX, payments
 
-The plan §12.4 lists the right accounts. The FX exposure is real but manageable: if 95%+ of revenue is USD and roughly 60% of costs are USD (Fora share, tools, contractors) and 40% are CAD (founder's CAD living costs, Canadian corp tax), the founder has roughly $40–60K of net CAD/USD exposure per year. At plausible 5–10% annual FX volatility, that's $2–6K of P&L noise — material to a Year-1 net of $30K, immaterial to a Year-5 net of $400K.
+§12.4 lists the right accounts. FX exposure: ~$40–60K/year net CAD/USD (95%+ USD revenue; ~60% USD costs, 40% CAD). At 5–10% annual volatility, $2–6K of P&L noise — material to a Y1 net of $30K, immaterial by Y5. Add bank forwards for any single planned conversion >$25K by Y3.
 
-Stripe USD payouts to a TD USD account, Wise Business for sub-$50K FX conversions, and **forward contracts via the bank** for any single planned conversion above $25K. The plan does not mention forwards; for the bear/base Y1, this is fine. By Y3 it should be a standing practice.
-
-### G.4 Payment processing
-
-Stripe USD billing is fine. Two unobvious risks:
-
-1. **Chargebacks**. A member who churns angrily (early in the relationship, before The First 30 is fully understood) may file a chargeback rather than use the no-fault exit. The First 30 program mitigates this, but Stripe's chargeback dispute process is asymmetric — the merchant usually loses if the buyer is determined. Set Stripe radar rules; require explicit acknowledgment of the First 30 terms at billing.
-2. **Stripe risk team interventions**. New businesses billing high ACVs ($1K–$2.5K/month) in financial services-adjacent categories sometimes get held by Stripe risk. Establish the account, build billing history with the first ~5 members at lower amounts (Atlas Light) before billing the first Society client at $2,500/month.
+Stripe risks: (1) chargebacks from angry early-churn members (First 30 mitigates but Stripe dispute is asymmetric — require explicit First 30 acknowledgment at billing); (2) Stripe risk-team holds on new high-ACV financial-adjacent accounts — build billing history with Atlas Light members before billing the first $2,500/mo Society client.
 
 ---
 
@@ -327,63 +320,37 @@ Stripe USD billing is fine. Two unobvious risks:
 
 What kills Latitude 43 in months 1–6? Six concrete spirals, ranked by probability.
 
-### H.1 Spiral 1: The bad early-member story
+### H.1 Spiral 1: Bad early-member story (P: 20–30%)
 
-A member onboards in month 2. In month 4, the founder mis-tickets a name on a $4,200 international itinerary. The member is denied boarding at Newark. They miss a fundraising meeting in London. The founder pays the change fees (~$1,800), the member is furious, posts on LinkedIn about "the travel office that ruined my Series A roadshow." The post gets 200 reactions. Two warm prospects in the founder's pipeline see it. Both ghost.
+Month 2 onboard. Month 4 the founder mis-tickets a name on a $4,200 international itinerary. Member denied boarding at Newark. Misses a fundraising meeting in London. Posts on LinkedIn: "the travel office that ruined my Series A roadshow." 200 reactions. Two warm prospects ghost. Severity high but recoverable if handled well; terminal if not. *Mitigation:* triple-check every international ticket against passport name for the first 50 bookings; peer Fora advisor reviews every international PNR for 30 days.
 
-Probability in months 1–6: **20–30%**. Severity: high but recoverable if handled well; terminal if handled badly.
+### H.2 Spiral 2: Unintended TICO violation (P: 5–10%)
 
-Mitigation: Triple-check every international ticket against passport name for the first 50 bookings, period. Have a peer Fora advisor review every international PNR for the first 30 days.
+Toronto-based prospect emails the website. Founder, eager for an anchor, hand-waves the US-only line on the discovery call. Member onboards. Six months later TICO finds Latitude 43 marketing to an Ontarian (call logged, Stripe ON address). Formal complaint, public. Catastrophic for brand. *Mitigation:* hard founder-signed rule that no ON-resident discovery call happens without TICO counsel pre-clearance. The footer is not enough — temptation to take the warm anchor is the real risk.
 
-### H.2 Spiral 2: Unintended TICO violation
+### H.3 Spiral 3: Spouse / family runway pressure (P: 15–25%)
 
-A Toronto-based prospect emails through the website. The founder, eager for any anchor, takes a discovery call. The conversation goes well; the prospect is a Toronto-based founder who wants to sign up. The founder, under pressure, hand-waves the US-only line. The member onboards. Six months later TICO does a routine sweep, finds Latitude 43 marketing to Ontarians (because the discovery call is logged, the email exists, the Stripe billing address shows ON). Fine, formal complaint, public.
+Month 4: household income from Latitude 43 is $0. Spouse asks questions. Founder takes a 15-hr/week consulting bridge. Desk degrades, two churns, case study dies, Journal slips. *Mitigation:* explicit pre-launch household runway conversation, in writing, with a defined re-evaluation date. The plan does not include a household budget; an investor would ask.
 
-Probability in months 1–6: **5–10%**. Severity: catastrophic for the brand; recoverable financially.
+### H.4 Spiral 4: First IROP at 2am ET (P: 40–60%)
 
-Mitigation: A hard rule, signed by the founder, that no Ontario-resident discovery call happens, ever, without TICO counsel pre-clearance. The footer disclaimer is necessary but not sufficient — the temptation to take the warm anchor is the real risk.
+Office-tier member, Frankfurt cancel at 7am local = 1am ET. Founder asleep. Fora overnight pool acknowledges in 32 min, books a Marriott instead of the member's Kempinski, gets a 6-hr connection when 3-hr existed via Munich. Member spends 9 hrs at FRA, calls the founder at 3pm ET: "what am I paying you for." *Mitigation:* reciprocal-coverage peer; written escalation card per member loaded into the Fora desk view; founder phone on for 90 days. Also the strongest argument for **deferring Society beyond Q1 2027** until the second advisor is hired.
 
-### H.3 Spiral 3: Spouse / family pressure
+### H.5 Spiral 5: Fora policy break (P: 10–15%)
 
-Three months in, household income is $0 from Latitude 43. The spouse, who agreed to 12 months of runway, starts asking questions in month 4. The founder, sensing the runway compressing, takes on a side consulting engagement to bridge — the engagement eats 15 hours/week. The 24/7 desk degrades. Two members churn. The case study dies. The Journal slips.
+Fora changes the split, adds a non-compete, or reinterprets memberships as outside the payment rails. *Mitigation:* read the host contract; maintain a 90-day contingency to migrate (Cadence, Gifted Travel Network, Brownell Independent, SmartFlyer); keep at least one Privé and one Virtuoso contact outside Fora's introductions.
 
-Probability in months 1–6: **15–25%** depending on household financial position.
+### H.6 Spiral 6: The founder's own first SLA miss (P: 80–90%)
 
-Mitigation: Have the explicit conversation **before launch**, in writing if possible. Set a defined runway with a defined re-evaluation date (e.g., month 12). Budget for the household, not for the business. The plan does not currently include a household budget; an investor would ask to see one.
-
-### H.4 Spiral 4: The first IROP at 2am ET
-
-A Society-tier (or even Office-tier) member is in Frankfurt. Their flight cancels at 7am Frankfurt = 1am ET. They text the desk. The founder is asleep. The Fora overnight pool picks up 32 minutes later (outside the 60-minute SLA but acceptable) but does not know the member, books a Marriott instead of the member's preferred Kempinski, gets the member a connecting flight 6 hours later when a 3-hour option existed via Munich. The member spends 9 hours in Frankfurt and calls the founder personally at 3pm ET demanding to know "what am I paying you for."
-
-Probability in months 1–6: **40–60%** depending on member travel volume and international exposure.
-
-Mitigation: The reciprocal-coverage Fora peer agreement; a written escalation card for every member loaded into the Fora overnight desk's view; founder's phone on for the first 90 days, period. This is also the strongest single argument for **delaying Society launch beyond Q1 2027** unless the second advisor is hired.
-
-### H.5 Spiral 5: Fora policy or relationship break
-
-Fora changes its commission split (the v1.0 plan acknowledges this risk at Medium probability). Or Fora's host agreement adds a non-compete clause. Or Fora's CEO leaves and the new operator tightens the membership-product rules. The founder discovers that Latitude 43's membership SKU is not "travel sales" under Fora's interpretation and is required to be billed separately, outside Fora's payment rails.
-
-Probability in months 1–6: **10–15%**. Severity: medium; survivable with planning.
-
-Mitigation: Read the host contract in detail. Maintain a written contingency to migrate to another host (Cadence, Gifted Travel Network, Brownell Independent, or SmartFlyer) within 90 days. Keep direct relationships with at least one Privé contact and one Virtuoso contact outside Fora's introductions.
-
-### H.6 Spiral 6: The founder's own first SLA miss
-
-In month 3, the founder is at a sister's wedding in Vancouver. Phone is on silent. A member sends two messages over a 90-minute window. The founder responds 4 hours later. The member doesn't churn — but their next renewal is uncertain, and they tell a peer that the desk "wasn't really 24/7."
-
-Probability in months 1–6: **80–90%**. This *will* happen. The question is whether the system catches it.
-
-Mitigation: This is the single strongest argument for a reciprocal-coverage Fora peer. Set the cover before the wedding.
+Month 3: sister's wedding in Vancouver, phone on silent, member messages, founder responds 4 hrs later. Member tells a peer "the desk wasn't really 24/7." This *will* happen. Question is whether the system catches it. *Mitigation:* reciprocal-coverage peer; arrange cover before the wedding.
 
 ---
 
 ## I. The team Latitude 43 needs to be venture-backable
 
-Three different framings here: (1) what does the business need to clear a "this could be a real company" bar; (2) what does it need to be acquirable by a larger advisory in Year 5; (3) what does it need to be venture-backable (debatable whether it should ever raise venture given the unit economics, but we'll answer).
+Three framings: (1) Y2 "real-company" bar, (2) Y5 acquirable team, (3) venture-backability.
 
-### I.1 The Year-2 team to clear the "real company" bar
-
-By the end of Year 2, to demonstrate to any outside observer (investor, acquirer, or just a sober founder doing a self-assessment) that Latitude 43 is a real company and not a side project:
+### I.1 End-of-Y2 team to clear the "real company" bar
 
 | Role | When | Cost (USD/year) |
 |---|---|---|
@@ -405,9 +372,9 @@ By the end of Year 2, to demonstrate to any outside observer (investor, acquirer
 | Scaled VA team (2 PHT-based, 7-day coverage) | Month 18 | $40–55K (replaces single VA) |
 | **Annual team cost by end of Y3** | | **~$210–280K, on top of founder draw** |
 
-### I.3 The Year-5 team to be acquirable
+### I.3 Y5 team to be acquirable
 
-To be acquirable (the founder's stated exit thesis in v1.0 §1: "compound for a decade or sell into a larger advisory group in year five"), Latitude 43 needs to demonstrate that **the business does not require the founder personally**. That requires:
+The founder's stated exit (v1.0 §1) is "compound a decade or sell to a larger advisory in Y5." Acquirability requires demonstrating the business does not require the founder personally:
 
 | Role | Cost (USD/year) |
 |---|---|

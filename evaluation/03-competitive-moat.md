@@ -121,43 +121,42 @@ Let's run the scenario the planning documents most need to confront. A Fora-host
 
 ### Day 0–14: Brand and site
 
-| Asset | Time | Cost | Difficulty |
-|---|---|---|---|
-| Domain + LLC | 2 hours | $500 | Trivial |
-| Wordmark + brand identity | 2 weeks | $5–15K (Fiverr to mid-tier studio) | Easy |
-| Voice guide (banned words, sample sentences) | 1 week | $2K (copywriter) | Easy |
-| One-page website with pricing | 1 week | $3–8K (Webflow agency) | Easy |
-| LinkedIn rebrand of personal profile | 2 hours | $0 | Trivial |
-| Three Journal entries to seed the feed | 1 week | $3K (ghostwriter) | Easy |
+| Asset | Cost | Difficulty |
+|---|---|---|
+| Domain + LLC | $500 | Trivial |
+| Wordmark + brand identity (mid-tier studio) | $5–15K | Easy |
+| Voice guide (copywriter, banned words, sample sentences) | $2K | Easy |
+| One-page website with pricing (Webflow agency) | $3–8K | Easy |
+| LinkedIn rebrand + three seed Journal entries (ghostwriter) | $3K | Easy |
 
-Total day 14: **~$15–25K, mostly outsourced.** Maya has a brand, a site, a pricing page, three published posts, and a registered LLC. The site looks 80% as good as Latitude 43's. The remaining 20% — typography polish, photography choices, the specific operator-luxe tone — is recognizable only by people who care about these things, which is not the buyer.
+Total day 14: **~$15–25K, mostly outsourced.** Maya has a brand, site, pricing page, three posts, registered LLC. The site looks 80% as good as Latitude 43's. The remaining 20% — typography polish, the specific operator-luxe tone — is recognizable only by people who care about these things, which is not the buyer.
 
 ### Day 14–30: Pricing, programs, contracts
 
-| Asset | Time | Cost | Difficulty |
-|---|---|---|---|
-| Three-tier membership page | 3 days | $0 (template) | Easy |
-| Membership agreement + design fee schedule | 1 week | $3–5K (contract attorney) | Easy |
-| EA Companion Seat as a billable line item | 2 hours | $0 | Trivial |
-| First Loss Insurance language | 1 hour | $0 (paragraph in contract) | Trivial |
-| Commission disclosure receipt template | 2 days | $0 (Notion + Stripe receipt customization) | Easy |
-| 60-minute SLA promise | 0 hours | $0 | Trivial (it's words) |
-| Application form + reference requirement | 1 day | $0 (Tally form) | Easy |
-| "Cap of 30" society tier page | 1 day | $0 | Trivial |
+| Asset | Cost | Difficulty |
+|---|---|---|
+| Three-tier membership page (template) | $0 | Easy |
+| Membership agreement + design fee schedule (attorney) | $3–5K | Easy |
+| EA Companion Seat (billing line item) | $0 | Trivial |
+| First Loss Insurance language (one paragraph) | $0 | Trivial |
+| Commission disclosure receipt template (Stripe + Notion) | $0 | Easy |
+| 60-minute SLA promise | $0 | Trivial — it's words |
+| Application form (Tally) + reference requirement | $0 | Easy |
+| Society tier "cap of 25" page | $0 | Trivial |
 
-Total day 30: **~$5K added.** Maya has a parallel product architecture. Every feature on the Latitude 43 pricing page exists on hers. The Society tier cap is announced as 25, just to be different. The First Loss Insurance is $1,500, also to be different.
+Total day 30: **~$5K added.** Every feature on the Latitude 43 pricing page exists on Maya's. The Society cap is 25, the First Loss is $1,500 — just to be different.
 
 ### Day 30–60: Migration and launch
 
-Maya tells her existing 50 Fora clients: "I'm rebranding the practice. Same me, new name, new pricing structure that's better for high-frequency travelers." She moves the 15 highest-volume clients onto Atlas Office–equivalent memberships. Her revenue model improves overnight from commission-only to subscription + commission.
+Maya tells her 50 Fora clients: "I'm rebranding. Same me, new structure that works better for high-frequency travelers." She moves her 15 highest-volume clients onto Atlas Office–equivalent memberships. Revenue model improves overnight from commission-only to subscription + commission.
 
-She continues to host under Fora — she does not need to leave Fora to do any of this. Fora doesn't care; they get their 10% commission share regardless. Her existing supplier relationships migrate intact. Her Virtuoso access is unchanged. Her FHR cross-bookings are unchanged.
+She continues hosting under Fora — she does not need to leave. Fora doesn't care; they get their 10% commission share regardless. Supplier relationships migrate intact. Virtuoso access unchanged.
 
-By day 60, Maya has 12 paying members on the new structure, three Journal entries up, and an applications pipeline. She has roughly matched everything in the Latitude 43 plan except the specific brand name "Latitude 43" and the founder's specific story.
+By day 60, Maya has 12 paying members, three Journal entries, and an applications pipeline. She has matched everything in the Latitude 43 plan except the specific brand name and the founder's specific story.
 
 ### Day 60–90: Press and proof
 
-Maya does what Latitude 43 cannot: she leverages her existing track record. She gets her best client to write a LinkedIn endorsement: "Maya has run my travel for four years; this rebrand formalizes what she has been doing all along." She pitches Skift on the "from IC to firm" arc. She gets two suppliers (a Park Hyatt GM, a Lufthansa rep) to provide quotes. She has, in 90 days, more proof artifacts than Latitude 43 will have in 18 months.
+Maya does what Latitude 43 cannot: leverages an existing track record. Best client writes a LinkedIn endorsement: "Maya has run my travel for four years; this rebrand formalizes it." She pitches Skift on the "from IC to firm" arc. Two suppliers (Park Hyatt GM, Lufthansa rep) provide quotes. In 90 days she has more proof artifacts than Latitude 43 will have in 18 months.
 
 ### What's actually hard for Maya?
 

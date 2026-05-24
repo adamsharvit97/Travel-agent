@@ -160,43 +160,36 @@ The list is correct and complete *as a list*. The question is whether it goes fa
 
 | Word | Why ban |
 |---|---|
-| **Tailored** | The marketer's substitute for "bespoke." Same problem. Already creeping into the v1.0 copy. |
-| **Premium** | Marketing word. Founders say "the right one" or "the lie-flat one," not "premium." |
-| **Effortless** | Same family as seamless. Buyer research lists it adjacent to seamless. |
-| **Handpicked** | Buyer research lists this. Should be in the formal ban. |
-| **Discerning** | Snob-coded. Reads as "exclusive" with extra steps. |
+| **Tailored** | Marketer's substitute for "bespoke." Same problem. |
+| **Premium** | Founders say "the right one" / "the lie-flat one," not "premium." |
+| **Effortless / Effortlessly** | Same family as seamless. |
+| **Handpicked** | Buyer-research listed. |
+| **Discerning** | Snob-coded. "Exclusive" with extra steps. |
 | **Journey** | Buyer says "trip." Marketers say "journey." |
-| **Experience** | When used as a noun for the trip itself ("design an experience"). Buyer says "trip." |
-| **Worldwide / Global** | Use specific place names (Geneva, Aspen, Sirenuse). The private-aviation register document is explicit. |
-| **Members-only** | Either say "members" (correct) or "invite-only" (correct for Society). "Members-only" reads as gym marketing. |
-| **VIP** | Buyer research lists. Should be in formal ban. |
-| **Trusted** / **Trust** | When used adjectivally about the brand itself ("trusted travel partner"). Trust is shown, not claimed. |
-| **Partner** | When used as a verb ("we partner with the best hotels"). Partnership is a contract relationship, not a marketing claim. |
-| **Solutions** | The single most diluted business noun of the last decade. Banned at NetJets-tier brands. |
-| **Best-in-class** / **World-class** | Already absent. Should be formally banned. |
-| **Inspire / Inspired** | Wellness-coded. Buyer rejects. |
-| **Mindful** | Wellness-coded. |
-| **Effortlessly** | Marketing adverb. |
+| **Experience** (as noun for the trip) | Buyer says "trip." |
+| **Worldwide / Global** | Use specific place names. |
+| **Members-only** | Either "members" or "invite-only." "Members-only" reads as gym marketing. |
+| **VIP** | Buyer-research listed. |
+| **Trusted / Trust** (as adjective about brand) | Trust is shown, not claimed. |
+| **Partner** (as verb) | Partnership is contract, not marketing. |
+| **Solutions** | Most diluted business noun of the decade. |
+| **Best-in-class / World-class** | Already absent — formally ban. |
+| **Inspire / Mindful** | Wellness-coded. Buyer rejects. |
 
 ### Preferred words being missed
 
-The v2.0 facts brief has a *use* list: members, the desk, apply, the office, open the desk. It is shorter than it should be. The buyer-research vocabulary section provides a richer preferred list that should be promoted:
+The v2.0 brief's *use* list (members, the desk, apply, the office, open the desk) is shorter than it should be. From buyer research and private-aviation register:
 
-**Buyer-validated verbs:** book, rebook, fix, hold, push, swap, confirm, escalate, find, get there, get back, lock in, hand off, sort, handle.
+- **Verbs:** book, rebook, fix, hold, push, swap, confirm, escalate, find, lock in, hand off, sort, handle.
+- **Nouns:** the desk, the office, the operator, the room, the seat, the rebook, the gate, the lounge, the car, the line, the day, the meeting.
+- **Phrases:** "Just get it done." "I don't want to think about it." "Pick up when I call." "Don't make me explain it twice." "Make the problem yours."
+- **Register words:** renowned, distinctive, restful, considered, quietly, program, card, reserve, inquire, hours, **standing instructions**.
 
-**Buyer-validated nouns:** the desk, the office, the operator, the room (not the suite), the seat, the rebook, the gate, the lounge, the car, the line, the queue, the day, the meeting.
-
-**Buyer-validated phrases:** "Just get it done." "I don't want to think about it." "I just want it to work." "Pick up when I call." "Don't make me explain it twice." "Make the problem yours." "Know where I sit."
-
-**Private-aviation register words missing from current use list:** renowned, distinctive, restful, considered, quietly, program, card, reserve, inquire, hours, standing instructions.
-
-The most actionable missing preferred word: **"standing instructions."** It is a private-banker / wealth-management noun, it captures the buyer wish ("Don't make me explain it twice. Know where I sit."), and it positions the brand directly inside the private-banker analog. Adopt it.
+The most actionable missing preferred word: **"standing instructions."** Private-banker/wealth-management noun. Captures the buyer wish ("Don't make me explain it twice. Know where I sit."). Positions the brand directly inside the private-banker analog. Adopt it.
 
 ### The hardest call: "concierge"
 
-The brief bans concierge. The private-aviation register document hedges: "Concierge (only if backed by named staff)." The buyer research is decisive: "Soft no — use sparingly, with self-awareness... 'operator' lands harder for this audience."
-
-**Verdict:** the brief is right. Ban it formally. The brand uses "the desk" and "the operator" — both stronger. There is no place in the public brand surface where "concierge" outperforms either alternative. The one acceptable use is in the *negative* — "We're not a concierge" — and even that should be sparing, because the buyer research warns against category-defense framing.
+The brief bans concierge. The private-aviation document hedges ("only if backed by named staff"). The buyer research is decisive: *"operator lands harder for this audience."* Verdict: brief is right. Ban it. "The desk" and "the operator" are both stronger.
 
 ---
 
@@ -214,16 +207,16 @@ The v2.0 brief identifies the v1.0 framing as "rewards, convenience, 24/7." All 
 
 ### What actually motivates the buyer
 
-Ranked from the buyer-research wants table, cross-referenced against the LinkedIn corpus and the conversion-stories file:
+From the buyer-research wants table, cross-referenced against LinkedIn corpus and conversion stories:
 
-1. **Reliability when something breaks.** The "Frankfurt 2am" moment. 89% disrupted; 72% rebooking during the trip. This is the singular wedge.
-2. **Time back.** "Get my time back." "Get hours back." Cuban: "I get to work while they get to stand in line." Naval: hourly-rate math.
-3. **One person who knows me.** The Eric/Nikki/Robyn pattern from the wishes-and-wants research — relational continuity, named human, accumulated context.
-4. **Pre-empted disruption.** "I want the rebook to happen before I notice." (Wish #2 in the wishes-and-wants synthesis.)
-5. **Stay out of the way of my points.** Loyalty protection.
-6. **Don't sell me up.** Trust.
-7. **Family time protected.** Cuban's daddy-daughter dance line. El-Erian's list of 22 missed events.
-8. **Make the problem yours.** End-to-end ownership.
+1. **Reliability when something breaks** — the Frankfurt 2am moment. 89% disrupted; 72% rebook during the trip. The singular wedge.
+2. **Time back** — Cuban: "I get to work while they get to stand in line." Naval: hourly-rate math.
+3. **One person who knows me** — relational continuity, named human, accumulated context.
+4. **Pre-empted disruption** — "the rebook happens before I notice."
+5. **Stay out of the way of my points** — loyalty protection.
+6. **Don't sell me up** — trust.
+7. **Family time protected** — Cuban's daddy-daughter dance; El-Erian's list of 22 missed events.
+8. **Make the problem yours** — end-to-end ownership.
 
 ### Should "support-call black hole" be the primary frame?
 
@@ -246,16 +239,14 @@ The buyer wants the second column. The first column codes as marketer-language, 
 
 ### The "76% enjoy travel" finding — implications
 
-This is the most important single finding for the value-prop framing, and it inverts a lot of conventional travel-advisor copy.
+Inverts conventional travel-advisor copy:
 
-**Implications:**
+1. **Drop all "travel is hell" copy.** Buyer doesn't agree with the premise.
+2. **Lead with what the buyer is doing, not what's being done to them.** "You travel for the meeting. We take the rest."
+3. **Frame the desk as agency-amplifying, not pain-relieving.** The desk amplifies competence. It doesn't rescue incompetence.
+4. **The Cuban frame is the model.** Outcome-focused. Time-denominated. Pro-the-thing-we-do, not anti-the-thing-we-don't.
 
-1. **Drop all "travel is hell" copy.** No "we know travel is broken." No "the road is hard." No "you deserve better." The buyer doesn't agree with the premise.
-2. **Lead with what the buyer is doing, not what's being done to them.** "You travel for the meeting. We take the rest." Not "we save you from the airport."
-3. **Frame the desk as agency-amplifying, not pain-relieving.** The buyer is competent. The desk amplifies competence. It doesn't rescue incompetence.
-4. **The Cuban frame is the model.** Cuban doesn't say "flying private is great because flying commercial sucks." He says "I get to work while they get to stand in line at the airport." Outcome-focused. Time-denominated. Pro-the-thing-we-do, not anti-the-thing-we-don't.
-
-The brand's current copy ("A travel office for people whose time costs more than their tickets") is actually executing this correctly. It's pro-the-buyer ("whose time costs more"), not anti-the-pain. Keep that frame and extend it.
+The current "A travel office for people whose time costs more than their tickets" executes this correctly. Pro-buyer, not anti-pain. Keep the frame and extend it.
 
 ---
 
