@@ -8,13 +8,13 @@
 
 ## What's right
 
-### TICO Path A is still the correct Y1 choice — and v3 actually tightens it
+### TICO Path A is still the correct Y1 choice
 
-The v2 evaluation pressure-tested Path A and concluded it was operationally narrow but defensible if the founder ran a documented intake control. v3 keeps Path A and §11.1 names it the Y1 default. The Model B pivot does not change the TICO analysis on its own. TICO's jurisdiction triggers on the act of selling travel services to consumers in Ontario, and Ontario residency is the dominant test in practice. The membership-tier change from $99 to $189 does not move that needle.
+The v2 evaluation pressure-tested Path A and concluded it was operationally narrow but defensible with a documented intake control. v3 keeps Path A in §11.1. The Model B pivot does not change the TICO analysis on its own — TICO jurisdiction triggers on selling travel to Ontario consumers, and Ontario residency is the dominant test. The $99 → $189 tier change does not move the needle.
 
-What v3 quietly improves: the §11.2 line "US sales sourced as services delivered from Canada (no US trade or business)" is correctly framed. The v2 plan was wobblier on this. The Ontario CCPC delivering services into the US under the Canada-US Tax Treaty Article VII business-profits position is the right structural answer, and §11.2 names it.
+What v3 improves: the §11.2 line "US sales sourced as services delivered from Canada (no US trade or business)" is correctly framed. The Ontario CCPC delivering services into the US under Canada-US Tax Treaty Article VII business-profits position is the right structural answer.
 
-The Atlas Family Office variant in §2.1 also tightens the residency intake control — the pre-signed NDA and the rolling roster of up to 20 named travelers create a natural documentation moment where country of residence, billing address, and tax residency get captured per traveler. If the intake checklist is built into the onboarding kit (referenced in §8.6 as `/operations/onboarding-kit.md`), the Path A defense gets stronger with every Office member added. This is the kind of mechanical control that survives a TICO complaint investigation.
+The Atlas Family Office variant in §2.1 also tightens residency intake — the pre-signed NDA and rolling roster of up to 20 named travelers create a natural documentation moment where country of residence, billing address, and tax residency get captured. If the intake checklist is built into `/operations/onboarding-kit.md`, the Path A defense gets stronger with every Office member added.
 
 ### The "First Trip Guarantee" rename is the single biggest legal upgrade from v2
 

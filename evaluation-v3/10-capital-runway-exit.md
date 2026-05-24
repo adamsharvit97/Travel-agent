@@ -27,21 +27,7 @@ The cash gap that would otherwise need to be plugged by personal savings or F&F 
 
 ### A.3 The founder draw schedule (Y1 $0 / Y2 conditional / Y3+ real) is correct
 
-The draw schedule in §14.2 reads:
-- **Y1:** $0 founder draw, Latitude is supplemental.
-- **Y2:** Founder draw "only if revenue justifies."
-- **Y3+:** Revenue base is large enough to support a real draw.
-
-This matches the unit-economics curve in §6:
-- Y1 revenue ~$115K (or ~$60–80K under the honest planning case the v3 short-eval recommends)
-- Y2 revenue ~$222K
-- Y3 revenue ~$467K
-- Y4 revenue ~$740K
-- Y5 revenue ~$870K
-
-The Ontario CCPC structure lets the founder accumulate retained earnings at the small business deduction rate (~12.2% combined federal and Ontario on the first $500K of active business income, with the new $500K SBD ceiling) for the first two years, then begin paying out as eligible or non-eligible dividends starting Y3. Holding the draw at zero for 24 months is not just financially conservative — it is **tax-optimal** under the CCPC structure, because corporate-retained earnings compound faster than personally-taxed dividends.
-
-The plan does not say this explicitly, but it should. **The Y1 $0 draw is not a sacrifice; it is the right tax decision.** Framing matters here because it affects how the founder talks to her accountant, her spouse, and her future self in month 14 when she's tempted to start drawing early.
+The draw schedule in §14.2 (Y1 $0, Y2 only if revenue justifies, Y3+ real) matches the unit-economics curve in §6 (Y1 $115K, Y2 $222K, Y3 $467K, Y4 $740K, Y5 $870K). The Ontario CCPC structure lets the founder accumulate retained earnings at the small business deduction rate (~12.2% on the first $500K of active business income) for the first two years, then begin paying eligible or non-eligible dividends starting Y3. Holding the draw at zero for 24 months is not just financially conservative — it is **tax-optimal**, because corporate-retained earnings compound faster than personally-taxed dividends. The plan should say this explicitly. **The Y1 $0 draw is not a sacrifice; it is the right tax decision.**
 
 ### A.4 The lifestyle ceiling is honestly priced
 
@@ -57,14 +43,9 @@ Latitude 43 Inc. as an Ontario CCPC is the correct structure for this business. 
 
 ### A.6 The 7-year outcome distribution lines up with the comparable benchmarks
 
-The plan's outcome distribution maps reasonably onto observable benchmarks:
+The plan's outcome distribution maps reasonably onto observable benchmarks: **Cadence Travel** took roughly 8 years to reach $5M ARR, founder-led, no meaningful outside capital — the lifestyle-compound path. **Indagare** took roughly 15 years to scale to a multi-advisor firm with $20M+ GBV, with modest capital deployed into content and trip-design products Latitude has not built. **Bell & Bly Travel** may raise; if they execute, the "competitor consolidates" exit becomes more likely for Latitude. **SmartFlyer** built to ~$1B GBV over 15+ years with no outside capital — the boutique-compound ceiling.
 
-- **Cadence Travel** took roughly 8 years to reach $5M ARR. They are still founder-led, never raised meaningful outside capital, and represent the "lifestyle compound" path. Y5 $870K → Y10 $3–5M is plausible under the same trajectory.
-- **Indagare** took roughly 15 years to scale to a multi-advisor firm with $20M+ in GBV. Indagare raised modest capital and used it to expand into content and trip-design product lines that Latitude has explicitly not built.
-- **Bell & Bly Travel** may raise capital, per the competitive landscape note. If they raise and execute, they accelerate the consolidation path that makes the "competitor acquires" exit (Path 6 in my v2.0 memo) more likely for Latitude.
-- **SmartFlyer** built to ~$1B GBV over 15+ years with no outside capital. They represent the "boutique compound" ceiling — what Latitude looks like in Y15+ if the founder stays in.
-
-Against those reference points, the 7-year exit distribution in §14.2 is well-calibrated. It is neither falsely optimistic (no claim of a $200M outcome) nor falsely pessimistic (acknowledges the 5% venture-shaped tail).
+Against those reference points, the 7-year exit distribution in §14.2 is well-calibrated. It is neither falsely optimistic nor falsely pessimistic.
 
 ---
 

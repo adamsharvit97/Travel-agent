@@ -58,13 +58,9 @@ The Light tier is the friction-heavy decision. It is the entry product, the firs
 | $229 | $229 | $2,748 | Indagare Custom-adjacent | No — partner consult zone | Reads "premium-entry" |
 | $249 | $249 | $2,988 | At Velocity Black floor | No — definite procurement | Reads "Office-tier first ask" |
 
-### $169 — defending the lower price
+### $169 — worse than $189
 
-The case for $169 is that it reduces the close-rate drag on the cold funnel and increases first-call yield. At a 1–3% reply rate on cold outreach, every percentage point of close-rate improvement is worth roughly 5 members per 5,000 outreaches. At $20/month × 60 Y5 members × 12 = $14,400 of foregone subscription, you'd need 6 incremental members across 5 years for $169 to outperform $189. Plausible in theory; the buyer profile in §3.1–3.5 is not a $20-sensitivity profile in practice.
-
-**The argument against $169:** at $169, the brand register (navy, brass, Cormorant Garamond, "operator-luxe") is mispriced to its visual identity. The pricing-stress-test research established that under-pricing relative to the register triggers the "no free lunch" instinct in the buyer the brand is courting. $169 reads as a discount on $189, which is itself the implicit positioning of $99 Model A. The founder spent v2.0 → v3.0 walking away from the $99 anchor; reintroducing it at $169 partially undoes the work.
-
-**Verdict on $169:** Worse than $189. Don't.
+$169 reduces close-rate drag on cold outreach and increases first-call yield. At $20/month × 60 Y5 members × 12 = $14,400 of foregone subscription, the founder needs 6 incremental closes over 5 years for $169 to outperform $189 — plausible only if the buyer profile is $20-sensitive, which §3.1–3.5 buyers are not. More important: at $169 the brand register reads as discounted, which triggers the "no free lunch" instinct the v2 → v3 pivot was meant to escape. **Verdict: don't.**
 
 ### $189 — the v3.0 position
 
@@ -107,13 +103,9 @@ Office is the higher-stakes pricing decision because it's the contribution-margi
 | $399 | $4,788 | Soho House CWH + 11% | 111% step | Reads "small business tool" |
 | $449 | $5,388 | Soho House Every House zone | 138% step | Reads "office line item" |
 
-### $299 — the soft case
+### $299 — wrong direction
 
-$299 maintains a cleaner Light:Office ratio and reduces the procurement-event friction. It sits at the Indagare Custom price ($238/mo published, +$60 for the Latitude upgrade) and is the price most directly comparable to the strongest direct competitor.
-
-**The argument against $299:** the Office buyer is structurally less price-sensitive than the Light buyer. The Office tier is purchased by founders with EAs, PE operating partners with assistants, RIA principals with co-partners. None of these buyers has the $200 instinct constraint. Pricing Office at $299 leaves $50/month × 40 Y5 members × 12 = $24,000/year of revenue on the table for negligible close-rate benefit.
-
-**Verdict on $299:** Wrong. The Office buyer doesn't reward a discount on this product.
+$299 sits at the Indagare Custom price ($238/mo + a Latitude premium). But the Office buyer is structurally less price-sensitive than the Light buyer — none of the Office-tier ICPs has the $200 instinct constraint. $299 leaves $50/month × 40 Y5 members × 12 = $24,000/year on the table for negligible close-rate benefit. **Verdict: wrong.**
 
 ### $349 — the v3.0 position
 
@@ -133,11 +125,9 @@ At $399 the annual is $4,788 (vs $4,188 at $349). The incremental $600/year per 
 
 **Verdict on $399:** This is the probable Y2 or Y3 reprice target. Don't launch here.
 
-### $449 — the aspirational case
+### $449 — wrong for Y1
 
-$449 prices Office at the Soho House Every House register. The case is brand integrity: at $449 the product is unambiguously priced like a relationship, not a tool. The case against is that the close rate likely drops materially — $449 triggers a different procurement category, the EA cannot defend the price internally without a quarter of usage data, and the cold funnel close rate probably degrades 25–35%.
-
-**Verdict on $449:** Wrong for Y1. Possible Y4+ if the brand earns it.
+$449 prices Office at the Soho House Every House register. Strong brand-integrity argument, but close rate likely drops 25–35% — the EA cannot defend the price internally without a quarter of usage data. **Verdict: possible Y4+ if the brand earns it; wrong now.**
 
 ### The Office optimum
 
