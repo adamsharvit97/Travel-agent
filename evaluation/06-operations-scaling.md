@@ -93,14 +93,9 @@ If Fora hits a product or commercial wall in 2027-2028, every advisor on the pla
 
 ### B.1 The "named human" promise vs. operational reality
 
-The voice guide and lifecycle doc are explicit: members get "the desk" (lowercase) but also "Sarah K." (named). The lifecycle document goes further — every member has a **lead advisor who owns the relationship day-to-day**, plus a **named successor advisor**.
+The lifecycle doc promises a **lead advisor** plus a **named successor advisor**. In Y1, the founder is both. **The named-successor promise is broken on day one and only becomes true at month 24+.** Members who join in months 1-24 were sold a structural promise the firm cannot yet deliver.
 
-In Y1, the founder is the lead advisor for every member. There is no named successor — "the named backup" line in §6.3 of the business plan is aspirational. **The promise of a named successor is broken on day one and only becomes true at month 24+** when the first associate advisor arrives. Members who joined in months 1-24 were sold a structural promise the firm could not yet deliver.
-
-This is recoverable, but it requires two things the plan does not currently spell out:
-
-1. **An explicit Y1 disclosure** — "your lead advisor is the founder; a named backup will be appointed by Q3 2027 and introduced before any handoff." Anything less is a quiet overpromise.
-2. **A "founder-only" tier signal** that doesn't pretend the firm is bigger than it is. The Society tier explicitly promises a "dedicated principal" — which is true (the principal is the founder) and is also the only seat where the founder is the *named, personal* contact. The plan should be more honest that Light/Office members are getting the founder in Y1 *and* a structurally less-personal experience starting in Y3 when the associate takes over their day-to-day.
+Recoverable, but the plan needs (a) explicit Y1 disclosure ("your lead is the founder; named backup appointed by Q3 2027") and (b) honesty that Light/Office members will get a structurally less-personal experience starting in Y3 when associates take over day-to-day.
 
 ### B.2 When does the desk become a pod (and break the promise)?
 
@@ -112,11 +107,11 @@ The promise — one name, one phone, one inbox — survives until two operationa
 | First lead-advisor handoff (member changes lead) | Month 30–36 | The member explicitly notices that their "named human" was a placeholder |
 | First trip executed entirely by associate, founder absent | Month 36–48 | The founder's relational equity stops being the product |
 
-The lifecycle doc handles this gracefully on paper ("the member meets the people who will pick up the phone" at the orientation call). In practice, the member who closed on "the founder is your desk" feels something else when an associate emails them. The repeat-member NPS gap between "served by founder" and "served by associate" in boutique advisory businesses is consistently 15-25 points. **The pod transition is not a feature; it is a churn event that has to be engineered around.**
+The member who closed on "the founder is your desk" feels something else when an associate emails them. The repeat-member NPS gap between "founder-served" and "associate-served" in boutique advisories is consistently 15-25 points. **The pod transition is a churn event, not a feature.**
 
 ### B.3 The Society 1:6 ratio at 30, 60, 100 members
 
-The Society SLA implies a ~1:6 dedicated-advisor-to-member ratio (industry standard for ultra-high-net-worth concierge: Quintessentially runs ~1:8, Knightsbridge Circle ~1:5, Société Anonyme ~1:6). At 1:6, each advisor handles **roughly 1,400-1,800 service hours/year of work** for their assigned principals — a near-saturating workload.
+Industry benchmarks for UHNW concierge: Quintessentially ~1:8, Knightsbridge Circle ~1:5, Société Anonyme ~1:6. At 1:6, each advisor carries ~1,400-1,800 saturating hours/year.
 
 Applied to the Society cap of 30 (Y5 plan: 20 active):
 
@@ -183,29 +178,15 @@ The IROP playbook is the best operational document in the file. It is also writt
 
 ### D.1 The 2am Frankfurt scenario — does it hold solo?
 
-In §6 of the playbook: *"The overnight advisor (Marcus, Berlin time) receives the cancellation alert from the flight monitoring system within 90 seconds."*
+Playbook §6: *"The overnight advisor (Marcus, Berlin time) receives the cancellation alert within 90 seconds."* In `/tmp/v2-facts.md`: the founder is solo, in Toronto, with no Berlin advisor and no Y1 hiring budget for one. **The playbook describes a Y3 firm.**
 
-In `/tmp/v2-facts.md`: the founder is solo, in Toronto, hosted under Fora, with no overnight advisor in Berlin and no Year 1 hiring budget for one. The playbook is describing a Y3 firm operating procedure.
+In Y1, FRA 02:00 = ET 20:00 — founder still awake, fine. The hard case is concurrent: Devin's FRA cancellation while the founder has a Society principal mid-IROP in Aspen and a roadshow member needing a 05:00 brief in London. Three Tier 2s, one human, one hour.
 
-What actually happens in Y1 at 2am Frankfurt:
-
-1. The cancellation hits at 02:00 FRA = 20:00 ET. **Founder is still awake** in Y1. This case is fine.
-2. The cancellation hits at 02:00 FRA on a Saturday = 20:00 ET Friday. **Founder is at dinner.** Phone is on. 60-min SLA hits at 21:00. Still survivable.
-3. The cancellation is actually an LH 22:40 FRA-YYZ cancelling at 22:00 FRA = 16:00 ET — easy case. The hard case is the Asia-heavy member whose 06:00 HKG flight cancels at 02:00 HKG = 14:00 prior-day ET — also fine for a Toronto founder.
-4. **The actual nightmare:** Devin's 02:00 FRA cancellation while the founder has a Society principal mid-IROP in Aspen and a roadshow member needing a 05:00 brief in London. Three Tier 2s, one human, one hour.
-
-The playbook does not handle concurrency. Tier classification assumes serial incidents. **Concurrent Tier 2s break the playbook at any member count above ~15** because the probability of two simultaneous IROPs scales with the square of trips-in-flight.
+The playbook does not handle concurrency. Tier classification assumes serial incidents. **Concurrent Tier 2s break the playbook above ~15 members** because P(simultaneous IROPs) scales with the square of trips-in-flight.
 
 ### D.2 Fora's overnight pool — what's the real handoff quality?
 
-The business plan calls "Fora global network + emergency line" the Y1 overnight backstop. Operationally, this is **other Fora advisors who happen to be online**, not a contracted service. Quality of handoff is:
-
-- **No knowledge of the member's profile.** The Fora advisor sees a PNR; they don't see "Diane prefers prosecco-first-then-Barolo" or "Marco at Park Hyatt is the back-channel to the suite upgrade."
-- **No authority to spend.** They cannot make a $45K private-jet decision on the founder's behalf without explicit pre-authorization.
-- **No relational equity.** They cannot call the Cathay MPC Diamond desk *as* the founder; they call as themselves, which routes the member to a different queue.
-- **Variable competence.** Fora is a large network — some advisors are world-class, most are leisure-focused, a meaningful tail is just learning.
-
-The handoff quality is **2/5 at best**. The member will feel the difference inside one interaction. The playbook implicitly acknowledges this — every templated message names a Latitude 43 person ("Sarah," "Marcus"), not "your overnight advisor at Fora." There is no escape from the underlying truth: the Y1 24/7 promise is fiction, gracefully papered over.
+"Fora global network + emergency line" is **other Fora advisors who happen to be online** — not a contracted service. No knowledge of the member's profile, no authority to spend, no relational equity (they call Cathay MPC Diamond as themselves, not as the founder), variable competence (Fora is leisure-skewed). Handoff quality is **2/5 at best.** The playbook implicitly acknowledges this — every template names a Latitude 43 person, not a Fora overnight. **The Y1 24/7 promise is fiction, gracefully papered over.**
 
 ### D.3 The 15-min Society SLA on overnight calls — biologically impossible solo
 

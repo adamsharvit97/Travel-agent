@@ -63,18 +63,18 @@ That is a Year 3+ structure if and only if the Ontario book grows large enough t
 
 Realistic Canadian host partners for Ontario referral overflow:
 
-| Partner | Posture | Pros | Cons |
-|---|---|---|---|
-| **Travel Edge** (Toronto, Internova-owned) | Luxury-leisure, IC advisors | Best brand fit, Virtuoso member | Owned by same parent as Brownell/ALTOUR — your competition |
-| **Vision Travel** (Direct Travel) | Corporate-leaning | Strong corporate infra | Less luxury polish, brand mismatch |
-| **TPI (Travel Professionals Intl.)** | Host-only model | Easy onboarding, established | Generalist brand |
-| **Nexion Canada** (CWT/American Express affiliate) | Host | Good systems | AmEx affiliation is awkward given you'll position against AmEx GBT |
-| **The Travel Agent Next Door** | Host, leisure | Easy onboarding | Mass-market brand drag |
-| **Independent boutique TICO holder** | Bespoke | Cleanest control | Hardest to find and vet |
+| Partner | Pros | Cons |
+|---|---|---|
+| **Travel Edge** (Internova) | Best brand fit, Virtuoso | Same parent as Brownell/ALTOUR — your competition |
+| **Vision Travel** (Direct Travel) | Strong corporate infra | Brand mismatch |
+| **TPI** | Easy onboarding, established | Generalist brand |
+| **Nexion Canada** (CWT/AmEx) | Good systems | AmEx affiliation awkward given competitive positioning |
+| **The Travel Agent Next Door** | Easy onboarding | Mass-market drag |
+| **Boutique TICO holder** | Cleanest control | Hardest to find and vet |
 
-**Fair split for a pure referral hand-off:** 25% of net commission to the TICO-holder if they do the booking and own the client; 10–15% as a finder's fee if you do the work and they only provide the umbrella. For full white-label arrangements (their TICO number, your brand on the receipt), you should expect 20–30% gross.
+**Fair split:** 25% of net commission if they book and own the client; 10–15% finder's fee if you do the work and they provide the umbrella; 20–30% for full white-label (their TICO number, your brand on the receipt).
 
-**Liability cross-overs:** The TICO holder owns the consumer-protection obligation for the booking they process. You retain reputational liability and any contractual obligation under your membership agreement. The risk is **whipsaw liability** — the client sues you for service failure, and your defense ("we didn't book it, the TICO partner did") is undermined by the fact that your membership contract promised the service. Pre-resolve via: explicit pass-through service language in the Latitude 43 membership agreement, written referral agreement with the TICO partner that includes indemnity in both directions, and a single point-of-contact protocol for service failures.
+**Liability cross-overs:** TICO holder owns consumer-protection obligation for bookings they process; you retain reputational and membership-contract liability. The whipsaw risk: client sues you for service failure, your defense ("we didn't book it") is undermined by your membership contract. Resolve via explicit pass-through language, a written referral agreement with mutual indemnity, and a single point-of-contact protocol.
 
 ### A.4 Recommendation on framework
 
@@ -114,10 +114,10 @@ The plan's tax section (§12.3) is directionally right and mechanically incomple
 
 **US tax surfaces the plan understates:**
 
-1. **Form W-8BEN-E** filed with Fora (not W-9). A Canadian CCPC is a foreign entity. W-8BEN-E with treaty position claimed under Article VII (business profits) reduces US withholding on commission income to zero. If you file W-9 by mistake, you signal US tax residency and risk 30% withholding plus an IRS filing obligation. **Correct the plan: W-8BEN-E, not W-9.**
-2. **Form 1042-S** is what Fora issues to the founder's CCPC. The CCPC may need to file Form 1120-F (US tax return of foreign corporation) **only** if engaged in a US trade or business and earning effectively connected income. Solo Canadian advisor with no US presence: no 1120-F. But if Atlas Firm clients put you in their NYC office for two weeks a year, that calculation can flip.
-3. **State seller-of-travel registrations** (separate from federal tax). See Section D.
-4. **State sales tax on the membership product** — most states do not tax services, but Washington, Hawaii, and New Mexico have broad service-sales-tax regimes. Hawaii General Excise Tax (GET) at 4.5% can apply to services delivered to Hawaii residents, **even by a non-resident provider**, if there is sufficient nexus. With a single Hawaii client, this is unlikely to trigger. With ten, it is worth a memo.
+1. **Form W-8BEN-E, not W-9**, filed with Fora. A CCPC is a foreign entity. W-8BEN-E with treaty position under Article VII (business profits) zeroes US withholding on commission. W-9 signals US tax residency and risks 30% withholding plus IRS filings. Correct the plan.
+2. **Form 1042-S** is what Fora issues to the CCPC. Form 1120-F required only with US trade-or-business and effectively connected income. Solo Canadian advisor with no US presence: no 1120-F. Atlas Firm embedded engagements flip the math.
+3. **State seller-of-travel registrations** — see Section D.
+4. **State sales tax on the membership product** — WA, HI, NM have broad service-sales-tax regimes. Hawaii GET at 4.5% can apply to non-resident providers with sufficient nexus. One HI client unlikely; ten worth a memo.
 
 ### B.3 Permanent establishment risk if founder visits US client offices
 
@@ -318,19 +318,11 @@ CCPC limited liability holds only with corporate formalities (minute book, resol
 
 ### G.1 TICO advertising rules
 
-Ontario Reg. 26/05 ss. 30–39 govern travel advertising. Three relevant rules:
+Ontario Reg. 26/05 ss. 30–39 govern travel advertising. Section 30 prohibits providing (including advertising) travel services without registration; section 32 sets disclosure requirements. Passive websites accessible from Ontario are generally not "ads to Ontario consumers," but North American sites including Ontario sit in a grey zone.
 
-1. **Section 30:** No person shall provide travel services unless registered. **Advertising travel services** is part of providing them. Includes "promoting" travel services to Ontario consumers.
-2. **Section 32:** Specific disclosure requirements in ads — registration number, total price including tax, terms and conditions.
-3. **Targeting test:** A passive website accessible from Ontario is generally not an "ad to Ontario consumers" — but a website that promotes travel services to a North American audience including Ontario is in a grey zone.
+**Skift / press article problem:** a Toronto resident reads a profile, visits the site, inquires. Technically arguable as Ontario marketing; practically, TICO does not pursue passive-website cases without evidence of active Ontario targeting.
 
-**The Skift / press article problem is real.** A Skift profile of Latitude 43 mentions the founder is Toronto-based. A Toronto resident reads it, visits the website, inquires. The Latitude 43 website at that moment is being read by an Ontario consumer. Has Latitude 43 advertised to Ontario? Technically arguable yes; practically, TICO would not pursue a passive-website case without evidence of active Ontario marketing.
-
-**Defensive posture:**
-- Website includes a clear "We are a U.S.-market travel office. We are not registered with TICO and do not sell to Ontario residents" notice in the footer or on the inquiry form.
-- Inquiry form requires country of residence; Ontario residents receive an automated decline with a referral.
-- No Ontario-targeted advertising: no Ontario geo-targeted Google Ads, no Toronto-targeted LinkedIn, no Toronto print/digital placements.
-- Press: Skift / Travel Weekly / TripAdvisor press are US-trade publications; passive availability in Ontario does not constitute Ontario marketing.
+**Defensive posture:** footer notice ("We are a U.S.-market travel office. Not registered with TICO. Do not sell to Ontario residents"); inquiry form requires country of residence with automated decline-and-refer for Ontario; no Ontario geo-targeted ads anywhere; treat US trade press (Skift, Travel Weekly) as US marketing despite Ontario accessibility.
 
 ### G.2 FTC and US marketing rules
 
@@ -424,33 +416,9 @@ The plan mentions "pre-signed NDA" at Society and Family Office tiers. The NDA i
 
 ### I.3 "First Loss Insurance" — the biggest IP/regulatory risk in the plan
 
-This phrase is **operationally clever and regulatorily dangerous.**
+Operationally clever, regulatorily dangerous. "Insurance" is regulated under the Ontario Insurance Act and every US state. Using it in a product name when the product is not an insurance contract risks: (1) UDAP/consumer protection enforcement for misleading naming, (2) insurance regulator inquiry (FSRA, state DOIs), (3) weaker trademark, (4) courts construing the "insurance" promise broadly against the drafter.
 
-**The problem:** In Ontario, "insurance" is a regulated term under the Insurance Act (Ontario). In every US state, "insurance" is a regulated term. The use of "insurance" in a product name when the product is not actually an insurance contract risks:
-
-1. **Consumer protection enforcement** — misleading product name under Ontario Consumer Protection Act and US state UDAP statutes
-2. **Insurance regulator inquiry** — FSRA in Ontario, state DOIs in the US, asking why an unlicensed entity is selling "insurance"
-3. **Trademark unenforceability** — descriptive terms about insurance are weaker if you don't actually sell insurance
-4. **Contract construction risk** — courts may construe ambiguities against the drafter and read the "insurance" promise broadly
-
-**The mitigation:** Either rename or restructure.
-
-**Rename options:**
-- "First Trip Guarantee"
-- "First Loss Credit"
-- "Welcome Trip Protection" (still uses "protection," which is less regulated but watch language)
-- "Onset Trip Coverage" (still risky)
-- "First Trip Promise"
-- "Founder's Guarantee — First Trip"
-
-**Restructure to keep the concept:** Whatever the name, the structure is a service-level guarantee, not an insurance product. Specify:
-- Maximum dollar amount of refund/credit (the $1K labor cap helps)
-- Named trip only
-- Specific failure events that trigger
-- Service credit, not cash, where possible
-- Disclaimer that this is not insurance, is not regulated as insurance, and does not replace travel insurance
-
-**Recommended action:** Rename. The brand voice work in v2 already bans "luxury, bespoke, curated" — drop "insurance" too. A guarantee is more on-brand (confessional rather than triumphalist) and far less risky.
+**Mitigation: rename.** Candidates: "First Trip Guarantee," "First Loss Credit," "First Trip Promise," "Founder's Guarantee — First Trip." Structure unchanged: service-level guarantee with $1K labor cap, named trip only, specific failure events, service credit not cash, disclaimer that it is not insurance and does not replace travel insurance. The v2 voice work already bans "luxury, bespoke, curated" — drop "insurance" too.
 
 ### I.4 "Latitude Atlas," "Latitude Desk," "Latitude Journal," "Latitude Society"
 

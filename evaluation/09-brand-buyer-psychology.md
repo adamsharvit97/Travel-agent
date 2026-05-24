@@ -63,36 +63,27 @@ The brand cannot afford to drop a single one of the three protective elements ab
 
 ### Do Patek / Aman / Loro Piana resonate with founders / PE / VC?
 
-**Tactically: partially. Strategically: yes, but for second-order reasons.**
+**Tactically partial. Strategically yes — for second-order reasons.**
 
-The first-order question — *do founders care about Patek?* — is the wrong question. The founder buyer doesn't buy Latitude 43 because the brand reminds them of Patek. They buy it because it doesn't remind them of Marriott Bonvoy.
+Founders don't buy Latitude 43 because it reminds them of Patek. They buy it because it doesn't remind them of Marriott Bonvoy. The references serve as **internal censor list, not aspiration list**: Patek doesn't have a "Most Popular" badge; Aman doesn't run a Save 20% banner; Loro Piana doesn't use exclamation points. That's the correct use of them.
 
-The second-order role of those references is **internal discipline**: they tell the brand team what *not* to do. Patek doesn't have a "Most Popular" badge. Aman doesn't run a Save 20% banner. Loro Piana doesn't use exclamation points. The reference set is a censor list, not an aspiration list. That is correct.
+Risk: the references over-index on a register the founder cohort itself rejects.
 
-The third-order risk: the references over-index on a register that the *founder cohort itself rejects* in the buyer research:
+- **Patek** is the *bank chairman* watch. Founders buy Rolex Daytona, AP Royal Oak, F.P. Journe.
+- **Aman** has become a paparazzi destination (Bezos wedding, Aman NY opening). Buyer-research caveat: *"72% of luxury travelers won't pay for accommodations that look the same as everything else."* Aman is now copy-paste luxury.
+- **Loro Piana** is the strongest of the three. Quiet, unbranded, peer-identifiable. Keep it.
 
-- Patek owners over-index on PE/family-office, under-index on founders. Founders who care about watches buy Rolex Daytona, Audemars Royal Oak, Richard Mille, F.P. Journe (the latter the actual founder/VC quiet-luxury signal of 2024–2026). Patek is the *bank chairman* watch.
-- Aman is rapidly becoming a paparazzi destination (the Bezos wedding, the Kardashian visibility, the Aman New York opening). The buyer-research finding *"72% of luxury travelers won't pay for accommodations that look the same as everything else"* applies — Aman is now copy-paste luxury in the same way Soho House became copy-paste cool.
-- Loro Piana is the strongest of the three. Quiet, unbranded, identifiable to peers, invisible to masses. This *is* the buyer-research's quiet-luxury thesis in physical form. Keep it. Build on it.
-
-Better internal references for 2026:
-- F.P. Journe instead of Patek (the founder watch, not the chairman watch)
-- Cheval Blanc Paris instead of Aman (still quiet, less photographed)
-- Loro Piana — keep
-- Brunello Cucinelli — add (the founder-as-institution model, the geographic positioning of Solomeo, the published worker manifesto)
-- Maison Margiela — add (the white-label, anti-logo discipline)
+Better 2026 internal references: **F.P. Journe** (founder watch, not chairman watch), **Cheval Blanc Paris** (less photographed than Aman), **Loro Piana** (keep), **Brunello Cucinelli** (founder-as-institution, published manifesto), **Maison Margiela** (white-label, anti-logo discipline).
 
 ### Test against the LinkedIn confessional voice
 
-This is the most important test in this section, and the brand passes it more than it fails it.
+The brand passes more than it fails.
 
-The LinkedIn research shows the highest-engagement posts in this audience are *confessional*: 3am hotel rooms, missed bedtimes, the cost-of-business-travel-on-marriages. Joe Staples (Seat 3A to 27E), Martin Port (3am LA), Matthew Holman (57% feel lonely on the road), Ben Clarke (the divorce post). These are not triumph posts. They are *quiet admission* posts.
+The highest-engagement LinkedIn posts in this audience are *confessional*: 3am hotel rooms (Martin Port), missed bedtimes (Ben Clarke's divorce post), Seat 3A-to-27E (Joe Staples), 57% lonely on the road (Matthew Holman). These are quiet-admission posts, not triumph posts. Latitude 43's "confessional over triumphalist" voice is in the right register. The refusal section, the published failure modes ("Flight cancelled at 02:00 in Frankfurt"), and the disclosed fees are all confessional moves.
 
-The Latitude 43 brand voice — "confessional over triumphalist" — is in the right register for this audience. The "What we do not do" section, the published failure modes ("Flight cancelled at 02:00 in Frankfurt. Visa rejected at the gate. Hotel walks you on arrival."), the disclosed fees — these are confessional moves. They mirror the LinkedIn voice.
+Where it breaks: **EB Garamond at headline level reads editorial, not confessional.** The LinkedIn confessional register is sans-serif, plain. "A travel office for people whose time costs more than their tickets" is a Patek line, not a LinkedIn line.
 
-Where it breaks: **EB Garamond at the headline level reads as editorial, not confessional.** The confessional register on LinkedIn is sans-serif, plain, sometimes in all-lowercase. The current home hero "A travel office for people whose time costs more than their tickets" is a Patek line, not a LinkedIn line. It reads as a luxury-hospitality magazine sub-head.
-
-The fix is not to drop Garamond. It is to **stop making Garamond do the confessional work** and let Inter handle it. The headline can stay editorial; the proof sections, the failure-mode sections, the receipts — those need to drop into Inter, plain, dense. The current visual hierarchy treats every Garamond line as load-bearing. It isn't.
+Fix: stop making Garamond do the confessional work. Let Inter handle it. Headlines stay editorial; proof, failure modes, and receipts drop into Inter — plain, dense. The current visual hierarchy treats every Garamond line as load-bearing. It isn't.
 
 ---
 
@@ -109,11 +100,9 @@ The fix is not to drop Garamond. It is to **stop making Garamond do the confessi
 
 ### "Latitude 43" — too poetic? Bay Street acceptable?
 
-**Not too poetic, but slightly fragile in voice-call delivery.** "Hi, this is Latitude Forty-Three" requires the receiver to mentally parse "Forty-Three" before they know what kind of business is calling. Compare to "Hi, this is the Desk at Latitude" or "Hi, this is Latitude Atlas" — easier to delivery, easier to repeat.
+**Not too poetic, but slightly fragile in voice-call delivery.** "Hi, this is Latitude Forty-Three" requires the receiver to parse "Forty-Three" before knowing what kind of business is calling. "Hi, this is the Desk at Latitude" is easier to repeat.
 
-Bay Street acceptable: yes. The geographic register matches the way Toronto institutions name themselves — Wittington, Onex, Power Corp, Brookfield. Numbers in names work in the category (1832 Asset Management, Connor Clark & Lunn). "Latitude 43" sits there.
-
-The risk in Bay Street specifically: the *43* is invisible to a Canadian audience that doesn't think geographically. Toronto buyers don't sit around saying "43°N." They say "downtown." The geographic register is more legible to a US buyer than a Toronto buyer — which is fine, given Path A (US-only sales) is the Y1 plan. But it means in Toronto, the brand has to do extra work to land the geographic story.
+Bay Street acceptable: yes. The geographic register matches Toronto institutional naming (Wittington, Onex, Brookfield, 1832 Asset Management). The risk: the *43* is invisible to Canadians who don't think geographically. The register lands harder on a US buyer than a Toronto buyer — which fits the Path A (US-only) Y1 plan.
 
 ### "Atlas" — work, or precious?
 
@@ -136,29 +125,21 @@ The fix: collapse. One sub-brand for the membership (Atlas), one for the service
 
 ### "The Desk" — operator-correct or too startup?
 
-**Operator-correct. Possibly the single strongest naming decision on the entire site.**
+**Operator-correct. The single strongest naming decision on the site.**
 
-The buyer-research vocabulary table validates "desk" directly:
+The buyer-research vocabulary table validates: *"The desk, the office, the operator, the room, the seat, the rebook, the gate, the lounge, the car, the line, the queue."* "Desk" is in the buyer's mouth and absent from competitors (ALTOUR has "Advisors"; Cadence has "Travelers"; Bell & Bly has "Concierge"; Indagare has "Membership Team"). Uncontested territory.
 
-> "The desk, the office, the operator, the room, the seat, the rebook, the gate, the lounge, the car, the line, the queue."
-
-"Desk" is in the buyer's mouth. It is not in any competitor's name. ALTOUR has "Travel Advisors." Cadence has "Travelers." Bell & Bly has "Concierge." Indagare has "Membership Team." None of them have *the desk*. The naming move is uncontested.
-
-The "too startup" worry is the wrong worry. Startups call things "platform" and "OS" and "app." "Desk" is a 200-year-old institutional noun. It belongs to private banks, law firms, trading floors. It is the *least* startup-flavored noun in the entire taxonomy. Keep it. Promote it.
+The "too startup" worry is misplaced. Startups call things "platform" or "OS." "Desk" is a 200-year-old institutional noun belonging to private banks, law firms, trading floors. Keep it. Promote it.
 
 ### "Open the desk" — works, or too clever?
 
-**Works for now, but only because the brand is small.** At Series A scale, "Open the desk" becomes the kind of clever CTA that ad agencies pitch and customers dutifully click. At 50 members, it lands. At 500, it sounds like every other category brand trying to be different.
-
-The save: pair it with a literal phone number from day one. "Open the desk · +1-416-XXX-XXXX · 24/7." The verb stays poetic; the number stays operational. The combination is the register move. The verb alone is the marketing move.
+**Works while the brand is small.** At 50 members, it lands. At 500, it risks reading as the clever CTA an agency would pitch. The save: pair it with a literal phone number from day one. *"Open the desk · +1-416-XXX-XXXX · 24/7."* Verb stays poetic; number stays operational. The combination is the register move; the verb alone is the marketing move.
 
 ### What's missing from the naming taxonomy
 
-The founder has named the institution, the membership, the service line, the content, and the tiers. What is not named:
-
-1. **The principal's named operator.** "Your operator is [Name]." VistaJet has Personal Flight Coordinators; private banks have Relationship Managers; Aman has Aman Hosts. Latitude 43 has not named the role yet. This is the most important named-thing to add — it's the human face of the desk.
-2. **The receipt.** Replacing the scrapped Latitude Reports with "per-trip receipts" — the receipt itself wants a name. "The Trip Receipt" is functional. "The After-Action" or "The Closeout" is operator-coded. Worth naming.
-3. **The onboarding moment.** "The First 30" exists, but is the program, not the moment. The moment of being onboarded as a new Atlas member — the in-take call, the profile build, the first booking — needs a verb. "Building your profile" or "Opening your account" both work.
+1. **The principal's named operator.** VistaJet has Personal Flight Coordinators; private banks have Relationship Managers. Latitude 43 has not named the role. This is the most important addition — the human face of the desk.
+2. **The receipt.** Per-trip receipts replacing scrapped Reports — the receipt itself wants a name. "The Closeout" or "The After-Action" is operator-coded.
+3. **The onboarding moment.** "Opening your account" or "Building your profile" — the in-take call / first booking needs a verb.
 
 ---
 

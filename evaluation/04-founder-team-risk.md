@@ -155,7 +155,7 @@ This is the modal outcome for a solo advisor on a published 24/7 SLA. No reputab
 
 ## D. Hiring plan gaps
 
-The v1.0 plan has a coverage table for Years 1–5 but it is not a hiring plan. There are no roles, no titles, no JDs, no equity allocations, no salary bands, no recruiting funnel, no onboarding plan, no role-by-role revenue trigger. This is a major gap.
+The v1.0 plan has a Y1–Y5 coverage table but no hiring plan. No roles, titles, JDs, equity allocations, salary bands, recruiting funnel, or role-by-role revenue trigger. Major gap.
 
 ### D.1 The hires that should be in the plan
 
@@ -182,15 +182,15 @@ The v1.0 plan has a coverage table for Years 1–5 but it is not a hiring plan. 
 | Y4 | $280–330K (full associate + ops + bookkeeper + Society advisor) | $575K | $240–290K founder draw possible |
 | Y5 | $380–450K (full team) | $871K | $420–490K founder draw possible |
 
-The v2.0 base case is **viable but tight**. The bear case ($500K Y5) **cannot sustain this hiring plan** — the second principal advisor and the ops lead become unaffordable, and Society launch must be deferred indefinitely.
+The v2.0 base is **viable but tight**. Bear case ($500K Y5) **cannot sustain this hiring plan** — the second advisor and ops lead become unaffordable; Society launch defers indefinitely.
 
 ### D.3 The hire the plan most underestimates
 
-It is not the VA. It is the **second principal advisor**. The Society tier and the bus-factor problem both require a second corporate-trained human who can hold an active member relationship. That human is not a $50K hire. They are a $110–140K all-in hire (salary + commission share + benefits + tools) and they are hard to find — corporate-grade travel advisors with 5+ years of experience, willing to work as an associate in a 2-person shop, are vanishingly rare in the Fora population. The realistic recruiting timeline is **6–9 months**, which means starting the search at month 9 to onboard by month 18, which means having the cash committed at month 6. The plan does not.
+Not the VA. The **second principal advisor**. The Society tier and the bus-factor problem both require a second corporate-trained human who can hold an active member relationship. Not a $50K hire — $110–140K all-in (salary + commission share + benefits + tools), and hard to find. Corporate-grade travel advisors with 5+ years experience, willing to associate in a 2-person shop, are vanishingly rare in Fora. Realistic recruiting timeline: 6–9 months. Start search at month 9, onboard by month 18, cash committed by month 6. The plan does not.
 
 ### D.4 Compensation reality
 
-The Toronto cost-of-living advantage is real but does not extend to the second advisor. If the second advisor is also Toronto-based, they are taking a salary that is roughly competitive with Canadian agency work (~CAD $85–110K). If the second advisor is US-based (which the plan implies in the v1.0 §11.4 "US-based associate advisor"), they cost USD $85–95K plus benefits — closer to $115–125K all-in. The founder's Toronto-overhead-advantage thesis erodes the moment the team is more than one person.
+The Toronto cost-of-living advantage does not extend to the second advisor. Toronto-based: CAD $85–110K. US-based (the v1.0 plan implies this in §11.4): USD $85–95K + benefits = ~$115–125K all-in. The Toronto-overhead thesis erodes the moment the team is more than one person.
 
 ---
 
@@ -210,7 +210,7 @@ The travel advisory category has well-documented burnout patterns. They are not 
 
 ### E.2 The realistic Year-1 hour load
 
-A solo founder running a paid membership product with a published 24/7 SLA, doing outbound sales, writing the Journal weekly, building partner relationships, learning the category, and operating a Canadian corp serving US clients is at:
+A solo founder running this load is at:
 
 | Category | Hours/week (steady state) |
 |---|---|
@@ -238,19 +238,17 @@ Drawing on the small-business and concierge/founder literature:
 | Sustained social isolation (loss of non-work friendships) | 50–60% |
 | Quit / sell / shut down by end of Y2 | 25–35% |
 
-These are bad numbers. The mitigations are: (a) hire the VA earlier than the plan says, (b) build the reciprocal-coverage agreement with a peer Fora advisor before month 3, (c) set a "Saturday hours" hard line from month 3 (no member contact between Saturday 6pm ET and Sunday 6pm ET except true emergencies), (d) require the founder to take 5 days off, fully disconnected, every 90 days, with the reciprocal-coverage partner running the desk, and (e) make Fora's Slack community part of the social cure for isolation rather than another work surface.
+Mitigations: hire the VA earlier than the plan says; sign the reciprocal-coverage Fora peer before month 3; hard "Saturday off" rule from month 3 (no member contact Sat 6pm ET → Sun 6pm ET except true emergencies); 5 days fully disconnected every 90 days with the peer running the desk; use Fora's Slack community as a social cure for isolation, not another work surface.
 
-### E.4 The spouse / family pressure on bootstrapped runway
+### E.4 The bootstrapped-runway spouse pressure
 
-The founder is bootstrapped. The v1.0 plan shows a Y1 net to founder of $5,880 (bear) to $24,448 (bull) — and the v2.0 facts revise revenue down further (Y1 = $80K total, before any costs). The founder is taking home **somewhere between $0 and $30K in Y1**, while working 60–80 hours/week, while a spouse watches and pays the household bills.
-
-This is the most under-discussed risk in the deck. Bootstrapped founders who go below $50K household income, while their spouse covers the gap, while they work weekends, fail at roughly twice the rate of founders with 12 months of runway. The plan needs an explicit answer to: **what is the household runway?** If the spouse is not on board for an 18-month income drought, the business has a 6-month half-life.
+V1.0 shows Y1 net to founder of $5,880 (bear) to $24,448 (bull). V2.0 facts revise revenue down further (Y1 = $80K total, before costs). Founder takes home **$0–$30K in Y1** while working 60–80 hrs/week, spouse covering bills. Bootstrapped founders below $50K household income, with weekend-working partners, fail at ~2× the rate of those with 12 months of runway. The plan needs an explicit answer to **household runway**. If the spouse is not on board for 18 months, the business has a 6-month half-life.
 
 ---
 
 ## F. Skill stack gaps
 
-A founder of a productized service business needs roughly nine skill stacks. Here is the honest grading of the Latitude 43 founder against each.
+Honest grading of the founder against the nine skill stacks of a productized service business:
 
 | Skill stack | Required level | Founder's apparent level (from v1.0 + v2.0) | Gap | Mitigation |
 |---|---|---|---|---|
@@ -266,25 +264,25 @@ A founder of a productized service business needs roughly nine skill stacks. Her
 
 ### F.1 The pattern
 
-The founder is **strong at brand, marketing, and strategy; weak at the core craft of travel operations**. This is a precisely backwards configuration for a productized service business in the first 18 months. A founder who is strong at travel ops but weak at brand can hire a fractional CMO for $30K/year. A founder who is strong at brand but weak at travel ops cannot hire a fractional senior travel advisor cheaply — that person is $100K+ and hard to find.
+The founder is **strong at brand, marketing, strategy; weak at the core craft of travel ops**. Precisely backwards for a productized service business in the first 18 months. A founder strong at ops, weak at brand can hire a fractional CMO for $30K/year. A founder strong at brand, weak at ops cannot cheaply hire a fractional senior travel advisor — that person is $100K+.
 
-The founder is, in effect, running a brand exercise (Latitude 43, the Journal, the voice, the website designs) on top of a service they have not yet learned to deliver. This is the precise configuration of failure for "agency" launches across categories: the marketing front door is gorgeous, the back-of-house is empty. It works for 6–12 months until the first wave of members tries to actually use the service.
+The founder is running a brand exercise on top of a service they have not yet learned to deliver. The marketing front door is gorgeous; the back of house is empty. Works for 6–12 months until the first wave of members tries to actually use the service.
 
-### F.2 Where the founder must invest in advisors/contractors immediately
+### F.2 Outside humans needed before member #1
 
-1. A **senior corporate-travel advisor mentor** willing to be on speed-dial for 5–10 hours/month, paid $300–500/hour. The plan should budget $15–25K Y1 for this.
-2. A **TICO-experienced Canadian attorney**, on retainer at $3–5K/year, because the Toronto-resident-serving-US-clients structure has at least three sharp edges (TICO, US state seller-of-travel laws applied to a Canadian seller via Fora's umbrella, and the question of whether Atlas memberships are "travel sales" under any of those regimes — flagged in v1.0 §12.2 but not resolved).
-3. A **cross-border CPA** (already in the plan, non-negotiable).
-4. A **US-licensed E&O specialist broker** — Fora's umbrella may not extend to all of Latitude 43's advisory work (the v1.0 plan acknowledges this in §11.5). Confirm coverage in writing before member #1.
-5. A **reciprocal-coverage Fora peer advisor**, signed in writing, before launch.
+1. Senior corporate-travel advisor mentor on speed-dial, 5–10 hrs/mo at $300–500/hr ($15–25K Y1)
+2. TICO-experienced Canadian attorney on $3–5K/year retainer (TICO + US state seller-of-travel via Fora's umbrella + whether Atlas memberships are "travel sales")
+3. Cross-border CPA (in plan)
+4. US-licensed E&O specialist broker — Fora's umbrella may not cover advisory work (v1.0 §11.5 acknowledges); confirm in writing before member #1
+5. Reciprocal-coverage Fora peer, signed before launch
 
-That is five outside humans before the founder takes their first member. The plan currently names roughly two (the CPA and a vague "counsel").
+Five outside humans. The plan currently names two (CPA + vague counsel).
 
 ---
 
 ## G. Cross-border ops
 
-The Toronto-founder-serving-US-clients structure is the single best margin lever in the model and the single most legally complex feature of the business. It deserves more attention than the plan gives it.
+Toronto founder serving US clients is the best margin lever and the most legally complex feature. Deserves more attention than the plan gives.
 
 ### G.1 Operational frictions
 
@@ -299,7 +297,7 @@ The Toronto-founder-serving-US-clients structure is the single best margin lever
 
 ### G.2 Tax structure risks
 
-The v1.0 plan §12.3 is competent but compressed. The risks not adequately surfaced:
+V1.0 §12.3 is competent but compressed. Under-surfaced risks:
 
 | Risk | Severity | Notes |
 |---|---|---|

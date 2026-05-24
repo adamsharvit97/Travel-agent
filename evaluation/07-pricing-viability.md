@@ -7,30 +7,29 @@
 
 ---
 
-## Investor's TL;DR (read this first)
+## Investor's TL;DR
 
-The v2.0 pricing structure is a meaningful improvement over the $50/mo proposal that the prior stress-test killed. It is **closer to credible** at every price point, and the architectural decision to retain 100% of subscription dollars while sharing only commissions with Fora is the single smartest move in the entire plan. That alone converts a marginal Y1 into a survivable one.
+v2.0 is a meaningful improvement over the $50/mo proposal the prior stress-test killed. The architectural decision to retain 100% of subscription dollars while sharing only commissions with Fora is the single smartest move in the plan. That alone converts a marginal Y1 into a survivable one.
 
-But "improvement" is not "investable." Under a hard investor lens, **v2.0 still has six structural cracks**:
+But "improvement" ≠ "investable." Under a hard investor lens, v2.0 has **six structural cracks**:
 
-1. **The $99 Atlas Light tier is priced into a dead zone** — above the content-only floor ($33/mo) but below the credible-human-relationship floor ($200/mo). It will attract the wrong members and create the wrong expectations.
-2. **The 70/30 → 80/20 threshold ($300K personal sales) is harder to clear than the plan models.** The Y2 numbers assume the founder hits 80/20 by end of Y1. The math says probably not.
-3. **The "subscription = 100% to advisor" claim is not independently verified.** It is the load-bearing assumption of the entire model. If Fora's policy changes — or if it was never that policy to begin with — the plan loses ~$50–$430K in 5-year value depending on the timing.
-4. **The design fee escalator delivers $50–$200/hr effective rates on the most common trip bands.** That is a labor problem with a money disguise.
-5. **First Loss Insurance is unpriced** ($30K of theoretical exposure that is plausibly real on 30–50% of named trips in Y1, given the support-call-black-hole pain point being the *whole pitch*).
-6. **Society at $14K is below the prevailing market floor for a 1:6 service-ratio, dedicated-principal, 15-minute-SLA product** — Knightsbridge's nearest analog is £25K ($31K) at 1:5, and Knightsbridge has 10 years of provenance Latitude does not have.
+1. **Atlas Light $99 is priced into a dead zone** — above content-only floor ($33), below credible-human floor ($200). Wrong members, wrong expectations.
+2. **70/30 → 80/20 trigger ($300K personal sales) is harder to clear than modeled.** Y2 assumes 80/20 by end of Y1. Probably not.
+3. **"Subscription = 100% to advisor" is not independently verified.** Load-bearing assumption. If wrong, plan loses $50–$430K in 5-year value.
+4. **Design fee escalator delivers $50–$200/hr on the most common bands.** Labor problem with a money disguise.
+5. **First Loss Insurance is unpriced** ($30K theoretical exposure, plausibly real on 30–50% of named trips given the pitch *is* the support-call black hole).
+6. **Society $14K is below the floor for 1:6, dedicated-principal, 15-min-SLA.** Knightsbridge analog is $31K at 1:5 with 10 years of provenance Latitude lacks.
 
-**Verdict:** A bootstrapped solo founder can survive Y1–Y2 on this pricing if and only if the warm-anchor close happens, the 70/30 split is endured without complaint, and Society is deferred (which v2.0 has correctly already done). **The plan does not break at Y1.** It breaks at the Y3 inflection where the model assumes Society members and the founder needs to be in two service registers at once with no team.
+**Verdict:** Bootstrapped solo founder survives Y1–Y2 if the warm anchor closes, 70/30 is endured, Society stays deferred (correctly already done). Plan doesn't break at Y1. It breaks at the Y3 inflection — Society credibility required, two service registers, no team.
 
-**What I would change before launch:**
-- Kill or radically reposition Atlas Light at $99. Either raise to $199 (credible-human band) or strip the human and price at $49 (content + AI band).
-- Tighten the 80/20 trigger language: it's a Fora-controlled threshold, not a Latitude-controlled outcome.
-- Lock subscription policy with Fora in writing before launch.
-- Re-cut the design fee escalator to start at $5K with a $500 floor — not $250 on a $5K trip.
-- Charge an upfront $1,500 Society induction fee to offset First Loss exposure.
-- Defer Society to Y3 at the earliest. Y2 is too aggressive.
+**What to change before launch:**
+- Reposition Atlas Light at $99. Either $199 (credible-human band) or $49 + per-trip (content/AI band).
+- Lock Fora subscription policy in writing pre-launch.
+- Re-cut design fee escalator: $500 floor at $5K, not $250.
+- $1,500 Society induction fee to offset First Loss exposure.
+- Defer Society to Y3, not Q1 2027.
 
-The rest of this document shows the math.
+Math follows.
 
 ---
 
@@ -38,37 +37,29 @@ The rest of this document shows the math.
 
 ### A.1 Atlas Light — $99/mo ($1,188/yr)
 
-**Position claim:** Just above Indagare Self Planner ($33/mo, content-only). Below the "no human service exists below $200/mo" floor.
+**Position claim:** Just above Indagare Self Planner ($33/mo, content-only). Below the "no human service below $200/mo" floor.
 
-**Why $99 fails the credible-floor test:**
+**Why $99 fails the credible-floor test.** The stress-test established a five-band price ladder:
 
-The pricing stress-test established (Section 1.4) a five-band credible price ladder:
-
-| Band | Price | What it pays for | Examples |
+| Band | Price | What it buys | Examples |
 |---|---:|---|---|
 | Content + app only | $33–$50/mo | Self-serve, no human | Indagare Self Planner, One Medical |
 | Content + async human triage | $99–$150/mo | **Gap in market** | (none) |
-| Named human relationship, on-demand | $200–$400/mo | Indagare Custom, Velocity Black, MDVIP, Soho House CWH |
-| Named human + escalation, hard SLA | $400+/mo | Sollis, E by Equinox |
-| Bespoke / quiet ultra-luxury | $1,000+/mo | Knightsbridge, Sienna Charles |
+| Named human, on-demand | $200–$400/mo | Indagare Custom, Velocity Black, MDVIP, Soho House CWH |
+| Named human + hard SLA | $400+/mo | Sollis, E by Equinox |
+| Bespoke ultra-luxury | $1,000+/mo | Knightsbridge, Sienna Charles |
 
-**The investor read:** the "gap in market" framing is *almost always* a self-deception. Gaps exist for a reason. The $99–$150/mo band is empty because **the unit economics of putting a human on the line at $1,188/yr per member do not work for the operator** — which is exactly what the stress-test math showed. Atlas Light at $99 is asking the founder to volunteer for the same trap that killed Forward at $149/mo.
+**Investor read:** the "gap in market" framing is almost always self-deception. The $99–$150/mo band is empty because **the unit economics of putting a human on the line at $1,188/yr do not work** — exactly what the stress-test math showed. Atlas Light at $99 is volunteering for the trap that killed Forward at $149/mo.
 
-**The v2.0 defense (steelmanned):** v2.0 design fees are stacked on top of Light ($250 floor at $5K, scaling up), and Light commissions still flow. The $99 is not the only revenue line. The per-member Y1 economics in `/tmp/v2-facts.md` say $2,400–3,000 per Light member, which is the same neighborhood as a $200/mo pure-subscription product.
+**v2.0 defense (steelmanned):** design fees stack on top of Light ($250 floor at $5K) and commissions flow. Per-member Y1 economics in v2-facts say $2,400–3,000 per Light member, similar to a $200/mo pure-subscription product. The math is roughly correct *if* the member books 18 nights/year at $500 ADR with 30% commissionable. Plausible for a business traveler.
 
-**Why this defense partially works:**
-The math is roughly correct *if* the Light member books 18 nights/year through Fora at $500 ADR with 30% on commissionable preferred rates. That is a plausible assumption for a business traveler. The per-member economics are not fake.
+**Why this defense doesn't fully work.** The $99 price sets *buyer expectations* of service level. A buyer paying $99 expects content-tier responsiveness; v2.0 promises relationship-tier service (24/7 desk, named text/email) to a $99 buyer. Same register-price mismatch the stress-test flagged at $50/mo, scaled up.
 
-**Why this defense does not fully work:**
-The $99 price point sets *buyer expectations* of service level. A buyer paying $99/mo expects content-tier responsiveness. A buyer paying $200/mo expects relationship-tier responsiveness. **The v2.0 plan promises relationship-tier service (24/7 desk, named text/email)** to a $99/mo buyer. This is the same register-price mismatch that the stress-test flagged at $50/mo, just scaled up. The mismatch is smaller but not eliminated.
+**Predicted failure mode:** adverse selection into sub-$5K bookings (no design fee, thin commission), scope creep ("can you book my anniversary dinner?"), 8% annual churn = $9,500 cliff per 10 members.
 
-**Predicted failure mode at $99:**
-Light members will treat the desk as their personal travel agent for any whim ("can you book my anniversary dinner?"). Light members will adverse-select into the lowest-margin trip patterns (multiple sub-$5K bookings where no design fee applies and commission is thin). Light members will churn at consumer-subscription rates (8% annual base, per Recurly), which at $1,188/yr is a $9,500 cliff per 10 members.
+**Where $99 might survive:** if and only if Light is positioned as **the on-ramp tier**, with a hard policy that 18 nights/year (~$9K booking volume) is required for renewal, and members falling below get upsold to per-trip booking with no membership. This is unstated in v2.0.
 
-**Where $99 might survive:**
-If — and only if — Atlas Light is genuinely positioned as **the on-ramp tier**, with a hard policy that 18 nights/year × $500 ADR (= $9K booking volume) is required for renewal eligibility, and members who fall below that are politely upsold to per-trip booking with no membership. This is unstated in v2.0. It should be stated.
-
-**Investor verdict on $99:** Tentatively viable as written *only because* design fees and commissions backfill it. Strategically, $99 is the wrong price. Either raise to $199 or strip human service and price at $49 + per-trip design fees.
+**Verdict on $99:** Tentatively viable *because design fees and commissions backfill it*. Strategically, wrong price. Either raise to $199 or strip the human and price at $49 + per-trip.
 
 ### A.2 Atlas Office — $249/mo ($2,988/yr)
 
