@@ -39,13 +39,13 @@ The supporting analysis the plan does not show but should keep in the data room:
 
 ### Fora structure is fit-for-purpose
 
-§1 names Fora as "US ARC/IATA, CLIA, state seller-of-travel registrations." This is accurate. Fora holds ARC and IATA accreditation, CLIA cruise accreditation, and state SOT registrations in CA, FL, WA, HI, and IA. The advisor (Latitude 43) operates under Fora's accreditation umbrella and routes bookings through Fora's merchant-of-record systems. The legal architecture is:
+§1 names Fora as "US ARC/IATA, CLIA, state seller-of-travel registrations." Accurate. Fora holds ARC and IATA accreditation, CLIA, and SOT registrations in CA, FL, WA, HI, IA. Architecture:
 
-- **Fora handles:** ARC/IATA accreditation, CLIA, state SOT registrations for the booking transaction, merchant-of-record status on bookings, advisor E&O umbrella on Fora-routed bookings, Form 1042-S issuance, supplier accreditation (Marriott STARS, Hyatt Privé, Belmond Bellini, Mandarin Fan Club — all of which are routed through Fora's host status).
-- **Advisor (Latitude 43) handles:** membership product contract, Stripe billing for the membership, the relationship with the member, T2 corporate return, GST/HST registration and zero-rating analysis, TICO compliance (Path A documentation), member-product E&O (gap coverage), cyber insurance, privacy policy, trademark, the Canadian CPA, the cross-border tax memo.
-- **Virtuoso** sits under Fora's Virtuoso membership. The 2% clip described in §1 is applied at the Virtuoso level before the Fora-advisor split. Advisor cannot independently hold Virtuoso outside a host.
+- **Fora handles:** ARC/IATA, CLIA, state SOT for the booking transaction, merchant-of-record status, advisor E&O umbrella on Fora-routed bookings, Form 1042-S issuance, supplier accreditation (Marriott STARS, Hyatt Privé, Belmond, Mandarin Fan Club — all routed through Fora).
+- **Advisor (Latitude 43) handles:** membership contract, Stripe billing, member relationship, T2 corporate return, GST/HST zero-rating analysis, TICO compliance, member-product E&O (gap coverage), cyber insurance, privacy policy, trademark, cross-border CPA.
+- **Virtuoso** sits under Fora. The 2% clip in §1 is applied before the Fora-advisor split. Advisor cannot hold Virtuoso outside a host.
 
-This split is operationally clean and the v3 plan describes it correctly. The legal question that remains is the one carried forward from v2: is the membership product itself within Fora's SOT registrations, or does it sit outside as a separate Latitude 43 product needing its own analysis. Under v2 the answer was "ambiguous, get a memo." Under v3 Unlimited, the answer leans toward "the membership is closer to a sale-of-travel arrangement and the memo is now urgent." Detailed below.
+The split is operationally clean and the v3 plan describes it correctly. The legal question carried from v2: is the membership product within Fora's SOT registrations, or does it sit outside as a separate Latitude 43 product needing its own analysis. Under v2 the answer was "ambiguous, get a memo." Under v3 Unlimited, the answer leans toward "membership is closer to a sale-of-travel arrangement and the memo is urgent." Detailed below.
 
 ### The Ontario CCPC structure and dividend treatment
 
