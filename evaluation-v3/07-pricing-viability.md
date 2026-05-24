@@ -171,29 +171,13 @@ The labor risk is real, bounded, and conditional. It is not a fundamental flaw. 
 
 The plan is dismissive of Model A in §15. The defense exists and deserves a fairer hearing.
 
-### Variable-cost protection
+**Variable-cost protection.** Model A's escalator is a variable-cost hedge: heavy travelers pay more, light travelers pay less. Under Model B, the founder absorbs the variability. For a solo founder with bus factor 1.0, this argument is structurally stronger than the plan acknowledges. One twisted ankle becomes a margin disaster under Model B; under Model A, every additional design hour generated a fee.
 
-Model A's design fee escalator is a variable-cost hedge against heavy-usage members. The heavy traveler pays more, the light traveler pays less. Under Model B, the founder absorbs the cost of variability entirely. This is structurally analogous to the choice between an HMO (capitated) and a PPO (fee-for-service). HMOs win on simplicity and predictability for the buyer; PPOs win on labor protection for the provider. Both are viable; the choice depends on which side you're protecting.
+**CFO-defensibility.** Where a CFO is in the room (family-office, RIA segments), Model A's "subscription + variable design fee" reads as a known SaaS pattern (Salesforce + implementation services). Model B Unlimited reads as a flat retainer, which some procurement teams resist because it's not benchmarkable.
 
-For a solo founder with bus factor 1.0, the PPO argument is structurally stronger than the plan acknowledges. The founder is one twisted ankle from a margin disaster under Model B. Under Model A, every additional hour of design work generated a corresponding fee.
+**Category norm.** SmartFlyer charges $500 floor + escalator. Bell & Bly charges $800/week. Indagare Custom charges $2,850/year + escalator on complex trips. Model B is a category-deviating bet. Sometimes that's Tesla; sometimes it's a flat-rate health insurance startup from the 2010s.
 
-### CFO-defensibility
-
-Where the buyer is a corporate-card holder with a CFO in the room, the Model A escalator was structurally easier to defend. The CFO reads "subscription + variable design fee per trip" as a known SaaS pattern (à la Salesforce + implementation services, or HubSpot + onboarding fees). The Model B Unlimited reads as a flat retainer, which some procurement teams resist because it's not benchmarkable. In the buyer profiles in §3, only the family-office and RIA segments have meaningful CFO involvement; for them, Model A may close better than the sims indicated.
-
-### Category norm
-
-The travel-advisory category norm is fees + commissions. SmartFlyer charges $500 floor + escalator. Bell & Bly charges $800/week. Indagare Custom charges $2,850/year + escalator on complex trips. Latitude under Model B is making a category-deviating bet. Category deviation is sometimes the winning move (Tesla on dealerships, Ramp on no-annual-fee) and sometimes the loser (every flat-rate health insurance startup of the 2010s). The plan should be honest that Model B is a category bet, not a category norm.
-
-### Why the case still loses
-
-The defenders' case is real but it loses to two facts:
-
-**(a)** The buyer doesn't care about the founder's variable-cost protection. The buyer pays for predictability. Every dollar of variable-cost protection the founder banks under Model A is a dollar of predictability the buyer loses. In a market where Concur and Navan are the alternative, predictability is the structural advantage.
-
-**(b)** The sim data, however limited, ran a controlled test of the two models. Vanessa Coyne closing Light $99 under A and Office $349 under B is the cleanest single data point: same person, higher tier, more revenue. The Model A defenders need to explain that data point. They can't.
-
-Model A loses on the buyer-side argument even if it wins on the founder-side argument. The plan should have made this case more explicitly so the rejection is understood as a real trade-off, not an obvious win.
+**Why the case still loses.** Two facts kill it: (a) the buyer pays for predictability, and every dollar of variable-cost protection the founder banks under Model A is a dollar of predictability the buyer loses; (b) Vanessa Coyne closing Light $99 under A and Office $349 under B — same person, higher tier — is a data point Model A defenders can't explain. Model A loses on the buyer side even where it wins on the founder side. The plan should make this trade-off explicit instead of treating the rejection as obvious.
 
 ---
 
@@ -201,25 +185,11 @@ Model A loses on the buyer-side argument even if it wins on the founder-side arg
 
 Model C (Basic $99 / Plus $249 / Office $499) was tested in Sim 12 and closed at list. The plan rejects it; the rejection is partially right.
 
-### What Model C does well
+**What Model C does well.** A ladder gives buyer agency — Tomasz Werner in Sim 12 anchored downward to $99 without leaving the conversation, and closed Plus at list. The $99 Basic tier captures a freemium-adjacent buyer (4–6 trips/year at $80K T&E) that Model B turns away. The middle tier is feature-defensible: the founder closed by reframing the $150 Basic-Plus gap as "what design inclusion costs to deliver" — the cleanest possible price defense, unavailable under Model B.
 
-**A ladder gives buyer agency.** Tomasz Werner in Sim 12 wanted a way to anchor downward without leaving the conversation. The $99 Basic tier gave him that anchor. He could push for "Plus at Basic pricing" precisely because Basic existed. In Model B, that conversation has nowhere to go — the buyer either takes $189 or walks. Buyer agency is a sales feature, even when the buyer ends up at the same price.
+**What Model C does badly.** Feature-defensible but rep-fragile — Sim 12's founder almost lost the deal twice and recovered both times by elite-level argument. Model C demands a more disciplined rep than Model B, which is fine while the founder runs every call and breaks the moment a salesperson is hired. The $99 anchor is a long-term liability: every Plus prospect can point to it. And three tiers means three SLAs, three FTGs, three sales pitches — 50% more sales-script complexity for a solo founder running primary income.
 
-**The $99 Basic tier captures the freemium-adjacent buyer.** A founder doing 4–6 trips/year at $80K T&E is wrong for Light Unlimited but right for a booking-desk tier. Under Model B, that buyer is turned away (or referred to the non-member design schedule). Under Model C, they convert into a low-margin but real recurring relationship that may upgrade in Year 2–3.
-
-**The middle tier is feature-defensible.** Sim 12's founder closed Plus by reframing the $150 Basic-Plus gap as "this is what design inclusion costs to deliver." That's the cleanest possible price defense. Model B Unlimited can't deploy this argument because there's no Basic to compare against.
-
-### What Model C does badly
-
-**The middle tier is feature-defensible but rep-fragile.** The Sim 12 evaluator notes the founder almost lost the deal twice and recovered both times by elite-level argument. Model C demands a more disciplined rep than Model B. For a solo founder doing every sales call themselves, this is acceptable. The moment the founder hires a salesperson (Y3+?), Model C scales worse than Model B.
-
-**The $99 anchor is a long-term liability.** Every Plus prospect can point to $99 as a starting reference. Sim 12 shows the founder absorbing the pressure successfully, but across 100 sales calls, the $99 anchor wins some of them on price and loses others on the "Plus is the right product, you're just shopping" argument. Model B removes that anchor entirely.
-
-**Three SLAs, three FTGs, three sales pitches.** Operating three tiers simultaneously is 50% more sales-script complexity for the founder. For a solo founder running primary income, this is not free.
-
-### The verdict on Model C
-
-Model C is the right pricing model for a multi-rep firm with a freemium-adjacent SMB segment. It is the wrong pricing model for a solo founder selling principal-grade service. The plan rejects it correctly, but the rejection should acknowledge that Model C scored within 10% of Model B on the sim outcomes — not below it.
+**Verdict.** Model C is right for a multi-rep firm with a freemium-adjacent SMB segment; wrong for a solo founder selling principal-grade service. The plan rejects it correctly, but the rejection should acknowledge Model C scored within 10% of Model B on sim outcomes — not below.
 
 ---
 
@@ -370,25 +340,16 @@ The user (founder) rejected the idea of differentiating pricing by ICP (e.g., $1
 
 **The user was right to reject it. Here's why.**
 
-### Why segment-pricing would have made sense
+**Why segment-pricing would have made sense.** Each ICP has different willingness-to-pay. PE operating partners at $500K T&E absorb $449/mo without friction; surgeons at $250K T&E might balk at $349. Crude Y5 lift from segment-pricing: +$50 on PE Office members (30% of book), +$25 on RIA Light members (25% of book) = roughly $14K/year. Real money, but small.
 
-Each ICP has different willingness-to-pay. PE operating partners at $500K T&E can absorb $449/month without friction. Surgeons at $250K T&E might balk at $349. In a textbook price-discrimination model, charging each segment closer to their willingness-to-pay maximizes revenue per member.
+**Why segment-pricing was the wrong move.** Five reasons:
+1. **Operating complexity.** Two prices per tier = two sales scripts, two contract templates, two MSA versions, two Stripe price IDs. 2× cognitive load per sales call.
+2. **Cross-segment referrals.** Series A founder refers PE associate refers RIA principal. If pricing differs by segment, the referral conversation includes "what did you pay?" — and the answer breaks trust.
+3. **Brand register.** Operator-luxe brands don't price-discriminate. Patek doesn't charge different prices to lawyers vs surgeons.
+4. **Simplicity argument.** The whole Model B thesis is "one number, repeatable by the EA, defensible without notes." Segment pricing violates the central argument.
+5. **Sim data.** None of the 30 sims tested segment-pricing. The evidence base would have to be re-run.
 
-The Y5 revenue lift from segment-pricing, modeled crudely: lift Office by $50 on PE-segment members (30% of Office book), lift Light by $25 on RIA-segment members (25% of Light book). That's roughly $14K/year of incremental subscription at Y5. Real money, but small.
-
-### Why segment-pricing was the wrong move anyway
-
-**1. Operating complexity.** Two prices per tier means two sales scripts, two contract templates, two MSA versions, two Stripe price IDs. For a solo founder, this is 2× the cognitive load on every sales call.
-
-**2. Cross-segment referrals.** The Series A founder refers the PE associate. The PE associate refers the RIA principal. If pricing differs by segment, the referral conversation includes "what did you pay?" — and the answer breaks trust.
-
-**3. Brand register.** Operator-luxe brands don't price-discriminate. Patek Philippe doesn't charge different prices to lawyers vs. surgeons. The visual register the founder has built reads at a single price band, not a segmented one.
-
-**4. The buyer math.** The whole Model B argument is "one number, repeatable by the EA, defensible without notes." Segment pricing violates the central simplicity argument.
-
-**5. The 30-sim data.** None of the 30 sims tested segment-pricing. The whole evidence base would have to be re-tested.
-
-**Verdict:** Rejecting segment-pricing was correct. The $14K of Y5 revenue lift is not worth the operating complexity, referral friction, or brand-coherence cost. The right tool for segment-level WTP differences is the tier ladder (Light/Office/Society), not within-tier discrimination.
+**Verdict:** Rejecting segment-pricing was correct. $14K of Y5 lift is not worth the operating complexity, referral friction, or brand-coherence cost. The right tool for segment-level WTP differences is the tier ladder, not within-tier discrimination.
 
 ---
 

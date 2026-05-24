@@ -171,15 +171,7 @@ The plan would be sharper acknowledging that the *competitive frontier* is movin
 
 ### The plan does not budget for Virtuoso Travel Week or FAM-trip cadence
 
-§3.5 mentions FAM trips as a documented operating artifact (operations/fam-trip-briefing.md), and §13 acknowledges supplier program access. There is no annual budget line for the supplier-relationship investment that is, per the v2 audit, the only 8/10 moat available to the founder. Realistic annual cost:
-
-- Virtuoso Travel Week (Las Vegas, August) — $3K registration + travel
-- 6 FAM trips per year — $0 net (FAM trips are typically sponsored, costing only the founder's time)
-- 4–6 in-person property inspections per year on personal travel — $8–15K
-- ILTM Cannes (December) — $4–6K including travel
-- 1–2 regional consortium summits — $3–5K
-
-Annual all-in: **$15–25K**, exactly the §10.1 networking budget but explicitly allocated to supplier compounding rather than Toronto club memberships. The current §10.1 allocation (Soho House, EO Toronto, brother-in-law dinners) buys *client* leads. The supplier compounding budget buys *moat*. Both matter. The plan should explicitly carve out at least 40% of the networking budget for supplier-side investment.
+§3.5 mentions FAM trips and §13 acknowledges supplier program access, but there is no annual budget line for the supplier-relationship investment that is the only 8/10 moat available. Realistic annual cost: Virtuoso Travel Week $3K + travel; 6 FAM trips at sponsored cost (founder time only); 4–6 in-person property inspections $8–15K; ILTM Cannes $4–6K; 1–2 regional consortium summits $3–5K. Annual all-in: **$15–25K** — exactly the §10.1 networking budget, but explicitly allocated to supplier compounding rather than Toronto club memberships. Soho House and EO Toronto buy *client* leads. The supplier budget buys *moat*. Both matter; the plan should carve out at least 40% of networking spend for supplier-side investment.
 
 ### Speed-of-moat-building — the 12 / 24 / 36 month milestone scorecard the plan should include
 
@@ -233,8 +225,8 @@ If 50% or less ships, the moat reverts to operating discipline alone (5/10 at pe
 
 ## Closing note on the grade
 
-C+ is not a downgrade from v2. The v2 audit graded the moat structure as ~3.7/10 today, ~5.5/10 by end of Y2 if E1–E10 ship, ~6.5/10 by Y5. v3 has not meaningfully moved any of those numbers. What v3 changed is the *sales-cycle conversion* on the inbound funnel — the all-included offering removes the largest objection in v2 — and the *EA-explainability* on the buying decision — the one-sentence pitch survives the EA-to-principal handoff. Those are real wins. They are GTM wins, not moat wins.
+C+ is not a downgrade from v2. The v2 audit graded the moat structure as ~3.7/10 today, ~5.5/10 by end of Y2 if compounding actions ship, ~6.5/10 by Y5. v3 has not meaningfully moved those numbers. What v3 changed is the *sales-cycle conversion* on the inbound funnel and the *EA-explainability* on the buying decision. Those are real wins. They are GTM wins, not moat wins.
 
-The grade reflects two facts. First: the positioning is sharper, but the plan's claims about defensibility have not caught up to the v2 audit's verdict, and the new pricing simplification is itself the easiest single thing in v3 for a competitor to copy. Second: the EA-as-a-Service blind spot is structural, not cosmetic — it is the largest adjacent competitive category and the plan does not name it once. A B-grade plan would address both. A B+/A- plan would convert the EA category from competitor to partner and would carve out a supplier-side investment budget that maps to the only true 8/10 moat available.
+The grade reflects two facts. First: positioning is sharper, but defensibility claims have not caught up to the v2 audit's verdict, and the new pricing simplification is the easiest single thing in v3 for a competitor to copy. Second: the EA-as-a-Service blind spot is structural — the largest adjacent competitive category, not named once in §13. A B-grade plan would address both. A B+/A- plan would convert the EA category from competitor to partner and carve out a supplier-side investment budget mapped to the only 8/10 moat available.
 
-The founder is approximately 8–10 specific actions away from a B+ moat thesis. None of them require capital. All of them require the same execution discipline the v2 audit named — Journal cadence, supplier compounding, Society curation, incident-log shipping — re-anchored under the cleaner Model B economics. The plan should say that out loud. It does not yet.
+The founder is approximately 8–10 specific actions away from a B+ moat thesis. None require capital. All require the same execution discipline the v2 audit named — Journal cadence, supplier compounding, Society curation, incident-log shipping — re-anchored under the cleaner Model B economics. The plan should say that out loud. It does not yet.

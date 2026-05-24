@@ -10,14 +10,9 @@
 
 ### A.1 Zero outside capital is the right answer for this business
 
-This is the most important thing the plan gets right and the easiest thing to miss. A solo professional services business with the unit-economics profile in §5 — 50–70% gross margin, founder time as the binding constraint, brand-and-relationship as the moat — cannot absorb venture capital without becoming a worse version of itself. The implicit math:
+A solo professional services business with the unit-economics profile in §5 — 50–70% gross margin, founder time as binding constraint, brand-and-relationship as moat — cannot absorb venture capital without becoming a worse version of itself. A $500K seed at a $3M cap is 17% of the business; at Y5 base case $870K revenue and a 2–4× strategic exit multiple, that 17% is worth $300–600K to the investor against a required $5M return on a seed check. The math does not clear. The founder would lose 17% of equity in exchange for capital she does not need (Renmac covers personal burn) and oversight she does not want (board cadence on a one-person shop).
 
-- A $500K seed round at a $3M post-money cap is a 17% sale of the business.
-- At Y5 base case of $870K revenue and a 1.5–3× revenue multiple on a strategic exit, that 17% is worth $220K–$440K to the investor.
-- The investor's required return at 10× on a seed check is $5M. The business does not produce that outcome in 80% of probability-weighted cases.
-- The founder loses 17% of equity in exchange for capital she does not need (Renmac covers personal burn) and oversight she does not want (board cadence on a one-person shop).
-
-The plan correctly identifies this in §14.2: *"This is not a venture-backable business. It is a lifestyle practice."* That single sentence is the most important sentence in the document. It removes the entire class of bad decisions that a founder with capital-market access would otherwise be tempted to make. The v2.0 evaluation memo spent 4,000 words arguing for the lifestyle framing. v3.0 just declares it. That is the correct level of confidence.
+The plan correctly identifies this in §14.2: *"This is not a venture-backable business. It is a lifestyle practice."* That sentence removes the entire class of bad decisions that a founder with capital-market access would otherwise be tempted to make. The v2.0 evaluation memo spent 4,000 words arguing for the lifestyle framing. v3.0 just declares it. That is the correct level of confidence.
 
 ### A.2 The Renmac backstop is the load-bearing fact
 
@@ -193,36 +188,15 @@ I argued in §A.2 that the Renmac primary income is, functionally, a 24-month in
 
 §14.2 says: *"40% lifestyle, 25% acqui-hire, 15% strategic, 5% venture-shaped, 15% failure."* The plan does not say what dollar outcome corresponds to each bucket. That gap matters because the founder needs to make planning decisions against expected exit value, not just probability bucket names. Let me work the numbers and the plan should incorporate them.
 
-**Bucket 1 — Lifestyle (40%).** No exit; founder runs the business 10–20 years.
-- Y5 personal income: $400–800K (after PHT VA + ops costs, before founder tax)
-- Y10 personal income: $700K–$1.5M (under Cadence-trajectory compound assumption)
-- Cumulative founder cash, Y1–Y10, present-value discounted at 6%: **$3.5–5.5M**
-- This is the dominant EV contributor.
+**Bucket 1 — Lifestyle (40%).** No exit; founder runs the business 10–20 years. Y5 personal income $400–800K; Y10 personal income $700K–$1.5M under a Cadence-trajectory compound assumption. Cumulative Y1–Y10 founder cash, PV-discounted at 6%: **$3.5–5.5M**. Dominant EV contributor.
 
-**Bucket 2 — Acqui-hire by larger advisor (25%, $1.5–3M at Y5 base).** Brownell, Tzell, Internova, or a similar group buys the book.
-- Multiple: 2–4× revenue (typical for boutique travel advisory books with strong renewal)
-- Y5 revenue base case ~$870K, so at 2–4× = $1.7–3.5M gross
-- Founder net after tax: **$1.3–2.8M** assuming LCGE shelters first $1.01M
-- Typical structure: 30–50% cash at close, 50–70% earnout against 2–3 year revenue retention targets
+**Bucket 2 — Acqui-hire by larger advisor (25%).** Brownell, Tzell, Internova, or similar. 2–4× revenue multiple (typical for boutique advisory books with strong renewal). Y5 revenue base ~$870K → $1.7–3.5M gross. Founder net after tax with LCGE: **$1.3–2.8M**. Typical structure: 30–50% cash at close, 50–70% earnout against 2–3 year retention.
 
-**Bucket 3 — Strategic acquisition by host or platform (15%, 3–6× revenue).** Fora is the primary candidate; private aviation broker is the secondary.
-- Multiple: 3–6× revenue (higher because the buyer values strategic adjacency, not just the book)
-- Y5 revenue base ~$870K, so at 3–6× = $2.6–5.2M gross
-- Founder net after tax with LCGE: **$2–4.5M**
-- Structure: typically heavier on cash and lighter on earnout because the strategic is buying capability, not just revenue retention
+**Bucket 3 — Strategic acquisition by host or platform (15%).** Fora is the primary candidate; private aviation broker is the secondary. 3–6× revenue multiple (higher because the buyer values strategic adjacency, not just book). Y5 revenue ~$870K → $2.6–5.2M gross. Founder net after tax with LCGE: **$2–4.5M**. Heavier on cash, lighter on earnout — the strategic is buying capability.
 
-**Bucket 4 — Venture-shaped breakout (5%, $20M+ at Y7).** Latitude scales beyond solo and becomes a multi-advisor firm with $3–5M ARR.
-- This requires the founder to have hired 3–5 advisors and a real operations layer by Y4–Y5
-- Y7 revenue: $3–5M
-- Multiple at this scale: 4–6×
-- Gross: **$12–30M, midpoint $20M**
-- Founder net after tax with LCGE: **$10–22M**
-- Probability is correctly named as 5%. Even at 5%, this single bucket is the largest contributor to upside variance.
+**Bucket 4 — Venture-shaped breakout (5%).** Latitude scales beyond solo to a multi-advisor firm with $3–5M ARR by Y7. Requires hiring 3–5 advisors and a real operations layer by Y4–Y5. 4–6× multiple at this scale → **$12–30M gross, midpoint $20M**. Founder net after tax with LCGE: **$10–22M**. Single largest contributor to upside variance.
 
-**Bucket 5 — Failure / wind-down (15%, ~$0–200K).**
-- Founder shuts down or sells the book for asset value: $50–200K
-- Recoverable: brand, member list, supplier relationships
-- Founder net: **-$50K to +$100K** depending on whether outstanding obligations exceed asset value
+**Bucket 5 — Failure / wind-down (15%).** Founder shuts down or sells the book for asset value $50–200K. Recoverable: brand, member list, supplier relationships. Founder net: -$50K to +$100K.
 
 **Probability-weighted expected founder outcome (7-year horizon):**
 
