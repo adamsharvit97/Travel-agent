@@ -53,95 +53,65 @@ Now the long form on each.
 
 ### A1. "One named human" — 3/10
 
-The closest analog is Bell & Bly: founder Sarah Groen, named on her contracts, picks up the phone for her best clients. Indagare's Custom Planners are named. Embark Beyond's leisure advisors are named. SmartFlyer's 250 ICs each operate as named advisors to their own books. The named-human commitment is the *default* in the boutique segment. The corporate-side incumbents (ALTOUR, Cadence, Brownell Corporate, Amex GBT) use pod models because their unit economics demand spreading agents thin — but the Fora-hosted advisor cohort, which is the actual competitive set Latitude 43 sits inside, is structurally named-human.
+Bell & Bly's Sarah Groen, Indagare's Custom Planners, Embark's advisors, SmartFlyer's 250 ICs — all named-human. It is the *default* in the boutique segment. The corporate-side incumbents (ALTOUR, Cadence, Brownell, GBT) use pod models because their unit economics demand it, but the Fora-hosted advisor cohort, which is the actual competitive set, is structurally named-human.
 
-What *would* be a moat is publishing the cap (15 accounts/advisor) AND the current book size AND the named secondary. The positioning master document calls this out. It is still copyable in two weeks. Score is 3, not lower, because the discipline of *holding* the cap when subscription revenue is sitting on the table is harder than it sounds — most founders blink. That discipline becomes a real moat after the founder has been observed holding it through two recessions.
+What *would* be a moat is publishing the cap (15/advisor) AND the current book size AND the named secondary. Still copyable in two weeks. Score is 3 because the discipline of *holding* the cap when subscription revenue is on the table is harder than it sounds — most founders blink — and that discipline becomes a real moat only after being observed for years.
 
 ### A2. "60-minute SLA" — 2/10
 
-A 60-minute first-response SLA is operationally easy at 30 members. It is operationally hard at 300, where it requires staffed overnight coverage. The promise costs nothing to make. The infrastructure to keep it costs ~$120K/year per FTE for after-hours human coverage. Until Latitude 43 publishes an incident log with first-response times and root-cause analysis, the SLA is a marketing claim indistinguishable from every other "24/7" promise in the category.
-
-A Fora advisor can publish a 60-minute SLA on their site this afternoon. They will probably miss it three times in the first month, and no one will know.
+Operationally easy at 30 members. Hard at 300, where it requires ~$120K/year in after-hours FTE. The promise costs nothing to make. Until Latitude 43 publishes an incident log with first-response times, the SLA is indistinguishable from every other "24/7" promise in the category. A Fora advisor can publish a 60-minute SLA this afternoon. She will miss it three times the first month, and no one will know.
 
 ### A3. "Operator-luxe brand" — 4/10
 
-The voice guide is the strongest single asset in the planning corpus. The banned-word list (no "luxury," "bespoke," "curated," "concierge"), the sample sentences, the discipline of "members not customers" — this is a brand register that genuinely differentiates from the leisure-advisory standard. It is also copyable. A motivated competitor with $50K and a good copywriter can produce a parallel register in six weeks. What they *cannot* copy quickly is the cumulative effect of 100 published Journal entries written in that register — but that is the editorial moat (Section E), not the brand moat per se.
-
-I score this 4 instead of 3 because brand is multiplicative with everything else. A consistent register applied across pricing transparency, SLA delivery, and case studies compounds into something hard to dislodge — eventually. But on its own, it is positioning.
+The voice guide is the strongest single asset in the planning corpus. The banned-word list, the discipline of "members not customers," the sample sentences — a brand register that genuinely differentiates from the leisure-advisory standard. Also copyable. A motivated competitor with $50K and a good copywriter produces a parallel register in six weeks. What they *cannot* copy quickly is the cumulative effect of 100 published Journal entries in that register — but that is the editorial moat (Section E), not the brand register itself. Score 4 because brand is multiplicative with everything else, but on its own it is positioning.
 
 ### A4. "Commission disclosure" — 5/10
 
-This is the most interesting item on the list. Disclosing the commission split on every booking receipt is structurally hostile to the incumbent model. ALTOUR cannot disclose because their override-commission revenue is opaque by design; Cadence cannot disclose because their three-masters dilution (corporate / MICE / leisure host) makes the math unrepresentable on a receipt; Brownell cannot disclose because their corporate side is a Tzell routing affiliate and they do not have direct visibility into the override stack themselves.
+The most interesting item on the list. Disclosing commission splits on every booking receipt is structurally hostile to the incumbent model: ALTOUR's override revenue is opaque by design; Cadence's three-masters dilution makes the math unrepresentable; Brownell's corporate side is a Tzell routing affiliate without direct visibility into the override stack.
 
-So the incumbents are structurally blocked. That sounds like a moat. It isn't, because the relevant competitive set isn't the incumbents — it's the *next* founder-led advisory. Bell & Bly could publish receipts tomorrow. A senior Fora advisor going solo could publish receipts tomorrow. The disclosure is a brilliant trust device for the buyer, but the asymmetry is against incumbents who cannot copy it, not against the actual competitive set.
-
-Score is 5 because it is a real first-mover advantage in a category where no one has done it, and being first to a transparency norm sets the benchmark every entrant after you has to meet. That is meaningful. It is not unbreachable.
+But the relevant competitive set isn't the incumbents — it's the *next* founder-led advisory. Bell & Bly could publish receipts tomorrow. Maya (Section B) can publish receipts tomorrow. Score 5 because being first to a transparency norm sets the benchmark every entrant has to meet, which is meaningful and slightly sticky. Not unbreachable.
 
 ### A5. "EA Companion Seat" — 3/10
 
-The EA Companion Seat is a clever bundle: principal pays for Atlas Office, EA gets a complimentary Light seat for managing the principal's calendar. It is a pricing-architecture decision dressed as a product. Bell & Bly does not have it. Indagare does not have it. None of the analogs have it. Today, Latitude 43 is alone.
-
-But: it is one line in a pricing page. The moment a competitor sees Latitude 43 closing deals against them with "and the EA gets a seat too," they implement it in their next billing cycle. There is zero technical barrier. The only reason it isn't already industry-standard is that no one has thought of it. After Latitude 43 publishes it, everyone will think of it.
-
-Score is 3 because being the first to name a bundle is worth something — it associates the language with you — but the bundle itself is not defensible.
+A clever bundle: principal pays for Atlas Office, EA gets a complimentary Light seat. None of the analogs have it today. It is one line in a pricing page. The moment a competitor sees Latitude 43 closing deals with "and the EA gets a seat too," they implement it in the next billing cycle. Zero technical barrier. Score 3 because being first to name a bundle associates the language with you, but the bundle itself is not defensible.
 
 ### A6. "First Loss Insurance" — 4/10
 
-$1K labor cap, one named trip, declared on the sales call. It is a sales-confidence device. It says "if we mess up, we eat the work." It is a thoughtful operating commitment.
-
-It is also self-insured at $1K per trip per member. A book of 100 members triggering once each is $100K in annualized risk — manageable as a marketing expense, not as an insurance product. A competitor can copy the language in their next contract template. The actual value is the founder's discipline in honoring it without making the member fight for it. That discipline is observable only over time.
-
-I score 4 because the *willingness to bear the cost* is a costly signal, and costly signals are harder to copy than free ones. A pod-model TMC has accounting structures that make it nearly impossible to attribute labor cost to a single named trip — they would have to rebuild billing. Boutique competitors can copy it; incumbents structurally cannot. Same asymmetry as commission disclosure, lower magnitude.
+$1K labor cap, one named trip. A sales-confidence device that says "if we mess up, we eat the work." Self-insured at $1K × 100 members = $100K annualized risk — manageable as marketing expense. A competitor copies the language in the next contract template. The actual value is the founder's discipline in honoring it without making the member fight for it. A pod-model TMC structurally cannot attribute labor cost to one named trip — they would have to rebuild billing. Score 4: same asymmetry as commission disclosure (boutique-copyable, incumbent-blocked), lower magnitude.
 
 ### A7. "Member application + reference requirement" — 5/10
 
-The application + reference layer is a curation gate. Done correctly, it produces two outputs: (1) higher-quality cohort with lower churn and better word-of-mouth, (2) a marketable scarcity signal. Indagare does not require applications. Bell & Bly does not. Knightsbridge Circle does ($50K+ membership), but in a different category.
+A curation gate. Done correctly, it produces a higher-quality cohort with lower churn and a marketable scarcity signal. Indagare does not require applications. Bell & Bly does not. Knightsbridge Circle does at $50K+, in a different category.
 
-The score depends entirely on whether the references *actually exist and check out*. A 30-member cohort with no marquee names in it is a paper gate. A 30-member cohort that includes two named GPs from $1B+ funds, three founders of YC top-quartile companies, and a public-company CFO is a real moat — because the *next* applicant is buying the social proof, not the SLA.
-
-Today, this is potential. Score is 5 because the framework is right; the execution risk is that Latitude 43 fills the application gate with whoever pays first, which is the cohort-collapse failure mode (see Section E5).
+Score depends entirely on whether the references *actually check out*. A 30-member cohort with no marquee names is a paper gate. A cohort with two named GPs from $1B+ funds, three top-quartile YC founders, and a public-company CFO is a real moat — because the next applicant is buying social proof, not SLA. Score 5: framework is right, execution risk is filling the gate with whoever pays first (Section E5).
 
 ### A8. "Society tier cap of 30" — 4/10
 
-A cap is a positioning device, not a moat. It is the same logic as Soho House saying "we are full" — useful for pricing power, useful for FOMO, useful for retention. It is not a structural barrier to entry. Anyone can launch their own "Latitude Society competitor" with a cap of 30. Knightsbridge Circle, Quintessentially, and several private aviation brands could announce a "midmarket tier capped at 30" in 90 days.
-
-What *would* be a moat is the network effect of who is *in* the 30. If the roster is "the 30 best mid-market founders in North America," then membership becomes a status good (Section D, Section E5). The roster does not exist yet. The cap is currently aspiration.
+A scarcity device dressed as a constraint. Same logic as Soho House saying "we are full" — useful for pricing power, useful for FOMO, useful for retention, not a barrier to entry. Anyone can announce their own "cap of 30." What *would* be a moat is the network effect of who is *in* the 30 (Section D4, Section E5). The roster does not exist yet. The cap is aspiration.
 
 ### A9. "Toronto cost advantage" — 5/10
 
-This is the most underrated item on the list because it is the one most often misread. The cost advantage is real and durable as long as the founder is the only operator. Toronto-based founder on Eastern Time with Canadian healthcare and CAD-denominated rent runs ~30–40% under a Manhattan equivalent. That is meaningful at small scale because it lets Latitude 43 charge $99/mo Light without bleeding.
+Real and durable while the founder is the only operator. Toronto-based on ET, Canadian healthcare, CAD rent runs ~30–40% under Manhattan equivalent. That lets Latitude 43 charge $99/mo Light without bleeding.
 
-The advantage degrades the moment Latitude 43 hires. The second advisor will not work from Toronto unless Latitude 43 finds a peer-level talent there, which is not impossible but is a tighter labor market than NYC or remote-distributed. By advisor #3, the cost structure averages back toward the median competitor.
-
-A more aggressive read: Bell & Bly already uses offshore (Houston is not Manhattan, plus distributed virtual assistants per the Voyage Houston interview). SmartFlyer has 60 globally with 15 in NYC and the rest distributed. Indagare is 128 in NYC at a higher cost base. Latitude 43's Toronto advantage is real vs. Indagare, marginal vs. Bell & Bly, and zero vs. a remote-first new entrant.
-
-Score is 5: real for founder, eroding from advisor #2 onward, defeatable by a remote-first competitor in one hiring cycle.
+Degrades the moment hiring starts. Advisor #2 may not be in Toronto. By advisor #3, the cost base averages back toward the median competitor. And the comparative read is brutal: Bell & Bly already uses distributed VAs from Houston; SmartFlyer is 60 global with only 15 in NYC; Indagare is 128 NYC at higher cost. Latitude 43's Toronto advantage is real vs. Indagare, marginal vs. Bell & Bly, zero vs. a remote-first new entrant. Score 5: real for founder, eroding from advisor #2, defeatable by remote-first competitor in one hiring cycle.
 
 ### A10. "Hosted under Fora" — 2/10
 
-Fora is not a moat. Fora is a vendor. They provide ARC/IATA accreditation, Sabre access, payment processing, and a commission split. So do dozens of other host agencies (Brownell, Cadence host division, Travel Quest, Avenir, Cruise Planners, Travel Leaders, KHM, Nexion, Tzell, etc.). Fora has done a good job branding itself as the "modern, tech-forward host" — which earns it a small recruiting advantage among new entrants — but the 5,000+ advisors on Fora have access to the same supplier shelf, the same booking tools, and the same commission schedule.
+Fora is not a moat. Fora is a vendor. ARC/IATA accreditation, Sabre access, payment processing, and a commission split are also available from Brownell, Travel Quest, Avenir, Travel Leaders, KHM, Nexion, Tzell, and dozens of others. The 5,000+ advisors on Fora have the same supplier shelf and the same commission schedule.
 
-Worse: hosting under Fora is a structural *anti-moat* in two ways. First, Fora takes 30% (later 20%, then 10%) of every commission. That is rent paid to a third party that controls your accreditation. Second, if Fora is acquired or pivots (they have raised VC; they are on a clock), Latitude 43's operational stack is hostage to someone else's strategic decisions.
-
-Score is 2 because it is the right operating choice for a solo founder at launch, but it should not be on the moat list at all.
+Worse: Fora takes 30% (then 20%, then 10%) of every commission — rent paid to a third party that controls your accreditation. Fora is VC-backed; they are on a clock. Latitude 43's operational stack is hostage to someone else's strategic decisions. Score 2: right operating choice for a solo founder at launch; should not be on the moat list at all.
 
 ### A11. "Supplier program access (Virtuoso, FHR, STARS, Privé)" — 1/10
 
-Hard to overstate how thoroughly this is *not* a moat. Virtuoso has ~20,000 advisors globally. FHR is the Amex Platinum hotel program — every Platinum cardholder has access. STARS, Privé, Impresario, Bellini Club, Rosewood Elite — these are luxury hotel preferred-partner programs administered through consortia. Anyone with a Virtuoso membership, an Amex Platinum, or a Fora account has the same shelf.
-
-The amenity programs are real value to the *client* — extra-night-free, F&B credits, upgrades — and Latitude 43 should absolutely market them. But "we have Virtuoso access" is the marketing equivalent of "we have an internet connection." It cannot appear in a moat analysis with a straight face.
-
-The honest version of this claim is: "We will pass through preferred-partner amenities our buyers do not realize they could already be getting through their Amex." That is true. It is not a moat. The moment the buyer learns the truth, they can replicate by booking through any of 19,999 other Virtuoso advisors or by using the Amex Platinum concierge.
+Virtuoso has ~20,000 advisors globally. FHR is the Amex Platinum hotel program — every Platinum cardholder has access. STARS, Privé, Impresario, Bellini Club, Rosewood Elite are all consortium-administered. The amenity programs are real value to the client (extra-night-free, F&B credits, upgrades) and Latitude 43 should market them — but "we have Virtuoso access" is the marketing equivalent of "we have an internet connection." The buyer can replicate by booking through any of 19,999 other Virtuoso advisors or by using their Amex Platinum concierge. Not a moat. Table stakes.
 
 ### A12. "Founder-personal supplier relationships" — 6/10
 
-Here is where the conversation gets interesting. Personal supplier relationships — the GM at the Bayerischer Hof who will hold a room, the Lufthansa station manager who will rebook off-protocol, the Park Hyatt Vienna front-desk lead who knows the principal's preferences — are the one item on the moat list that *cannot be copied by reading the homepage*. They require years of personal investment, hundreds of small favors banked, dozens of in-person property visits, and a track record of sending the right kind of clients to the right kind of properties.
+The one item on the list that *cannot be copied by reading the homepage*. The GM at the Bayerischer Hof who holds the room, the Lufthansa station manager who rebooks off-protocol, the Park Hyatt Vienna front desk lead who knows the principal's preferences — these require years of personal investment, hundreds of small favors banked, dozens of in-person property visits, and a track record of sending the right kind of clients to the right kind of properties.
 
-This is the moat the entire luxury advisory category actually runs on. It is why Michael Holtz (SmartFlyer) sits on advisory boards for Four Seasons, Marriott Luxury, IHG Luxury, and Seabourn. It is why Stuart McNeill at Knightsbridge Circle has WhatsApp threads with property GMs in Cap Ferrat. It is why Brownell, at 138 years, still has a corporate side worth routing through Tzell. Not the booking tech. The Rolodex.
+This is the moat the entire luxury advisory category actually runs on. Holtz sits on advisory boards at Four Seasons, Marriott Luxury, IHG Luxury, Seabourn. McNeill at Knightsbridge has WhatsApp threads with GMs in Cap Ferrat. Brownell at 138 years still routes through Tzell because of the Rolodex, not the tech.
 
-The honest assessment: **Latitude 43's founder does not yet have this moat.** The plan acknowledges this implicitly — the business plan is a launch plan, not a track-record document. The founder has 1 warm anchor lead (old boss) and a brother-in-law network. The founder has not been on a 30-person Virtuoso Travel Week trip. The founder has not done familiarization trips to 12 Asian luxury hotels. The founder has not banked years of favors with European luxury GMs.
-
-Score is 6 because the *potential* is there and the *category gravity* points toward this becoming a real moat over 5+ years. Score is not 8 because today, in May 2026, it is a future asset, not a current one. If asked again in 2029, the answer could be 7 or 8. Today, 6 is generous.
+**Latitude 43's founder does not yet have this.** The plan acknowledges it implicitly — 1 warm anchor lead, brother-in-law network, no Virtuoso Travel Week attended, no FAM trip history. Score 6 because the *potential* is real and category gravity points toward this becoming the moat over 5+ years. Score is not 8 because today it is a future asset, not a current one.
 
 ---
 

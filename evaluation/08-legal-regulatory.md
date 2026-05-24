@@ -305,19 +305,12 @@ The plan's §11.5 is one paragraph. It's the right outline; here is the full pic
 
 ### F.2 Corporate veil
 
-- Latitude 43 Inc. CCPC provides limited liability **only if**:
-  - Corporate formalities are observed (minute book, annual resolutions, board minutes for a one-shareholder corp)
-  - No commingling of personal and corporate funds (the most common veil-piercing factor)
-  - The corporation is adequately capitalized for its operations
-  - Founder does not personally guarantee obligations except where unavoidable (e.g., commercial lease, bank LOC)
-- Founder will likely be required to personally guarantee: any corporate credit card, any commercial lease, sometimes Stripe (rare for low-risk businesses), and a host-agency obligation if Fora requires it (read the IC agreement).
-- Avoid personal liability creep: separate bank account (already planned), separate credit card, separate email infrastructure, no founder-paid expenses without expense reports.
+CCPC limited liability holds only with corporate formalities (minute book, resolutions), no commingling (top veil-piercing factor), adequate capitalization, and no unnecessary personal guarantees. Expect to personally guarantee corporate credit cards, any commercial lease, occasionally Stripe, and possibly Fora. Keep separate bank account, credit card, and email infrastructure.
 
-### F.3 The two specific liability scenarios to model
+### F.3 Two liability scenarios to model
 
-1. **The Bali villa walk** — member's family of six arrives at a villa they paid for; villa is double-booked. Member sues for trip cost, replacement cost, lost time. Damages: $20–50K. Fora E&O likely responds if the booking was via Fora. Independent E&O responds if the advisory framing (the membership "deserves better") is the gravamen of the claim. **Both policies matter.**
-
-2. **The cyber breach** — passport scans exfiltrated from email account. PIPEDA breach notification, 60 members notified, possible class-action threat. Damages: $50–200K in response costs alone. **Cyber policy non-negotiable.**
+1. **Villa walk** — member's family arrives at a double-booked villa. $20–50K exposure. Fora E&O likely responds for the booking; independent E&O covers the advisory-promise framing. Both policies matter.
+2. **Cyber breach** — passport scans exfiltrated from email. PIPEDA notification, 60 members, possible class threat. $50–200K in response cost alone. Cyber policy non-negotiable.
 
 ---
 

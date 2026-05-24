@@ -70,24 +70,22 @@ The EA Companion Seat creates a second profile per Office/Society member — sec
 
 **EA turnover is the silent multiplier.** EA tenure at Series A-C startups is ~14-18 months; at family offices ~3 years. Across 60 Office+Society seats by Y5, expect **20-30 EA churn events/year** — each a re-onboarding, fresh consent, fresh trust-build. **Unmanageable by month 30 without dedicated profile-management infrastructure and ≥0.25 FTE of ops support.**
 
-### A.5 The Society 15-minute SLA becomes unholdable solo at ~3 Society members
+### A.5 The Society 15-min SLA is unholdable solo at ~3 members
 
-The Society tier (Q1 2027 launch, capped at 30 globally) promises a **15-minute SLA**. This is 4x tighter than the Atlas SLA. Combined with the "dedicated principal" language, the operational implication is that the founder personally is on the hook for 15-min response, 24/7, for every Society member.
+15-min SLA is 4x tighter than Atlas. Combined with "dedicated principal," it means the founder personally is on the hook 15-min, 24/7, per Society member.
 
-At one Society member, the founder simply lives on the phone — manageable for a single ultra-high-value relationship. At three, the founder cannot reliably sleep, eat dinner, or be in a meeting without a phone-down policy. At five, the SLA is mathematically violable any night the founder must sleep more than 4 consecutive hours. **The 15-min SLA is solo-feasible at N=1, marginal at N=2, fictional at N=3+** — and the Y5 plan calls for 20.
+N=1: founder lives on the phone — manageable. N=3: cannot reliably sleep, eat dinner, or be in a meeting without a phone-down policy. N=5: mathematically violable any night the founder sleeps >4 consecutive hours. **Solo-feasible at N=1, marginal at N=2, fictional at N=3+** — the Y5 plan calls for 20.
 
-Critically: a 15-min SLA cannot be met by a VA in Manila who is not licensed to make sub-$10K commitments on behalf of a Society principal whose family is in Aspen with a hospitalized child. The "dedicated principal" promise is what gives the 15-min number meaning. The VA pool is not a substitute; it is an answering service.
+A 15-min SLA cannot be met by a Manila VA who is not licensed to make sub-$10K commitments on behalf of a Society principal mid-crisis. The VA pool is an answering service, not a substitute.
 
 ### A.6 Fora host infrastructure constraints
 
-Fora is the operating chassis. The hard constraints from `business-plan.md` and `/tmp/v2-facts.md`:
+- **Commission split tiered on personal sales.** 90/10 only at $2M GBV. The Y5 base case has the founder still at 80/20.
+- **Fora is consumer-leisure-first.** Tern, Axus, Notion are bolted on — two of three core SaaS layers (CRM, itinerary, portal) are *outside* Fora's stack and unsupported.
+- **Sabre access is via Fora.** Host agency GDS contracts get renegotiated routinely. "Migrate within 90 days" understates the cost: every profile, PNR history, and commission record lives in Fora.
+- **Fora's E&O umbrella covers "activities performed in the Fora system."** The membership product, advisory work, Notion portal, Slack channels — none of that is. The independent $2M E&O is needed from Day 1, not Y2.
 
-- **Commission split tiered on personal sales** ($300K → 80/20, $2M → 90/10). At Y5 base case ($871K total revenue, of which ~$440K is commission/design), the founder is still at 80/20 well into Y5 unless personal GBV crosses $2M (likely Y5 or Y6). The 90/10 dream rate is back-loaded.
-- **Fora is consumer-leisure-first.** Per the business plan, Fora's tooling assumes leisure cadence; the firm has had to bolt on Tern, Axus, and custom Notion infrastructure to handle the business-travel use case. This means **two of the three core SaaS layers (CRM, itinerary, portal) are outside Fora's stack** — and unsupported.
-- **Sabre access is via Fora.** If Fora changes its GDS contract (a known industry risk — host agencies routinely renegotiate), the firm loses live availability access. The plan acknowledges this risk but the mitigation ("migrate to another host within 90 days") understates the cost: every member profile, every PNR history, every commission record is in Fora's system.
-- **Fora's E&O umbrella applies "for activities performed in the Fora system."** The membership product, the advisory work, the Notion portal, the Slack channels — none of that is "in the Fora system." The independent $2M E&O policy is correctly noted as needed from Y2 — but the gap in Y1 is material.
-
-Fora binds the model. The constraint is not "Fora kills growth" — it is "Fora does not scale faster than the host agency itself scales." If Fora hits a product or commercial wall in 2027-2028, every advisor on the platform shares the wall.
+If Fora hits a product or commercial wall in 2027-2028, every advisor on the platform shares the wall.
 
 ---
 

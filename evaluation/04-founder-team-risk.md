@@ -112,24 +112,11 @@ The plan should require a specific corporate-travel certification path in the fi
 
 ## C. The 24/7 SLA reality
 
-The v2.0 facts state Atlas Light/Office have a 24/7 desk; Society has a 15-minute SLA. The v1.0 plan describes 60-minute first response. Either way, the math does not close on one human.
+The v2.0 facts state Atlas Light/Office have a 24/7 desk; Society has a 15-min SLA. The v1.0 plan says 60-min first response. Either way, the math does not close on one human.
 
-### C.1 The single-human capacity model
+### C.1 Capacity model
 
-Let's model the desk as a queueing system, very roughly.
-
-Assume:
-- Active members at scale: 30 (the v2.0 facts' Y2 target = 51 members; let's use 30 for a mid-Y2 mid-point)
-- Average member message rate during a normal week: 2–4 messages/week per active traveler
-- Atlas Office has ~3 active travelers; assume 50% of members are Office or higher
-- Effective traveler count served: 30 + (15 × 2 additional travelers) = ~60 travelers
-- Messages per week: 60 × 3 = **180 messages/week, ~26/day, ~1.1/hour over a 24-hour day**
-
-A 60-minute first-response SLA across 24 hours per day requires the responder to be checking the queue at least every 30 minutes (so the max wait at any point is ≤60 min). That is 48 check-ins per day. Even if each check-in is only 5 minutes of cognitive load (read, triage, respond or defer), that is **4 hours of pure attention per day on the desk before any actual booking work happens**.
-
-Booking work, supplier escalations, sales calls, Journal writing, finance, taxes, and Fora administrative load are on top of that.
-
-A solo human can run this for maybe 12–16 weeks before measurable degradation. Then they break.
+Assume 30 members mid-Y2; ~60 effective travelers (50% Office tier with ~3 active travelers). At 2–4 messages/week/traveler that's ~180 msgs/week, ~1.1/hour over 24 hours. A 60-min SLA requires checking the queue every 30 min — 48 check-ins/day. At 5 minutes of cognitive load each, that's **4 hours of pure attention per day on the desk before any booking work happens**. Sales, Journal, supplier work, finance, taxes, Fora admin sit on top. Solo, this runs for 12–16 weeks before measurable degradation. Then it breaks.
 
 ### C.2 The breakpoint by member count
 
@@ -142,19 +129,15 @@ A solo human can run this for maybe 12–16 weeks before measurable degradation.
 | 25 members | 75–90 hrs | Founder is sleeping 5 hrs/night; cognitive errors compound |
 | 30+ members | 90+ hrs | Mathematically impossible without help |
 
-The plan's Y1 target is 30 paying members (22 Light + 8 Office). The plan's Y2 target is 51 members. **The founder breaks somewhere between member 15 and member 22, well before the Y1 target is hit.**
+Y1 target is 30 paying members. Y2 target is 51. **The founder breaks between member 15 and member 22, before Y1 target is hit.**
 
-This is the central operational lie in the v1.0 plan. The 24/7 SLA at the Y1 member volume cannot be held solo. The plan acknowledges this in §9.5 ("hire the PHT VA at month 9–12, not month 18") but the operational coverage table still shows founder-only night coverage in Year 1, and the VA is scoped at $12K/year, which is a single 8-hour shift, 5 days/week. That leaves 16 hours/day, plus weekends, on the founder.
+This is the central operational lie. The v1.0 plan acknowledges it in §9.5 ("hire PHT VA month 9–12") but the coverage table still shows founder-only nights in Y1; the VA is scoped at $12K/year — one 8-hour shift, 5 days/week. That leaves 16 hours/day plus weekends on the founder.
 
 ### C.3 The Society 15-minute SLA
 
-The Latitude Society tier promises a 15-minute SLA. This is a marketing-grade promise. Held against a single human across 24 hours, it is **fundamentally impossible**. The maximum sustainable response cadence for a human checking queues across a 24-hour cycle is 30–60 minutes (because the human has to sleep, eat, shower, and have a relationship). A 15-minute SLA requires either:
+A 15-min SLA held by one human across 24 hours is **fundamentally impossible**. It requires either two humans in offset time zones (Toronto + Manila, both senior enough for Society members; realistically $80K/year on the second seat), three humans in 8-hr rotations ($200K+ all-in), or an AI-mediated triage layer ($50–100K build, brittle on launch).
 
-- Two humans in offset time zones (Toronto + Manila, both senior enough to handle Society-tier members) — the cheap version is $40K/year on the VA side, the realistic version is $80K
-- Three humans in 8-hour rotations — $200K+ all-in
-- An AI-mediated triage layer that acknowledges within 15 minutes and surfaces to a human asynchronously — possible but requires a $50K–$100K build and is brittle on launch
-
-The Society tier launches Q1 2027 (deferred from Q3 2026, per v2.0 facts) — sensible. But the 15-minute SLA is presently a promise that cannot be operationally backed in 2027 either, unless the second principal advisor (proposed below) is hired and trained by then. With Society capped at 30 members globally and an invite-only motion, this is recoverable. But it requires a hire by Q3 2026 to be ready for Q1 2027 launch — and that hire is not in the plan.
+Society defers to Q1 2027 (good). But the 15-min SLA is unbackable in 2027 either unless the second principal advisor is hired and trained by then — and that hire is not in the plan.
 
 ### C.4 When the founder actually breaks
 
@@ -166,7 +149,7 @@ Combining the message-volume math with the burnout literature:
 - **Month 10–14:** First anchor client raises concerns — either churns or downgrades. The plan's "anchor client churn at month 9" risk materializes.
 - **Month 12–16:** Founder either hires help, restructures the offering, or burns out and the business enters a slow decline that takes 6–12 more months to manifest publicly.
 
-This is not pessimism. This is the modal outcome for a solo advisor on a published 24/7 SLA. It is the reason no other reputable competitor in the v2.0 facts list — Bell & Bly, Cadence, Brownell, SmartFlyer, Indagare — publishes a true 24/7 SLA. They publish business hours plus an emergency line because they know.
+This is the modal outcome for a solo advisor on a published 24/7 SLA. No reputable competitor in the v2.0 facts list — Bell & Bly, Cadence, Brownell, SmartFlyer, Indagare — publishes a true 24/7 SLA. They publish business hours plus an emergency line because they know.
 
 ---
 

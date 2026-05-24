@@ -90,32 +90,29 @@ If — and only if — Atlas Light is genuinely positioned as **the on-ramp tier
 
 **Investor verdict on $249:** Right price. Wrong service promise. Fix: cap "active travelers" at 3 (not 5), or redefine "up to 5" as a roster (not a usage allowance).
 
-### A.3 Latitude Society — $1,000–$2,500/mo ($12,000–$30,000/yr)
+### A.3 Latitude Society — $1,000–$2,500/mo ($12K–$30K/yr)
 
-**Position claim:** Above Indagare Custom ($238/mo = $2,856/yr) but below Knightsbridge (£25K = ~$31K/yr at current FX).
-
-**The Knightsbridge comparison is doing all the work in v2.0's pricing logic. It deserves scrutiny.**
+**Position claim:** Above Indagare Custom ($2,856/yr) but below Knightsbridge (~$31K/yr).
 
 | Comp | Annual | Service ratio | Member count | Provenance |
 |---|---:|---|---|---|
-| Indagare Custom | $2,850 | Undisclosed | Several thousand | Founded 2007, 19 years |
-| Sienna Charles | $50K base | Undisclosed | ~$100M+ NW required | Founded 2008, 18 years |
-| Bon Vivant (UK) | $2,000 | Small team, founder-led | Boutique | Founded 2014 |
-| Knightsbridge Standard | $31,000 (£25K) | 1:4–1:5 manager/member | 50–60 capped | Founder = ex-Amex Centurion Elite architect |
-| Knightsbridge Elite | $124,000 (£100K) | Higher ratio | Subset of total | Same |
-| **Latitude Society** | **$12K–$30K avg $14K** | **1:6** | **30 cap** | **Solo founder, no track record** |
+| Indagare Custom | $2,850 | Undisclosed | Several thousand | 19 years |
+| Sienna Charles | $50K base | Undisclosed | $100M+ NW required | 18 years |
+| Knightsbridge Standard | $31,000 | 1:4–1:5 | 50–60 capped | Ex-Amex Centurion Elite architect |
+| Knightsbridge Elite | $124,000 | Higher | Subset | Same |
+| **Latitude Society** | **$12K–$30K, avg $14K** | **1:6** | **30 cap** | **Solo founder, no track record** |
 
-**The brutal comparison:** Knightsbridge has Stuart McNeill's Amex Centurion provenance (founder built the original $10K Centurion service, then designed Elite at 1:10, quit when told to scale to 1:50). That provenance is *the entire brand*. Knightsbridge has 95%+ disclosed renewal. The price is earned over a decade of word-of-mouth in the right rooms.
+**The brutal comparison:** Knightsbridge has McNeill's Amex Centurion provenance (built the original Centurion service, designed Elite at 1:10, quit when told to scale). That provenance is *the entire brand*. 95%+ renewal. Earned over a decade.
 
-**Latitude Society at $14K average is asking principals to pay 45% of Knightsbridge's price for a founder with no track record in the category.** The argument "but I'm a deal less" is *exactly* the wrong argument at this tier. The buyer at $14K/yr is not bargain-hunting; they are status-buying. Pricing 45% below the leader signals *45% less credible*, not *45% better value*.
+**Latitude Society at $14K average is asking principals to pay 45% of Knightsbridge's price for a founder with no track record.** The buyer at $14K/yr is not bargain-hunting; they are status-buying. Pricing 45% below the leader signals *45% less credible*, not *45% better value*.
 
-**The defense (steelmanned):** v2.0 has correctly **deferred Society to Q1 2027** (per `/tmp/v2-facts.md` line 11). The founder is not actually pricing Society in Y1. The price is *modeled* but not *live*. This is significant. It buys 6 months of Y2 to build the proof points before any Society sales happen.
+**Defense (steelmanned):** v2.0 has correctly **deferred Society to Q1 2027**. The price is *modeled* but not *live*. This buys 6 months of Y2 to build proof points.
 
-**The remaining problem:** even deferred to Q1 2027, the founder has roughly 6 months (Q3 2026 launch → Q1 2027) to manufacture the Society-credibility-stack: 2–3 case studies from Office members, a named hotel GM partnership, a named private aviation tie, an Atlas Conduct document, an application/committee mechanism, and the founder's own long-form press in *Air Mail*, *Private Air Mag*, or *Worth*. Without that stack, Society at $14K is a $14K product without the brand to charge it. The Y3 plan assumes 5 Society members netting $26K–$46K each (call it $180K of the $353K total revenue) — that's 50% of Y3 revenue resting on Society.
+**Remaining problem:** even deferred, the founder has ~6 months to manufacture the Society-credibility stack — 2–3 Office case studies, named hotel GM partnership, Atlas Conduct doc, application/committee, founder long-form press. Without that stack, Society at $14K is a price without a brand. Y3 plan assumes 5 Society members netting $26K–$46K each — that's 50% of Y3 revenue resting on Society.
 
-**The band itself ($1K–$2.5K/mo):** the band is sensible. Within it, the **modal price needs to be $2,083/mo ($25K/yr) to be credible against the Knightsbridge anchor**. Pricing the band's *average* at $14K (i.e., the bottom-half of the band) sends a discount signal that erodes the entire premise. Either compress the band to $20K–$30K and live with fewer members, or accept that "Society" at the $12K floor is competing against Indagare Custom + a $1K/mo upcharge, not against Knightsbridge.
+**The band:** sensible. But the **modal price needs to be $2,083/mo ($25K/yr) to be credible against the Knightsbridge anchor**. Pricing the average at $14K (bottom-half of band) sends a discount signal. Either compress band to $20K–$30K with fewer members, or accept Society competes against Indagare + a $1K/mo upcharge, not Knightsbridge.
 
-**Investor verdict on Society:** The deferral to Q1 2027 is correct. The band is correct. The modeled average price ($14K) is too low for the band's positioning logic. **Either move the average up to $20K+ or reposition Society's competitive set downward to Indagare/Sienna's lower tiers.** Cannot have it both ways.
+**Investor verdict:** Deferral correct. Band correct. Modal price ($14K) too low for the positioning logic. **Move the average to $20K+ or reposition Society downward.** Cannot have it both ways.
 
 ---
 
