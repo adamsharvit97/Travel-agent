@@ -388,17 +388,13 @@ The founder's stated exit (v1.0 §1) is "compound a decade or sell to a larger a
 | Bookkeeper + fractional CFO | $35K |
 | **Total team cost** | **~$835K** |
 
-Against a v2.0 base-case Y5 revenue of $871K, **this team consumes the entire revenue base**. The business cannot afford the team that makes it acquirable on base-case revenue. It can on bull-case revenue ($1.6M). It cannot on bear-case ($500K). The plan has not surfaced this tension.
+Against v2.0 base Y5 revenue of $871K, **this team consumes the entire revenue base**. The business cannot afford the team that makes it acquirable on base-case revenue. It can on bull ($1.6M). It cannot on bear ($500K). The plan has not surfaced this tension.
 
 ### I.4 Venture-backability
 
-Latitude 43 is, charitably, not a venture-backable business in the standard VC sense. The unit economics (90 accounts × ~$10K blended ACV at Y5 = $900K revenue) are too small to support venture-scale outcomes. The business is more appropriately funded with:
+Latitude 43 is charitably not a venture-backable business. 90 accounts × ~$10K blended ACV = $900K Y5 revenue — too small for venture outcomes. Appropriate funding: small F&F round ($50–150K) for runway smoothing; BDC/Futurpreneur Canada loan ($25–50K); bootstrap from subscription revenue.
 
-- A small friends-and-family round ($50–150K) for 18-month runway smoothing
-- A small SBA-equivalent (BDC, Futurpreneur Canada) loan ($25–50K)
-- Bootstrap from member subscription revenue
-
-If the founder insists on venture, the only realistic path is to **reposition the company as a software-and-services hybrid** — a SaaS layer (Tern-replacement, Society-portal, member-app) sold to other advisors, with Latitude 43 as the flagship use case. That is a different company.
+The only realistic venture path is repositioning as a software-and-services hybrid — a SaaS layer (Tern-replacement, Society portal, member app) sold to other advisors, with Latitude 43 as the flagship use case. Different company.
 
 ---
 
@@ -406,43 +402,35 @@ If the founder insists on venture, the only realistic path is to **reposition th
 
 ### J.1 Verdict
 
-Latitude 43 has a defensible product thesis, a strong brand layer, and a founder who is clearly investing in the marketing and positioning surface of the business. The founder/team risk profile, however, is **the highest single risk in the deck**. A solo, category-new founder running a published 24/7 SLA in a regulated, cross-border, supplier-dependent service business is structurally unstable. The risk is not that the business idea is wrong. The risk is that the founder cannot operationally deliver the promise long enough for the brand thesis to compound.
+Latitude 43 has a defensible product thesis, a strong brand layer, and a founder investing in the marketing surface. Founder/team risk is **the highest single risk in the deck**. A solo, category-new founder running a published 24/7 SLA in a regulated, cross-border, supplier-dependent service business is structurally unstable. The risk is not that the idea is wrong — it is that the founder cannot operationally deliver the promise long enough for the brand thesis to compound.
 
-The base-case path is survivable if and only if **five things happen by month 9**:
+Base case survives only if five things happen by month 9: (1) PHT VA hired and live (not "scoped for month 12"), (2) reciprocal-coverage Fora peer agreement signed, (3) senior advisor mentor on retainer, (4) explicit 18-month household runway plan in writing, (5) first 25 bookings completed without a member-facing severe error. If any two fail, the business has >50% probability of failing or compressing materially by month 18.
 
-1. The PHT VA is hired and trained (not "scoped for month 12" — hired and live by month 9)
-2. The reciprocal-coverage Fora peer agreement is signed
-3. The senior advisor mentor is on retainer
-4. The household runway conversation has happened and produced an explicit 18-month plan
-5. The founder has booked their first 25 bookings without a member-facing severe error
+Society should be deferred beyond Q1 2027 unless the second principal advisor is hired by Q3 2026. The 15-min SLA is unbackable solo.
 
-If any two of these do not happen, the business has a >50% probability of failing or compressing materially by month 18.
-
-The Society tier should be **deferred beyond Q1 2027** unless the second principal advisor is hired by Q3 2026. The 15-minute SLA is unbackable solo.
-
-The honest investor verdict is: **invest only if the founder demonstrates a 24-month operational plan, a written hiring trigger schedule, a key-person insurance policy, a reciprocal-coverage agreement signed by a peer, and an explicit household runway commitment**. The product can work. The founder configuration, as presented, cannot.
+Honest verdict: **invest only if the founder demonstrates a 24-month operational plan with a written hiring-trigger schedule, key-person insurance, a signed peer reciprocal-coverage agreement, and an explicit household runway commitment**. The product can work. The founder configuration as presented cannot.
 
 ### J.2 The 10 specific hires, partnerships, and advisors needed
 
-1. **PHT-based VA (overnight desk, member-support generalist)** — Hire by month 6, not month 12. Cost $18–24K/year. The single highest-leverage operational hire in the business. Without this, the 24/7 promise is fiction.
+1. **PHT VA (overnight desk, member-support generalist)** — by month 6, not 12. $18–24K/year. Single highest-leverage operational hire. Without this, 24/7 is fiction.
 
-2. **Reciprocal-coverage Fora peer advisor** — Sign before launch. Identify two candidates in the Fora corporate-travel cohort, propose mutual vacation/illness coverage with a 50/50 commission share on bookings made during the coverage window. No cash cost. Single best mitigation for bus-factor risk.
+2. **Reciprocal-coverage Fora peer advisor** — signed pre-launch. Two candidates in Fora's corporate cohort; mutual vacation/illness coverage with 50/50 commission share during the window. No cash cost. Best single mitigation for bus-factor.
 
-3. **Senior corporate-travel advisor mentor** — Retain by month 1. 5–10 hours/month at $300–500/hour. Target someone with 10+ years of corporate-travel advisory experience at SmartFlyer, Brownell, Cadence, or Tzell. Cost $15–25K Y1. Compresses the founder's learning curve from 24 months to 9–12.
+3. **Senior corporate-travel advisor mentor** — by month 1. 5–10 hrs/mo at $300–500/hr. Target 10+ years at SmartFlyer, Brownell, Cadence, or Tzell. $15–25K Y1. Compresses learning curve from 24 months to 9–12.
 
-4. **TICO-experienced Canadian counsel** — Retain by month 1. Annual retainer $3–5K. Resolve the open question of whether Atlas memberships are "travel sales" under Ontario regulations; pre-clear any Canadian inbound; review the Fora host agreement.
+4. **TICO-experienced Canadian counsel** — by month 1. $3–5K/year retainer. Resolve whether Atlas memberships are "travel sales" under ON regs; pre-clear any Canadian inbound; review the Fora host agreement.
 
-5. **Cross-border CPA (US/Canada)** — Retain by month 1. Cost $5K Y1, scaling to $8–12K by Y3. Already in the v1.0 plan. Confirm.
+5. **Cross-border CPA (US/Canada)** — by month 1. $5K Y1, $8–12K by Y3. In the plan.
 
-6. **Fractional CMO / Content Editor** — Hire by month 6. 5–10 hours/week at $1,500–2,500/month. Owns the Journal calendar, edits posts, manages LinkedIn distribution. Frees the founder to do desk work and sales.
+6. **Fractional CMO / Content Editor** — by month 6. 5–10 hrs/week at $1,500–2,500/mo. Owns Journal calendar, edits posts, manages LinkedIn. Frees founder for desk and sales.
 
-7. **Second Principal Advisor** — Begin recruiting at month 9, hire by month 18. Corporate-travel trained, 5+ years experience, willing to operate as associate-with-equity in a 2-person shop. Cost $110–140K all-in. Required for Society launch and bus-factor risk reduction.
+7. **Second Principal Advisor** — recruit at month 9, hire by month 18. Corporate-trained, 5+ years, willing to associate-with-equity in a 2-person shop. $110–140K all-in. Required for Society launch and bus-factor reduction.
 
-8. **US-based E&O specialist insurance broker** — Engage by month 3. Confirm Fora umbrella coverage in writing for membership product and advisory services. Layer a $2M independent E&O policy by month 12. Cost: $1K broker engagement, $2.4K/year policy.
+8. **US E&O specialist insurance broker** — by month 3. Confirm Fora umbrella covers membership + advisory in writing; layer a $2M independent policy by month 12. $1K engagement, $2.4K/year policy.
 
-9. **Key-person life and disability insurance policy on the founder** — Bind by month 3. $250K life + 24-month disability income replacement. Cost $1.5–2.5K/year. Payable to the Ontario corp to fund member transition or wind-down. This is the only thing that makes Latitude 43 borrowable against and acquirable in a key-person event.
+9. **Key-person life and disability policy on founder** — bind by month 3. $250K life + 24-mo disability income replacement, $1.5–2.5K/year, payable to the Ontario corp. Makes the business borrowable against and acquirable in a key-person event.
 
-10. **Anchor-client advisory partnership** — Formalize with the warm anchor (the founder's old boss) by month 1. Written 12-month case-study agreement: discounted Atlas Office membership ($1,500/year for Y1, then full price), in exchange for written testimonial at month 6, video testimonial at month 12, and quarterly referral conversations. The brother-in-law network is informal and unreliable; the old boss is the only structured GTM asset in Year 1 and should be papered as such.
+10. **Anchor-client advisory partnership** — papered with the old boss by month 1. 12-month case-study agreement: discounted Atlas Office ($1,500 Y1 then full) for written testimonial at m6, video at m12, quarterly referral conversations. Brother-in-law network is informal; the old boss is the only structured GTM asset in Y1.
 
 ### J.3 A summary table of priorities
 
@@ -460,12 +448,10 @@ The honest investor verdict is: **invest only if the founder demonstrates a 24-m
 | P2 | Recruiting for second principal advisor begins | Month 9 | Society launch is impossible; bus factor unchanged |
 | P3 | Society launch (deferred until second advisor hired) | Q1 2027 if and only if advisor is live by Q3 2026 | 15-min SLA promise fails on contact |
 
-### J.4 The bottom line
+### J.4 Bottom line
 
-The founder is investing heavily in the front of the house — the brand, the Journal, the website, the deck, the voice guide. The back of the house — the desk, the coverage model, the hiring plan, the regulatory and tax structure, the partner network — is **roughly 12 months behind where it should be at this stage of planning**. The v2.0 facts deferred the Society tier from Q3 2026 to Q1 2027; this is the right instinct. The same instinct should be applied to the 24/7 promise itself: either explicitly downgrade Atlas Light to "extended hours (7am–11pm ET, 7 days)" until the second human is hired, or do the hiring work to make 24/7 real.
+The founder is investing heavily in the front of house — brand, Journal, website, deck, voice guide. The back of house — desk, coverage model, hiring plan, regulatory and tax structure, partner network — is roughly **12 months behind** where it should be at this stage of planning. The v2.0 facts wisely deferred Society from Q3 2026 to Q1 2027. The same instinct should apply to the 24/7 promise: either downgrade Atlas Light to "extended hours (7am–11pm ET, 7 days)" until the second human is hired, or do the hiring work to make 24/7 real.
 
-A solo founder with no track record in the category, running a 24/7 SLA, serving US clients from Toronto, with one warm lead and a brother-in-law network, is not unfundable. They are early. The question is not whether they can build Latitude 43. It is whether they can build the team that builds Latitude 43, before the desk gets too loud to think.
+A solo founder with no track record, running a 24/7 SLA, serving US clients from Toronto, with one warm lead and a brother-in-law network, is not unfundable. They are early. The question is not whether they can build Latitude 43. It is whether they can build the team that builds Latitude 43 — before the desk gets too loud to think.
 
----
-
-*End of audit. Recommendations are concrete and dated. The founder either builds this team configuration by month 12 or the business fails for predictable, modeled reasons. The investor's first ask should be a 24-month hiring plan with cash triggers. The founder's first ask of themselves should be the same.*
+The investor's first ask should be a 24-month hiring plan with cash triggers. The founder's first ask of themselves should be the same.
