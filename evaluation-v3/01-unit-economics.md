@@ -123,17 +123,9 @@ Modeling three scenarios per member:
 
 **The "all design included" change should mechanically lift attach rate** — buyers who would otherwise hesitate to "use" the desk for a $4K family ski trip now have no marginal-cost reason not to. This is the strongest argument for the v3.0 attach assumption being right. But "no marginal cost to the buyer" is not the same as "the buyer remembers to text the desk in October when they're planning February break." Most members default to direct booking out of habit. The plan should track attach rate as a Y1 KPI with a target (e.g., 40% by month 6, 60% by month 12 for Office) and re-publish the Y2 forecast against actual attach.
 
-### The 18-night × $500 ADR × 3 active travelers Office math assumes the Office cap binds at 3, not at average usage
+### The Office 3-active math assumes the cap binds, not average usage
 
-The Office tier is "up to 5 named, 3 active concurrent." The plan models 3 × 18 nights = 54 nights/Office-member/yr. This assumes the Office member uses the cap. Realistic usage:
-
-- 1-principal Office (most common — founder + EA seat, EA doesn't book separately): 1 active traveler × 25–35 nights = 25–35 nights
-- 2-principal Office (PE partners sharing): 2 active × 20–30 = 40–60 nights
-- 3-principal Office (the cap case — small team/family pool): 3 active × 15–22 = 45–66 nights
-
-The blend across realistic Office composition is probably **35–45 nights/member/yr**, not 54. Recomputing at 40 nights, 7.0% commission, $500 ADR: 40 × $500 × 7.0% = $1,400 hotel commission (vs $1,890 published, vs $2,106 in the plan's table). That's a **-$500 to -$700 per Office member Y1 swing**.
-
-This compounds with the segment-level point above: the heaviest Office users (PE operating partners at 40 nights × 2 active) get to 80 nights, but the modal Office user is 30–40 nights. The plan averages high.
+The plan models 3 × 18 = 54 nights/Office-member/yr, assuming the cap is fully used. Realistic blend across Office compositions (1-principal solo + EA; 2-principal PE share; 3-principal team/family) is **35–45 nights/member/yr**, not 54. At 40 nights, 7.0%, $500 ADR: $1,400 hotel commission vs $2,106 published — a **-$700 per Office member Y1 swing**. The plan averages high.
 
 ---
 
@@ -272,9 +264,9 @@ At full Society fill (20 members), the plan **beats** its published $870K. At ha
 
 ### Neutral
 
-- Society economics are essentially identical between v2.0 and v3.0. Society members were always design-fees-waived above $30K event threshold; that doesn't change.
-- The Fora ladder mechanics (70/30 → 80/20 → 90/10) are unchanged. The plan should still pin Fora down on the definition of "personal sales" — gross booked vs commissionable booked, annual vs cumulative, reset behavior. This is unresolved across both versions.
-- The 18-night/yr assumption is the same. Both plans average across segments rather than modeling segment-by-segment. Both are exposed to the bimodal-usage problem.
+- Society economics are essentially identical between v2.0 and v3.0.
+- The Fora ladder mechanics (70/30 → 80/20 → 90/10) are unchanged. The Fora "personal sales" definition remains unpinned in both versions.
+- The 18-night/yr assumption is the same. Both plans average across segments.
 
 ---
 
