@@ -348,6 +348,90 @@ def _revs(h):
 # CLI
 # --------------------------------------------------------------------------
 
+def report_consolidated(city: str, min_rating: float, min_star: float,
+                        top: int | None, deals_only: bool) -> str:
+    """Aggregate across ALL scanned windows: per hotel, the best deal found
+    and the nightly-rate range. This is the multi-window planning view."""
+    catalog = load_catalog(city)
+    hotels = catalog["hotels"]
+    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    if not obs:
+        return f"No observations found for {city}."
+
+    # Latest observation per (hotel, window).
+    latest: dict[tuple, dict] = {}
+    for o in obs:
+        key = (o["hotel_id"], o["checkin"], o["checkout"])
+        if key not in latest or o["scanned_at"] > latest[key]["scanned_at"]:
+            latest[key] = o
+
+    # Group by hotel.
+    by_hotel: dict[str, list[dict]] = {}
+    for o in latest.values():
+        by_hotel.setdefault(o["hotel_id"], []).append(o)
+
+    agg = []
+    windows_seen = set()
+    for hid, rows in by_hotel.items():
+        h = hotels.get(hid)
+        if not h or (h.get("star") or 0) < min_star or (h.get("guest_rating") or 0) < min_rating:
+            continue
+        deal_rows = [r for r in rows if r["on_deal"] == "1"]
+        for r in rows:
+            windows_seen.add((r["checkin"], r["checkout"]))
+        nightlies = [_to_float(r["nightly_price"]) for r in rows if _to_float(r["nightly_price"])]
+        best = max(deal_rows, key=lambda r: float(r["discount_pct"]), default=None)
+        agg.append({
+            "hotel": h,
+            "deal_windows": len(deal_rows),
+            "total_windows": len(rows),
+            "best_discount": float(best["discount_pct"]) if best else 0.0,
+            "best_window": (best["checkin"], best["checkout"]) if best else None,
+            "best_nightly": _to_float(best["nightly_price"]) if best else None,
+            "min_nightly": min(nightlies) if nightlies else None,
+            "max_nightly": max(nightlies) if nightlies else None,
+        })
+
+    if deals_only:
+        agg = [a for a in agg if a["deal_windows"] > 0]
+    agg.sort(key=lambda a: (TIER_ORDER.get(a["hotel"].get("tier"), 9), quality_key(a["hotel"])))
+    if top:
+        agg = agg[:top]
+
+    wins = sorted(windows_seen)
+    span = f"{wins[0][0]} → {wins[-1][1]}" if wins else "—"
+    lines = [
+        f"# Latitude 43 — {catalog.get('city', city)} Multi-Window Deal Scan",
+        "",
+        f"**Check-in span:** {span} · {len(wins)} windows scanned · 1 guest  ",
+        f"**Generated:** {date.today().isoformat()}  ",
+        f"**Filter:** ≥{min_star:g}★ / ≥{min_rating:g} rating  ",
+        "",
+        "_Per hotel: the best discount found across all scanned windows, and the "
+        "nightly-rate range. Quality-first order. 'Deal wins' = how many of the "
+        "scanned windows had an active discount (a signal of a real vs. one-off deal)._",
+        "",
+        "| # | Hotel | ★ | Rating | Area (tier) | Nightly range | Best deal | When | Deal wins |",
+        "|---|-------|---|--------|-------------|---------------|-----------|------|-----------|",
+    ]
+    for i, a in enumerate(agg, 1):
+        h = a["hotel"]
+        rng = f"{_money(a['min_nightly'])}–{_money(a['max_nightly'])}" if a["min_nightly"] else "—"
+        if a["best_discount"] > 0:
+            bw = a["best_window"]
+            best = f"{a['best_discount']:g}% @ {_money(a['best_nightly'])}"
+            when = f"{bw[0][5:]}" if bw else "—"
+        else:
+            best, when = "— full rate —", "—"
+        lines.append(
+            f"| {i} | {h['name']} | {_star(h)} | {h.get('guest_rating','?')} "
+            f"({_revs(h)}) | {h.get('area','')} ({h.get('tier','')}) | {rng} | "
+            f"{best} | {when} | {a['deal_windows']}/{a['total_windows']} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="Latitude 43 hotel deal finder")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -360,6 +444,10 @@ def main(argv=None):
     pr = sub.add_parser("report", help="Generate a ranked deal report")
     pr.add_argument("--city", default="Toronto")
     pr.add_argument("--window", help="checkin..checkout, e.g. 2026-06-16..2026-06-18")
+    pr.add_argument("--consolidated", action="store_true",
+                    help="aggregate across all scanned windows (multi-window view)")
+    pr.add_argument("--deals-only", action="store_true",
+                    help="consolidated: show only hotels with at least one deal")
     pr.add_argument("--min-rating", type=float, default=9.0)
     pr.add_argument("--min-star", type=float, default=4.0)
     pr.add_argument("--top", type=int, default=None)
@@ -384,8 +472,12 @@ def main(argv=None):
         return 0
 
     if args.cmd == "report":
-        md = report(args.city, args.window, args.min_rating, args.min_star,
-                    args.top, not args.no_full_rate)
+        if args.consolidated:
+            md = report_consolidated(args.city, args.min_rating, args.min_star,
+                                     args.top, args.deals_only)
+        else:
+            md = report(args.city, args.window, args.min_rating, args.min_star,
+                        args.top, not args.no_full_rate)
         if args.out:
             os.makedirs(os.path.dirname(os.path.abspath(args.out)), exist_ok=True)
             with open(args.out, "w", encoding="utf-8") as fh:

@@ -321,6 +321,42 @@
       "tier": "Prime",
       "segment": "Upscale"
     },
+    "1056271": {
+      "name": "Pantages Hotel Downtown Toronto",
+      "brand": "Independent",
+      "star": 4.0,
+      "guest_rating": 9.2,
+      "review_count": 2313,
+      "lat": 43.65452,
+      "long": -79.37912,
+      "area": "Yonge-Dundas / Garden District",
+      "tier": "Core",
+      "segment": "Boutique upscale"
+    },
+    "19145": {
+      "name": "Crowne Plaza Toronto North York by IHG",
+      "brand": "IHG",
+      "star": 4.0,
+      "guest_rating": 8.2,
+      "review_count": 3552,
+      "lat": 43.756722,
+      "long": -79.35048,
+      "area": "North York (Sheppard & Yonge)",
+      "tier": "Suburban",
+      "segment": "Upscale"
+    },
+    "124420462": {
+      "name": "Nester Finn Entertainment District",
+      "brand": "Independent",
+      "star": 4.0,
+      "guest_rating": 9.2,
+      "review_count": 117,
+      "lat": 43.647365,
+      "long": -79.393298,
+      "area": "Entertainment District",
+      "tier": "Prime",
+      "segment": "Aparthotel"
+    },
     "1221183": {
       "name": "Executive Hotel Cosmopolitan Toronto",
       "brand": "Independent",
