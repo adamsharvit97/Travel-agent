@@ -5,6 +5,20 @@ catalog** of business-relevant hotels per city (including ones that rarely
 discount, like the Four Seasons) and detects which are **on deal right now**,
 ranked by quality rather than by raw price.
 
+## Major travel hubs
+
+The engine now tracks 10 hubs, registered in `catalog/_hubs.json` (each with a
+financial-core anchor for distance tiers and airport anchors for the Airport
+tier): **Toronto, New York, Chicago, Boston, San Francisco, Los Angeles,
+Miami, Washington D.C., Dallas, Atlanta**. City keys are slugs
+(`new-york`, `washington-dc`, ...). Adding a hub = add a registry entry, scan,
+ingest.
+
+```bash
+python3 latitude43_deals.py cities          # hub list + catalog/observation counts
+python3 latitude43_deals.py curate --city chicago   # infer brands from names
+```
+
 ## Why two layers
 
 - **Master catalog** (`catalog/<city>.json`) — the full, stable roster of
@@ -60,13 +74,47 @@ Yorkville) → `Secondary` → `Airport` → `Suburban`.
 | `--no-full-rate` | off | Hide the full-rate (no-deal) catalog section |
 | `--out` | stdout | Write Markdown to a file |
 
+## City alerts (signup page → Excel list → email)
+
+The subscription loop lives next to the pipeline:
+
+1. **Signup page** — `alerts/index.html` + `alerts/server.py` (stdlib HTTP +
+   `openpyxl`). The page renders the hub list from `catalog/_hubs.json` as
+   checkboxes; a visitor picks cities, leaves name + email.
+   ```bash
+   python3 alerts/server.py          # http://localhost:8043
+   ```
+2. **Subscriber list (Excel, for now)** — `data/subscribers.xlsx`, one row per
+   subscriber: `email | name | cities | subscribed_at | updated_at`.
+   Re-subscribing with the same email updates that person's city list.
+   ```bash
+   python3 alerts/subscribers.py list --city chicago   # who to email for Chicago
+   python3 alerts/subscribers.py all
+   ```
+3. **The alert email** — `build_alert_email.py` renders a city's current
+   deals into the branded letter (lookbook direction, email-safe tables +
+   inline styles): hero, "Deepest right now" feature, ledger of other
+   softenings, the luxury houses holding rate, desk sign-off. Prints a
+   suggested subject line.
+   ```bash
+   python3 build_alert_email.py --city chicago         # -> out/email_chicago.html
+   python3 build_alert_email.py --city toronto --window 2026-06-16..2026-06-18
+   ```
+
+Sending is manual for now: build the email, pull the city's list, send via
+the desk's mail client (BCC).
+
 ## Files
 
 ```
 deals/
   latitude43_deals.py     # pipeline (stdlib only, no dependencies)
-  catalog/toronto.json    # master catalog — curated, stable
+  build_alert_email.py    # branded city-alert email generator
+  catalog/_hubs.json      # hub registry: anchors, airports, display names
+  catalog/<city>.json     # master catalogs — curated, stable
   data/observations.csv   # appended price observations (time-series)
+  data/subscribers.xlsx   # alert subscriber list (Excel, for now)
+  alerts/                 # signup page + server + subscriber store
   raw/                    # raw Expedia search JSON dropped here by the agent
-  out/                    # generated reports
+  out/                    # generated reports + sample emails
 ```

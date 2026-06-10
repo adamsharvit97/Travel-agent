@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitude 43 — City Alerts</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0C0A09; --bg2:#13110F; --line:#2A241C; --text:#F2ECDF; --soft:#C6BCA6;
+         --mute:#827763; --gold:#D9B987; --goldb:#F2D29E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#050403;font-family:'Inter',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;}
+  .frame{max-width:640px;margin:0 auto;background:var(--bg);min-height:100vh;}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;}
+  .top{padding:28px 36px;display:flex;justify-content:space-between;align-items:center;}
+  .brand{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.04em;}
+  .brand i{color:var(--gold);font-style:italic;}
+  .top .tag{font-size:9.5px;color:var(--mute);}
+  .hero{position:relative;}
+  .hero img{width:100%;height:230px;object-fit:cover;filter:brightness(.72) saturate(.9);display:block;}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(12,10,9,.96) 100%);}
+  .hero-cap{position:absolute;left:36px;right:36px;bottom:24px;}
+  .hero-cap .eyebrow{font-size:10px;color:var(--goldb);margin-bottom:10px;}
+  .hero-cap h1{font-family:'Playfair Display',serif;font-weight:400;font-size:30px;line-height:1.16;}
+  .hero-cap h1 i{font-style:italic;color:var(--goldb);}
+  .intro{padding:24px 36px 6px;}
+  .intro p{font-size:14px;line-height:1.7;color:var(--soft);max-width:480px;}
+  form{padding:18px 36px 44px;}
+  .sect{font-size:10px;color:var(--gold);margin:26px 0 6px;}
+  .sect-sub{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;}
+  .cities{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;}
+  label.city{display:flex;align-items:baseline;gap:12px;padding:11px 2px;border-top:1px solid var(--line);
+             cursor:pointer;user-select:none;}
+  label.city input{position:absolute;opacity:0;}
+  .box{width:13px;height:13px;border:1px solid var(--mute);flex:none;position:relative;top:1px;
+       transition:all .15s ease;}
+  label.city input:checked ~ .box{border-color:var(--goldb);background:var(--goldb);
+       box-shadow:0 0 0 3px rgba(242,210,158,.12);}
+  label.city .nm{font-family:'Playfair Display',serif;font-size:15.5px;flex:1;}
+  label.city .ll{font-size:9px;color:var(--mute);font-family:'JetBrains Mono',monospace;letter-spacing:.14em;}
+  label.city input:checked ~ .nm{color:var(--goldb);}
+  .fields{margin-top:8px;}
+  .field{border-top:1px solid var(--line);padding:14px 2px;}
+  .field span{display:block;font-size:9.5px;color:var(--mute);margin-bottom:6px;
+              font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;}
+  .field input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
+               font-family:'Playfair Display',serif;font-size:17px;}
+  .field input::placeholder{color:#4A4236;}
+  button{margin-top:28px;width:100%;background:transparent;border:1px solid var(--gold);color:var(--goldb);
+         font-family:'JetBrains Mono',monospace;letter-spacing:.24em;text-transform:uppercase;font-size:11px;
+         padding:15px 0;cursor:pointer;transition:all .2s ease;}
+  button:hover{background:rgba(217,185,135,.08);}
+  button:disabled{opacity:.4;cursor:default;}
+  .note{margin-top:16px;font-size:11.5px;line-height:1.7;color:var(--mute);}
+  .done{display:none;padding:40px 36px 60px;}
+  .done .eyebrow{font-size:10px;color:var(--gold);margin-bottom:14px;}
+  .done h2{font-family:'Playfair Display',serif;font-weight:400;font-size:26px;line-height:1.2;}
+  .done h2 i{font-style:italic;color:var(--goldb);}
+  .done p{margin-top:14px;font-size:14px;line-height:1.7;color:var(--soft);max-width:440px;}
+  .err{display:none;margin-top:14px;font-size:12px;color:#D98787;}
+  .foot{padding:26px 36px 40px;border-top:1px solid var(--line);background:var(--bg2);}
+  .foot p{font-size:11.5px;line-height:1.7;color:var(--mute);}
+  .sig{font-size:9.5px;color:var(--mute);text-align:center;margin-top:16px;}
+</style></head>
+<body>
+<div class="frame">
+
+  <div class="top"><span class="brand">Latitude <i>43°</i></span><span class="tag mono">City Alerts</span></div>
+
+  <div class="hero">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1280&q=85" alt="">
+    <div class="hero-veil"></div>
+    <div class="hero-cap">
+      <div class="eyebrow mono">The Watch List</div>
+      <h1>Tell us your cities.<br>We'll watch the <i>rates</i>.</h1>
+    </div>
+  </div>
+
+  <div class="intro">
+    <p>The desk tracks the good rooms in the cities below — including the houses that
+    rarely discount. When a city you care about softens, you get one short letter:
+    which hotels, which weeks, how deep. Nothing else, no noise.</p>
+  </div>
+
+  <form id="f">
+    <div class="sect mono">Step One</div>
+    <div class="sect-sub">The cities you travel to</div>
+    <div class="cities">
+      {{CITY_OPTIONS}}
+    </div>
+
+    <div class="sect mono">Step Two</div>
+    <div class="sect-sub">Where the letter should land</div>
+    <div class="fields">
+      <div class="field"><span>Name</span><input type="text" name="name" placeholder="Jordan Ellis" autocomplete="name"></div>
+      <div class="field"><span>Email</span><input type="email" name="email" placeholder="you@company.com" autocomplete="email" required></div>
+    </div>
+
+    <button type="submit" id="go">Add me to the list</button>
+    <div class="err" id="err"></div>
+    <p class="note">One email per city, only when something genuinely moves. Reply to any
+    letter to reach the desk directly. Unsubscribe by replying "stop" — a person reads it.</p>
+  </form>
+
+  <div class="done" id="done">
+    <div class="eyebrow mono">Noted at the desk</div>
+    <h2>You're on the list<i>.</i></h2>
+    <p id="done-msg">We'll write when one of your cities softens.</p>
+  </div>
+
+  <div class="foot">
+    <p>Latitude 43 watches Expedia standard rates across a curated roster of business-grade
+    hotels — 4–5★, well-located, well-reviewed — and flags genuine softenings, not inflated
+    strikethroughs. The booking, and everything after, is ours.</p>
+    <p class="sig mono">Latitude 43 · The Travel Office · Toronto 43°N</p>
+  </div>
+
+</div>
+<script>
+const f = document.getElementById('f');
+f.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const err = document.getElementById('err');
+  err.style.display = 'none';
+  const cities = [...f.querySelectorAll('input[name=city]:checked')].map(c => c.value);
+  const email = f.email.value.trim();
+  if (!cities.length) { err.textContent = 'Pick at least one city.'; err.style.display = 'block'; return; }
+  if (!email) { err.textContent = 'We need an email to write to.'; err.style.display = 'block'; return; }
+  const go = document.getElementById('go');
+  go.disabled = true; go.textContent = 'One moment';
+  try {
+    const r = await fetch('/subscribe', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ name: f.name.value.trim(), email, cities })
+    });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || 'Something went wrong.');
+    f.style.display = 'none';
+    document.querySelector('.intro').style.display = 'none';
+    document.getElementById('done-msg').textContent =
+      'We’ll write to ' + email + ' when ' +
+      (data.cities.length === 1 ? data.cities_pretty[0] + ' softens.'
+                                : 'any of your ' + data.cities.length + ' cities soften.');
+    document.getElementById('done').style.display = 'block';
+  } catch (ex) {
+    err.textContent = ex.message; err.style.display = 'block';
+    go.disabled = false; go.textContent = 'Add me to the list';
+  }
+});
+</script>
+</body></html>

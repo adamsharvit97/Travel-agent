@@ -1,0 +1,112 @@
+{
+  "_notes": "Registry of major travel hubs tracked by Latitude 43. Keys are city slugs (used for catalog filenames and --city args). 'core' anchors the business-district distance tiers; 'airports' mark airport hotel clusters. New catalogs are seeded from this registry on first ingest.",
+  "toronto": {
+    "city": "Toronto",
+    "country": "Canada",
+    "currency": "USD",
+    "destination": "Toronto, Ontario, Canada",
+    "core": { "lat": 43.648, "long": -79.3805, "label": "King & Bay (Financial District)" },
+    "airports": [
+      { "code": "YYZ", "lat": 43.6777, "long": -79.6248 }
+    ]
+  },
+  "new-york": {
+    "city": "New York",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "New York, NY, United States",
+    "core": { "lat": 40.757, "long": -73.976, "label": "Midtown East (Park & 50th)" },
+    "airports": [
+      { "code": "JFK", "lat": 40.6413, "long": -73.7781 },
+      { "code": "LGA", "lat": 40.7769, "long": -73.874 },
+      { "code": "EWR", "lat": 40.6895, "long": -74.1745 }
+    ]
+  },
+  "chicago": {
+    "city": "Chicago",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Chicago, IL, United States",
+    "core": { "lat": 41.8819, "long": -87.632, "label": "The Loop (LaSalle & Madison)" },
+    "airports": [
+      { "code": "ORD", "lat": 41.9742, "long": -87.9073 },
+      { "code": "MDW", "lat": 41.7868, "long": -87.7522 }
+    ]
+  },
+  "boston": {
+    "city": "Boston",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Boston, MA, United States",
+    "core": { "lat": 42.3563, "long": -71.0547, "label": "Post Office Square (Financial District)" },
+    "airports": [
+      { "code": "BOS", "lat": 42.3656, "long": -71.0096 }
+    ]
+  },
+  "san-francisco": {
+    "city": "San Francisco",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "San Francisco, CA, United States",
+    "core": { "lat": 37.7929, "long": -122.4023, "label": "Montgomery & California (FiDi)" },
+    "airports": [
+      { "code": "SFO", "lat": 37.6213, "long": -122.379 },
+      { "code": "OAK", "lat": 37.7126, "long": -122.2197 }
+    ]
+  },
+  "los-angeles": {
+    "city": "Los Angeles",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Los Angeles, CA, United States",
+    "core": { "lat": 34.0511, "long": -118.254, "label": "Bunker Hill (Downtown)" },
+    "airports": [
+      { "code": "LAX", "lat": 33.9416, "long": -118.4085 },
+      { "code": "BUR", "lat": 34.1983, "long": -118.3574 }
+    ],
+    "notes": "Polycentric market: Century City / Beverly Hills / Santa Monica derive as Suburban by distance — curate tier by hand for west-side business hotels."
+  },
+  "miami": {
+    "city": "Miami",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Miami, FL, United States",
+    "core": { "lat": 25.7617, "long": -80.1918, "label": "Brickell" },
+    "airports": [
+      { "code": "MIA", "lat": 25.7959, "long": -80.287 },
+      { "code": "FLL", "lat": 26.0742, "long": -80.1506 }
+    ]
+  },
+  "washington-dc": {
+    "city": "Washington, D.C.",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Washington, D.C., United States",
+    "core": { "lat": 38.9019, "long": -77.0388, "label": "Farragut Square (K Street)" },
+    "airports": [
+      { "code": "DCA", "lat": 38.8512, "long": -77.0402 },
+      { "code": "IAD", "lat": 38.9531, "long": -77.4565 }
+    ]
+  },
+  "dallas": {
+    "city": "Dallas",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Dallas, TX, United States",
+    "core": { "lat": 32.7812, "long": -96.7969, "label": "Main & Akard (Downtown)" },
+    "airports": [
+      { "code": "DFW", "lat": 32.8998, "long": -97.0403 },
+      { "code": "DAL", "lat": 32.8471, "long": -96.8518 }
+    ]
+  },
+  "atlanta": {
+    "city": "Atlanta",
+    "country": "United States",
+    "currency": "USD",
+    "destination": "Atlanta, GA, United States",
+    "core": { "lat": 33.7615, "long": -84.387, "label": "Peachtree Center (Downtown)" },
+    "airports": [
+      { "code": "ATL", "lat": 33.6407, "long": -84.4277 }
+    ]
+  }
+}

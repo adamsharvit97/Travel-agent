@@ -57,16 +57,41 @@ OBS_FIELDS = [
 # Catalog
 # --------------------------------------------------------------------------
 
+HUBS_PATH = os.path.join(CATALOG_DIR, "_hubs.json")
+
+
+def slug(city: str) -> str:
+    return city.lower().replace(",", "").replace(".", "").replace(" ", "-")
+
+
+def load_hubs() -> dict:
+    if not os.path.exists(HUBS_PATH):
+        return {}
+    with open(HUBS_PATH, "r", encoding="utf-8") as fh:
+        hubs = json.load(fh)
+    hubs.pop("_notes", None)
+    return hubs
+
+
 def catalog_path(city: str) -> str:
-    return os.path.join(CATALOG_DIR, f"{city.lower()}.json")
+    return os.path.join(CATALOG_DIR, f"{slug(city)}.json")
 
 
 def load_catalog(city: str) -> dict:
     path = catalog_path(city)
     if not os.path.exists(path):
+        hub = load_hubs().get(slug(city), {})
         return {
-            "city": city.title(), "country": "", "currency": "USD",
-            "financial_core_anchor": None, "notes": "", "hotels": {},
+            "city": hub.get("city", city.title()),
+            "country": hub.get("country", ""),
+            "currency": hub.get("currency", "USD"),
+            "financial_core_anchor": (
+                {**hub["core"], "label": hub["core"].get("label", "")}
+                if hub.get("core") else None
+            ),
+            "airports": hub.get("airports", []),
+            "notes": hub.get("notes", ""),
+            "hotels": {},
         }
     with open(path, "r", encoding="utf-8") as fh:
         return json.load(fh)
@@ -88,13 +113,18 @@ def haversine_km(lat1, lon1, lat2, lon2) -> float:
     return 2 * r * math.asin(math.sqrt(a))
 
 
+AIRPORT_RADIUS_KM = 2.8
+
+
 def derive_tier(catalog: dict, lat: float, lon: float) -> str:
     """Fallback tier for hotels not yet curated. Curated 'tier' always wins."""
-    # Airport cluster sits well west of downtown.
-    if lon is not None and lon < -79.55 and lat is not None and lat > 43.66:
-        return "Airport"
+    if lat is None or lon is None:
+        return "Unclassified"
+    for ap in catalog.get("airports", []) or []:
+        if haversine_km(lat, lon, ap["lat"], ap["long"]) <= AIRPORT_RADIUS_KM:
+            return "Airport"
     anchor = catalog.get("financial_core_anchor")
-    if not anchor or lat is None or lon is None:
+    if not anchor:
         return "Unclassified"
     d = haversine_km(lat, lon, anchor["lat"], anchor["long"])
     if d <= 1.2:
@@ -104,6 +134,137 @@ def derive_tier(catalog: dict, lat: float, lon: float) -> str:
     if d <= 8.0:
         return "Secondary"
     return "Suburban"
+
+
+# --------------------------------------------------------------------------
+# Brand curation
+# --------------------------------------------------------------------------
+
+# Keyword (lowercased, first match wins) -> (brand, segment). Used by the
+# `curate` command to fill obvious brands on _needs_review hotels; tier and
+# area stay hand-curated.
+BRAND_RULES = [
+    ("four seasons", ("Four Seasons", "Luxury")),
+    ("ritz-carlton", ("Ritz-Carlton", "Luxury")),
+    ("st. regis", ("St. Regis", "Luxury")),
+    ("waldorf astoria", ("Waldorf Astoria", "Luxury")),
+    ("park hyatt", ("Park Hyatt", "Luxury")),
+    ("grand hyatt", ("Grand Hyatt", "Upper upscale")),
+    ("peninsula", ("Peninsula", "Luxury")),
+    ("shangri-la", ("Shangri-La", "Luxury")),
+    ("mandarin oriental", ("Mandarin Oriental", "Luxury")),
+    ("rosewood", ("Rosewood", "Luxury")),
+    ("faena", ("Faena", "Luxury")),
+    ("salamander", ("Salamander", "Luxury")),
+    ("nobu hotel", ("Nobu", "Luxury")),
+    ("1 hotel", ("1 Hotels", "Luxury")),
+    ("edition", ("EDITION", "Luxury")),
+    ("thompson", ("Thompson (Hyatt)", "Upper upscale")),
+    ("kimpton", ("Kimpton (IHG)", "Upper upscale")),
+    ("intercontinental", ("InterContinental (IHG)", "Upper upscale")),
+    ("fairmont", ("Fairmont", "Upper upscale")),
+    ("jw marriott", ("JW Marriott", "Upper upscale")),
+    ("w hotel", ("W Hotels", "Upper upscale")),
+    ("westin", ("Westin (Marriott)", "Upper upscale")),
+    ("sheraton", ("Sheraton (Marriott)", "Upscale")),
+    ("renaissance", ("Renaissance (Marriott)", "Upper upscale")),
+    ("le méridien", ("Le Méridien (Marriott)", "Upper upscale")),
+    ("le meridien", ("Le Méridien (Marriott)", "Upper upscale")),
+    ("autograph", ("Autograph Collection", "Upper upscale")),
+    ("tribute portfolio", ("Tribute Portfolio (Marriott)", "Upscale")),
+    ("moxy", ("Moxy (Marriott)", "Select / lifestyle")),
+    ("ac hotel", ("AC Hotels (Marriott)", "Upscale")),
+    ("residence inn", ("Residence Inn (Marriott)", "Extended stay")),
+    ("courtyard", ("Courtyard (Marriott)", "Select service")),
+    ("fairfield", ("Fairfield (Marriott)", "Select service")),
+    ("city express", ("City Express (Marriott)", "Select service")),
+    ("marriott", ("Marriott", "Upper upscale")),
+    ("conrad", ("Conrad (Hilton)", "Luxury")),
+    ("signia", ("Signia (Hilton)", "Upper upscale")),
+    ("curio collection", ("Curio Collection (Hilton)", "Upper upscale")),
+    ("tapestry collection", ("Tapestry Collection (Hilton)", "Upscale")),
+    ("canopy by hilton", ("Canopy (Hilton)", "Upscale / lifestyle")),
+    ("graduate by hilton", ("Graduate (Hilton)", "Upscale / lifestyle")),
+    ("doubletree", ("DoubleTree (Hilton)", "Upscale")),
+    ("embassy suites", ("Embassy Suites (Hilton)", "Upscale")),
+    ("hilton garden inn", ("Hilton Garden Inn", "Select service")),
+    ("hampton", ("Hampton (Hilton)", "Select service")),
+    ("home2 suites", ("Home2 Suites (Hilton)", "Extended stay")),
+    ("hilton", ("Hilton", "Upper upscale")),
+    ("hyatt house", ("Hyatt House", "Extended stay")),
+    ("hyatt place", ("Hyatt Place", "Select service")),
+    ("hyatt centric", ("Hyatt Centric", "Upscale / lifestyle")),
+    ("hyatt regency", ("Hyatt Regency", "Upper upscale")),
+    ("unbound collection", ("Unbound Collection (Hyatt)", "Upper upscale")),
+    ("hyatt", ("Hyatt", "Upper upscale")),
+    ("voco", ("voco (IHG)", "Upscale")),
+    ("hotel indigo", ("Hotel Indigo (IHG)", "Upscale / boutique")),
+    ("even hotel", ("EVEN (IHG)", "Select service")),
+    ("candlewood", ("Candlewood Suites (IHG)", "Extended stay")),
+    ("holiday inn express", ("Holiday Inn Express (IHG)", "Select service")),
+    ("holiday inn", ("Holiday Inn (IHG)", "Midscale")),
+    ("crowne plaza", ("Crowne Plaza (IHG)", "Upscale")),
+    ("omni", ("Omni", "Upper upscale")),
+    ("sonesta es suites", ("Sonesta ES Suites", "Extended stay")),
+    ("royal sonesta", ("Royal Sonesta", "Upper upscale")),
+    ("sonesta", ("Sonesta", "Upscale")),
+    ("pullman", ("Pullman (Accor)", "Upper upscale")),
+    ("sofitel", ("Sofitel (Accor)", "Luxury")),
+    ("citizenm", ("citizenM", "Select / lifestyle")),
+    ("yotel", ("YOTEL", "Select / lifestyle")),
+    ("riu plaza", ("RIU Plaza", "Upscale")),
+    ("eurostars", ("Eurostars", "Upscale")),
+    ("club quarters", ("Club Quarters", "Business value")),
+    ("virgin hotels", ("Virgin Hotels", "Upscale / lifestyle")),
+    ("hoxton", ("The Hoxton", "Upscale / lifestyle")),
+    ("staypineapple", ("Staypineapple", "Upscale / boutique")),
+    ("warwick", ("Warwick", "Upscale")),
+    ("wyndham", ("Wyndham", "Midscale")),
+    ("ramada", ("Ramada (Wyndham)", "Midscale")),
+    ("la quinta", ("La Quinta (Wyndham)", "Midscale")),
+    ("days inn", ("Days Inn (Wyndham)", "Economy")),
+    ("travelodge", ("Travelodge (Wyndham)", "Economy")),
+    ("best western premier", ("Best Western Premier", "Upscale")),
+    ("bw premier", ("Best Western Premier", "Upscale")),
+    ("bw signature", ("BW Signature Collection", "Midscale")),
+    ("best western", ("Best Western", "Midscale")),
+    ("comfort suites", ("Comfort Suites (Choice)", "Midscale")),
+    ("comfort inn", ("Comfort Inn (Choice)", "Midscale")),
+    ("cambria", ("Cambria (Choice)", "Upscale")),
+    ("ascend collection", ("Ascend Collection (Choice)", "Midscale")),
+    ("four points", ("Four Points (Marriott)", "Select service")),
+    ("trump", ("Trump Hotels", "Luxury")),
+    ("waldorf", ("Waldorf Astoria", "Luxury")),
+    ("public,", ("PUBLIC (Schrager)", "Upscale / lifestyle")),
+    ("pod ", ("Pod Hotels", "Micro / value")),
+]
+
+
+def infer_brand(name: str):
+    n = (name or "").lower()
+    for kw, hit in BRAND_RULES:
+        if kw in n:
+            return hit
+    return None
+
+
+def curate(city: str) -> dict:
+    """Fill brand/segment from name keywords on hotels still flagged for
+    review. Tier/area remain manual; the flag is kept until those are set."""
+    catalog = load_catalog(city)
+    stats = {"branded": 0, "still_unknown": 0}
+    for h in catalog["hotels"].values():
+        if h.get("brand") not in (None, "", "Unknown"):
+            continue
+        hit = infer_brand(h.get("name", ""))
+        if hit:
+            h["brand"], h["segment"] = hit
+            stats["branded"] += 1
+        else:
+            h["brand"] = "Independent"
+            stats["still_unknown"] += 1
+    save_catalog(city, catalog)
+    return stats
 
 
 # --------------------------------------------------------------------------
@@ -239,7 +400,7 @@ def report(city: str, window: str | None, min_rating: float,
            min_star: float, top: int | None, include_full_rate: bool) -> str:
     catalog = load_catalog(city)
     hotels = catalog["hotels"]
-    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    obs = [o for o in load_observations() if slug(o["city"]) == slug(city)]
 
     if window:
         ci, co = window.split("..")
@@ -354,7 +515,7 @@ def report_consolidated(city: str, min_rating: float, min_star: float,
     and the nightly-rate range. This is the multi-window planning view."""
     catalog = load_catalog(city)
     hotels = catalog["hotels"]
-    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    obs = [o for o in load_observations() if slug(o["city"]) == slug(city)]
     if not obs:
         return f"No observations found for {city}."
 
@@ -443,7 +604,7 @@ def report_coverage(city: str, min_rating: float, min_star: float,
     lean discounted_only scans where only on-deal hotels are returned."""
     catalog = load_catalog(city)
     hotels = catalog["hotels"]
-    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    obs = [o for o in load_observations() if slug(o["city"]) == slug(city)]
     if checkin_from:
         obs = [o for o in obs if o["checkin"] >= checkin_from]
     if not obs:
@@ -531,7 +692,7 @@ def _outlook_grid(city: str, min_rating: float, min_star: float,
     """Shared builder for the outlook matrix: quality hotels x sampled windows."""
     catalog = load_catalog(city)
     hotels = catalog["hotels"]
-    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    obs = [o for o in load_observations() if slug(o["city"]) == slug(city)]
     if checkin_from:
         obs = [o for o in obs if o["checkin"] >= checkin_from]
 
@@ -692,6 +853,11 @@ def main(argv=None):
     pi.add_argument("--city", default="Toronto")
     pi.add_argument("--scanned-at", default=datetime.now().isoformat(timespec="seconds"))
 
+    pc = sub.add_parser("curate", help="Infer brand/segment from hotel names")
+    pc.add_argument("--city", default="Toronto")
+
+    pl = sub.add_parser("cities", help="List hub cities and catalog status")
+
     pr = sub.add_parser("report", help="Generate a ranked deal report")
     pr.add_argument("--city", default="Toronto")
     pr.add_argument("--window", help="checkin..checkout, e.g. 2026-06-16..2026-06-18")
@@ -728,6 +894,23 @@ def main(argv=None):
         if stats["new_hotels"]:
             print(f"Added {len(stats['new_hotels'])} new hotel(s) "
                   f"(flagged _needs_review): {', '.join(stats['new_hotels'])}")
+        return 0
+
+    if args.cmd == "curate":
+        stats = curate(args.city)
+        print(f"{args.city}: branded {stats['branded']} hotel(s), "
+              f"{stats['still_unknown']} marked Independent.")
+        return 0
+
+    if args.cmd == "cities":
+        hubs = load_hubs()
+        obs = load_observations()
+        for key, hub in hubs.items():
+            cat = load_catalog(key)
+            n_obs = sum(1 for o in obs if slug(o["city"]) == key)
+            print(f"{key:15s} {hub['city']:18s} "
+                  f"{len(cat.get('hotels', {})):3d} hotels in catalog, "
+                  f"{n_obs:4d} observations")
         return 0
 
     if args.cmd == "report":
