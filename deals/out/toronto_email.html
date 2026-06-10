@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitude 43 — The Toronto Calendar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0C0A09; --bg2:#13110F; --line:#2A241C; --text:#F2ECDF; --soft:#C6BCA6;
+         --mute:#827763; --gold:#D9B987; --goldb:#F2D29E; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#050403;font-family:'Inter',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;}
+  .frame{max-width:640px;margin:0 auto;background:var(--bg);}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;}
+  .cover{position:relative;height:340px;overflow:hidden;}
+  .cover img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) brightness(.72);display:block;}
+  .cover-veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,9,.5) 0%,rgba(12,10,9,.12) 38%,rgba(12,10,9,.97) 100%);}
+  .cover-top{position:absolute;top:28px;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:0 34px;}
+  .brand{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.04em;}
+  .brand i{color:var(--gold);font-style:italic;}
+  .cover-top .tag{font-size:9.5px;color:var(--soft);}
+  .cover-cap{position:absolute;left:34px;right:34px;bottom:32px;}
+  .eyebrow{font-size:10px;color:var(--gold);margin-bottom:14px;}
+  h1{font-family:'Playfair Display',serif;font-weight:400;font-size:36px;line-height:1.13;}
+  h1 i{font-style:italic;color:var(--goldb);}
+  .letter{padding:38px 38px 6px;}
+  .letter p{font-size:15px;line-height:1.72;color:var(--soft);}
+  .letter .lead{color:var(--text);font-size:16px;}
+  .letter p + p{margin-top:13px;}
+  .feat{position:relative;margin:26px 0 6px;}
+  .feat img{width:100%;height:320px;object-fit:cover;filter:brightness(.74) saturate(.9);display:block;}
+  .feat-veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 32%,rgba(12,10,9,.96) 100%);}
+  .feat-cap{position:absolute;left:32px;right:32px;bottom:26px;}
+  .feat-cap .tier{font-size:10px;color:var(--goldb);margin-bottom:10px;}
+  .feat-cap h2{font-family:'Playfair Display',serif;font-weight:400;font-size:26px;}
+  .feat-cap .loc{font-size:12px;color:var(--soft);margin-top:4px;}
+  .feat-cap .deal{margin-top:13px;display:flex;align-items:baseline;gap:12px;}
+  .feat-cap .pct{font-family:'Playfair Display',serif;font-size:30px;color:var(--goldb);}
+  .feat-cap .rate{font-size:12px;color:var(--soft);}
+  .tiles{display:flex;gap:6px;}
+  .tile{flex:1;position:relative;}
+  .tile img{width:100%;height:180px;object-fit:cover;filter:brightness(.7) saturate(.9);display:block;}
+  .tile-veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(12,10,9,.96) 100%);}
+  .tile-cap{position:absolute;left:16px;right:16px;bottom:16px;}
+  .tile-cap h3{font-family:'Playfair Display',serif;font-weight:400;font-size:16px;line-height:1.15;}
+  .tile-cap .loc{font-size:10px;color:var(--soft);margin-top:3px;}
+  .tile-cap .pct{font-family:'Playfair Display',serif;font-size:19px;color:var(--goldb);margin-top:7px;}
+  .tile-cap .pct small{font-family:'Inter';font-size:11px;color:var(--soft);margin-left:6px;}
+  .season{padding:30px 38px 8px;}
+  .season-h{font-size:10px;color:var(--gold);margin-bottom:6px;}
+  .season-sub{font-family:'Playfair Display',serif;font-size:23px;margin-bottom:6px;}
+  .season-note{font-size:12.5px;color:var(--mute);margin-bottom:8px;}
+  .wk{padding:24px 0 18px;border-top:1px solid var(--line);}
+  .wk-h{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;}
+  .wk-h .date{font-family:'Playfair Display',serif;font-size:20px;}
+  .wk-h .count{font-size:9.5px;color:var(--mute);}
+  .row{display:flex;align-items:baseline;gap:14px;padding:9px 0;border-bottom:1px solid rgba(42,36,28,.5);}
+  .row:last-of-type{border-bottom:none;}
+  .nm{flex:1;} .nm .h{font-family:'Playfair Display',serif;font-size:16px;line-height:1.2;}
+  .nm .s{font-size:10.5px;color:var(--mute);margin-top:2px;}
+  .off{text-align:right;white-space:nowrap;}
+  .off .opct{font-family:'Playfair Display',serif;font-size:18px;color:var(--goldb);}
+  .off .orate{display:block;font-size:10.5px;color:var(--soft);margin-top:1px;}
+  .more{font-size:11px;color:var(--mute);font-style:italic;padding-top:10px;}
+  .foot{margin-top:28px;padding:30px 38px 44px;border-top:1px solid var(--line);background:var(--bg2);}
+  .foot p{font-size:12px;line-height:1.7;color:var(--mute);}
+  .foot a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(217,185,135,.4);padding-bottom:2px;}
+  .sig{font-size:9.5px;color:var(--mute);text-align:center;margin-top:18px;}
+  @media (max-width:600px){ h1{font-size:30px;} }
+</style></head>
+<body><div class="frame">
+
+  <div class="cover">
+    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1280&q=85" alt="">
+    <div class="cover-veil"></div>
+    <div class="cover-top"><span class="brand">Latitude <i>43°</i></span>
+      <span class="tag mono">The Desk · Toronto</span></div>
+    <div class="cover-cap">
+      <div class="eyebrow mono">The Toronto Calendar · Jun 15 – Sep 7</div>
+      <h1>The weeks the city's<br>best rooms <i>soften.</i></h1>
+    </div>
+  </div>
+
+  <div class="letter">
+    <p class="lead">A quiet note from the office. We keep an eye on the rooms our members
+    use in Toronto, and we mark the weeks they go on sale — so a trip can be timed,
+    not just booked.</p>
+    <p>You think about the meeting, or the people you brought with you. We'll watch the
+    rate, hold the booking, and be reachable when something needs handling. Below: the
+    deepest softenings of the season, then every week of it.</p>
+  </div>
+
+  <div class="feat">
+    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1280&q=85" alt="">
+    <div class="feat-veil"></div>
+    <div class="feat-cap">
+      <div class="tier mono">Deepest this season · week of Jul 6</div>
+      <h2>Hotel Riu Plaza Toronto</h2>
+      <div class="loc">4★ · 9.2 (3,607 reviews) · Bay & Dundas</div>
+      <div class="deal"><span class="pct">&minus;51%</span>
+        <span class="rate">$184 a night</span></div>
+    </div>
+  </div>
+  <div class="tiles">
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=720&q=85" alt="">
+      <div class="tile-veil"></div>
+      <div class="tile-cap"><h3>One King West Hotel & Residence</h3>
+        <div class="loc">4★ · Financial District</div>
+        <div class="pct">&minus;35%<small>$202/nt</small></div></div>
+    </div>
+    <div class="tile">
+      <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=720&q=85" alt="">
+      <div class="tile-veil"></div>
+      <div class="tile-cap"><h3>1 Hotel Toronto</h3>
+        <div class="loc">5★ · Entertainment District</div>
+        <div class="pct">&minus;35%<small>$575/nt</small></div></div>
+    </div></div>
+
+  <div class="season">
+    <div class="season-h mono">The season, week by week</div>
+    <div class="season-sub">13 weeks · 23 hotels on sale</div>
+    <div class="season-note">Best softening seen each week, against the hotel's standard rate.</div>
+
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jun 15</span>
+        <span class="count mono">17 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;38%</span>
+          <span class="orate">$411/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;30%</span>
+          <span class="orate">$148/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Fairmont Royal York</div>
+        <div class="s">4★ · 9.0 · Union Station</div></div>
+        <div class="off"><span class="opct">&minus;30%</span>
+          <span class="orate">$313/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;30%</span>
+          <span class="orate">$215/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;29%</span>
+          <span class="orate">$337/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;26%</span>
+          <span class="orate">$200/nt</span></div></div>
+      <div class="more">+ 11 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jun 22</span>
+        <span class="count mono">16 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$313/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$259/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;28%</span>
+          <span class="orate">$164/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$198/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;23%</span>
+          <span class="orate">$547/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Old Mill Toronto</div>
+        <div class="s">4★ · 9.4 · Bloor West / Humber</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$264/nt</span></div></div>
+      <div class="more">+ 10 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jun 29</span>
+        <span class="count mono">18 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$268/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$202/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;27%</span>
+          <span class="orate">$176/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$185/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$174/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Union Hotel</div>
+        <div class="s">4★ · 9.2 · Union Station / Front St</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$217/nt</span></div></div>
+      <div class="more">+ 12 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jul 6</span>
+        <span class="count mono">18 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;51%</span>
+          <span class="orate">$184/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$417/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;27%</span>
+          <span class="orate">$178/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;26%</span>
+          <span class="orate">$250/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$193/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;23%</span>
+          <span class="orate">$129/nt</span></div></div>
+      <div class="more">+ 12 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jul 13</span>
+        <span class="count mono">16 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$271/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$525/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;28%</span>
+          <span class="orate">$119/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$251/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Old Mill Toronto</div>
+        <div class="s">4★ · 9.4 · Bloor West / Humber</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$247/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Union Hotel</div>
+        <div class="s">4★ · 9.2 · Union Station / Front St</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$317/nt</span></div></div>
+      <div class="more">+ 10 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jul 20</span>
+        <span class="count mono">11 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$411/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;28%</span>
+          <span class="orate">$119/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Sandman Signature Toronto Airport Hotel</div>
+        <div class="s">4★ · 9.0 · YYZ Airport</div></div>
+        <div class="off"><span class="opct">&minus;27%</span>
+          <span class="orate">$145/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$241/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Old Mill Toronto</div>
+        <div class="s">4★ · 9.4 · Bloor West / Humber</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$247/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">The Broadview Hotel</div>
+        <div class="s">4★ · 9.4 · Riverside / East End</div></div>
+        <div class="off"><span class="opct">&minus;18%</span>
+          <span class="orate">$591/nt</span></div></div>
+      <div class="more">+ 5 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Jul 27</span>
+        <span class="count mono">17 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$217/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$492/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;34%</span>
+          <span class="orate">$225/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$213/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$179/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$132/nt</span></div></div>
+      <div class="more">+ 11 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Aug 3</span>
+        <span class="count mono">16 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;47%</span>
+          <span class="orate">$246/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$499/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;33%</span>
+          <span class="orate">$162/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Old Mill Toronto</div>
+        <div class="s">4★ · 9.4 · Bloor West / Humber</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$247/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Le Germain Hotel Maple Leaf Square</div>
+        <div class="s">4★ · 9.6 · South Core / Scotiabank Arena</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$354/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">The Broadview Hotel</div>
+        <div class="s">4★ · 9.4 · Riverside / East End</div></div>
+        <div class="off"><span class="opct">&minus;18%</span>
+          <span class="orate">$320/nt</span></div></div>
+      <div class="more">+ 10 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Aug 10</span>
+        <span class="count mono">17 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$535/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;26%</span>
+          <span class="orate">$260/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$320/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Toronto Marriott City Centre Hotel</div>
+        <div class="s">4★ · 9.2 · Rogers Centre / South Core</div></div>
+        <div class="off"><span class="opct">&minus;22%</span>
+          <span class="orate">$885/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Old Mill Toronto</div>
+        <div class="s">4★ · 9.4 · Bloor West / Humber</div></div>
+        <div class="off"><span class="opct">&minus;21%</span>
+          <span class="orate">$247/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Le Germain Hotel Maple Leaf Square</div>
+        <div class="s">4★ · 9.6 · South Core / Scotiabank Arena</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$402/nt</span></div></div>
+      <div class="more">+ 11 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Aug 17</span>
+        <span class="count mono">18 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$228/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$575/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;27%</span>
+          <span class="orate">$127/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$290/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Le Germain Hotel Maple Leaf Square</div>
+        <div class="s">4★ · 9.6 · South Core / Scotiabank Arena</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$448/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;20%</span>
+          <span class="orate">$303/nt</span></div></div>
+      <div class="more">+ 12 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Aug 24</span>
+        <span class="count mono">20 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$211/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;35%</span>
+          <span class="orate">$525/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$211/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$266/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;24%</span>
+          <span class="orate">$287/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;23%</span>
+          <span class="orate">$135/nt</span></div></div>
+      <div class="more">+ 14 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Aug 31</span>
+        <span class="count mono">20 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$234/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;34%</span>
+          <span class="orate">$239/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;30%</span>
+          <span class="orate">$553/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;28%</span>
+          <span class="orate">$204/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$241/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Great Canadian Casino Resort Toronto</div>
+        <div class="s">4★ · 9.0 · Etobicoke (Woodbine)</div></div>
+        <div class="off"><span class="opct">&minus;22%</span>
+          <span class="orate">$107/nt</span></div></div>
+      <div class="more">+ 14 more rooms softening this week</div>
+    </div>
+    <div class="wk">
+      <div class="wk-h"><span class="date">Week of Sep 7</span>
+        <span class="count mono">19 on sale</span></div>
+      
+      <div class="row"><div class="nm"><div class="h">Hotel Riu Plaza Toronto</div>
+        <div class="s">4★ · 9.2 · Bay & Dundas</div></div>
+        <div class="off"><span class="opct">&minus;46%</span>
+          <span class="orate">$238/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">One King West Hotel & Residence</div>
+        <div class="s">4★ · 9.4 · Financial District</div></div>
+        <div class="off"><span class="opct">&minus;34%</span>
+          <span class="orate">$258/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Pantages Hotel Downtown Toronto</div>
+        <div class="s">4★ · 9.2 · Yonge-Dundas / Garden District</div></div>
+        <div class="off"><span class="opct">&minus;34%</span>
+          <span class="orate">$173/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Cambridge Suites Toronto</div>
+        <div class="s">4★ · 9.2 · Downtown core (Richmond/Bay)</div></div>
+        <div class="off"><span class="opct">&minus;25%</span>
+          <span class="orate">$241/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">1 Hotel Toronto</div>
+        <div class="s">5★ · 9.6 · Entertainment District</div></div>
+        <div class="off"><span class="opct">&minus;23%</span>
+          <span class="orate">$560/nt</span></div></div>
+      <div class="row"><div class="nm"><div class="h">Toronto Marriott City Centre Hotel</div>
+        <div class="s">4★ · 9.2 · Rogers Centre / South Core</div></div>
+        <div class="off"><span class="opct">&minus;22%</span>
+          <span class="orate">$343/nt</span></div></div>
+      <div class="more">+ 13 more rooms softening this week</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <p>Rates are watched for two-night stays against each hotel's standard published rate;
+    figures are the best softening seen that week and move daily — a guide to <em>when</em>
+    a room tends to sell, not a quote. Rooms that hold rate are no less worth booking; there,
+    our value is the upgrade, the breakfast, the late checkout we add quietly. Refreshed June 10, 2026.</p>
+    <p style="margin-top:16px;">When a week suits you, simply reply, or <a href="#">reach the desk</a>.</p>
+    <p class="sig mono">Latitude 43 · The Travel Office · 43°N</p>
+  </div>
+
+</div></body></html>
