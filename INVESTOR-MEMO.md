@@ -1,5 +1,7 @@
 # Latitude 43 — Investor & Partner Memo
 
+> **PRICING SUPERSEDED — June 2026.** The tiers in this memo are v1.0. Current pricing is v3.1 Model B Unlimited: Atlas Light Unlimited **$189/mo**, Atlas Office Unlimited **$349/mo**, all trip design included; Latitude Society invite-only, H2 2027. Update this memo against `business-plan.md` §2 before sending it to anyone.
+
 A two-page version of the thesis. Distinct from the 9,500-word business plan and the 22-slide deck. This is what you send to a friend who asks "what's the story?"
 
 ---

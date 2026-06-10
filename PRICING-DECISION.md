@@ -1,5 +1,7 @@
 # The Pricing Decision
 
+> **SUPERSEDED — June 2026.** This document predates the pricing pivots recorded in `business-plan-changelog.md`. Current pricing is **v3.1 Model B Unlimited**: Atlas Light Unlimited **$189/mo** and Atlas Office Unlimited **$349/mo**, all trip design included; Latitude Society invite-only, H2 2027. See `business-plan.md` §2. Kept for the decision history only — do not quote prices from this file.
+
 The single biggest strategic question that has emerged from the research: where does Atlas price?
 
 The competitive research argues for one structure ($3,600 / $12,000 / $36,000 — Indagare-adjacent). The adjacent-boutique-services research argues for another ($15,000 / $35,000 / $75,000 — Knightsbridge-adjacent). These are not minor adjustments. They are different businesses. Pick one before week one.

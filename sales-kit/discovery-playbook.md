@@ -68,7 +68,9 @@ Three pillars. One sentence each. No bullets.
 
 State it calmly. Make the prospect choose the tier.
 
-> *"There are three tiers. Principal is thirty-six hundred a year — one traveler, unlimited support, all planning fees waived. Office is twelve thousand — up to five travelers, plus quarterly reports. Firm is thirty-six thousand — up to fifteen travelers, dedicated relationship, custom reporting. Based on what you described, you're in [Tier]."*
+> *"Two ways in. Light is one eighty-nine a month — one traveler, all trip design included, business and personal. Office is three forty-nine a month — up to five travelers and your EA, everything included. No per-trip fees, no surprise invoices, either way. Based on what you described, you're in [Tier]."*
+
+If the first trip comes up, name the guarantee: *"If we screw up your first trip, you get the month back, the next month free, and a service credit on the next one."*
 
 Then stop talking. Let them respond.
 
@@ -109,7 +111,7 @@ The weak-signal close keeps the door open and reframes the next disruption as a 
 
 ### "Isn't this a lot of money for someone who travels twenty times a year?"
 
-> *"It's three hundred dollars a month. At your spend level — call it eighty thousand a year — we typically capture three to nine thousand in upgrades, credits, and rebooked savings. Even at the low end the membership pays for itself. But more honestly, you're not buying ROI. You're buying never thinking about it again. The same way you don't calculate the ROI of your accountant."*
+> *"It's one eighty-nine a month, and that includes the trip design, not just the bookings. At your spend level — call it eighty thousand a year — we typically capture three to nine thousand in upgrades, credits, and rebooked savings. Even at the low end the membership pays for itself. But more honestly, you're not buying ROI. You're buying never thinking about it again. The same way you don't calculate the ROI of your accountant."*
 
 ### "What happens if I want to book my own trip?"
 

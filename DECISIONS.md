@@ -36,6 +36,8 @@ Every unresolved decision blocking launch. For each: the decision, the recommend
 
 ## Pricing
 
+> **SUPERSEDED — June 2026.** Decisions 4 and 5 below reference v1.0 pricing ($3,600/$4,800/$6,000), which was replaced twice: v2.0 ($99/$249 + design fees, May 2026), then v3.1 Model B Unlimited (**$189/mo Light · $349/mo Office**, all design included) after the R6/R7 sims. See `business-plan.md` §2 and `business-plan-changelog.md`. Kept for the record.
+
 ### 4. Atlas Principal floor — $3,600 vs. $4,800 vs. $6,000
 **Decision:** Where does Atlas Principal land?
 

@@ -1,5 +1,7 @@
 # Projected Revenue From the 28 Sales Sims
 
+> **PRICING ERA NOTE — June 2026.** Every dollar figure in this projection uses the v2.0 Model A price book (Light $99/mo, Office $249/mo, plus design fees), which was replaced by v3.1 Model B Unlimited ($189/$349, all design included) after the R6/R7 sims. The conversion-rate findings stand; the revenue math does not. Re-run against $189/$349 before using these numbers anywhere.
+
 A probability-weighted revenue projection across Rounds 1 and 2. These are simulated calls, not real prospects — but they project what the funnel yields IF these conversion rates hold against real buyers of the same type.
 
 ---
