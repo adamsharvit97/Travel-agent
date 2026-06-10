@@ -8,102 +8,118 @@
          --mute:#827763; --gold:#D9B987; --goldb:#F2D29E; }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:#050403;font-family:'Inter',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;}
-  .frame{max-width:640px;margin:0 auto;background:var(--bg);min-height:100vh;}
+  .frame{max-width:680px;margin:0 auto;background:var(--bg);min-height:100vh;}
   .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.22em;text-transform:uppercase;}
   .top{padding:28px 36px;display:flex;justify-content:space-between;align-items:center;}
   .brand{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.04em;}
   .brand i{color:var(--gold);font-style:italic;}
   .top .tag{font-size:9.5px;color:var(--mute);}
+  /* hero */
   .hero{position:relative;}
-  .hero img{width:100%;height:230px;object-fit:cover;filter:brightness(.72) saturate(.9);display:block;}
-  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(12,10,9,.96) 100%);}
-  .hero-cap{position:absolute;left:36px;right:36px;bottom:24px;}
-  .hero-cap .eyebrow{font-size:10px;color:var(--goldb);margin-bottom:10px;}
-  .hero-cap h1{font-family:'Playfair Display',serif;font-weight:400;font-size:30px;line-height:1.16;}
+  .hero img{width:100%;height:330px;object-fit:cover;filter:brightness(.72) saturate(.9);display:block;}
+  .hero-veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 22%,rgba(12,10,9,.96) 100%);}
+  .hero-cap{position:absolute;left:36px;right:36px;bottom:26px;}
+  .hero-cap .eyebrow{font-size:10px;color:var(--goldb);margin-bottom:12px;}
+  .hero-cap h1{font-family:'Playfair Display',serif;font-weight:400;font-size:34px;line-height:1.14;}
   .hero-cap h1 i{font-style:italic;color:var(--goldb);}
-  .intro{padding:24px 36px 6px;}
-  .intro p{font-size:14px;line-height:1.7;color:var(--soft);max-width:480px;}
-  form{padding:18px 36px 44px;}
-  .sect{font-size:10px;color:var(--gold);margin:26px 0 6px;}
-  .sect-sub{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;}
-  .cities{display:grid;grid-template-columns:1fr 1fr;gap:0 22px;}
-  label.city{display:flex;align-items:baseline;gap:12px;padding:11px 2px;border-top:1px solid var(--line);
-             cursor:pointer;user-select:none;}
-  label.city input{position:absolute;opacity:0;}
-  .box{width:13px;height:13px;border:1px solid var(--mute);flex:none;position:relative;top:1px;
-       transition:all .15s ease;}
-  label.city input:checked ~ .box{border-color:var(--goldb);background:var(--goldb);
-       box-shadow:0 0 0 3px rgba(242,210,158,.12);}
-  label.city .nm{font-family:'Playfair Display',serif;font-size:15.5px;flex:1;}
-  label.city .ll{font-size:9px;color:var(--mute);font-family:'JetBrains Mono',monospace;letter-spacing:.14em;}
-  label.city input:checked ~ .nm{color:var(--goldb);}
-  .fields{margin-top:8px;}
-  .field{border-top:1px solid var(--line);padding:14px 2px;}
-  .field span{display:block;font-size:9.5px;color:var(--mute);margin-bottom:6px;
+  .hero-cap p{margin-top:12px;font-size:13.5px;line-height:1.65;color:var(--soft);max-width:440px;}
+  /* city mosaic */
+  .sect{padding:30px 36px 14px;display:flex;justify-content:space-between;align-items:baseline;}
+  .sect .h{font-size:10px;color:var(--gold);}
+  .sect .count{font-size:9.5px;color:var(--mute);}
+  .sect-sub{font-family:'Playfair Display',serif;font-size:22px;padding:0 36px 18px;}
+  .sect-sub i{font-style:italic;color:var(--goldb);}
+  .mosaic{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:0 6px;}
+  .ct{position:relative;cursor:pointer;display:block;overflow:hidden;}
+  .ct input{position:absolute;opacity:0;pointer-events:none;}
+  .ct img{width:100%;height:172px;object-fit:cover;display:block;
+          filter:brightness(.62) saturate(.82);transition:filter .35s ease, transform .6s ease;}
+  .ct:hover img{filter:brightness(.74) saturate(.92);transform:scale(1.025);}
+  .ct .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(12,10,9,.92) 100%);
+            pointer-events:none;}
+  .ct .cap{position:absolute;left:18px;right:18px;bottom:14px;pointer-events:none;}
+  .ct .cap .nm{font-family:'Playfair Display',serif;font-size:19px;line-height:1.1;}
+  .ct .cap .ll{font-size:9px;color:var(--soft);margin-top:4px;display:flex;justify-content:space-between;}
+  .ct .ring{position:absolute;inset:0;border:1px solid transparent;transition:all .25s ease;pointer-events:none;}
+  .ct .mark{position:absolute;top:12px;right:12px;font-size:9px;color:#0C0A09;background:var(--goldb);
+            padding:5px 9px 4px;letter-spacing:.18em;opacity:0;transform:translateY(-4px);
+            transition:all .25s ease;pointer-events:none;}
+  .ct input:checked ~ img{filter:brightness(.82) saturate(1);}
+  .ct input:checked ~ .ring{border-color:var(--goldb);inset:6px;}
+  .ct input:checked ~ .mark{opacity:1;transform:none;}
+  /* fields */
+  .fields-wrap{padding:8px 36px 44px;}
+  .field{border-top:1px solid var(--line);padding:15px 2px;}
+  .field span{display:block;font-size:9.5px;color:var(--mute);margin-bottom:7px;
               font-family:'JetBrains Mono',monospace;letter-spacing:.18em;text-transform:uppercase;}
   .field input{width:100%;background:transparent;border:none;outline:none;color:var(--text);
-               font-family:'Playfair Display',serif;font-size:17px;}
-  .field input::placeholder{color:#4A4236;}
-  button{margin-top:28px;width:100%;background:transparent;border:1px solid var(--gold);color:var(--goldb);
+               font-family:'Playfair Display',serif;font-size:18px;}
+  .field input::placeholder{color:#4A4236;font-style:italic;}
+  button{margin-top:30px;width:100%;background:transparent;border:1px solid var(--gold);color:var(--goldb);
          font-family:'JetBrains Mono',monospace;letter-spacing:.24em;text-transform:uppercase;font-size:11px;
-         padding:15px 0;cursor:pointer;transition:all .2s ease;}
+         padding:16px 0;cursor:pointer;transition:all .2s ease;}
   button:hover{background:rgba(217,185,135,.08);}
   button:disabled{opacity:.4;cursor:default;}
   .note{margin-top:16px;font-size:11.5px;line-height:1.7;color:var(--mute);}
-  .done{display:none;padding:40px 36px 60px;}
-  .done .eyebrow{font-size:10px;color:var(--gold);margin-bottom:14px;}
-  .done h2{font-family:'Playfair Display',serif;font-weight:400;font-size:26px;line-height:1.2;}
-  .done h2 i{font-style:italic;color:var(--goldb);}
-  .done p{margin-top:14px;font-size:14px;line-height:1.7;color:var(--soft);max-width:440px;}
   .err{display:none;margin-top:14px;font-size:12px;color:#D98787;}
+  /* done state */
+  .done{display:none;position:relative;}
+  .done img{width:100%;height:420px;object-fit:cover;filter:brightness(.66) saturate(.9);display:block;}
+  .done .veil{position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(12,10,9,.96) 100%);}
+  .done .cap{position:absolute;left:36px;right:36px;bottom:34px;}
+  .done .eyebrow{font-size:10px;color:var(--gold);margin-bottom:12px;}
+  .done h2{font-family:'Playfair Display',serif;font-weight:400;font-size:30px;line-height:1.18;}
+  .done h2 i{font-style:italic;color:var(--goldb);}
+  .done p{margin-top:12px;font-size:13.5px;line-height:1.7;color:var(--soft);max-width:430px;}
   .foot{padding:26px 36px 40px;border-top:1px solid var(--line);background:var(--bg2);}
   .foot p{font-size:11.5px;line-height:1.7;color:var(--mute);}
   .sig{font-size:9.5px;color:var(--mute);text-align:center;margin-top:16px;}
+  @media (max-width:560px){ .mosaic{grid-template-columns:1fr;} .ct img{height:150px;} }
 </style></head>
 <body>
 <div class="frame">
 
-  <div class="top"><span class="brand">Latitude <i>43°</i></span><span class="tag mono">City Alerts</span></div>
+  <div class="top"><span class="brand">Latitude <i>43°</i></span><span class="tag mono">City Alerts · The Watch List</span></div>
 
-  <div class="hero">
-    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1280&q=85" alt="">
+  <div class="hero" id="hero">
+    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1360&q=85" alt="">
     <div class="hero-veil"></div>
     <div class="hero-cap">
-      <div class="eyebrow mono">The Watch List</div>
+      <div class="eyebrow mono">From the desk · Latitude 43</div>
       <h1>Tell us your cities.<br>We'll watch the <i>rates</i>.</h1>
+      <p>The desk tracks the good rooms in ten cities — including the houses that rarely
+      discount. When a city of yours softens, you get one short letter: which hotels,
+      which weeks, how deep.</p>
     </div>
-  </div>
-
-  <div class="intro">
-    <p>The desk tracks the good rooms in the cities below — including the houses that
-    rarely discount. When a city you care about softens, you get one short letter:
-    which hotels, which weeks, how deep. Nothing else, no noise.</p>
   </div>
 
   <form id="f">
-    <div class="sect mono">Step One</div>
-    <div class="sect-sub">The cities you travel to</div>
-    <div class="cities">
-      {{CITY_OPTIONS}}
+    <div class="sect"><span class="h mono">Step One — Choose your cities</span><span class="count mono" id="count">0 selected</span></div>
+    <div class="sect-sub">Where does the work <i>take you?</i></div>
+    <div class="mosaic">
+      {{CITY_TILES}}
     </div>
 
-    <div class="sect mono">Step Two</div>
-    <div class="sect-sub">Where the letter should land</div>
-    <div class="fields">
+    <div class="fields-wrap">
+      <div class="sect" style="padding:30px 0 12px;"><span class="h mono">Step Two — Where the letter lands</span></div>
       <div class="field"><span>Name</span><input type="text" name="name" placeholder="Jordan Ellis" autocomplete="name"></div>
       <div class="field"><span>Email</span><input type="email" name="email" placeholder="you@company.com" autocomplete="email" required></div>
-    </div>
 
-    <button type="submit" id="go">Add me to the list</button>
-    <div class="err" id="err"></div>
-    <p class="note">One email per city, only when something genuinely moves. Reply to any
-    letter to reach the desk directly. Unsubscribe by replying "stop" — a person reads it.</p>
+      <button type="submit" id="go">Add me to the list</button>
+      <div class="err" id="err"></div>
+      <p class="note">One email per city, only when something genuinely moves. Reply to any
+      letter to reach the desk directly. To step off the list, reply "stop" — a person reads it.</p>
+    </div>
   </form>
 
   <div class="done" id="done">
-    <div class="eyebrow mono">Noted at the desk</div>
-    <h2>You're on the list<i>.</i></h2>
-    <p id="done-msg">We'll write when one of your cities softens.</p>
+    <img id="done-img" src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1360&q=85" alt="">
+    <div class="veil"></div>
+    <div class="cap">
+      <div class="eyebrow mono">Noted at the desk</div>
+      <h2>You're on the list<i>.</i></h2>
+      <p id="done-msg">We'll write when one of your cities softens.</p>
+    </div>
   </div>
 
   <div class="foot">
@@ -116,11 +132,17 @@
 </div>
 <script>
 const f = document.getElementById('f');
+const count = document.getElementById('count');
+f.addEventListener('change', () => {
+  const n = f.querySelectorAll('input[name=city]:checked').length;
+  count.textContent = n === 0 ? '0 selected' : (n === 1 ? '1 city' : n + ' cities');
+});
 f.addEventListener('submit', async (e) => {
   e.preventDefault();
   const err = document.getElementById('err');
   err.style.display = 'none';
-  const cities = [...f.querySelectorAll('input[name=city]:checked')].map(c => c.value);
+  const checked = [...f.querySelectorAll('input[name=city]:checked')];
+  const cities = checked.map(c => c.value);
   const email = f.email.value.trim();
   if (!cities.length) { err.textContent = 'Pick at least one city.'; err.style.display = 'block'; return; }
   if (!email) { err.textContent = 'We need an email to write to.'; err.style.display = 'block'; return; }
@@ -134,13 +156,17 @@ f.addEventListener('submit', async (e) => {
     });
     const data = await r.json();
     if (!r.ok) throw new Error(data.error || 'Something went wrong.');
+    // Close on the first chosen city's photograph.
+    const ph = checked[0].dataset.photo;
+    if (ph) document.getElementById('done-img').src = ph + '?auto=format&fit=crop&w=1360&q=85';
     f.style.display = 'none';
-    document.querySelector('.intro').style.display = 'none';
+    document.getElementById('hero').style.display = 'none';
     document.getElementById('done-msg').textContent =
       'We’ll write to ' + email + ' when ' +
       (data.cities.length === 1 ? data.cities_pretty[0] + ' softens.'
                                 : 'any of your ' + data.cities.length + ' cities soften.');
     document.getElementById('done').style.display = 'block';
+    window.scrollTo({top: 0});
   } catch (ex) {
     err.textContent = ex.message; err.style.display = 'block';
     go.disabled = false; go.textContent = 'Add me to the list';

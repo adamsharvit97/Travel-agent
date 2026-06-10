@@ -36,16 +36,23 @@ def city_label(hub: dict) -> str:
 
 def render_index() -> bytes:
     hubs = load_hubs()
-    options = []
+    tiles = []
     for slug, hub in hubs.items():
-        options.append(
-            f'<label class="city"><input type="checkbox" name="city" value="{slug}">'
-            f'<span class="box"></span><span class="nm">{hub["city"]}</span>'
-            f'<span class="ll">{city_label(hub)}</span></label>'
+        photo = hub.get("photo", "")
+        anchor = (hub.get("core") or {}).get("label", "")
+        tiles.append(
+            f'<label class="ct"><input type="checkbox" name="city" value="{slug}" '
+            f'data-photo="{photo}">'
+            f'<img src="{photo}?auto=format&fit=crop&w=720&q=80" alt="{hub["city"]}" loading="lazy">'
+            f'<span class="veil"></span><span class="ring"></span>'
+            f'<span class="mark mono">Watching</span>'
+            f'<span class="cap"><span class="nm">{hub["city"]}</span>'
+            f'<span class="ll mono"><span>{anchor}</span><span>{city_label(hub)}</span></span></span>'
+            f'</label>'
         )
     with open(INDEX_PATH, "r", encoding="utf-8") as fh:
         html = fh.read()
-    return html.replace("{{CITY_OPTIONS}}", "\n      ".join(options)).encode("utf-8")
+    return html.replace("{{CITY_TILES}}", "\n      ".join(tiles)).encode("utf-8")
 
 
 class Handler(BaseHTTPRequestHandler):
