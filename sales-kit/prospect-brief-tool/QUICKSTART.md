@@ -31,7 +31,7 @@ The last 30 prospects are saved in the **Recent prospects** archive — click a 
 Up to 26 sections; empty ones auto-hide. The high-leverage ones:
 
 - **Hot moments right now** — what's moving in their world this week, with a USE → angle for each.
-- **Atlas fit & tier recommendation** — Principal / Office / Firm, with an evidence-based travel-volume estimate.
+- **Atlas fit & tier recommendation** — Light Unlimited $189/mo / Office Unlimited $349/mo (or Society disqualify-up), with an evidence-based travel-volume estimate.
 - **Travel footprint & pain signals** — every flight, conference, roadshow, or airport gripe in their content. This is the buying signal for a travel office.
 - **Mirror language** — their exact words vs the generic equivalents not to use.
 - **Connection paths & warm intros** — mutuals, shared ex-employers, schools, communities, and how to ask.
