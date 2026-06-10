@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitude 43 — Prospect Brief</title>
+<style>
+  :root {
+    --navy: #0E1A2B;
+    --ivory: #F4EFE6;
+    --bone: #E8E0D0;
+    --brass: #B8924C;
+    --charcoal: #1F1F1F;
+    --sand: #C9BFAB;
+    --charcoal-70: rgba(31, 31, 31, 0.72);
+    --serif: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--charcoal);
+    background: var(--ivory);
+  }
+  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 500; color: var(--navy); line-height: 1.15; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 28px 80px; }
+
+  /* Top bar */
+  .topbar {
+    background: var(--navy);
+    color: var(--ivory);
+    padding: 18px 28px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .wordmark { font-family: var(--serif); font-size: 1.5rem; letter-spacing: 0.04em; }
+  .wordmark .coord { font-family: var(--sans); font-size: 0.65rem; letter-spacing: 0.22em; color: var(--brass); text-transform: uppercase; margin-left: 14px; }
+  .topbar .actions { display: flex; gap: 10px; }
+  .btn {
+    font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 9px 18px; cursor: pointer; border: 1px solid var(--brass);
+    background: var(--brass); color: var(--navy); font-weight: 600;
+  }
+  .btn.ghost { background: transparent; color: var(--brass); }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+
+  .eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--brass); font-weight: 600; display: block; margin-bottom: 8px;
+  }
+  .card {
+    background: #fff; border: 1px solid var(--bone);
+    padding: 26px 28px; margin-top: 26px;
+  }
+  .card h2 { font-size: 1.45rem; margin-bottom: 6px; }
+  .card p.note { color: var(--charcoal-70); font-size: 0.9rem; }
+
+  /* How it works ribbon */
+  .ribbon { display: flex; gap: 0; margin-top: 26px; border: 1px solid var(--bone); background: #fff; }
+  .ribbon .step { flex: 1; padding: 14px 16px; border-right: 1px solid var(--bone); }
+  .ribbon .step:last-child { border-right: none; }
+  .ribbon .n { font-family: var(--serif); font-size: 1.3rem; color: var(--brass); display: block; }
+  .ribbon .t { font-size: 0.78rem; color: var(--charcoal-70); }
+
+  label { display: block; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy); font-weight: 600; margin: 18px 0 6px; }
+  input[type=text], input[type=email], textarea, select {
+    width: 100%; padding: 10px 12px; font-family: var(--sans); font-size: 0.92rem;
+    border: 1px solid var(--sand); background: var(--ivory); color: var(--charcoal);
+  }
+  textarea { min-height: 130px; resize: vertical; }
+  textarea.tall { min-height: 200px; }
+  input:focus, textarea:focus, select:focus { outline: 2px solid var(--brass); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .bm-link {
+    display: inline-block; margin-top: 10px; padding: 10px 20px;
+    background: var(--navy); color: var(--ivory); font-size: 0.85rem;
+    border: 1px solid var(--navy); cursor: grab; text-decoration: none;
+  }
+  .toast {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    background: var(--navy); color: var(--ivory); padding: 12px 24px;
+    font-size: 0.85rem; display: none; z-index: 99;
+  }
+  .errbox { background: #fdf0ee; border: 1px solid #c0392b; color: #7b241c; padding: 14px 18px; margin-top: 16px; font-size: 0.88rem; display: none; }
+
+  /* History */
+  .hist { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .hist .chip {
+    border: 1px solid var(--sand); background: #fff; padding: 8px 14px;
+    font-size: 0.82rem; cursor: pointer;
+  }
+  .hist .chip:hover { border-color: var(--brass); }
+  .linklike { background: none; border: none; color: var(--brass); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
+
+  /* Brief output */
+  #brief { display: none; margin-top: 40px; }
+  .brief-head {
+    background: var(--navy); color: var(--ivory); padding: 34px 36px;
+  }
+  .brief-head .eyebrow { color: var(--brass); }
+  .brief-head h1 { color: var(--ivory); font-size: 2.2rem; font-weight: 400; }
+  .brief-head .sub { color: var(--sand); font-size: 0.95rem; margin-top: 6px; font-style: italic; font-family: var(--serif); }
+  .brief-head .contact { margin-top: 18px; font-size: 0.8rem; color: var(--bone); letter-spacing: 0.04em; }
+  .bsec {
+    background: #fff; border: 1px solid var(--bone); border-top: none;
+    padding: 24px 36px; page-break-inside: avoid;
+  }
+  .bsec h3 { font-size: 1.15rem; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--bone); }
+  .bsec h3 .idx { color: var(--brass); margin-right: 10px; font-size: 0.95rem; }
+  .bsec p, .bsec li { font-size: 0.93rem; color: var(--charcoal); }
+  .bsec ul { padding-left: 20px; }
+  .bsec li { margin-bottom: 7px; }
+  .kv { display: grid; grid-template-columns: 190px 1fr; gap: 6px 18px; font-size: 0.93rem; }
+  .kv .k { color: var(--charcoal-70); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 2px; }
+  .item { border-left: 3px solid var(--brass); padding: 8px 14px; margin-bottom: 12px; background: var(--ivory); page-break-inside: avoid; }
+  .item .lead { font-weight: 600; }
+  .item .meta { font-size: 0.82rem; color: var(--charcoal-70); margin-top: 3px; }
+  .item .use { font-size: 0.85rem; margin-top: 5px; }
+  .item .use b { color: var(--brass); letter-spacing: 0.08em; font-size: 0.72rem; }
+  .mirror { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .mirror h4 { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 8px; }
+  .mirror .good h4 { color: var(--brass); } .mirror .bad h4 { color: #a33; }
+  .qa { margin-bottom: 14px; page-break-inside: avoid; }
+  .qa .q { font-weight: 600; } .qa .a { margin-top: 3px; color: var(--charcoal); }
+  .variant { border: 1px solid var(--bone); margin-bottom: 18px; page-break-inside: avoid; }
+  .variant .vhead { background: var(--ivory); padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .variant .vhead .vt { font-weight: 600; font-size: 0.9rem; }
+  .variant .vbody { padding: 14px 16px; }
+  .variant .subj { font-size: 0.88rem; margin-bottom: 8px; }
+  .variant .subj b { letter-spacing: 0.08em; font-size: 0.72rem; color: var(--brass); }
+  .variant .body-text { white-space: pre-wrap; font-size: 0.92rem; background: var(--ivory); padding: 14px; border-left: 3px solid var(--navy); }
+  .variant .why { font-size: 0.82rem; color: var(--charcoal-70); margin-top: 10px; font-style: italic; }
+  .copybtn { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; border: 1px solid var(--sand); background: #fff; padding: 5px 10px; cursor: pointer; }
+  .plan-step { display: flex; gap: 14px; margin-bottom: 12px; page-break-inside: avoid; }
+  .plan-step .pn { font-family: var(--serif); font-size: 1.3rem; color: var(--brass); min-width: 26px; }
+  .plan-step .pt { font-size: 0.78rem; color: var(--charcoal-70); letter-spacing: 0.06em; }
+  .anti { border-left: 3px solid #a33; background: #faf5f2; padding: 8px 14px; margin-bottom: 10px; page-break-inside: avoid; }
+  .anti .d { font-weight: 600; } .anti .w { font-size: 0.85rem; color: var(--charcoal-70); margin-top: 2px; }
+  .brief-foot { background: var(--navy); color: var(--sand); padding: 18px 36px; font-size: 0.75rem; letter-spacing: 0.05em; }
+
+  @media print {
+    .no-print { display: none !important; }
+    body { background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    #brief { display: block !important; margin-top: 0; }
+    .bsec { border-left: none; border-right: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar no-print">
+  <div class="wordmark">Latitude 43<span class="coord">Prospect Brief · 43.65°N</span></div>
+  <div class="actions">
+    <button class="btn ghost" id="settingsBtn">Settings</button>
+    <button class="btn" id="printBtn" disabled>Save as PDF</button>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="ribbon no-print">
+    <div class="step"><span class="n">1</span><span class="t">Open the LinkedIn profile. Click the bookmarklet. Paste below.</span></div>
+    <div class="step"><span class="n">2</span><span class="t">Generate. The prompt is copied and claude.ai opens.</span></div>
+    <div class="step"><span class="n">3</span><span class="t">Paste the prompt into Claude. Copy the JSON it returns.</span></div>
+    <div class="step"><span class="n">4</span><span class="t">Paste the JSON back here. Render. Save as PDF.</span></div>
+  </div>
+
+  <div class="card no-print" id="settingsCard" style="display:none;">
+    <span class="eyebrow">One-time setup</span>
+    <h2>Your details</h2>
+    <p class="note">Appears in the brief header and footer. Stored in this browser only.</p>
+    <div class="grid2">
+      <div><label>Name</label><input type="text" id="uName" placeholder="Your name"></div>
+      <div><label>Email</label><input type="email" id="uEmail" placeholder="you@latitude43.travel"></div>
+      <div><label>Phone</label><input type="text" id="uPhone" placeholder="+1 ..."></div>
+      <div><label>&nbsp;</label><button class="btn" id="saveSettings">Save</button></div>
+    </div>
+  </div>
+
+  <div class="card no-print">
+    <span class="eyebrow">Capture</span>
+    <h2>Bookmarklet</h2>
+    <p class="note">Drag the button below to your bookmarks bar. On any LinkedIn page, click it — the page text is copied to your clipboard. Use it once on the profile, once on the profile's <em>/recent-activity/all/</em> page.</p>
+    <a class="bm-link" id="bmLink" href="#">Capture LinkedIn page</a>
+  </div>
+
+  <div class="card no-print">
+    <span class="eyebrow">Prospect</span>
+    <h2>Build a brief</h2>
+    <label>LinkedIn profile URL (optional, for the record)</label>
+    <input type="text" id="pUrl" placeholder="https://www.linkedin.com/in/...">
+    <label>Profile content (paste from bookmarklet)</label>
+    <textarea id="pProfile" class="tall" placeholder="Open the profile, click the bookmarklet, paste here."></textarea>
+    <label>Recent activity (optional — paste from /recent-activity/all/)</label>
+    <textarea id="pActivity" placeholder="Open the profile's recent activity page, click the bookmarklet, paste here. Posts are the richest signal source — skipping this thins the brief."></textarea>
+    <label>Prospect type (calibrates the pitch angle and tier recommendation)</label>
+    <select id="pAudience">
+      <option value="founder">Founder / CEO — seed to Series B</option>
+      <option value="vc">VC / PE partner or principal</option>
+      <option value="ria">RIA / wealth management principal</option>
+      <option value="family">Family office / HNW principal</option>
+      <option value="other">Other / general</option>
+    </select>
+    <div style="margin-top:22px;"><button class="btn" id="genBtn">Generate brief</button></div>
+    <div class="errbox" id="errBox"></div>
+  </div>
+
+  <div class="card no-print" id="responseCard" style="display:none;">
+    <span class="eyebrow">Step 4</span>
+    <h2>Paste Claude's response</h2>
+    <p class="note">The prompt is on your clipboard and claude.ai is open in a new tab. Paste it there, send, then copy the full JSON block Claude returns and paste it below.</p>
+    <label>Claude's JSON response</label>
+    <textarea id="jsonIn" class="tall" placeholder='{ "name": ... }'></textarea>
+    <div style="margin-top:18px;"><button class="btn" id="renderBtn">Render brief</button></div>
+  </div>
+
+  <div class="card no-print">
+    <span class="eyebrow">Archive</span>
+    <h2>Recent prospects <button class="linklike" id="clearHist" style="float:right;">Clear</button></h2>
+    <div class="hist" id="histBox"><p class="note">No prospects yet.</p></div>
+  </div>
+
+  <div id="brief"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+
+/* ---------- settings ---------- */
+const LS_USER = 'l43_user', LS_HIST = 'l43_hist';
+const $ = id => document.getElementById(id);
+
+function loadUser() { try { return JSON.parse(localStorage.getItem(LS_USER)) || {}; } catch (e) { return {}; } }
+function saveUser(u) { localStorage.setItem(LS_USER, JSON.stringify(u)); }
+
+function toast(msg) {
+  const t = $('toast'); t.textContent = msg; t.style.display = 'block';
+  clearTimeout(t._h); t._h = setTimeout(() => t.style.display = 'none', 2600);
+}
+function showErr(msg) { const e = $('errBox'); e.textContent = msg; e.style.display = 'block'; }
+function clearErr() { $('errBox').style.display = 'none'; }
+
+$('settingsBtn').onclick = () => {
+  const c = $('settingsCard');
+  c.style.display = c.style.display === 'none' ? 'block' : 'none';
+};
+$('saveSettings').onclick = () => {
+  saveUser({ name: $('uName').value.trim(), email: $('uEmail').value.trim(), phone: $('uPhone').value.trim() });
+  $('settingsCard').style.display = 'none';
+  toast('Saved.');
+};
+(function initUser() {
+  const u = loadUser();
+  $('uName').value = u.name || ''; $('uEmail').value = u.email || ''; $('uPhone').value = u.phone || '';
+  if (!u.name) $('settingsCard').style.display = 'block';
+})();
+
+/* ---------- bookmarklet ---------- */
+(function initBm() {
+  const code = "(function(){var t=document.body.innerText;function f(m){var d=document.createElement('div');d.textContent=m;d.style.cssText='position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#0E1A2B;color:#F4EFE6;padding:12px 24px;font:14px sans-serif;z-index:999999';document.body.appendChild(d);setTimeout(function(){d.remove()},2500)}navigator.clipboard.writeText(t).then(function(){f('Captured '+t.length+' chars. Paste into the brief tool.')},function(){window.prompt('Copy manually (Ctrl+C):',t.slice(0,8000))})})();";
+  $('bmLink').href = 'javascript:' + encodeURIComponent(code);
+  $('bmLink').onclick = e => { e.preventDefault(); toast('Drag this button to your bookmarks bar — do not click it here.'); };
+})();
+
+/* ---------- audience context ---------- */
+const AUDIENCES = {
+  founder: 'Founder or CEO of a seed-to-Series-B company. Likely pain: the founder or a co-founder spends 80-200 hours a year on travel logistics, or an EA inherits it and loses the hours twice over. Recommended tier: Atlas Principal ($3,600/yr, single traveler) unless an exec team travels, then Atlas Office ($12,000/yr). Buying triggers: a funding round close, an EA hire, a conference circuit, investor roadshows.',
+  vc: 'Partner or principal at a VC or PE fund. Likely pain: LP roadshows, portfolio visits, and the conference circuit run on calendar-and-Concur, and the friction shows at the gate. Recommended tier: Atlas Office ($12,000/yr) covering the partnership, or Atlas Principal ($3,600/yr) for an individual partner. Buying triggers: a fund close, an LP roadshow, AGM season, conference season (SOSV, Upfront, Future Proof).',
+  ria: 'Principal at an RIA or wealth management firm, $100M+ AUM. Likely pain: on the road 60+ days a year between client visits, Schwab Impact, Future Proof, and roundtables — and every trip is a brand expression. Recommended tier: Atlas Principal ($3,600/yr) or Atlas Office ($12,000/yr) for a partnership. Buying triggers: AUM milestones, M&A, podcast or press appearances, conference season.',
+  family: 'Family office or HNW principal. Likely pain: complex multi-traveler itineraries, family trips with zero failure tolerance, properties and aviation already in place but commercial travel under-served. Recommended tier: Atlas Office ($12,000/yr) or Atlas Firm ($36,000/yr). Buying triggers: a new family office hire, a relocation, school-calendar travel patterns, board seats.',
+  other: 'General prospect. Infer the closest fit among founder, fund principal, advisory-firm principal, or family office and calibrate accordingly. Recommended tier: start at Atlas Principal ($3,600/yr) unless evidence points higher.'
+};
+
+/* ---------- prompt builder ---------- */
+function buildPrompt() {
+  const u = loadUser();
+  const profile = $('pProfile').value.trim().slice(0, 22000);
+  const activity = $('pActivity').value.trim().slice(0, 18000);
+  const url = $('pUrl').value.trim();
+  const aud = $('pAudience').value;
+
+  return `You are the head of growth at Latitude 43, preparing a pre-call prospect brief the way a top-1% salesperson would — looking for negative space, leverage, and the exact human moment to show up.
+
+ABOUT LATITUDE 43 (the seller):
+A members' travel office for founders, GPs, and principals. Toronto, 43.65°N. One named advisor per member. 60-minute first-response SLA in writing, 24/7/365. B2B booking channels the prospect cannot reach themselves: Virtuoso, Amex FHR, Four Seasons Preferred Partner (STARS). The member's EA stays on the calendar; the desk takes the airline calls and the 11 pm reroutes. Tiers: Atlas Principal $3,600/yr (single traveler) · Atlas Office $12,000/yr (covers a partnership or exec team) · Atlas Firm $36,000/yr. Application-based; the firm declines roughly two of five applications. Selling motion is quiet and specific, never loud.
+
+THE PROSPECT TYPE: ${AUDIENCES[aud]}
+
+VOICE RULES — every outreach draft MUST obey these (they are brand law, not preferences):
+- Confident, restrained, specific, dry. It states; it does not sell, perform, or announce.
+- NO exclamation marks. NO emojis. NO adverbs of intensity (truly, genuinely, incredibly, absolutely).
+- Banned vocabulary: bespoke, curated, luxe, wanderlust, journey (noun), experience (noun), unforgettable, magical, dream, excited, thrilled, reach out, circle back, touch base, hey there, don't miss out, limited time.
+- Say "the desk", "member", "apply" — not "the team", "customer", "sign up".
+- Short sentences. Periods. Name things precisely ("AC 704", not "the morning flight"). Numbers with units ("60 minutes", "$3,600").
+- If a sentence could appear in a private bank's quarterly letter it is on-brand; if it could appear in a travel agency's Instagram caption it is not.
+
+KNOWN OBJECTION BANK (adapt to this prospect, do not copy verbatim):
+"How is this different from my Amex Platinum concierge?" / "How is this different from Navan or TravelPerk?" / "My EA already handles this." / "That's a lot of money for twenty flights a year." / "What if I want to book my own trip?" / "How do I know you won't disappear in six months?"
+
+CADENCE RULES for the plan of attack: first touch Tuesday or Wednesday morning 9:00-10:30 a.m. prospect-local time. One follow-up at +5 business days, one paragraph, no second pitch — a single specific insight tied to the prospect's published activity. Never chase past two touches without a referral or a fresh signal.
+
+DISCIPLINE RULES:
+- Leave any field empty ("" or []) rather than invent. Every claim must anchor to the source text.
+- Exclude sensitive personal categories (health, religion, politics, sexuality) from personal signals even if visible.
+- Anti-patterns must derive from THIS prospect's content; each "why" must cite something specific from the source. If nothing anchors, return fewer.
+- For risk_signals, include only items with real evidence; no speculation.
+
+SOURCE — LINKEDIN PROFILE${url ? ' (' + url + ')' : ''}:
+<<<PROFILE
+${profile}
+PROFILE>>>
+
+SOURCE — RECENT ACTIVITY:
+<<<ACTIVITY
+${activity || '(not provided)'}
+ACTIVITY>>>
+
+Return ONLY a JSON object (no markdown fences, no commentary) with exactly this schema:
+{
+  "name": "", "headline": "", "location": "",
+  "snapshot": { "current_role": "", "prior_roles": ["..."], "education": "", "credentials": "", "network": "" },
+  "summary": "2-3 sentence read of who this person is and why they matter to Latitude 43",
+  "hot_moments": [ { "what": "", "why": "", "use": "how to use it this week" } ],
+  "recent_changes": [ "role/employment/announcement changes with dates where visible" ],
+  "company": { "name": "", "what_they_do": "", "size": "", "recent_changes": ["..."], "notes": "" },
+  "industry_pulse": "what is hot or painful in their sector right now and what it means for the pitch angle",
+  "tenure_stability": { "arc": "career arc in one line", "read": "honeymoon / settled / restless / flight-risk", "approach": "how that calibrates the approach" },
+  "power_role": { "type": "solo founder / partner / exec etc.", "budget_authority": "", "travel_decision": "who decides on travel spend — them, EA, ops?", "implication": "" },
+  "icp_fit": { "tier": "Atlas Principal / Atlas Office / Atlas Firm", "annual_fee": "", "fit": "strong / moderate / weak", "rationale": "", "travel_volume_estimate": "estimated trips or road-days per year from evidence" },
+  "travel_signals": [ { "signal": "any flight, trip, conference, roadshow, airport gripe, or travel-pain mention", "source": "where in the content", "use": "" } ],
+  "stakeholders": [ { "who": "", "role": "EA / co-founder / partner / spouse-as-co-traveler", "why": "" } ],
+  "reach": { "channel": "", "best_time": "", "reply_window": "", "avoid": "" },
+  "mirror_language": { "their_words": ["verbatim phrases they use about themselves"], "avoid_words": ["the generic equivalents NOT to use"], "directive": "" },
+  "tone": { "style": "", "formality": "", "directive": "how to match their register" },
+  "influences": [ "authors, mentors, public figures they cite" ],
+  "recent_events": [ { "event": "trips, conferences, races, milestones (last ~90 days)", "when": "", "use": "" } ],
+  "personal_signals": [ "family, fitness, hobbies, communities — excluding sensitive categories" ],
+  "posting_patterns": { "cadence": "", "categories": ["e.g. data charts, lesson posts"], "engagement": "" },
+  "risk_signals": [ "only with real evidence" ],
+  "buying_signals": [ { "signal": "funding close, EA hire, fund close, AUM milestone, conference season, travel complaint", "timing": "" } ],
+  "warm_paths": [ { "path": "mutuals, shared ex-employers, schools, communities", "how_to_ask": "" } ],
+  "hooks": [ { "hook": "specific personalization hook", "leverage": "why it works, ranked best first" } ],
+  "objections": [ { "q": "objection in their voice", "a": "the pre-baked response" } ],
+  "outreach": [
+    { "variant": "A — recommended angle", "channel": "email or LinkedIn DM", "subject": "", "body": "", "rationale": "" },
+    { "variant": "B — alternate angle", "channel": "", "subject": "", "body": "", "rationale": "" },
+    { "variant": "C — personal-thread angle (use only after a warm signal)", "channel": "", "subject": "", "body": "", "rationale": "" }
+  ],
+  "plan": [ { "step": 1, "action": "", "timing": "specific day/window" } ],
+  "antipatterns": [ { "dont": "", "why": "must cite something specific from the source" } ],
+  "voice_notes": [ "any place where a draft risks drifting off the Latitude 43 voice rules" ]
+}`;
+}
+
+/* ---------- generate ---------- */
+$('genBtn').onclick = async () => {
+  clearErr();
+  if (!$('pProfile').value.trim()) { showErr('Paste the profile content first. Open the LinkedIn profile, click the bookmarklet, paste into the Profile content box.'); return; }
+  const prompt = buildPrompt();
+  try { await navigator.clipboard.writeText(prompt); }
+  catch (e) { showErr('Clipboard blocked by the browser. Click the page once, then Generate again.'); return; }
+  $('responseCard').style.display = 'block';
+  $('responseCard').scrollIntoView({ behavior: 'smooth' });
+  toast('Prompt copied. Opening claude.ai — paste it there.');
+  window.open('https://claude.ai/new', '_blank');
+};
+
+/* ---------- render ---------- */
+function esc(s) { const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }
+function nonEmpty(v) {
+  if (v == null) return false;
+  if (typeof v === 'string') return v.trim() !== '';
+  if (Array.isArray(v)) return v.length > 0;
+  if (typeof v === 'object') return Object.values(v).some(nonEmpty);
+  return true;
+}
+function ul(arr) { return '<ul>' + arr.map(x => '<li>' + esc(x) + '</li>').join('') + '</ul>'; }
+function kv(obj, labels) {
+  let h = '<div class="kv">';
+  for (const [k, lbl] of labels) if (nonEmpty(obj[k])) {
+    const v = Array.isArray(obj[k]) ? obj[k].map(esc).join('; ') : esc(obj[k]);
+    h += '<div class="k">' + lbl + '</div><div>' + v + '</div>';
+  }
+  return h + '</div>';
+}
+function items(arr, leadKey, metaKey, useKey) {
+  return arr.map(it => {
+    if (typeof it === 'string') return '<div class="item"><div class="lead">' + esc(it) + '</div></div>';
+    let h = '<div class="item"><div class="lead">' + esc(it[leadKey]) + '</div>';
+    if (metaKey && nonEmpty(it[metaKey])) h += '<div class="meta">' + esc(it[metaKey]) + '</div>';
+    if (useKey && nonEmpty(it[useKey])) h += '<div class="use"><b>USE →</b> ' + esc(it[useKey]) + '</div>';
+    return h + '</div>';
+  }).join('');
+}
+
+let SECTION_N = 0;
+function sec(title, inner) {
+  SECTION_N++;
+  return '<div class="bsec"><h3><span class="idx">' + String(SECTION_N).padStart(2, '0') + '</span>' + esc(title) + '</h3>' + inner + '</div>';
+}
+
+function renderBrief(d) {
+  SECTION_N = 0;
+  const u = loadUser();
+  const today = new Date().toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+  let h = '<div class="brief-head"><span class="eyebrow">Latitude 43 · Prospect Brief · ' + esc(today) + '</span>' +
+    '<h1>' + esc(d.name || 'Prospect') + '</h1>' +
+    (d.headline ? '<div class="sub">' + esc(d.headline) + (d.location ? ' · ' + esc(d.location) : '') + '</div>' : '') +
+    '<div class="contact">' + esc([u.name, u.phone, u.email].filter(Boolean).join(' · ')) + '</div></div>';
+
+  if (nonEmpty(d.snapshot)) h += sec('Profile snapshot', kv(d.snapshot, [['current_role','Current role'],['prior_roles','Prior roles'],['education','Education'],['credentials','Credentials'],['network','Network']]));
+  if (nonEmpty(d.summary)) h += sec('The read', '<p>' + esc(d.summary) + '</p>');
+  if (nonEmpty(d.hot_moments)) h += sec('Hot moments right now', items(d.hot_moments, 'what', 'why', 'use'));
+  if (nonEmpty(d.recent_changes)) h += sec('Recent changes', ul(d.recent_changes));
+  if (nonEmpty(d.company)) {
+    let inner = kv(d.company, [['name','Company'],['what_they_do','What they do'],['size','Size'],['notes','Notes']]);
+    if (nonEmpty(d.company.recent_changes)) inner += '<div style="margin-top:10px;"><b style="font-size:0.8rem;letter-spacing:0.1em;text-transform:uppercase;">Recent changes</b>' + ul(d.company.recent_changes) + '</div>';
+    h += sec('Company snapshot', inner);
+  }
+  if (nonEmpty(d.industry_pulse)) h += sec('Industry vertical pulse', '<p>' + esc(d.industry_pulse) + '</p>');
+  if (nonEmpty(d.tenure_stability)) h += sec('Tenure & role stability', kv(d.tenure_stability, [['arc','Career arc'],['read','Read'],['approach','Approach']]));
+  if (nonEmpty(d.power_role)) h += sec('Power & role analysis', kv(d.power_role, [['type','Type'],['budget_authority','Budget authority'],['travel_decision','Travel decision'],['implication','Implication']]));
+  if (nonEmpty(d.icp_fit)) h += sec('Atlas fit & tier recommendation', kv(d.icp_fit, [['tier','Tier'],['annual_fee','Annual fee'],['fit','Fit'],['travel_volume_estimate','Travel volume'],['rationale','Rationale']]));
+  if (nonEmpty(d.travel_signals)) h += sec('Travel footprint & pain signals', items(d.travel_signals, 'signal', 'source', 'use'));
+  if (nonEmpty(d.stakeholders)) h += sec('Adjacent stakeholders', items(d.stakeholders, 'who', 'role', 'why'));
+  if (nonEmpty(d.reach)) h += sec('Best time & channel', kv(d.reach, [['channel','Channel'],['best_time','Best time'],['reply_window','Reply window'],['avoid','Avoid']]));
+  if (nonEmpty(d.mirror_language)) {
+    let inner = '<div class="mirror"><div class="good"><h4>Their words — use these</h4>' + (nonEmpty(d.mirror_language.their_words) ? ul(d.mirror_language.their_words) : '<p>—</p>') + '</div>' +
+      '<div class="bad"><h4>Generic equivalents — avoid</h4>' + (nonEmpty(d.mirror_language.avoid_words) ? ul(d.mirror_language.avoid_words) : '<p>—</p>') + '</div></div>';
+    if (nonEmpty(d.mirror_language.directive)) inner += '<p style="margin-top:12px;"><em>' + esc(d.mirror_language.directive) + '</em></p>';
+    h += sec('Mirror language', inner);
+  }
+  if (nonEmpty(d.tone)) h += sec('Tone calibration', kv(d.tone, [['style','Style'],['formality','Formality'],['directive','Directive']]));
+  if (nonEmpty(d.influences)) h += sec('Influences they cite', ul(d.influences));
+  if (nonEmpty(d.recent_events)) h += sec('Recent travel & events', items(d.recent_events, 'event', 'when', 'use'));
+  if (nonEmpty(d.personal_signals)) h += sec('Personal signals', ul(d.personal_signals));
+  if (nonEmpty(d.posting_patterns)) h += sec('Posting patterns', kv(d.posting_patterns, [['cadence','Cadence'],['categories','Categories'],['engagement','Engagement']]));
+  if (nonEmpty(d.risk_signals)) h += sec('Risk signals', ul(d.risk_signals));
+  if (nonEmpty(d.buying_signals)) h += sec('Buying signals & triggers', items(d.buying_signals, 'signal', 'timing'));
+  if (nonEmpty(d.warm_paths)) h += sec('Connection paths & warm intros', items(d.warm_paths, 'path', null, 'how_to_ask'));
+  if (nonEmpty(d.hooks)) h += sec('Personalization hooks (ranked)', items(d.hooks, 'hook', 'leverage'));
+  if (nonEmpty(d.objections)) h += sec('Likely objections & pre-baked responses',
+    d.objections.map(o => '<div class="qa"><div class="q">Q: ' + esc(o.q) + '</div><div class="a">A: ' + esc(o.a) + '</div></div>').join(''));
+  if (nonEmpty(d.outreach)) h += sec('Outreach drafts',
+    d.outreach.filter(nonEmpty).map((v, i) => {
+      const full = (v.subject ? 'Subject: ' + v.subject + '\n\n' : '') + (v.body || '');
+      return '<div class="variant"><div class="vhead"><span class="vt">' + esc(v.variant || 'Variant ' + (i + 1)) + (v.channel ? ' · ' + esc(v.channel) : '') + '</span>' +
+        '<button class="copybtn no-print" data-copy="' + esc(full).replace(/"/g, '&quot;') + '">Copy</button></div><div class="vbody">' +
+        (v.subject ? '<div class="subj"><b>SUBJECT</b> ' + esc(v.subject) + '</div>' : '') +
+        '<div class="body-text">' + esc(v.body) + '</div>' +
+        (v.rationale ? '<div class="why">' + esc(v.rationale) + '</div>' : '') + '</div></div>';
+    }).join(''));
+  if (nonEmpty(d.plan)) h += sec('Plan of attack',
+    d.plan.map((p, i) => '<div class="plan-step"><div class="pn">' + esc(p.step || i + 1) + '</div><div><div>' + esc(p.action) + '</div>' + (p.timing ? '<div class="pt">' + esc(p.timing) + '</div>' : '') + '</div></div>').join(''));
+  if (nonEmpty(d.antipatterns)) h += sec('Anti-patterns — do not do these',
+    d.antipatterns.map(a => '<div class="anti"><div class="d">' + esc(a.dont) + '</div><div class="w">' + esc(a.why) + '</div></div>').join(''));
+  if (nonEmpty(d.voice_notes)) h += sec('Voice notes', ul(d.voice_notes));
+
+  h += '<div class="brief-foot">Latitude 43 · Members’ travel office for founders, GPs, and principals · 60-minute first-response SLA · latitude43.travel · Toronto · 43.65°N<br>Internal sales brief. Source: public LinkedIn content. Pre-send review applies to all outreach.</div>';
+
+  const b = $('brief');
+  b.innerHTML = h;
+  b.style.display = 'block';
+  $('printBtn').disabled = false;
+  b.querySelectorAll('.copybtn').forEach(btn => {
+    btn.onclick = () => { navigator.clipboard.writeText(btn.getAttribute('data-copy')); toast('Copied.'); };
+  });
+  b.scrollIntoView({ behavior: 'smooth' });
+}
+
+function parseJsonLoose(s) {
+  s = s.trim().replace(/^```(?:json)?/i, '').replace(/```$/, '').trim();
+  const a = s.indexOf('{'), z = s.lastIndexOf('}');
+  if (a === -1 || z === -1) throw new Error('No JSON object found in the pasted text.');
+  return JSON.parse(s.slice(a, z + 1));
+}
+
+$('renderBtn').onclick = () => {
+  clearErr();
+  let d;
+  try { d = parseJsonLoose($('jsonIn').value); }
+  catch (e) { showErr('Could not parse that as JSON: ' + e.message + ' — copy the full {...} block from Claude and paste again.'); return; }
+  renderBrief(d);
+  pushHist(d);
+};
+
+/* ---------- history ---------- */
+function loadHist() { try { return JSON.parse(localStorage.getItem(LS_HIST)) || []; } catch (e) { return []; } }
+function pushHist(d) {
+  const h = loadHist().filter(x => x.name !== d.name);
+  h.unshift({ name: d.name || 'Prospect', headline: d.headline || '', when: new Date().toISOString().slice(0, 10), data: d });
+  localStorage.setItem(LS_HIST, JSON.stringify(h.slice(0, 30)));
+  drawHist();
+}
+function drawHist() {
+  const h = loadHist(), box = $('histBox');
+  box.innerHTML = h.length ? '' : '<p class="note">No prospects yet.</p>';
+  h.forEach((x, i) => {
+    const c = document.createElement('div');
+    c.className = 'chip';
+    c.textContent = x.name + ' · ' + x.when;
+    c.title = x.headline;
+    c.onclick = () => renderBrief(loadHist()[i].data);
+    box.appendChild(c);
+  });
+}
+$('clearHist').onclick = () => { localStorage.removeItem(LS_HIST); drawHist(); };
+drawHist();
+
+/* ---------- print ---------- */
+$('printBtn').onclick = () => window.print();
+</script>
+</body>
+</html>
