@@ -526,6 +526,163 @@ def report_coverage(city: str, min_rating: float, min_star: float,
     return "\n".join(lines)
 
 
+def _outlook_grid(city: str, min_rating: float, min_star: float,
+                  checkin_from: str | None):
+    """Shared builder for the outlook matrix: quality hotels x sampled windows."""
+    catalog = load_catalog(city)
+    hotels = catalog["hotels"]
+    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    if checkin_from:
+        obs = [o for o in obs if o["checkin"] >= checkin_from]
+
+    latest: dict[tuple, dict] = {}
+    windows = set()
+    for o in obs:
+        windows.add(o["checkin"])
+        key = (o["hotel_id"], o["checkin"], o["checkout"])
+        if key not in latest or o["scanned_at"] > latest[key]["scanned_at"]:
+            latest[key] = o
+    windows = sorted(windows)
+
+    grid: dict[str, dict[str, dict]] = {}
+    for o in latest.values():
+        h = hotels.get(o["hotel_id"])
+        if not h or (h.get("star") or 0) < min_star or (h.get("guest_rating") or 0) < min_rating:
+            continue
+        cell = grid.setdefault(o["hotel_id"], {})
+        prev = cell.get(o["checkin"])
+        # If a hotel was sampled twice for one check-in, keep the deal row.
+        if prev is None or (prev["on_deal"] != "1" and o["on_deal"] == "1"):
+            cell[o["checkin"]] = o
+
+    rows = []
+    for hid, cells in grid.items():
+        deals = [c for c in cells.values() if c["on_deal"] == "1"]
+        if not deals:
+            continue
+        rows.append({
+            "hid": hid, "hotel": hotels[hid], "cells": cells,
+            "n_deal": len(deals),
+            "best": max(float(c["discount_pct"]) for c in deals),
+        })
+    rows.sort(key=lambda r: (-r["n_deal"], TIER_ORDER.get(r["hotel"].get("tier"), 9),
+                             quality_key(r["hotel"])))
+    return catalog, windows, rows
+
+
+def report_outlook(city: str, min_rating: float, min_star: float,
+                   checkin_from: str | None) -> str:
+    """Markdown matrix: which hotels have deals on which sampled check-in dates."""
+    catalog, windows, rows = _outlook_grid(city, min_rating, min_star, checkin_from)
+    if not windows:
+        return f"No observations found for {city}."
+
+    def d(w):  # 2026-07-21 -> 7/21
+        return f"{int(w[5:7])}/{int(w[8:10])}"
+
+    lines = [
+        f"# Latitude 43 — {catalog.get('city', city)} 3-Month Deal Outlook",
+        "",
+        f"**Sampled check-ins:** {d(windows[0])} → {d(windows[-1])} "
+        f"({len(windows)} dates, 2-night stays, 1 guest) · "
+        f"**Generated:** {date.today().isoformat()}",
+        "",
+        "_Cell = % off Expedia standard rate for that check-in date. Blank = no "
+        "discount observed that date. Rows ordered by how many sampled dates the "
+        "hotel was on deal._",
+        "",
+        "| Hotel (★ rating) | " + " | ".join(d(w) for w in windows) + " | Hit |",
+        "|---" * (len(windows) + 2) + "|",
+    ]
+    for r in rows:
+        h = r["hotel"]
+        cells = []
+        for w in windows:
+            o = r["cells"].get(w)
+            if o and o["on_deal"] == "1":
+                cells.append(f"{float(o['discount_pct']):.0f}%")
+            else:
+                cells.append("")
+        lines.append(
+            f"| {h['name']} ({_star(h)}★ {h.get('guest_rating','?')}) | "
+            + " | ".join(cells) + f" | {r['n_deal']}/{len(windows)} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def report_outlook_html(city: str, min_rating: float, min_star: float,
+                        checkin_from: str | None) -> str:
+    """Self-contained HTML heatmap of the outlook matrix (Latitude 43 styling)."""
+    catalog, windows, rows = _outlook_grid(city, min_rating, min_star, checkin_from)
+
+    def d(w):
+        return f"{int(w[5:7])}/{int(w[8:10])}"
+
+    head = "".join(f"<th>{d(w)}</th>" for w in windows)
+    body = []
+    for r in rows:
+        h = r["hotel"]
+        tds = []
+        for w in windows:
+            o = r["cells"].get(w)
+            if o and o["on_deal"] == "1":
+                pct = float(o["discount_pct"])
+                # 0-50%+ mapped to background intensity
+                alpha = min(pct / 50.0, 1.0) * 0.85 + 0.12
+                nightly = _money(o["nightly_price"])
+                tds.append(
+                    f'<td class="deal" style="background:rgba(31,122,90,{alpha:.2f})" '
+                    f'title="{h["name"]} — check-in {w}: {nightly}/nt, {pct:.0f}% off">'
+                    f"{pct:.0f}%</td>"
+                )
+            else:
+                tds.append('<td class="nodeal">·</td>')
+        meta = (f'{_star(h)}★ · {h.get("guest_rating","?")} · '
+                f'{h.get("area","")}')
+        body.append(
+            f'<tr><td class="hotel"><strong>{h["name"]}</strong>'
+            f'<span class="meta">{meta}</span></td>{"".join(tds)}'
+            f'<td class="hit">{r["n_deal"]}/{len(windows)}</td></tr>'
+        )
+
+    return f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitude 43 — {catalog.get('city', city)} 3-Month Deal Outlook</title>
+<style>
+  body {{ font-family: Georgia, 'Times New Roman', serif; background:#0E1A2B; color:#EAE6DD;
+         margin:0; padding:40px 24px; }}
+  .wrap {{ max-width:1180px; margin:0 auto; }}
+  h1 {{ font-weight:normal; font-size:26px; letter-spacing:.02em; margin:0 0 4px; }}
+  h1 .deg {{ color:#C8A96A; font-size:14px; vertical-align:super; margin-left:6px; }}
+  .sub {{ color:#9AA7B8; font-size:14px; margin-bottom:28px; }}
+  table {{ border-collapse:collapse; width:100%; font-size:13px;
+           font-family:'Helvetica Neue', Arial, sans-serif; }}
+  th {{ color:#C8A96A; font-weight:600; padding:6px 4px; border-bottom:1px solid #2A3A50;
+        text-align:center; white-space:nowrap; }}
+  th.hotel-h {{ text-align:left; }}
+  td {{ padding:6px 4px; border-bottom:1px solid #1C2A3E; text-align:center; }}
+  td.hotel {{ text-align:left; min-width:230px; }}
+  td.hotel .meta {{ display:block; color:#9AA7B8; font-size:11px; }}
+  td.deal {{ color:#fff; font-weight:600; border-radius:3px; }}
+  td.nodeal {{ color:#3A4A60; }}
+  td.hit {{ color:#C8A96A; font-weight:600; }}
+  .legend {{ margin-top:18px; color:#9AA7B8; font-size:12px;
+             font-family:'Helvetica Neue', Arial, sans-serif; }}
+</style></head><body><div class="wrap">
+<h1>Latitude 43<span class="deg">43°N</span> &nbsp;—&nbsp; {catalog.get('city', city)} 3-Month Deal Outlook</h1>
+<div class="sub">Sampled check-ins {d(windows[0])} → {d(windows[-1])} ({len(windows)} dates ·
+2-night stays · 1 guest) · % shown is off the Expedia standard rate · generated {date.today().isoformat()}</div>
+<table>
+<tr><th class="hotel-h">Hotel</th>{head}<th>Hit</th></tr>
+{''.join(body)}
+</table>
+<div class="legend">Darker green = deeper discount. Hover any cell for the nightly rate.
+A dot means no discount was observed for that check-in date.</div>
+</div></body></html>"""
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="Latitude 43 hotel deal finder")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -542,6 +699,10 @@ def main(argv=None):
                     help="aggregate across all scanned windows (multi-window view)")
     pr.add_argument("--coverage", action="store_true",
                     help="forward-horizon 'reliably discounting' leaderboard")
+    pr.add_argument("--outlook", action="store_true",
+                    help="hotels x sampled-dates deal matrix (3-month outlook)")
+    pr.add_argument("--html-out",
+                    help="outlook: also write a self-contained HTML heatmap here")
     pr.add_argument("--checkin-from",
                     help="coverage: only count windows with check-in on/after this date")
     pr.add_argument("--deals-only", action="store_true",
@@ -570,7 +731,17 @@ def main(argv=None):
         return 0
 
     if args.cmd == "report":
-        if args.coverage:
+        if args.outlook:
+            md = report_outlook(args.city, args.min_rating, args.min_star,
+                                args.checkin_from)
+            if args.html_out:
+                html = report_outlook_html(args.city, args.min_rating,
+                                           args.min_star, args.checkin_from)
+                os.makedirs(os.path.dirname(os.path.abspath(args.html_out)), exist_ok=True)
+                with open(args.html_out, "w", encoding="utf-8") as fh:
+                    fh.write(html)
+                print(f"Wrote {args.html_out}")
+        elif args.coverage:
             md = report_coverage(args.city, args.min_rating, args.min_star,
                                  args.checkin_from, args.top)
         elif args.consolidated:
