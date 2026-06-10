@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Latitude 43 — the travel desk for people who fly for a living</title>
+<meta name="description" content="A Toronto travel desk for the Sun–Thu crowd. Hotels booked in an hour, points kept, upgrades confirmed — and a human awake when the 11pm flight cancels.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --salmon: #F7E6CE;
+    --salmon-2: #F0DAB9;
+    --ink: #211B12;
+    --ink-65: rgba(33,27,18,0.65);
+    --ink-40: rgba(33,27,18,0.4);
+    --rule: rgba(33,27,18,0.8);
+    --rule-soft: rgba(33,27,18,0.18);
+    --red: #A8331F;
+    --navy: #1E3A56;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--salmon); color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 18px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  .mono { font-family: "IBM Plex Mono", monospace; }
+  .sans { font-family: "Archivo", sans-serif; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 44px; }
+  @media (max-width: 720px) { .wrap { padding: 0 20px; } }
+
+  /* masthead */
+  .topline { border-bottom: 1px solid var(--rule); }
+  .topline .row {
+    display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ink-65);
+  }
+  .masthead { border-bottom: 3px double var(--rule); padding: 30px 0 24px; }
+  .masthead .row { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+  .masthead h1.brand {
+    margin: 0; font-weight: 700; font-size: clamp(34px, 4.4vw, 58px);
+    letter-spacing: -0.01em;
+  }
+  .masthead h1.brand .deg { color: var(--red); }
+  .masthead .tag { font-family: "Archivo", sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-65); }
+  nav.sections { border-bottom: 1px solid var(--rule); }
+  nav.sections .row {
+    display: flex; gap: 34px; padding: 12px 0;
+    font-family: "Archivo", sans-serif; font-size: 12.5px; font-weight: 600;
+    letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  nav.sections a:hover { color: var(--red); }
+  nav.sections .right { margin-left: auto; color: var(--red); }
+  @media (max-width: 760px) { nav.sections .row { gap: 18px; flex-wrap: wrap; } }
+
+  /* front page */
+  .front { padding: 56px 0 70px; border-bottom: 1px solid var(--rule); }
+  .front-grid { display: grid; grid-template-columns: 1.55fr 1fr; gap: 64px; }
+  .dateline { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red); margin: 0 0 22px; }
+  .front h2.head {
+    font-weight: 700; font-size: clamp(40px, 5vw, 74px);
+    line-height: 1.0; letter-spacing: -0.022em; margin: 0 0 26px;
+  }
+  .front h2.head em { font-style: italic; font-weight: 400; }
+  .front .deck { font-size: 21px; line-height: 1.5; color: var(--ink-65); max-width: 30em; margin: 0 0 36px; }
+  .front .deck b { color: var(--ink); font-weight: 600; }
+  .byline { font-family: "Archivo", sans-serif; font-size: 13px; letter-spacing: 0.06em; color: var(--ink-65); margin-bottom: 38px; }
+  .byline b { color: var(--ink); text-transform: uppercase; font-size: 12px; letter-spacing: 0.1em; }
+  .front-cta { display: flex; gap: 26px; align-items: center; flex-wrap: wrap; }
+  .btn {
+    font-family: "Archivo", sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--red); color: var(--salmon); padding: 17px 30px;
+  }
+  .btn:hover { background: var(--ink); }
+  .btn-q { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-65); }
+  .btn-q u { text-underline-offset: 4px; text-decoration-color: var(--red); }
+
+  /* index card */
+  .indexcard { border-left: 1px solid var(--rule); padding-left: 44px; align-self: start; }
+  .indexcard .ic-head { font-family: "Archivo", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border-bottom: 2px solid var(--rule); padding-bottom: 10px; margin-bottom: 6px; }
+  .indexcard a.item { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--rule-soft); }
+  .indexcard a.item:hover .t { color: var(--red); }
+  .indexcard .t { font-weight: 600; font-size: 16.5px; }
+  .indexcard .p { font-family: "IBM Plex Mono", monospace; font-size: 11px; color: var(--ink-40); white-space: nowrap; }
+  .indexcard .quote {
+    margin: 26px 0 0; padding: 18px 0 0;
+    font-style: italic; font-size: 17px; line-height: 1.5; color: var(--ink-65);
+  }
+  .indexcard .quote .who { display: block; font-style: normal; font-family: "Archivo", sans-serif; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); margin-top: 10px; }
+  @media (max-width: 880px) { .front-grid { grid-template-columns: 1fr; } .indexcard { border-left: 0; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 36px; } }
+
+  /* sections as articles */
+  section.article { padding: 84px 0; border-bottom: 1px solid var(--rule); }
+  .art-label {
+    font-family: "Archivo", sans-serif; font-size: 11.5px; font-weight: 700;
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--red);
+    display: flex; align-items: center; gap: 16px; margin: 0 0 26px;
+  }
+  .art-label::after { content: ""; height: 1px; background: var(--rule-soft); flex: 1; }
+  h2.art {
+    font-weight: 700; font-size: clamp(30px, 3.8vw, 52px);
+    line-height: 1.03; letter-spacing: -0.018em; margin: 0 0 20px; max-width: 24ch;
+  }
+  h2.art em { font-style: italic; font-weight: 400; }
+  .standfirst { font-size: 19.5px; color: var(--ink-65); max-width: 38em; margin: 0 0 54px; }
+  .standfirst b { color: var(--ink); font-weight: 600; }
+
+  /* market data table */
+  .mkt { border: 1px solid var(--rule); background: var(--salmon); }
+  .mkt .cap {
+    font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 12px 24px; border-bottom: 1px solid var(--rule); display: flex; justify-content: space-between;
+    background: var(--salmon-2);
+  }
+  .mkt .cap span:last-child { color: var(--red); }
+  .mkt .mrow { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 18px; padding: 13px 24px; border-bottom: 1px solid var(--rule-soft); align-items: baseline; }
+  .mkt .mrow:last-child { border-bottom: 0; }
+  .mkt .mrow.mhead { font-family: "Archivo", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); border-bottom: 1px solid var(--rule); }
+  .mkt .mrow .l { font-weight: 600; font-size: 16px; }
+  .mkt .mrow .d { font-family: "IBM Plex Mono", monospace; font-size: 13px; color: var(--ink-65); }
+  .mkt .mrow .u { font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500; }
+  .mkt .mrow .u.up::before { content: "▲ "; color: #20663B; font-size: 10px; }
+  .mkt .mrow.total { background: var(--salmon-2); border-top: 1px solid var(--rule); }
+  .mkt .mrow.total .u { color: var(--red); font-weight: 700; font-size: 15px; }
+  @media (max-width: 720px) {
+    .mkt .mrow { grid-template-columns: 1fr; gap: 2px; }
+    .mkt .mrow.mhead { display: none; }
+    .mkt .mrow .d::before { content: "Direct: "; }
+    .mkt .mrow .u::before { content: "Desk: "; }
+    .mkt .mrow .u.up::before { content: "Desk: ▲ "; }
+  }
+
+  /* columns layout for dispatch */
+  .dispatch-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 70px; align-items: start; }
+  .dispatch-grid .colrule { border-left: 1px solid var(--rule-soft); padding-left: 56px; }
+  .dispatch p { margin: 0 0 1.2em; }
+  .dispatch p:first-of-type::first-letter {
+    font-size: 74px; float: left; line-height: 0.8; padding: 6px 12px 0 0; font-weight: 700; color: var(--red);
+  }
+  .pull {
+    border-top: 3px solid var(--ink); border-bottom: 1px solid var(--ink);
+    padding: 26px 0; margin: 10px 0 30px;
+    font-size: 26px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .pull em { color: var(--red); font-style: italic; }
+  .ledger { font-family: "IBM Plex Mono", monospace; font-size: 13px; border: 1px solid var(--rule); }
+  .ledger .lh { padding: 12px 20px; border-bottom: 1px solid var(--rule); letter-spacing: 0.16em; font-size: 11px; background: var(--salmon-2); }
+  .ledger .lr { display: flex; justify-content: space-between; gap: 14px; padding: 9px 20px; border-bottom: 1px dashed var(--rule-soft); }
+  .ledger .lr span:first-child { color: var(--ink-65); }
+  .ledger .lr.sum { border-top: 1px solid var(--rule); border-bottom: 0; font-weight: 700; padding: 13px 20px; }
+  .ledger .lr.sum span:last-child { color: var(--red); }
+  @media (max-width: 880px) { .dispatch-grid { grid-template-columns: 1fr; gap: 44px; } .dispatch-grid .colrule { border-left: 0; padding-left: 0; } }
+
+  /* classifieds pricing */
+  .classifieds { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); }
+  .ad { padding: 38px 34px 44px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; }
+  .ad:last-child { border-right: 0; }
+  .ad.star { background: var(--salmon-2); }
+  .ad .a-tier { font-family: "Archivo", sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-65); display: flex; justify-content: space-between; margin-bottom: 18px; }
+  .ad .a-tier .badge { color: var(--red); }
+  .ad .a-price { font-weight: 700; font-size: 46px; letter-spacing: -0.02em; line-height: 1; margin-bottom: 4px; }
+  .ad .a-price small { font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 400; color: var(--ink-40); }
+  .ad .a-for { font-style: italic; color: var(--ink-65); font-size: 16px; margin: 0 0 24px; }
+  .ad ul { list-style: none; margin: 0 0 30px; padding: 0; flex-grow: 1; }
+  .ad li { font-size: 15px; color: var(--ink-65); padding: 8px 0; border-bottom: 1px dotted var(--rule-soft); }
+  .ad li b { color: var(--ink); font-weight: 600; }
+  .ad .a-go {
+    font-family: "Archivo", sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    text-align: center; border: 1.5px solid var(--ink); padding: 14px 0;
+  }
+  .ad .a-go:hover { background: var(--ink); color: var(--salmon); }
+  .ad.star .a-go { background: var(--red); border-color: var(--red); color: var(--salmon); }
+  .ad.star .a-go:hover { background: var(--ink); border-color: var(--ink); }
+  @media (max-width: 880px) { .classifieds { grid-template-columns: 1fr; } .ad { border-right: 0; border-bottom: 1px solid var(--rule); } .ad:last-child { border-bottom: 0; } }
+
+  /* letters (faq) */
+  .letters-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 70px; }
+  .letter { padding: 26px 0; border-bottom: 1px solid var(--rule-soft); }
+  .letter .lq { font-weight: 700; font-size: 18.5px; margin: 0 0 8px; }
+  .letter .lq::before { content: "Sir — "; font-style: italic; font-weight: 400; color: var(--ink-40); }
+  .letter .la { margin: 0; color: var(--ink-65); font-size: 16px; }
+  .letter .la b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 760px) { .letters-grid { grid-template-columns: 1fr; } }
+
+  /* final */
+  .final { padding: 100px 0 110px; text-align: center; border-bottom: 1px solid var(--rule); }
+  .final .stop { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--red); display: block; margin-bottom: 24px; }
+  .final h2 { font-weight: 700; font-size: clamp(36px, 4.8vw, 66px); line-height: 1.0; letter-spacing: -0.02em; margin: 0 auto 24px; max-width: 18ch; }
+  .final h2 em { font-style: italic; font-weight: 400; }
+  .final p { color: var(--ink-65); font-size: 19px; max-width: 32em; margin: 0 auto 44px; }
+
+  footer.site { padding: 26px 0 40px; }
+  footer.site .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-40); }
+</style>
+</head>
+<body>
+
+<div class="topline">
+  <div class="wrap row">
+    <span>Toronto · 43°39′N 79°23′W</span>
+    <span>The desk is open · Sun–Thu, like you</span>
+    <span>hello@latitude43.travel</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap row">
+    <h1 class="brand">Latitude 43<span class="deg">°</span></h1>
+    <span class="tag">The travel desk, for people who fly for a living</span>
+  </div>
+</header>
+
+<nav class="sections">
+  <div class="wrap row">
+    <a href="#math">Market data</a>
+    <a href="#dispatch">Dispatches</a>
+    <a href="#pricing">Classifieds</a>
+    <a href="#letters">Letters</a>
+    <a class="right" href="mailto:hello@latitude43.travel">Book a 20-min call →</a>
+  </div>
+</nav>
+
+<main>
+  <section class="front">
+    <div class="wrap front-grid">
+      <div>
+        <p class="dateline">Filed from YYZ, gate D34 · 06:10</p>
+        <h2 class="head">The red-eye is bad enough. <em>The booking shouldn't be.</em></h2>
+        <p class="deck">You fly Sun–Thu and still book your own hotels at midnight like it's a hobby. Latitude 43 is a one-person travel desk in Toronto: <b>text the trip, it's booked within the hour</b> — same rate, your points, suite upgrades and breakfasts layered on top through the advisor programs the booking sites can't touch.</p>
+        <p class="byline"><b>By Adam</b> — founder, Latitude 43, who has stood in the rebooking queue and would not recommend it</p>
+        <div class="front-cta">
+          <a class="btn" href="mailto:hello@latitude43.travel">Book the 20-minute call</a>
+          <a class="btn-q" href="#math">or read the <u>market data</u> first</a>
+        </div>
+      </div>
+      <aside class="indexcard">
+        <p class="ic-head">In this edition</p>
+        <a class="item" href="#math"><span class="t">Same room, two arrivals — the numbers</span><span class="p">p. 2</span></a>
+        <a class="item" href="#dispatch"><span class="t">Dispatch: 32 nights, one founder, +$3,930</span><span class="p">p. 3</span></a>
+        <a class="item" href="#pricing"><span class="t">Classifieds: Free, $150, $500</span><span class="p">p. 4</span></a>
+        <a class="item" href="#letters"><span class="t">Letters to the desk</span><span class="p">p. 5</span></a>
+        <p class="quote">“Booked 8 weeks of business travel through the desk. Zero logging into Marriott.com. Two flight cancellations handled while I slept.”<span class="who">— A client, quoted with permission</span></p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="article" id="math">
+    <div class="wrap">
+      <p class="art-label">Market data</p>
+      <h2 class="art">Same room. Same rate. <em>Different arrival.</em></h2>
+      <p class="standfirst">The hotel charges your card direct and your loyalty number rides on the booking. The rate is identical to the one you'd find logged in, on your own, at midnight. <b>The difference is everything attached to it.</b></p>
+      <div class="mkt">
+        <div class="cap"><span>L43 / HOTEL DESK — TWO NIGHTS, KING ROOM</span><span>Q1 2026</span></div>
+        <div class="mrow mhead"><span>Line item</span><span>Booked direct</span><span>Through the desk</span></div>
+        <div class="mrow"><span class="l">Room rate</span><span class="d">$2,400</span><span class="u">$2,400 — unchanged</span></div>
+        <div class="mrow"><span class="l">Points earned</span><span class="d">10×</span><span class="u">10×, your account</span></div>
+        <div class="mrow"><span class="l">Room category</span><span class="d">Deluxe King</span><span class="u up">Premium Suite</span></div>
+        <div class="mrow"><span class="l">Breakfast, daily</span><span class="d">$42 out of pocket</span><span class="u up">Included</span></div>
+        <div class="mrow"><span class="l">Hotel credit</span><span class="d">nil</span><span class="u up">$100 / stay</span></div>
+        <div class="mrow"><span class="l">Early in / late out</span><span class="d">“subject to availability”</span><span class="u up">Confirmed</span></div>
+        <div class="mrow"><span class="l">11pm cancellation</span><span class="d">chat queue, pos. 14</span><span class="u">A human. On WhatsApp.</span></div>
+        <div class="mrow total"><span class="l">Added value, 3-night stay</span><span class="d">$0</span><span class="u">+$430 approx.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="article" id="dispatch">
+    <div class="wrap">
+      <p class="art-label">Dispatches</p>
+      <h2 class="art">One Toronto founder. 32 nights. <em>A quarter audited.</em></h2>
+      <div class="dispatch-grid" style="margin-top: 50px;">
+        <div class="dispatch">
+          <p>The client — a founder who flies to wherever his customers are, which last quarter meant eight trips across six cities — used to book everything himself. Not badly, either. He had status, he knew his properties, he could find the corporate rate.</p>
+          <p>What he couldn't do was clear a suite upgrade at booking, get the breakfast comp'd through STARS, or have someone else stand in the (figurative) rebooking queue when two of those thirty-two nights fell apart at the airport. Onboarding took twenty minutes in January.</p>
+          <p>Every booking since has been a two-line text, answered inside the hour, charged to his own card, points to his own account. The audit at right is his quarter — names changed, numbers not.</p>
+          <div class="pull">The cost over booking direct: <em>zero dollars.</em> The desk is paid by the hotels' marketing budgets — the same line that pays the booking sites.</div>
+        </div>
+        <div class="colrule">
+          <div class="ledger">
+            <div class="lh">AUDIT — CLIENT 011 · Q1 2026 · 32 NIGHTS / 8 TRIPS / 6 CITIES</div>
+            <div class="lr"><span>Bookings (Marriott · Hyatt · Hilton)</span><span>$18,400</span></div>
+            <div class="lr"><span>Upgrades captured</span><span>+$1,940</span></div>
+            <div class="lr"><span>Breakfasts included</span><span>+$1,180</span></div>
+            <div class="lr"><span>F&amp;B and spa credits</span><span>+$600</span></div>
+            <div class="lr"><span>Status point bonuses</span><span>+$220</span></div>
+            <div class="lr"><span>Disruption recovery, ×2</span><span>+$450</span></div>
+            <div class="lr"><span>Premium over direct</span><span>$0</span></div>
+            <div class="lr sum"><span>VALUE ADDED, ONE QUARTER</span><span>+$3,930</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="article" id="pricing">
+    <div class="wrap">
+      <p class="art-label">Classifieds</p>
+      <h2 class="art">Three listings. <em>Most take the first.</em></h2>
+      <p class="standfirst">Standard is free — the hotels pay the desk's commission, not you. The paid listings cover work beyond hotel bookings: flights, restaurants, and a phone that never goes to voicemail.</p>
+      <div class="classifieds">
+        <div class="ad">
+          <span class="a-tier">Standard</span>
+          <div class="a-price">Free</div>
+          <p class="a-for">For anyone with recurring hotel nights.</p>
+          <ul>
+            <li>Hotels via <b>Privé / STARS / Impresario / Virtuoso</b></li>
+            <li>Upgrades, breakfast, credits where partnered</li>
+            <li><b>Points and status stay yours</b></li>
+            <li>Hotel charges your card direct</li>
+            <li>Booked within 48 hours</li>
+          </ul>
+          <a class="a-go" href="mailto:hello@latitude43.travel">Start here</a>
+        </div>
+        <div class="ad star">
+          <span class="a-tier">Concierge <span class="badge">★ most taken</span></span>
+          <div class="a-price">$150<small> / month</small></div>
+          <p class="a-for">For the Sun–Thu calendar.</p>
+          <ul>
+            <li>Everything in Standard, plus —</li>
+            <li><b>Flights</b>: booking, seats, status-aware routing</li>
+            <li>Restaurants and car service, coordinated</li>
+            <li>Lounge access advisory</li>
+            <li><b>Booked within the hour</b></li>
+          </ul>
+          <a class="a-go" href="mailto:hello@latitude43.travel">Reply to this ad</a>
+        </div>
+        <div class="ad">
+          <span class="a-tier">Executive</span>
+          <div class="a-price">$500<small> / month</small></div>
+          <p class="a-for">For 60+ nights and a family at home.</p>
+          <ul>
+            <li>Everything in Concierge, plus —</li>
+            <li><b>24/7 WhatsApp</b> access</li>
+            <li>Quarterly travel-spend review</li>
+            <li>Spouse &amp; family leisure planning included</li>
+            <li>Booked within 30 minutes</li>
+          </ul>
+          <a class="a-go" href="mailto:hello@latitude43.travel">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="article" id="letters">
+    <div class="wrap">
+      <p class="art-label">Letters to the desk</p>
+      <h2 class="art">Asked, frequently. <em>Answered, honestly.</em></h2>
+      <div class="letters-grid" style="margin-top: 50px;">
+        <div class="letter">
+          <p class="lq">surely I lose my Marriott points?</p>
+          <p class="la">You don't. Bookings carry <b>your loyalty number and your card</b>; points and elite nights accrue exactly as if you'd booked direct. The perks stack on top.</p>
+        </div>
+        <div class="letter">
+          <p class="lq">what, then, is the catch?</p>
+          <p class="la">Hotels pay advisors from their marketing budget — the same budget that pays the booking sites their 15–20%. <b>Your rate does not move.</b> I'll happily prove it on a live booking.</p>
+        </div>
+        <div class="letter">
+          <p class="lq">my company makes me use Concur.</p>
+          <p class="la">Condolences. This is a personal-account model, not a TMS — most clients run hotels through the desk, the mandate for flights, and text me when the mandate fails them at 11pm.</p>
+        </div>
+        <div class="letter">
+          <p class="lq">which hotels are covered?</p>
+          <p class="la">Marriott STARS, Hyatt Privé, Hilton Impresario, Four Seasons Preferred, Rosewood Elite, and the Virtuoso network — <b>roughly 4,500 properties.</b> Anything else I'll still book; you simply get me instead of perks.</p>
+        </div>
+        <div class="letter">
+          <p class="lq">and the minimum commitment?</p>
+          <p class="la">None on Standard; the paid tiers run month-to-month. <b>If the desk stops being useful, fire it by text.</b> It will take the news professionally.</p>
+        </div>
+        <div class="letter">
+          <p class="lq">do you do the odd holiday too?</p>
+          <p class="la">Quietly, yes — Executive includes the family's leisure trips, and Standard clients get first call when the honeymoon-grade properties release their good weeks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="stop">— STOP PRESS —</span>
+      <h2>Travel 25+ nights a year? <em>The desk will pay for itself by Tuesday.</em></h2>
+      <p>Twenty minutes on the phone. Bring your last quarter's travel; I'll show you, line by line, what the desk would have added to it. If the numbers bore you, no hard feelings — you keep the audit.</p>
+      <a class="btn" href="mailto:hello@latitude43.travel">Book the 20-minute call</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap row">
+    <span>Latitude 43 Travel — Toronto</span>
+    <span>Printed daily at 43°39′N</span>
+    <span>© 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
