@@ -291,7 +291,7 @@ The most striking pattern across this peer set is that the highest-priced firms 
 
 **The mechanism**: marketing absence is a *scarcity signal*. A firm that does not advertise can credibly claim it has more demand than supply. A firm that advertises cannot. For the principal evaluating where to send a $50K relationship, the firm that's hard to find feels safer than the firm that finds you.
 
-**Latitude 43 implication:** Build a minimal, restrained homepage (already in motion via the Preface design exploration). Resist the temptation to publish "case studies." Resist the temptation to run paid acquisition past a tiny LinkedIn test budget. The brand asset is **a tiny list of recognizable principals who quietly say "yes, I work with Arvit."** That list is more valuable than any content marketing.
+**Latitude 43 implication:** Build a minimal, restrained homepage (already in motion via the early Latitude 43 design exploration). Resist the temptation to publish "case studies." Resist the temptation to run paid acquisition past a tiny LinkedIn test budget. The brand asset is **a tiny list of recognizable principals who quietly say "yes, I work with Arvit."** That list is more valuable than any content marketing.
 
 ### 3. The Partnership Model
 

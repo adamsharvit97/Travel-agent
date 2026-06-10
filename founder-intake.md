@@ -275,7 +275,7 @@
 
 ## I. Brand & Voice
 
-80. ★ The voice of Preface — sophisticated, playful, irreverent, restrained?
+80. ★ The voice of Latitude 43 — sophisticated, playful, irreverent, restrained?
     →
 
 81. Three brands (any industry) whose voice and presence you admire?

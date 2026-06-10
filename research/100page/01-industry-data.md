@@ -192,7 +192,7 @@ For each chart: **type**, **data**, **source(s)**, and a one-line **narrative ca
 ### B5. Conversion trigger frequency (qualitative bar)
 - **Type:** horizontal bar — % of new advisor clients citing each trigger.
 - **Data:** Big disruption / IROP (39%), new EA hire (22%), spouse pushed back (18%), board/IPO travel intensity (12%), divorce/illness (9%).
-- **Source:** This is a *first-party* estimate compiled from the firm's intake notes — flag as Preface internal data with [N=~120 founder/EA conversations 2024–2026]; cross-reference [Perk State of Travel 2025](https://www.perk.com/blog/business-travel-chaos-survey/) on the disruption % to anchor the largest bar.
+- **Source:** This is a *first-party* estimate compiled from the firm's intake notes — flag as Latitude 43 internal data with [N=~120 founder/EA conversations 2024–2026]; cross-reference [Perk State of Travel 2025](https://www.perk.com/blog/business-travel-chaos-survey/) on the disruption % to anchor the largest bar.
 - **Caption:** *Most people don't buy travel help when life is calm. They buy it on a Tuesday at 11pm after the third cancellation in a month.*
 
 ### B6. Service category comparison: TMC vs advisor vs concierge vs self-booker
@@ -265,7 +265,7 @@ Why is it unmanaged? Three reasons emerge clearly in the data:
 
 1. **Tool/UX mismatch.** SMBs say legacy TMC tools feel worse than Expedia or Google Flights. 53% of SMBs increasing spend in 2025 are looking for "consumer-style" booking ([BTN SME 2025](https://www.businesstravelnews.com/Research/SME-Report/2025/Small-Midsize-Enterprise-Business-Travel-Durability)).
 2. **Price.** TMCs charge **$7–25 per transaction** plus annual fees of **$3K–8K** for small accounts ([Engine 2024](https://engine.com/business-travel-guide/calculate-true-tmc-costs)). For a 5-person startup taking 50 trips/year, that's a meaningful tax with unclear ROI.
-3. **No relationship layer.** Concur and Navan are good at the 95% of trips that are simple. The 5% that are complex — the surprise IPO roadshow, the spouse-and-kids board offsite, the cancelled-at-midnight flight to a closing — fall through. That's the niche the human-advisor category fills, and it's where Preface plays.
+3. **No relationship layer.** Concur and Navan are good at the 95% of trips that are simple. The 5% that are complex — the surprise IPO roadshow, the spouse-and-kids board offsite, the cancelled-at-midnight flight to a closing — fall through. That's the niche the human-advisor category fills, and it's where Latitude 43 plays.
 
 This is not a niche. **The unmanaged middle is the market.** Every existing TMC's growth strategy is to *move down-market*; every advisor brand's strategy is to *productise up*. They meet in the same buyer.
 
@@ -363,7 +363,7 @@ The headline takeaway for the report: every dollar invested in *making business 
 - **Time horizon:** Most stats are from 2024–2026 unless they are foundational (decision fatigue, jet lag, family impact research, which date back further but are still the most cited).
 - **Geographic bias:** US-centric. GBTA and Skift cover global, but pain-point surveys skew Anglo (US + UK + Canada + AU).
 - **Survey biases:** Buyer-side surveys (GBTA, BTN) over-sample managed-program respondents because that's who joins industry associations. Traveler-side surveys (Concur, Perk, Booking) over-sample frequent flyers because that's who responds. Both biases probably *underestimate* the size and dissatisfaction of the unmanaged middle.
-- **Where Preface should commission primary research:** Conversion triggers (Chart B5), advisor NPS vs concierge NPS head-to-head, founder-specific decision-fatigue economics, and the spouse/family cost layer are all critical to this report and have no clean third-party source. These should be a 2026 first-party study.
+- **Where Latitude 43 should commission primary research:** Conversion triggers (Chart B5), advisor NPS vs concierge NPS head-to-head, founder-specific decision-fatigue economics, and the spouse/family cost layer are all critical to this report and have no clean third-party source. These should be a 2026 first-party study.
 
 ---
 

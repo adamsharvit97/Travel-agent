@@ -767,7 +767,7 @@ The review is conducted in approximately 15 minutes per member at Year 1 cohort 
 - **Palette.** Navy #0E1A2B, ivory #F4EFE6, brass #B8924C. Restrained. No gradients. No photo overlays on text.
 - **Register.** Patek Philippe / Aman / Loro Piana editorial. Not luxury-travel-brochure. Not concierge-app-startup.
 - **Photography.** Sparse. Hotel-shot-by-the-hotel; if the desk has not stayed there, no photo. Photos are credit-cited.
-- **Layout.** Asymmetric, white-space generous, table-driven where data carries the meaning. The website at `/preface-homepage-v3.html` and the design language at `/design-final-master.html` carry the visual system.
+- **Layout.** Asymmetric, white-space generous, table-driven where data carries the meaning. The website in `/website/` carries the visual system.
 
 ### 9.2 Voice rules
 

@@ -17,7 +17,7 @@ A one-advisor luxury travel office, Toronto (43°N), serving small-business owne
 
 ## 2. The chosen design direction
 
-`deals/brand/mockup-3-lookbook.html` — open it first. Its DNA (derived from root `design-E1v3-cinematic-personal.html`):
+`deals/brand/mockup-3-lookbook.html` — open it first. Its DNA:
 
 - **Palette:** warm near-black `#0C0A09` / `#13110F`, lines `#2A241C`, text `#F2ECDF`, soft `#C6BCA6`, mute `#827763`, champagne gold `#D9B987`, bright gold `#F2D29E`
 - **Type:** Playfair Display (display, italics for emphasis) · Inter (body) · JetBrains Mono (10px uppercase, letter-spaced `.2em` eyebrows/labels)
@@ -29,7 +29,7 @@ A one-advisor luxury travel office, Toronto (43°N), serving small-business owne
 
 `website/` — ~20 pages in an older "v3" style (navy `#0E1A2B`, brass `#B8924C`, EB Garamond, `styles.css`, `v3-*` classes). Structure worth keeping: index, approach, atlas (membership), journal, about, contact, for-founders / for-investors / for-advisors / for-solo, fees, faq, case-studies, press. Pricing on index: Atlas Principal $3,600 / Atlas Office $12,000 / Atlas Firm $36,000 per year.
 
-**Note:** root-level `preface-*`/`design-*` files are legacy (old "Preface" brand) — reference only. `website/toronto-deal-calendar.html` should likely be removed from the site (see §4).
+**Note:** the legacy "Preface"-brand files (`preface-*`/`design-*` at the root) have been removed from the repo. `website/toronto-deal-calendar.html` should likely be removed from the site (see §4).
 
 ## 4. Adjacent workstream (do not conflate)
 
