@@ -432,6 +432,100 @@ def report_consolidated(city: str, min_rating: float, min_star: float,
     return "\n".join(lines)
 
 
+def report_coverage(city: str, min_rating: float, min_star: float,
+                    checkin_from: str | None, top: int | None) -> str:
+    """Forward-horizon view for FLEXIBLE travel: across all sampled future
+    check-ins, how often is each quality hotel discounting? A hotel on deal in
+    most/all sampled windows is a safe bet whenever the client travels.
+
+    Denominator = total distinct windows sampled at/after checkin_from, so a
+    hotel absent from a window counts as 'not on deal' that window. Designed for
+    lean discounted_only scans where only on-deal hotels are returned."""
+    catalog = load_catalog(city)
+    hotels = catalog["hotels"]
+    obs = [o for o in load_observations() if o["city"].lower() == city.lower()]
+    if checkin_from:
+        obs = [o for o in obs if o["checkin"] >= checkin_from]
+    if not obs:
+        return f"No observations found for {city}."
+
+    # Latest obs per (hotel, window); collect the full set of windows sampled.
+    latest: dict[tuple, dict] = {}
+    windows = set()
+    for o in obs:
+        windows.add((o["checkin"], o["checkout"]))
+        key = (o["hotel_id"], o["checkin"], o["checkout"])
+        if key not in latest or o["scanned_at"] > latest[key]["scanned_at"]:
+            latest[key] = o
+    total_windows = len(windows)
+
+    by_hotel: dict[str, list[dict]] = {}
+    for o in latest.values():
+        if o["on_deal"] == "1":
+            by_hotel.setdefault(o["hotel_id"], []).append(o)
+
+    rows = []
+    for hid, deals in by_hotel.items():
+        h = hotels.get(hid)
+        if not h or (h.get("star") or 0) < min_star or (h.get("guest_rating") or 0) < min_rating:
+            continue
+        nightlies = [_to_float(d["nightly_price"]) for d in deals if _to_float(d["nightly_price"])]
+        discounts = [float(d["discount_pct"]) for d in deals]
+        rows.append({
+            "hotel": h,
+            "n_deal": len(deals),
+            "coverage": len(deals) / total_windows if total_windows else 0,
+            "min_nightly": min(nightlies) if nightlies else None,
+            "max_nightly": max(nightlies) if nightlies else None,
+            "med_discount": sorted(discounts)[len(discounts) // 2] if discounts else 0,
+            "max_discount": max(discounts) if discounts else 0,
+        })
+
+    def band(cov):
+        if cov >= 0.999:
+            return "Always on deal"
+        if cov >= 0.6:
+            return "Usually on deal"
+        return "Sometimes on deal"
+
+    rows.sort(key=lambda r: (-r["coverage"],
+                             TIER_ORDER.get(r["hotel"].get("tier"), 9),
+                             quality_key(r["hotel"])))
+    if top:
+        rows = rows[:top]
+
+    lines = [
+        f"# Latitude 43 — {catalog.get('city', city)}: Hotels Reliably on Deal",
+        "",
+        f"**Forward horizon:** {total_windows} future check-in windows sampled"
+        + (f" (from {checkin_from})" if checkin_from else "") + "  ",
+        f"**Generated:** {date.today().isoformat()} · ≥{min_star:g}★ / ≥{min_rating:g} rating  ",
+        "",
+        "_For flexible travel: a deal is tied to a date, but these hotels are "
+        "discounting across most/all sampled future dates — so whenever the trip "
+        "lands, they're the ones likely to be on sale. 'Coverage' = share of "
+        "sampled windows on deal._",
+        "",
+        "| Hotel | ★ | Rating | Area (tier) | Coverage | Typical off | Nightly range |",
+        "|-------|---|--------|-------------|----------|-------------|---------------|",
+    ]
+    current = None
+    for r in rows:
+        b = band(r["coverage"])
+        if b != current:
+            lines.append(f"| **— {b} —** | | | | | | |")
+            current = b
+        h = r["hotel"]
+        rng = f"{_money(r['min_nightly'])}–{_money(r['max_nightly'])}" if r["min_nightly"] else "—"
+        lines.append(
+            f"| {h['name']} | {_star(h)} | {h.get('guest_rating','?')} ({_revs(h)}) | "
+            f"{h.get('area','')} ({h.get('tier','')}) | {r['n_deal']}/{total_windows} | "
+            f"~{r['med_discount']:g}% (max {r['max_discount']:g}%) | {rng} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description="Latitude 43 hotel deal finder")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -446,6 +540,10 @@ def main(argv=None):
     pr.add_argument("--window", help="checkin..checkout, e.g. 2026-06-16..2026-06-18")
     pr.add_argument("--consolidated", action="store_true",
                     help="aggregate across all scanned windows (multi-window view)")
+    pr.add_argument("--coverage", action="store_true",
+                    help="forward-horizon 'reliably discounting' leaderboard")
+    pr.add_argument("--checkin-from",
+                    help="coverage: only count windows with check-in on/after this date")
     pr.add_argument("--deals-only", action="store_true",
                     help="consolidated: show only hotels with at least one deal")
     pr.add_argument("--min-rating", type=float, default=9.0)
@@ -472,7 +570,10 @@ def main(argv=None):
         return 0
 
     if args.cmd == "report":
-        if args.consolidated:
+        if args.coverage:
+            md = report_coverage(args.city, args.min_rating, args.min_star,
+                                 args.checkin_from, args.top)
+        elif args.consolidated:
             md = report_consolidated(args.city, args.min_rating, args.min_star,
                                      args.top, args.deals_only)
         else:
