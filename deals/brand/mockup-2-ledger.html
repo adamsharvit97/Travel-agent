@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Latitude 43 — The Toronto Calendar (Ledger)</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --bg:#0B0B0D; --bg2:#121217; --line:#22232B; --line2:#2E2F38;
+         --text:#ECE9E2; --soft:#A7A496; --mute:#6C6A60; --gold:#C8A96A; --goldb:#E3C588; }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#050506;font-family:'Inter',sans-serif;color:var(--text);-webkit-font-smoothing:antialiased;}
+  .frame{max-width:640px;margin:0 auto;background:var(--bg);}
+  .mono{font-family:'JetBrains Mono',monospace;letter-spacing:.2em;text-transform:uppercase;}
+  /* masthead */
+  .top{padding:30px 40px 26px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line2);}
+  .brand{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.04em;}
+  .brand i{color:var(--gold);font-style:italic;}
+  .top .tag{font-size:9.5px;color:var(--mute);}
+  .head{padding:46px 40px 34px;}
+  .eyebrow{font-size:10px;color:var(--gold);margin-bottom:20px;}
+  h1{font-family:'Playfair Display',serif;font-weight:400;font-size:33px;line-height:1.15;}
+  h1 i{font-style:italic;color:var(--goldb);}
+  .sub{margin-top:18px;font-size:14.5px;line-height:1.7;color:var(--soft);max-width:460px;}
+  /* legend */
+  .legend{padding:0 40px 22px;display:flex;gap:24px;align-items:center;}
+  .legend span{font-size:10.5px;color:var(--mute);display:flex;align-items:center;gap:8px;}
+  .chip{display:inline-block;min-width:30px;text-align:center;font-family:'JetBrains Mono';font-size:10px;
+        padding:2px 5px;border-radius:3px;}
+  .chip.on{background:rgba(200,169,106,.16);color:var(--goldb);border:1px solid rgba(200,169,106,.4);}
+  .chip.deep{background:var(--gold);color:#16140d;border:1px solid var(--gold);}
+  /* matrix */
+  .mtx{padding:0 22px 8px;overflow-x:auto;}
+  table{border-collapse:collapse;width:100%;font-family:'JetBrains Mono',monospace;}
+  thead th{font-size:9px;letter-spacing:.06em;color:var(--mute);font-weight:400;padding:0 0 12px;text-align:center;}
+  thead th.h{text-align:left;padding-left:18px;}
+  tbody td{text-align:center;padding:7px 2px;border-top:1px solid var(--line);}
+  .hcell{text-align:left;padding:9px 0 9px 18px;border-top:1px solid var(--line);width:210px;}
+  .hcell .h{font-family:'Playfair Display',serif;font-size:15px;letter-spacing:0;text-transform:none;}
+  .hcell .m{font-size:9px;color:var(--mute);letter-spacing:.04em;margin-top:2px;}
+  .m-on{font-size:10px;color:var(--goldb);}
+  .m-deep{font-size:10px;background:var(--gold);color:#16140d;border-radius:3px;padding:3px 4px;font-weight:500;}
+  .m-off{color:#34343d;}
+  tr.lux .hcell .h{color:var(--goldb);}
+  /* note */
+  .note{padding:30px 40px 12px;border-top:1px solid var(--line2);}
+  .note p{font-size:12px;line-height:1.7;color:var(--mute);}
+  .cta{padding:6px 40px 44px;}
+  .cta a{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+         color:var(--gold);text-decoration:none;border:1px solid rgba(200,169,106,.45);padding:13px 22px;display:inline-block;}
+  .sig{font-size:9.5px;color:var(--mute);text-align:center;padding:18px 0 40px;background:var(--bg2);}
+</style></head>
+<body>
+<div class="frame">
+
+  <div class="top">
+    <span class="brand">Latitude <i>43°</i></span>
+    <span class="tag mono">Dispatch № 06 · Toronto</span>
+  </div>
+
+  <div class="head">
+    <div class="eyebrow mono">The Hotel Calendar · Jun – Aug 2026</div>
+    <h1>Where Toronto is<br><i>on sale,</i> at a glance.</h1>
+    <p class="sub">One page. The rooms our members use, and the weeks each one softens below its standard rate. Find your week, read down the column.</p>
+  </div>
+
+  <div class="legend">
+    <span><i class="chip deep">−40</i> deep softening</span>
+    <span><i class="chip on">−15</i> on sale</span>
+    <span><i style="color:#34343d;font-family:'JetBrains Mono';font-size:12px;">·</i> holds rate</span>
+  </div>
+
+  <div class="mtx">
+    <table>
+      <thead><tr><th class="h">&nbsp;</th>
+        <th>Jun 23</th><th>Jun 30</th><th>Jul 7</th><th>Jul 14</th><th>Jul 21</th><th>Jul 28</th><th>Aug 4</th><th>Aug 11</th></tr></thead>
+      <tbody>
+        <tr class="lux"><td class="hcell"><div class="h">The Hazelton</div><div class="m">5★ 9.8 · Yorkville</div></td>
+          <td class="m-on">−6</td><td class="m-on">−6</td><td class="m-on">−10</td><td class="m-on">−10</td><td class="m-on">−10</td><td class="m-on">−10</td><td class="m-on">−10</td><td class="m-on">−10</td></tr>
+        <tr class="lux"><td class="hcell"><div class="h">1 Hotel Toronto</div><div class="m">5★ 9.6 · Entertainment Dist.</div></td>
+          <td class="m-on">−23</td><td class="m-on">−16</td><td><span class="m-deep">−35</span></td><td><span class="m-deep">−35</span></td><td class="m-off">·</td><td><span class="m-deep">−35</span></td><td><span class="m-deep">−35</span></td><td><span class="m-deep">−35</span></td></tr>
+        <tr class="lux"><td class="hcell"><div class="h">Four Seasons Toronto</div><div class="m">5★ 9.6 · Yorkville</div></td>
+          <td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td></tr>
+        <tr><td class="hcell"><div class="h">The Omni King Edward</div><div class="m">4.5★ 9.6 · St. Lawrence</div></td>
+          <td class="m-on">−15</td><td class="m-on">−15</td><td class="m-on">−15</td><td class="m-on">−15</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-on">−15</td><td class="m-off">·</td></tr>
+        <tr><td class="hcell"><div class="h">One King West</div><div class="m">4★ 9.4 · Financial District</div></td>
+          <td><span class="m-deep">−35</span></td><td><span class="m-deep">−35</span></td><td class="m-on">−26</td><td class="m-off">·</td><td class="m-off">·</td><td><span class="m-deep">−34</span></td><td class="m-off">·</td><td class="m-off">·</td></tr>
+        <tr><td class="hcell"><div class="h">Fairmont Royal York</div><div class="m">4★ 9.0 · Union Station</div></td>
+          <td class="m-on">−15</td><td class="m-on">−15</td><td class="m-on">−15</td><td class="m-on">−10</td><td class="m-on">−10</td><td class="m-on">−15</td><td class="m-on">−15</td><td class="m-on">−15</td></tr>
+        <tr><td class="hcell"><div class="h">Cambridge Suites</div><div class="m">4★ 9.2 · Downtown core</div></td>
+          <td class="m-on">−25</td><td class="m-on">−25</td><td class="m-on">−25</td><td class="m-on">−25</td><td class="m-on">−25</td><td class="m-on">−25</td><td class="m-off">·</td><td class="m-on">−25</td></tr>
+        <tr><td class="hcell"><div class="h">Le Germain Maple Leaf Sq.</div><div class="m">4★ 9.6 · South Core</div></td>
+          <td class="m-on">−20</td><td class="m-on">−20</td><td class="m-on">−20</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-off">·</td><td class="m-on">−20</td><td class="m-on">−20</td></tr>
+        <tr><td class="hcell"><div class="h">Hotel Riu Plaza</div><div class="m">4★ 9.2 · Bay &amp; Dundas</div></td>
+          <td><span class="m-deep">−46</span></td><td><span class="m-deep">−46</span></td><td><span class="m-deep">−51</span></td><td><span class="m-deep">−46</span></td><td><span class="m-deep">−46</span></td><td><span class="m-deep">−46</span></td><td><span class="m-deep">−47</span></td><td class="m-off">·</td></tr>
+        <tr><td class="hcell"><div class="h">Old Mill Toronto</div><div class="m">4★ 9.4 · Humber</div></td>
+          <td class="m-on">−21</td><td class="m-on">−14</td><td class="m-on">−10</td><td class="m-on">−21</td><td class="m-on">−21</td><td class="m-on">−16</td><td class="m-on">−21</td><td class="m-on">−21</td></tr>
+        <tr><td class="hcell"><div class="h">Great Canadian Casino</div><div class="m">4★ 9.0 · Woodbine</div></td>
+          <td class="m-on">−28</td><td class="m-on">−27</td><td class="m-on">−23</td><td class="m-on">−28</td><td class="m-on">−28</td><td class="m-on">−21</td><td><span class="m-deep">−33</span></td><td class="m-on">−26</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <p>A mark is the best softening we observed that week, against the hotel's standard published rate, for a two-night stay. Rates move daily — this is a map of <em>when</em>, not a quote. The rooms that hold rate are no less worth booking; there, our value is the upgrade, the breakfast, the late checkout we add quietly.</p>
+  </div>
+  <div class="cta"><a href="#">Reply, or reach the desk →</a></div>
+  <div class="sig mono">Latitude 43 · The Travel Office · Toronto 43°N</div>
+
+</div>
+</body></html>
